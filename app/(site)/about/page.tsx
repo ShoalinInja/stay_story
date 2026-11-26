@@ -16,7 +16,7 @@ export default async function AboutPage() {
   const [{ about }, collage] = await Promise.all([getSite(), getMedia("about")]);
   const paragraphs = about.body.split(/\n\s*\n/).filter(Boolean);
   return (
-    <main>
+    <main id="main">
       <section className="container-site section-y grid items-start gap-10 md:grid-cols-[1fr_400px]">
         <div>
           <Breadcrumbs items={[{ label: UI.pages.about, href: "/about" }]} className="mb-6" />

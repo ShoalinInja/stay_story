@@ -6,7 +6,7 @@ import { UI } from "./copy";
 export function LegalPage({ doc, href }: { doc: LegalDoc; href: string }) {
   const draft = doc.sections.some((x) => x.needsReview);
   return (
-    <main className="container-site section-y max-w-3xl">
+    <main id="main" className="container-site section-y max-w-3xl">
       <Breadcrumbs items={[{ label: doc.title, href }]} className="mb-6" />
       <h1 className="type-h1">{doc.title}</h1>
       {draft && <p role="note" className="mt-4 rounded-input bg-brand-tint px-4 py-3 text-sm font-semibold text-ink">{UI.legalDraft}</p>}

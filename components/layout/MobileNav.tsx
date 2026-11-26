@@ -5,33 +5,35 @@ import { useState } from "react";
 import { Menu, Phone } from "lucide-react";
 import type { NavGroup } from "@/lib/content/types";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger, Sheet } from "@/components/primitives";
+import { cn } from "@/lib/utils";
 import { UI, formatPhone, telHref } from "./copy";
 
-export type MobileNavProps = { groups: NavGroup[]; phone: string; fallbackHref: string };
+export type MobileNavProps = { groups: NavGroup[]; phone: string; fallbackHref: string; triggerClassName?: string };
 
 /**
  * Full-screen drawer with one accordion per nav group. Without JS the hamburger is a plain link
  * to the footer's link list (fallbackHref), so navigation still works.
  */
-export function MobileNav({ groups, phone, fallbackHref }: MobileNavProps) {
+export function MobileNav({ groups, phone, fallbackHref, triggerClassName }: MobileNavProps) {
   const [open, setOpen] = useState(false);
   const close = () => setOpen(false);
   return (
-    <>
-      <a
-        href={fallbackHref}
-        aria-label={UI.openMenu}
-        aria-haspopup="dialog"
-        aria-expanded={open}
-        onClick={(e) => {
-          e.preventDefault();
-          setOpen(true);
-        }}
-        className="flex size-11 items-center justify-center rounded-input text-ink hover:bg-surface-2 xl:hidden"
-      >
-        <Menu aria-hidden className="size-6" />
-      </a>
-      <Sheet
+    <Sheet
+        // Passed as the Sheet trigger so Radix restores focus to it on close. Its own preventDefault
+        // keeps the no-JS fallback href from navigating; Radix then skips its toggle, so open it here.
+        trigger={
+          <a
+            href={fallbackHref}
+            aria-label={UI.openMenu}
+            onClick={(e) => {
+              e.preventDefault();
+              setOpen(true);
+            }}
+            className={cn("flex size-11 items-center justify-center rounded-input text-ink hover:bg-surface-2 xl:hidden", triggerClassName)}
+          >
+            <Menu aria-hidden className="size-6" />
+          </a>
+        }
         open={open}
         onOpenChange={setOpen}
         side="left"
@@ -62,7 +64,6 @@ export function MobileNav({ groups, phone, fallbackHref }: MobileNavProps) {
             </AccordionItem>
           ))}
         </Accordion>
-      </Sheet>
-    </>
+    </Sheet>
   );
 }

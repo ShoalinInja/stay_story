@@ -8,7 +8,7 @@ export default async function NotFound() {
   const [categories, areas] = await Promise.all([getCategories(), getAreas()]);
   const t = UI.notFound;
   return (
-    <main className="container-site section-y flex flex-col items-center gap-8 text-center">
+    <main id="main" className="container-site section-y flex flex-col items-center gap-8 text-center">
       <div className="flex max-w-xl flex-col gap-3">
         <p className="type-meta font-semibold text-brand-strong">404</p>
         <h1 className="type-h1">{t.title}</h1>

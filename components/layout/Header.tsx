@@ -23,7 +23,13 @@ export const FOOTER_NAV_ID = "footer-nav";
 export async function Header({ variant }: HeaderProps) {
   const [site, areas, stays] = await Promise.all([getSite(), getAreas(), getStays()]);
   const nav = <MegaMenu groups={site.nav} label={UI.menu} className="hidden xl:block" />;
-  const search = <SearchBar variant="compact" options={areaSearchOptions(areas)} className="hidden md:flex" />;
+  const search = (
+    <div className="flex min-w-0 items-center gap-2">
+      <SearchBar variant="compact" options={areaSearchOptions(areas)} className="hidden md:flex" />
+      {/* The mega-menu isn't shown in this variant, so keep the drawer reachable on wide screens too. */}
+      <MobileNav groups={site.nav} phone={site.phone} fallbackHref={`#${FOOTER_NAV_ID}`} triggerClassName="hidden xl:flex" />
+    </div>
+  );
   const centre =
     variant === "detail" ? search
     : variant === "default" ? nav

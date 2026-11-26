@@ -9,7 +9,7 @@ export const metadata: Metadata = { title: UI.pages.gallery, description: UI.gal
 export default async function GalleryPage() {
   const photos = await getMediaList({ idPrefix: "gallery" });
   return (
-    <main className="container-site section-y">
+    <main id="main" className="container-site section-y">
       <Breadcrumbs items={[{ label: UI.pages.gallery, href: "/gallery" }]} className="mb-6" />
       <h1 className="type-h1">{UI.pages.gallery}</h1>
       <p className="mt-3 max-w-2xl type-body text-ink-2">{UI.gallery.intro}</p>

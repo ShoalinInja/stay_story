@@ -14,7 +14,8 @@ export function StickyHeader({ children }: { children: ReactNode }) {
   return (
     <header
       data-scrolled={scrolled || undefined}
-      className="sticky top-0 z-40 border-b border-line-soft bg-surface transition-shadow data-scrolled:shadow-card"
+      // Exactly 64px: the hairline is an inset shadow so it adds no height (A5 sticks tabs at top-16).
+      className="sticky top-0 z-40 h-16 bg-surface shadow-[inset_0_-1px_0_var(--line-soft)] transition-shadow data-scrolled:shadow-card"
     >
       {children}
     </header>

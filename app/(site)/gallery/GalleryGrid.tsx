@@ -1,7 +1,7 @@
 "use client";
 
 import Image from "next/image";
-import { useState, type KeyboardEvent } from "react";
+import { useEffect, useRef, useState } from "react";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 import type { MediaRef } from "@/lib/content/types";
 import { Button, Modal } from "@/components/primitives";
@@ -12,10 +12,24 @@ export function GalleryGrid({ photos }: { photos: MediaRef[] }) {
   const [index, setIndex] = useState<number | null>(null);
   const n = photos.length;
   const step = (d: number) => setIndex((i) => (i === null ? i : (i + d + n) % n));
-  const onKeyDown = (e: KeyboardEvent) => {
-    if (e.key === "ArrowRight") step(1);
-    if (e.key === "ArrowLeft") step(-1);
-  };
+  const isOpen = index !== null;
+  const lastTile = useRef<HTMLAnchorElement | null>(null);
+
+  // ←/→ anywhere in the open lightbox (focus may sit on the close button, outside our content).
+  useEffect(() => {
+    if (!isOpen) return;
+    const onKeyDown = (e: KeyboardEvent) => {
+      if (e.key === "ArrowRight") setIndex((i) => (i === null ? i : (i + 1) % n));
+      if (e.key === "ArrowLeft") setIndex((i) => (i === null ? i : (i - 1 + n) % n));
+    };
+    window.addEventListener("keydown", onKeyDown);
+    return () => {
+      window.removeEventListener("keydown", onKeyDown);
+      // A controlled Radix dialog with no Trigger restores focus to nothing; return it to the tile.
+      lastTile.current?.focus();
+    };
+  }, [isOpen, n]);
+
   const current = index === null ? null : photos[index];
 
   return (
@@ -28,6 +42,7 @@ export function GalleryGrid({ photos }: { photos: MediaRef[] }) {
               aria-label={UI.gallery.open(p.alt)}
               onClick={(e) => {
                 e.preventDefault();
+                lastTile.current = e.currentTarget;
                 setIndex(i);
               }}
               className="group relative block aspect-[4/3] overflow-hidden rounded-card bg-cream"
@@ -52,7 +67,7 @@ export function GalleryGrid({ photos }: { photos: MediaRef[] }) {
         className="sm:max-w-4xl"
       >
         {current && (
-          <div onKeyDown={onKeyDown} className="flex flex-col gap-4">
+          <div className="flex flex-col gap-4">
             <div className="relative aspect-[3/2] w-full overflow-hidden rounded-card bg-ink">
               <Image src={current.src} alt={current.alt} fill sizes="(min-width: 896px) 832px, 100vw" className="object-contain" />
             </div>

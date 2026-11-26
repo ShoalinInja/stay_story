@@ -16,7 +16,7 @@ export default async function ContactPage() {
   const a = site.address;
   const c = UI.contact;
   return (
-    <main className="container-site section-y">
+    <main id="main" className="container-site section-y">
       <Breadcrumbs items={[{ label: UI.pages.contact, href: "/contact" }]} className="mb-6" />
       <h1 className="type-h1">{UI.pages.contact}</h1>
       <p className="mt-3 max-w-2xl type-body text-ink-2">{c.intro}</p>

@@ -8,11 +8,11 @@ Spec of record: [`docs/BRIEF.md`](docs/BRIEF.md).
 | **Lead** | 0, 4 | `lib/content/types.ts`, `lib/content/index.ts`, `lib/content/placeholders.ts`, `app/globals.css`, `app/layout.tsx` `<html>`/fonts/metadata, `next.config.ts`, `package.json`, `OWNERSHIP.md`, `README.md`, `.claude/**` |
 | **A1 content-migrator** | 1 | `content/**`, `public/media/**`, `scripts/**` (except `scripts/check-redirects.ts`), `docs/ADD-A-STAY.md` |
 | **A2 design-system** | 1 | `components/ui/**`, `components/primitives/**`, `app/(dev)/styleguide/**`, `hooks/**` |
-| **A3 shell-navigation** | 2 | `components/layout/**`, `app/layout.tsx` `<body>` contents, `app/not-found.tsx`, `app/(site)/**` static pages (`about`, `gallery`, `contact`, `privacy`, `terms`, `thank-you`) |
+| **A3 shell-navigation** | 2 | `components/layout/**`, `app/layout.tsx` `<body>` contents, `app/not-found.tsx`, `app/(site)/**` static pages (`about`, `gallery`, `contact`, `privacy`, `terms`), `content/legal.ts` |
 | **A4 home** | 2 | `app/page.tsx`, `components/home/**` |
 | **A5 stays** | 2 | `app/stays/**`, `app/property-sales/**`, `app/areas/**`, `app/collections/**`, `app/list-your-property/**`, `components/stays/**` |
 | **A6 services** | 2 | `app/(services)/[category]/**`, `components/services/**` |
-| **A7 leads-backend** | 2 | `app/api/enquiry/**`, `components/forms/**`, `lib/leads/**`, `.env.example`, `supabase/**` |
+| **A7 leads-backend** | 2 | `app/api/enquiry/**`, `app/thank-you/**`, `components/forms/**`, `lib/leads/**`, `.env.example`, `supabase/**` |
 | **A8 seo-performance** | 3 | `app/sitemap.ts`, `app/robots.ts`, `**/opengraph-image.tsx`, `lib/seo/**`, `scripts/check-redirects.ts` |
 | **A9 qa** | 3 | `tests/**`, `playwright.config.ts`, `QA-REPORT.md` |
 

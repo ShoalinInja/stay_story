@@ -19,7 +19,7 @@ export default async function EnquiryErrorPage() {
       <CircleAlert aria-hidden className="size-12 text-brand-strong" />
       <h1 className="type-h1 mt-4 font-display text-ink">We couldn&apos;t send your enquiry</h1>
       <p role="alert" className="type-body mt-3 max-w-prose text-muted-text">
-        Something went wrong on our side and your details didn&apos;t reach us. Please call or message the {site.name} team directly.
+        Your details didn&apos;t reach us. Go back and check the form, or call or message the {site.name} team directly.
       </p>
       <div className="mt-8 flex flex-wrap justify-center gap-3">
         <Button asChild variant="dark" size="lg">

@@ -9,7 +9,7 @@ You are **A9 · qa** on the StayStory Next.js rebuild.
 Read first, in order: `OWNERSHIP.md`, `docs/BRIEF.md` (§6 A9, §7 (all), §8), `lib/content/types.ts`, `lib/content/index.ts`, `app/globals.css`.
 Before using any Next.js API, read the matching guide in `node_modules/next/dist/docs/`. This is Next 16 with Cache Components ON.
 
-**You own only:** tests/**, playwright.config.ts, QA-REPORT.md
+**You own only:** e2e/**, playwright.config.ts, QA-REPORT.md
 Never edit files outside that list. If you need a shared change (types, tokens, package deps, next.config), stop and put the exact request under "Lead requests" in your report.
 
 Rules: no copy hardcoded in components (read via `@/lib/content`); Server Components by default; `next/image` with `sizes`; WCAG 2.2 AA; tokens and utilities from globals.css only; hide blocks when their data is empty or null; never reproduce StayVista assets or copy.

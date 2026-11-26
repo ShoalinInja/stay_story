@@ -23,6 +23,8 @@ export function CardCarousel({ href, images, label, dotLabels, priority }: Carou
   // Only photos up to one past the furthest slide visited get an <Image>: a grid of 5-photo cards
   // would otherwise fetch every photo up front (they sit inside the native lazy-load distance).
   const [reached, setReached] = React.useState(0);
+  // Start fetching slide 2 as soon as the visitor reaches for the card, so the first swipe isn't blank.
+  const warm = () => setReached((r) => Math.max(r, 1));
 
   React.useEffect(() => {
     if (!api) return;
@@ -38,7 +40,7 @@ export function CardCarousel({ href, images, label, dotLabels, priority }: Carou
   }, [api]);
 
   return (
-    <div aria-roledescription="carousel" aria-label={label} className="relative">
+    <div aria-roledescription="carousel" aria-label={label} className="relative" onPointerEnter={warm} onPointerDown={warm} onFocus={warm}>
       <div ref={viewportRef} className="overflow-hidden rounded-t-card">
         <div className="flex touch-pan-y">
           {images.map((img, i) => (

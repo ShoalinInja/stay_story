@@ -1,0 +1,116 @@
+{
+  "legacyPath": "/artists-entertainment-goa.php",
+  "url": "https://www.staystory.in/artists-entertainment-goa.php",
+  "status": 200,
+  "title": "Artists & Entertainment in Goa | DJs & Performers",
+  "description": "Hire artists and entertainment in Goa including DJs, dancers, makeup artists, and performers for events with Stay Story.",
+  "keywords": "artists in Goa, entertainment services Goa, DJs in Goa, dancers Goa, live singers Goa, makeup artist Goa, henna artist Goa, performers Goa, event entertainment Goa, Stay Story entertainment",
+  "h1": "Artists & Entertainment in Goa – DJs, Performers & Styling Services",
+  "blocks": [
+    {
+      "heading": "Premium Artists & Entertainment Services in Goa",
+      "level": "h3",
+      "paragraphs": [
+        "Entertainment plays a vital role in creating memorable experiences, whether it’s a private party, wedding, or special celebration. Stay Story offers a curated selection of professional artists and entertainment services in Goa, ensuring your events are engaging, vibrant, and unforgettable. From music and performances to styling and creative art services, we provide everything you need to elevate your event."
+      ]
+    },
+    {
+      "heading": "DJs & Live Singers for Every Occasion",
+      "level": "h3",
+      "paragraphs": [
+        "Set the perfect mood with experienced DJs and live singers who understand your event’s vibe. Whether you’re hosting a beach party, wedding reception, or private gathering, our artists deliver high-quality performances tailored to your preferences. From energetic party music to soulful live singing, we ensure your guests stay entertained throughout."
+      ]
+    },
+    {
+      "heading": "Dancers & Professional Performers",
+      "level": "h3",
+      "paragraphs": [
+        "Add excitement and visual appeal to your event with skilled dancers and performers. Stay Story connects you with talented professionals who specialize in a variety of performance styles, including cultural acts, contemporary dance, and themed shows. These performances create a dynamic atmosphere and leave a lasting impression on your guests."
+      ]
+    },
+    {
+      "heading": "Makeup & Styling Services",
+      "level": "h3",
+      "paragraphs": [
+        "Look your best for any occasion with our professional makeup and styling services. Whether it’s for a wedding, party, photoshoot, or special event, our experienced artists provide customized looks that enhance your appearance. From natural styles to glamorous transformations, we ensure you feel confident and event-ready."
+      ]
+    },
+    {
+      "heading": "Tattoo, Henna & Face Art Services",
+      "level": "h3",
+      "paragraphs": [
+        "Make your event more interactive and creative with tattoo, henna, and face art services. These offerings are perfect for parties, festivals, and private events, adding a unique and engaging element for guests of all ages. Our artists use safe, high-quality materials and deliver intricate designs with precision."
+      ]
+    },
+    {
+      "heading": "Why Choose Stay Story for Artists & Entertainment?",
+      "level": "h3",
+      "paragraphs": [
+        "Stay Story is committed to delivering high-quality entertainment services backed by professionalism and creativity. We collaborate with experienced artists and verified professionals to ensure reliability and performance excellence. Our team focuses on understanding your event requirements and providing tailored entertainment solutions."
+      ]
+    },
+    {
+      "heading": "Book Artists & Entertainment Services Today",
+      "level": "h3",
+      "paragraphs": [
+        "Transform your event into a memorable experience with Stay Story’s artists and entertainment services in Goa. Whether you need DJs, performers, or styling experts, we have the right professionals for your needs. Contact us today to book and create an unforgettable atmosphere for your event."
+      ]
+    }
+  ],
+  "cards": [
+    {
+      "href": "https://www.staystory.in/tattoo-henna-face-art-goa.php",
+      "image": "https://www.staystory.in/assets/upload/pages/cover/8651591775495824.png",
+      "title": "Tattoo / Henna / Face Art",
+      "text": "Book tattoo, henna, and face art services in Goa with Stay Story. Add creativity and fun to your events with professional artists and custom designs."
+    },
+    {
+      "href": "https://www.staystory.in/makeup-styling-goa.php",
+      "image": "https://www.staystory.in/assets/upload/pages/cover/4441121775495819.png",
+      "title": "Makeup & Styling",
+      "text": "Book makeup and styling services in Goa with Stay Story. Get professional artists for weddings, parties, and special events with customized looks."
+    },
+    {
+      "href": "https://www.staystory.in/dancers-performers-goa.php",
+      "image": "https://www.staystory.in/assets/upload/pages/cover/8575061775495811.png",
+      "title": "Dancers & Performers",
+      "text": "Hire dancers and performers in Goa with Stay Story. Add energy and excitement to your events with professional performances and live entertainment."
+    },
+    {
+      "href": "https://www.staystory.in/djs-singers-in-goa.php",
+      "image": "https://www.staystory.in/assets/upload/pages/cover/279351775495804.png",
+      "title": "DJs & Singers",
+      "text": "Book DJs and singers in Goa with Stay Story. Enjoy live music, DJ performances, and professional entertainment for parties, weddings, and events."
+    }
+  ],
+  "images": [
+    {
+      "src": "https://www.staystory.in/assets/img/logo.png",
+      "alt": "logo"
+    },
+    {
+      "src": "https://www.staystory.in/assets/upload/tourpackage/type/banner/1158621775364409.jpg",
+      "alt": "Artists & Entertainment"
+    },
+    {
+      "src": "https://www.staystory.in/assets/upload/tourpackage/type/cover/3562601775384609.png",
+      "alt": ""
+    },
+    {
+      "src": "https://www.staystory.in/assets/upload/pages/cover/8651591775495824.png",
+      "alt": "Tattoo / Henna / Face Art"
+    },
+    {
+      "src": "https://www.staystory.in/assets/upload/pages/cover/4441121775495819.png",
+      "alt": "Makeup & Styling"
+    },
+    {
+      "src": "https://www.staystory.in/assets/upload/pages/cover/8575061775495811.png",
+      "alt": "Dancers & Performers"
+    },
+    {
+      "src": "https://www.staystory.in/assets/upload/pages/cover/279351775495804.png",
+      "alt": "DJs & Singers"
+    }
+  ]
+}

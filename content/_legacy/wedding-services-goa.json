@@ -1,0 +1,119 @@
+{
+  "legacyPath": "/wedding-services-goa.php",
+  "url": "https://www.staystory.in/wedding-services-goa.php",
+  "status": 200,
+  "title": "Wedding Services in Goa | Destination Wedding Planner",
+  "description": "Plan your destination wedding in Goa with expert services including venue, d�cor, and management by Stay Story.",
+  "keywords": "wedding planner Goa, destination wedding Goa, beach wedding Goa, wedding services Goa, Goa wedding planner, villa wedding Goa, wedding management Goa, Goa wedding venues, Stay Story wedding Goa",
+  "h1": "Wedding Services in Goa Destination Weddings & Planning Experts",
+  "blocks": [
+    {
+      "heading": "Plan Your Dream Wedding in Goa",
+      "level": "h3",
+      "paragraphs": [
+        "Goa is one of India’s most sought-after destinations for weddings, known for its scenic beaches, luxury venues, and vibrant atmosphere. Stay Story offers professional wedding services in Goa, helping you create a memorable and seamless celebration. Whether you envision a beachfront ceremony or an elegant villa wedding, our team ensures every detail is carefully planned and executed."
+      ]
+    },
+    {
+      "heading": "Complete Wedding Planning Solutions",
+      "level": "h3",
+      "paragraphs": [
+        "Stay Story provides end-to-end wedding planning services, covering every aspect of your big day. From initial concept development to final execution, we handle all arrangements to ensure a stress-free experience. Our team works closely with you to understand your vision and bring it to life with precision."
+      ]
+    },
+    {
+      "heading": "Venue Selection & Setup",
+      "level": "h3",
+      "paragraphs": [
+        "Choosing the right venue is essential for a successful wedding. We offer a range of options, including beachfront locations, luxury villas, and premium indoor venues. Our team manages venue setup, including décor, lighting, seating, and overall ambiance to match your wedding theme."
+      ]
+    },
+    {
+      "heading": "Décor, Styling & Theme Design",
+      "level": "h3",
+      "paragraphs": [
+        "We specialize in creating visually stunning wedding setups. From floral arrangements and stage design to customized themes and color palettes, every detail is thoughtfully planned. Our goal is to create a setting that reflects your personal style and enhances the overall experience."
+      ]
+    },
+    {
+      "heading": "Vendor Coordination & Management",
+      "level": "h3",
+      "paragraphs": [
+        "Stay Story works with a network of trusted vendors, including caterers, photographers, entertainers, and makeup artists. We coordinate all vendors to ensure smooth communication and timely execution, allowing you to focus on enjoying your celebration."
+      ]
+    },
+    {
+      "heading": "Guest Management & Logistics",
+      "level": "h3",
+      "paragraphs": [
+        "Managing guests is a key part of any destination wedding. We assist with accommodation, transportation, and scheduling to ensure a comfortable experience for your guests. Our team ensures everything runs efficiently from arrival to departure."
+      ]
+    },
+    {
+      "heading": "Why Choose Stay Story for Wedding Services?",
+      "level": "h3",
+      "paragraphs": [
+        "Stay Story stands out for its attention to detail, local expertise, and commitment to quality. We understand the importance of your special day and work diligently to deliver a flawless experience. Our personalized approach ensures that your wedding is unique, well-organized, and memorable."
+      ]
+    },
+    {
+      "heading": "Start Planning Your Wedding Today",
+      "level": "h3",
+      "paragraphs": [
+        "Turn your dream wedding into reality with Stay Story’s expert services in Goa. Whether it’s an intimate ceremony or a grand celebration, we provide everything you need for a perfect event. Contact us today to begin planning your wedding."
+      ]
+    }
+  ],
+  "cards": [
+    {
+      "href": "https://www.staystory.in/private-events-goa.php",
+      "image": "https://www.staystory.in/assets/upload/pages/cover/355181775493889.png",
+      "title": "Private Events",
+      "text": "Host private events in Goa with Stay Story. From intimate gatherings to corporate events, enjoy personalized planning and seamless execution."
+    },
+    {
+      "href": "https://www.staystory.in/bachelor-party-goa.php",
+      "image": "https://www.staystory.in/assets/upload/pages/cover/8445081775493914.png",
+      "title": "Bachelor Experiences",
+      "text": "Plan the ultimate bachelor party in Goa with Stay Story. Enjoy private parties, yacht experiences, nightlife access, and customized celebration packages."
+    },
+    {
+      "href": "https://www.staystory.in/wedding-services-goa.php",
+      "image": "https://www.staystory.in/assets/upload/pages/cover/4008261775493920.png",
+      "title": "Wedding Services",
+      "text": "Plan your dream wedding in Goa with Stay Story. From venue selection to d'cor and management, we offer complete wedding planning services."
+    },
+    {
+      "href": "https://www.staystory.in/party-planning-goa.php",
+      "image": "https://www.staystory.in/assets/upload/pages/cover/1961041775493927.png",
+      "title": "Party Planning",
+      "text": "Plan your party in Goa with Stay Story. From birthdays and private events to themed celebrations, we handle everything with professional event planning services."
+    }
+  ],
+  "images": [
+    {
+      "src": "https://www.staystory.in/assets/img/logo.png",
+      "alt": "logo"
+    },
+    {
+      "src": "https://www.staystory.in/assets/upload/pages/banner/3054581775447889.jpg",
+      "alt": "Wedding Services"
+    },
+    {
+      "src": "https://www.staystory.in/assets/upload/pages/cover/4008261775493920.png",
+      "alt": ""
+    },
+    {
+      "src": "https://www.staystory.in/assets/upload/pages/cover/355181775493889.png",
+      "alt": "Private Events"
+    },
+    {
+      "src": "https://www.staystory.in/assets/upload/pages/cover/8445081775493914.png",
+      "alt": "Bachelor Experiences"
+    },
+    {
+      "src": "https://www.staystory.in/assets/upload/pages/cover/1961041775493927.png",
+      "alt": "Party Planning"
+    }
+  ]
+}

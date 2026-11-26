@@ -1,0 +1,119 @@
+{
+  "legacyPath": "/self-drive-cars-goa.php",
+  "url": "https://www.staystory.in/self-drive-cars-goa.php",
+  "status": 200,
+  "title": "Self-Drive Cars in Goa | Affordable Car Rentals",
+  "description": "Rent self-drive cars in Goa with flexible plans and affordable pricing. Explore freely with Stay Story�s reliable car rental services.",
+  "keywords": "self drive cars Goa, car rental Goa self drive, rent car Goa, Goa car hire, affordable car rental Goa, SUV rental Goa, daily car rental Goa, Goa travel car rental, Stay Story self drive Goa",
+  "h1": "Self-Drive Cars in Goa Flexible & Affordable Car Rentals",
+  "blocks": [
+    {
+      "heading": "Explore Goa with Self-Drive Car Rentals",
+      "level": "h3",
+      "paragraphs": [
+        "Goa is best experienced at your own pace, and self-drive cars offer the perfect way to explore its beaches, markets, and hidden gems. Stay Story provides reliable self-drive car rental services in Goa, giving you the flexibility and independence to travel without restrictions. Whether you're on a short vacation or an extended stay, our services are designed to make your journey convenient and enjoyable."
+      ]
+    },
+    {
+      "heading": "Wide Range of Vehicles to Choose From",
+      "level": "h3",
+      "paragraphs": [
+        "Stay Story offers a diverse selection of vehicles to suit different travel needs and budgets. From compact hatchbacks for solo travelers and couples to spacious SUVs for families and groups, our fleet is well-maintained and ready for every type of trip. Each vehicle is regularly serviced to ensure safety, performance, and comfort."
+      ]
+    },
+    {
+      "heading": "Freedom to Travel on Your Terms",
+      "level": "h3",
+      "paragraphs": [
+        "With self-drive cars, you are not bound by schedules or routes. Plan your own itinerary, explore offbeat locations, and stop wherever you want. Whether it’s a beach-hopping day, a scenic drive through Goa’s countryside, or a night out, self-drive rentals give you complete control over your travel experience."
+      ]
+    },
+    {
+      "heading": "Affordable & Flexible Rental Plans",
+      "level": "h3",
+      "paragraphs": [
+        "Stay Story offers competitive pricing and flexible rental options, including daily, weekly, and extended rentals. Our transparent pricing ensures there are no hidden costs, allowing you to plan your trip with confidence. We also provide easy booking and quick vehicle handover for a seamless experience."
+      ]
+    },
+    {
+      "heading": "Easy Documentation & Hassle-Free Process",
+      "level": "h3",
+      "paragraphs": [
+        "Renting a self-drive car with Stay Story is simple and efficient. With minimal documentation and a streamlined process, you can get on the road quickly. Our team ensures clear communication and support throughout your rental period."
+      ]
+    },
+    {
+      "heading": "Safety & Reliability You Can Trust",
+      "level": "h3",
+      "paragraphs": [
+        "Your safety is our priority. All vehicles undergo regular maintenance checks and are equipped with essential safety features. We ensure that every car is clean, reliable, and ready for your journey, providing peace of mind while you explore Goa."
+      ]
+    },
+    {
+      "heading": "Why Choose Stay Story for Self-Drive Cars?",
+      "level": "h3",
+      "paragraphs": [
+        "Stay Story combines convenience, quality, and customer-focused service. Our well-maintained vehicles, flexible plans, and local expertise make us a trusted choice for self-drive car rentals in Goa. We aim to provide a smooth and enjoyable travel experience for every customer."
+      ]
+    },
+    {
+      "heading": "Book Your Self-Drive Car Today",
+      "level": "h3",
+      "paragraphs": [
+        "Take control of your Goa trip with Stay Story’s self-drive car rentals. Enjoy the freedom to explore at your own pace with reliable vehicles and flexible options. Contact us today to book your car and start your journey."
+      ]
+    }
+  ],
+  "cards": [
+    {
+      "href": "https://www.staystory.in/bike-rentals-goa.php",
+      "image": "https://www.staystory.in/assets/upload/pages/cover/4343121775492438.png",
+      "title": "Bike Rentals",
+      "text": "Rent bikes in Goa with Stay Story. Choose from scooters and motorbikes for easy, affordable, and flexible travel across beaches and local spots."
+    },
+    {
+      "href": "https://www.staystory.in/self-drive-cars-goa.php",
+      "image": "https://www.staystory.in/assets/upload/pages/cover/7796361775492447.png",
+      "title": "Self-Drive Cars",
+      "text": "Rent self-drive cars in Goa with Stay Story. Choose from a range of well-maintained vehicles and explore Goa at your own pace with complete freedom."
+    },
+    {
+      "href": "https://www.staystory.in/chauffeur-services-goa.php",
+      "image": "https://www.staystory.in/assets/upload/pages/cover/1767701775492455.png",
+      "title": "Chauffeur Services",
+      "text": "Hire chauffeur services in Goa with Stay Story. Enjoy professional drivers, luxury vehicles, and comfortable travel for business, leisure, and events."
+    },
+    {
+      "href": "https://www.staystory.in/airport-transfers-goa.php",
+      "image": "https://www.staystory.in/assets/upload/pages/cover/1891401775492465.png",
+      "title": "Airport Transfers",
+      "text": "Book airport transfers in Goa with Stay Story. Enjoy safe, timely pickup and drop services with professional drivers and comfortable vehicles."
+    }
+  ],
+  "images": [
+    {
+      "src": "https://www.staystory.in/assets/img/logo.png",
+      "alt": "logo"
+    },
+    {
+      "src": "https://www.staystory.in/assets/upload/pages/banner/363001775446631.jpg",
+      "alt": "Self-Drive Cars"
+    },
+    {
+      "src": "https://www.staystory.in/assets/upload/pages/cover/7796361775492447.png",
+      "alt": ""
+    },
+    {
+      "src": "https://www.staystory.in/assets/upload/pages/cover/4343121775492438.png",
+      "alt": "Bike Rentals"
+    },
+    {
+      "src": "https://www.staystory.in/assets/upload/pages/cover/1767701775492455.png",
+      "alt": "Chauffeur Services"
+    },
+    {
+      "src": "https://www.staystory.in/assets/upload/pages/cover/1891401775492465.png",
+      "alt": "Airport Transfers"
+    }
+  ]
+}

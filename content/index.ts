@@ -1,36 +1,27 @@
 // OWNER: A1 content-migrator. Barrel that assembles every content module into one bundle.
-// Phase 0 stub: real values for contact facts only; A1 replaces/extends each field.
+// Loaded by next.config.ts as well as lib/content, so: relative imports only, no `@/`, no next/* or server-only.
 import type { ContentBundle } from "../lib/content/types";
+import { areas } from "./areas";
+import { concierge } from "./categories/concierge";
+import { entertainment } from "./categories/entertainment";
+import { events } from "./categories/events";
+import { experiences } from "./categories/experiences";
+import { stays as staysCategory } from "./categories/stays";
+import { travel } from "./categories/travel";
+import { collections } from "./collections";
+import { mediaManifest } from "./media";
+import { redirects } from "./redirects";
+import { site } from "./site";
+import { stays } from "./stays";
 
 export const content: ContentBundle = {
-  site: {
-    name: "Stay Story",
-    tagline: "Villa | Apartment | Hotel | Plot",
-    logo: { src: "/media/brand/logo.png", alt: "Stay Story", width: 200, height: 60 },
-    phone: "+918160182809",
-    whatsapp: null, // unconfirmed with owner
-    contactEmail: "kishankumar0520@gmail.com", // TODO owner: swap to hello@staystory.in
-    address: {
-      line: "Home no 02, Circle, Pernem, Chopdem", locality: "Siolim", region: "Goa",
-      postalCode: "403512", country: "IN", lat: 15.631582, lng: 73.755411,
-    },
-    socials: [],
-    nav: [],
-    announcement: null,
-    stats: null,
-    hero: { headline: "Your Trusted Partner for a Complete Goa Experience", slides: [] },
-    about: { headline: "", body: "", whyChooseUs: [], closing: "Experience Goa with Confidence." },
-    features: [],
-    trust: [],
-    faqs: [],
-    seo: { title: "Stay Story Goa", description: "Stays, travel, experiences and events in Goa." },
-  },
-  stays: [],
-  categories: [],
-  areas: [],
-  collections: [],
-  offers: [],
-  testimonials: [],
-  media: [],
-  redirects: [],
+  site,
+  stays,
+  categories: [staysCategory, travel, experiences, events, concierge, entertainment],
+  areas,
+  collections,
+  offers: [], // none on the legacy site; the UI hides the rail when empty
+  testimonials: [], // no real reviews yet; hidden when empty
+  media: mediaManifest,
+  redirects,
 };

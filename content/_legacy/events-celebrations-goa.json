@@ -1,0 +1,116 @@
+{
+  "legacyPath": "/events-celebrations-goa.php",
+  "url": "https://www.staystory.in/events-celebrations-goa.php",
+  "status": 200,
+  "title": "Events in Goa | Wedding & Party Planning Services",
+  "description": "Plan events in Goa with Stay Story. Book wedding planning, parties, bachelor events, and private celebrations with expert services.",
+  "keywords": "events in Goa, wedding planner Goa, party planning Goa, bachelor party Goa, private events Goa, celebration services Goa, Goa event management, beach wedding Goa, Stay Story events Goa",
+  "h1": "Events & Celebrations in Goa – Parties, Weddings & Private Events",
+  "blocks": [
+    {
+      "heading": "Create Unforgettable Events & Celebrations in Goa",
+      "level": "h3",
+      "paragraphs": [
+        "Goa is one of India’s most sought-after destinations for celebrations, offering stunning beaches, vibrant nightlife, and luxurious venues. Stay Story specializes in organizing exceptional events and celebrations tailored to your vision. Whether you're planning an intimate gathering or a grand celebration, our expert team ensures every detail is managed with precision and creativity."
+      ]
+    },
+    {
+      "heading": "Professional Party Planning Services",
+      "level": "h3",
+      "paragraphs": [
+        "Turn your ideas into reality with our comprehensive party planning services. From venue selection and décor to entertainment and catering, Stay Story handles every aspect of your event. Whether it's a birthday party, anniversary, or themed celebration, we design experiences that are personalized and memorable."
+      ]
+    },
+    {
+      "heading": "Dream Wedding Services in Goa",
+      "level": "h3",
+      "paragraphs": [
+        "Celebrate your special day in one of the most beautiful destinations in India. Stay Story offers complete wedding planning services, including venue arrangements, decoration, guest management, and vendor coordination. Whether you prefer a beachfront ceremony or a luxurious villa wedding, we ensure your big day is flawless and unforgettable."
+      ]
+    },
+    {
+      "heading": "Bachelor & Bachelorette Experiences",
+      "level": "h3",
+      "paragraphs": [
+        "Make your pre-wedding celebrations truly exciting with customized bachelor and bachelorette experiences. From private parties and yacht celebrations to nightlife access and curated activities, Stay Story creates fun-filled and memorable experiences for you and your group."
+      ]
+    },
+    {
+      "heading": "Private Events with Personalized Touch",
+      "level": "h3",
+      "paragraphs": [
+        "Host exclusive private events with ease and elegance. Whether it’s a corporate gathering, family celebration, or intimate event, we provide tailored solutions to match your requirements. Our team focuses on delivering a seamless experience, ensuring your event runs smoothly from start to finish."
+      ]
+    },
+    {
+      "heading": "Why Choose Stay Story for Events & Celebrations?",
+      "level": "h3",
+      "paragraphs": [
+        "Stay Story combines creativity, local expertise, and professional management to deliver exceptional events in Goa. We work closely with trusted vendors and venues to ensure high-quality service and attention to detail. Our goal is to create unique experiences that reflect your style while maintaining the highest standards of execution."
+      ]
+    },
+    {
+      "heading": "Plan Your Celebration Today",
+      "level": "h3",
+      "paragraphs": [
+        "From weddings and parties to exclusive private events, Stay Story is your trusted partner for event planning in Goa. Let us bring your vision to life with our expert services and personalized approach. Contact us today to start planning your next celebration."
+      ]
+    }
+  ],
+  "cards": [
+    {
+      "href": "https://www.staystory.in/private-events-goa.php",
+      "image": "https://www.staystory.in/assets/upload/pages/cover/355181775493889.png",
+      "title": "Private Events",
+      "text": "Host private events in Goa with Stay Story. From intimate gatherings to corporate events, enjoy personalized planning and seamless execution."
+    },
+    {
+      "href": "https://www.staystory.in/bachelor-party-goa.php",
+      "image": "https://www.staystory.in/assets/upload/pages/cover/8445081775493914.png",
+      "title": "Bachelor Experiences",
+      "text": "Plan the ultimate bachelor party in Goa with Stay Story. Enjoy private parties, yacht experiences, nightlife access, and customized celebration packages."
+    },
+    {
+      "href": "https://www.staystory.in/wedding-services-goa.php",
+      "image": "https://www.staystory.in/assets/upload/pages/cover/4008261775493920.png",
+      "title": "Wedding Services",
+      "text": "Plan your dream wedding in Goa with Stay Story. From venue selection to d'cor and management, we offer complete wedding planning services."
+    },
+    {
+      "href": "https://www.staystory.in/party-planning-goa.php",
+      "image": "https://www.staystory.in/assets/upload/pages/cover/1961041775493927.png",
+      "title": "Party Planning",
+      "text": "Plan your party in Goa with Stay Story. From birthdays and private events to themed celebrations, we handle everything with professional event planning services."
+    }
+  ],
+  "images": [
+    {
+      "src": "https://www.staystory.in/assets/img/logo.png",
+      "alt": "logo"
+    },
+    {
+      "src": "https://www.staystory.in/assets/upload/tourpackage/type/banner/1551511775364237.jpg",
+      "alt": "Events & Celebrations"
+    },
+    {
+      "src": "https://www.staystory.in/assets/upload/tourpackage/type/cover/4174311775384593.png",
+      "alt": ""
+    },
+    {
+      "src": "https://www.staystory.in/assets/upload/pages/cover/355181775493889.png",
+      "alt": "Private Events"
+    },
+    {
+      "src": "https://www.staystory.in/assets/upload/pages/cover/8445081775493914.png",
+      "alt": "Bachelor Experiences"
+    },
+    {
+      "src": "https://www.staystory.in/assets/upload/pages/cover/4008261775493920.png",
+      "alt": "Wedding Services"
+    },
+    {
+      "src": "https://www.staystory.in/assets/upload/pages/cover/1961041775493927.png",
+      "alt": "Party Planning"
+    }
+  ]
+}

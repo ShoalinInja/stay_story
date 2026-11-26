@@ -1,0 +1,119 @@
+{
+  "legacyPath": "/bike-rentals-goa.php",
+  "url": "https://www.staystory.in/bike-rentals-goa.php",
+  "status": 200,
+  "title": "Bike Rentals in Goa | Scooters & Motorbike Hire",
+  "description": "Rent bikes in Goa with affordable scooter and motorbike hire. Explore beaches and local spots easily with Stay Story bike rentals.",
+  "keywords": "bike rental Goa, scooter rental Goa, motorbike hire Goa, rent bike Goa, cheap bike rental Goa, Goa scooter hire, two wheeler rental Goa, Goa travel bike rental, Stay Story bike rental Goa",
+  "h1": "Bike Rentals in Goa Affordable Scooters & Motorbike Hire",
+  "blocks": [
+    {
+      "heading": "Explore Goa Easily with Bike Rentals",
+      "level": "h3",
+      "paragraphs": [
+        "Bike rentals are one of the most popular and convenient ways to explore Goa. With its scenic coastal roads, vibrant streets, and easy accessibility, traveling by bike allows you to experience the destination like a local. Stay Story offers reliable bike rental services in Goa, providing you with the freedom to move around effortlessly and at your own pace."
+      ]
+    },
+    {
+      "heading": "Wide Range of Scooters & Motorbikes",
+      "level": "h3",
+      "paragraphs": [
+        "Stay Story offers a variety of two-wheelers to suit different travel preferences. From lightweight scooters ideal for short city rides to powerful motorbikes for longer journeys, our fleet is designed to meet every need. All vehicles are regularly serviced and maintained to ensure safety and performance."
+      ]
+    },
+    {
+      "heading": "Perfect for Short Trips & Daily Travel",
+      "level": "h3",
+      "paragraphs": [
+        "Bike rentals are ideal for quick trips to nearby beaches, cafes, markets, and attractions. They are especially useful in areas where parking is limited, allowing you to navigate narrow roads and busy streets with ease. Whether you’re heading out for a day of sightseeing or running daily errands, bikes offer unmatched convenience."
+      ]
+    },
+    {
+      "heading": "Affordable & Flexible Rental Options",
+      "level": "h3",
+      "paragraphs": [
+        "Stay Story provides cost-effective rental plans, making bike rentals one of the most budget-friendly travel options in Goa. Choose from daily, weekly, or extended rental plans based on your travel duration. Our transparent pricing ensures there are no hidden charges."
+      ]
+    },
+    {
+      "heading": "Easy Booking & Quick Pickup",
+      "level": "h3",
+      "paragraphs": [
+        "We offer a simple booking process with minimal documentation, allowing you to get started quickly. Our team ensures a smooth handover and provides clear instructions for a hassle-free experience. You can pick up your bike or request delivery to your location, depending on availability."
+      ]
+    },
+    {
+      "heading": "Safety & Well-Maintained Vehicles",
+      "level": "h3",
+      "paragraphs": [
+        "Safety is a top priority at Stay Story. All bikes are regularly inspected and maintained to ensure reliable performance. We also provide basic guidance and support to ensure a safe riding experience during your stay in Goa."
+      ]
+    },
+    {
+      "heading": "Why Choose Stay Story for Bike Rentals?",
+      "level": "h3",
+      "paragraphs": [
+        "Stay Story is known for its dependable service, quality vehicles, and customer-focused approach. Our local expertise allows us to recommend the best options based on your needs. We aim to provide a smooth, affordable, and enjoyable travel experience."
+      ]
+    },
+    {
+      "heading": "Book Your Bike Rental Today",
+      "level": "h3",
+      "paragraphs": [
+        "Discover Goa with ease and flexibility by renting a bike from Stay Story. Enjoy affordable rates, reliable vehicles, and the freedom to explore at your own pace. Contact us today to book your bike rental."
+      ]
+    }
+  ],
+  "cards": [
+    {
+      "href": "https://www.staystory.in/bike-rentals-goa.php",
+      "image": "https://www.staystory.in/assets/upload/pages/cover/4343121775492438.png",
+      "title": "Bike Rentals",
+      "text": "Rent bikes in Goa with Stay Story. Choose from scooters and motorbikes for easy, affordable, and flexible travel across beaches and local spots."
+    },
+    {
+      "href": "https://www.staystory.in/self-drive-cars-goa.php",
+      "image": "https://www.staystory.in/assets/upload/pages/cover/7796361775492447.png",
+      "title": "Self-Drive Cars",
+      "text": "Rent self-drive cars in Goa with Stay Story. Choose from a range of well-maintained vehicles and explore Goa at your own pace with complete freedom."
+    },
+    {
+      "href": "https://www.staystory.in/chauffeur-services-goa.php",
+      "image": "https://www.staystory.in/assets/upload/pages/cover/1767701775492455.png",
+      "title": "Chauffeur Services",
+      "text": "Hire chauffeur services in Goa with Stay Story. Enjoy professional drivers, luxury vehicles, and comfortable travel for business, leisure, and events."
+    },
+    {
+      "href": "https://www.staystory.in/airport-transfers-goa.php",
+      "image": "https://www.staystory.in/assets/upload/pages/cover/1891401775492465.png",
+      "title": "Airport Transfers",
+      "text": "Book airport transfers in Goa with Stay Story. Enjoy safe, timely pickup and drop services with professional drivers and comfortable vehicles."
+    }
+  ],
+  "images": [
+    {
+      "src": "https://www.staystory.in/assets/img/logo.png",
+      "alt": "logo"
+    },
+    {
+      "src": "https://www.staystory.in/assets/upload/pages/banner/1599771775447014.jpg",
+      "alt": "Bike Rentals"
+    },
+    {
+      "src": "https://www.staystory.in/assets/upload/pages/cover/4343121775492438.png",
+      "alt": ""
+    },
+    {
+      "src": "https://www.staystory.in/assets/upload/pages/cover/7796361775492447.png",
+      "alt": "Self-Drive Cars"
+    },
+    {
+      "src": "https://www.staystory.in/assets/upload/pages/cover/1767701775492455.png",
+      "alt": "Chauffeur Services"
+    },
+    {
+      "src": "https://www.staystory.in/assets/upload/pages/cover/1891401775492465.png",
+      "alt": "Airport Transfers"
+    }
+  ]
+}

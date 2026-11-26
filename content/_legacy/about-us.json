@@ -1,0 +1,74 @@
+{
+  "legacyPath": "/about-us.php",
+  "url": "https://www.staystory.in/about-us.php",
+  "status": 200,
+  "title": "About Stay Story Goa | Travel & Lifestyle Services",
+  "description": "Learn about Stay Story Goa offering stay, travel, events, and lifestyle services for a seamless and personalized experience.",
+  "keywords": "about Stay Story Goa, Goa travel services, lifestyle services Goa, stay services Goa, event planning Goa, concierge services Goa, Goa experiences, all services Goa, Stay Story company Goa",
+  "h1": "",
+  "blocks": [
+    {
+      "heading": "About Us",
+      "level": "h2",
+      "paragraphs": [
+        "home",
+        "//",
+        "About us"
+      ]
+    },
+    {
+      "heading": "About Stay Story – Complete Lifestyle Services in Goa",
+      "level": "h3",
+      "paragraphs": [
+        "Stay Story is a trusted name in Goa, offering a complete range of stay, travel, and lifestyle services designed to simplify your experience. Whether you are visiting Goa for a short vacation, planning a long-term stay, or organizing a special event, Stay Story provides everything you need under one platform. Our services are built around convenience, quality, and personalized support to ensure a smooth and enjoyable experience for every customer."
+      ]
+    },
+    {
+      "heading": "Our Story & Expertise",
+      "level": "h3",
+      "paragraphs": [
+        "Stay Story was created with a vision to bring together multiple services into one reliable solution. Instead of dealing with different vendors for accommodation, travel, events, and daily needs, we provide an integrated approach that saves time and effort. With strong local expertise and a well-connected network, we ensure access to the best properties, services, and experiences across Goa."
+      ]
+    },
+    {
+      "heading": "Comprehensive Services Under One Platform",
+      "level": "h3",
+      "paragraphs": [
+        "Stay Story offers a wide range of services covering every aspect of your lifestyle in Goa. Our stay options include luxury villas for short stays, apartments, hotels, long-term rentals, and property sales. In addition, we provide travel services such as airport transfers, chauffeur-driven cars, self-drive rentals, and bike hire for easy mobility.",
+        "We also specialize in curated experiences including yacht cruises, wellness sessions, workshops, and VIP nightlife access. For events and celebrations, we offer professional planning services for parties, weddings, bachelor experiences, and private events. Our dining and concierge services include private chefs, bartenders, babysitters, and special arrangements, while our entertainment services cover DJs, performers, makeup artists, and creative professionals. To ensure convenience, we also provide delivery services for essentials, beverages, and other daily needs."
+      ]
+    },
+    {
+      "heading": "Customer-Focused Approach",
+      "level": "h3",
+      "paragraphs": [
+        "At Stay Story, customer satisfaction is at the core of everything we do. We focus on understanding your requirements and delivering services that match your expectations. Our team ensures that every detail is handled professionally, from booking to execution, so you can enjoy a stress-free experience."
+      ]
+    },
+    {
+      "heading": "Why Choose Stay Story",
+      "level": "h3",
+      "paragraphs": [
+        "Stay Story stands out for its all-in-one service model, local expertise, and commitment to quality. We offer verified services, transparent processes, and personalized solutions tailored to your needs. Whether it is a stay, travel arrangement, event, or daily requirement, we ensure reliability and efficiency in every service."
+      ]
+    },
+    {
+      "heading": "Experience Goa with Confidence",
+      "level": "h3",
+      "paragraphs": [
+        "With Stay Story, you can explore Goa with ease and confidence. Our integrated services are designed to provide comfort, convenience, and memorable experiences. From accommodation to entertainment and everything in between, we are here to make your journey seamless and enjoyable."
+      ]
+    }
+  ],
+  "cards": [],
+  "images": [
+    {
+      "src": "https://www.staystory.in/assets/img/logo.png",
+      "alt": "logo"
+    },
+    {
+      "src": "https://www.staystory.in/assets/upload/about.png",
+      "alt": ""
+    }
+  ]
+}

@@ -1,0 +1,240 @@
+[
+  {
+    "legacyPath": "/index.php",
+    "status": 200,
+    "h1": "Your Trusted Partner for a Complete Goa Experience",
+    "blocks": 7,
+    "images": 27
+  },
+  {
+    "legacyPath": "/about-us.php",
+    "status": 200,
+    "h1": "",
+    "blocks": 7,
+    "images": 2
+  },
+  {
+    "legacyPath": "/photo-gallery.php",
+    "status": 200,
+    "h1": "",
+    "blocks": 1,
+    "images": 17
+  },
+  {
+    "legacyPath": "/contact-us.php",
+    "status": 200,
+    "h1": "",
+    "blocks": 3,
+    "images": 1
+  },
+  {
+    "legacyPath": "/stay-goa.php",
+    "status": 200,
+    "h1": "Premium Stay Options in Goa – Villas, Apartments & Rentals",
+    "blocks": 7,
+    "images": 7
+  },
+  {
+    "legacyPath": "/villas-goa.php",
+    "status": 200,
+    "h1": "Luxury Villas in Goa for Short Stay Private & Premium Rentals",
+    "blocks": 7,
+    "images": 6
+  },
+  {
+    "legacyPath": "/apartments-hotels-goa.php",
+    "status": 200,
+    "h1": "Apartments & Hotels in Goa Comfortable & Flexible Stays",
+    "blocks": 7,
+    "images": 6
+  },
+  {
+    "legacyPath": "/long-term-rentals-goa.php",
+    "status": 200,
+    "h1": "Long-Term Rentals in Goa Comfortable Homes for Extended Stays",
+    "blocks": 7,
+    "images": 6
+  },
+  {
+    "legacyPath": "/property-sales-goa.php",
+    "status": 200,
+    "h1": "Property Sales in Goa Buy Villas, Apartments & Investment Homes",
+    "blocks": 8,
+    "images": 6
+  },
+  {
+    "legacyPath": "/travel-services-goa.php",
+    "status": 200,
+    "h1": "Reliable Travel Services in Goa – Transfers, Rentals & Chauffeurs",
+    "blocks": 7,
+    "images": 7
+  },
+  {
+    "legacyPath": "/airport-transfers-goa.php",
+    "status": 200,
+    "h1": "Airport Transfers in Goa Reliable Pickup & Drop Services",
+    "blocks": 8,
+    "images": 6
+  },
+  {
+    "legacyPath": "/chauffeur-services-goa.php",
+    "status": 200,
+    "h1": "Chauffeur Services in Goa Professional & Luxury Car Hire",
+    "blocks": 8,
+    "images": 6
+  },
+  {
+    "legacyPath": "/self-drive-cars-goa.php",
+    "status": 200,
+    "h1": "Self-Drive Cars in Goa Flexible & Affordable Car Rentals",
+    "blocks": 8,
+    "images": 6
+  },
+  {
+    "legacyPath": "/bike-rentals-goa.php",
+    "status": 200,
+    "h1": "Bike Rentals in Goa Affordable Scooters & Motorbike Hire",
+    "blocks": 8,
+    "images": 6
+  },
+  {
+    "legacyPath": "/experiences-goa.php",
+    "status": 200,
+    "h1": "Luxury Experiences in Goa – Yacht, Wellness & Entertainment",
+    "blocks": 8,
+    "images": 8
+  },
+  {
+    "legacyPath": "/yacht-cruises-goa.php",
+    "status": 200,
+    "h1": "Yacht & Cruises in Goa Luxury Private Boat Experiences",
+    "blocks": 8,
+    "images": 7
+  },
+  {
+    "legacyPath": "/shisha-experience-goa.php",
+    "status": 200,
+    "h1": "Shisha Experience in Goa Premium Hookah & Lounge Setup",
+    "blocks": 8,
+    "images": 7
+  },
+  {
+    "legacyPath": "/workshops-activities-goa.php",
+    "status": 200,
+    "h1": "Workshops & Activities in Goa Creative, Cultural & Fun Experiences",
+    "blocks": 8,
+    "images": 7
+  },
+  {
+    "legacyPath": "/spiritual-wellness-goa.php",
+    "status": 200,
+    "h1": "Spiritual & Wellness in Goa Yoga, Meditation & Healing Experiences",
+    "blocks": 8,
+    "images": 7
+  },
+  {
+    "legacyPath": "/vip-club-access-goa.php",
+    "status": 200,
+    "h1": "VIP Club Access in Goa Exclusive Nightlife & Premium Entry",
+    "blocks": 8,
+    "images": 7
+  },
+  {
+    "legacyPath": "/events-celebrations-goa.php",
+    "status": 200,
+    "h1": "Events & Celebrations in Goa – Parties, Weddings & Private Events",
+    "blocks": 7,
+    "images": 7
+  },
+  {
+    "legacyPath": "/party-planning-goa.php",
+    "status": 200,
+    "h1": "Party Planning in Goa Private Events, Birthdays & Celebrations",
+    "blocks": 8,
+    "images": 6
+  },
+  {
+    "legacyPath": "/wedding-services-goa.php",
+    "status": 200,
+    "h1": "Wedding Services in Goa Destination Weddings & Planning Experts",
+    "blocks": 8,
+    "images": 6
+  },
+  {
+    "legacyPath": "/bachelor-party-goa.php",
+    "status": 200,
+    "h1": "Bachelor Party in Goa Exclusive Experiences & Celebration Packages",
+    "blocks": 8,
+    "images": 6
+  },
+  {
+    "legacyPath": "/private-events-goa.php",
+    "status": 200,
+    "h1": "Private Events in Goa Exclusive & Customized Event Planning",
+    "blocks": 8,
+    "images": 6
+  },
+  {
+    "legacyPath": "/dining-concierge-goa.php",
+    "status": 200,
+    "h1": "Dining & Concierge Services in Goa – Private Chef & Luxury Assistance",
+    "blocks": 8,
+    "images": 6
+  },
+  {
+    "legacyPath": "/private-chef-catering-goa.php",
+    "status": 200,
+    "h1": "Private Chef & Catering in Goa Personalized Dining Experiences",
+    "blocks": 8,
+    "images": 5
+  },
+  {
+    "legacyPath": "/bartenders-mixologists-goa.php",
+    "status": 200,
+    "h1": "Bartenders & Mixologists in Goa Professional Bar Services for Events",
+    "blocks": 8,
+    "images": 5
+  },
+  {
+    "legacyPath": "/cake-special-requests-goa.php",
+    "status": 200,
+    "h1": "Cake & Special Requests in Goa Custom Cakes & Personalized Services",
+    "blocks": 8,
+    "images": 5
+  },
+  {
+    "legacyPath": "/artists-entertainment-goa.php",
+    "status": 200,
+    "h1": "Artists & Entertainment in Goa – DJs, Performers & Styling Services",
+    "blocks": 7,
+    "images": 7
+  },
+  {
+    "legacyPath": "/djs-singers-in-goa.php",
+    "status": 200,
+    "h1": "DJs & Singers in Goa Live Music & Party Entertainment",
+    "blocks": 8,
+    "images": 6
+  },
+  {
+    "legacyPath": "/dancers-performers-goa.php",
+    "status": 200,
+    "h1": "Dancers & Performers in Goa Live Entertainment for Events",
+    "blocks": 8,
+    "images": 6
+  },
+  {
+    "legacyPath": "/makeup-styling-goa.php",
+    "status": 200,
+    "h1": "Makeup & Styling in Goa - Professional Beauty & Grooming Services",
+    "blocks": 8,
+    "images": 6
+  },
+  {
+    "legacyPath": "/tattoo-henna-face-art-goa.php",
+    "status": 200,
+    "h1": "Tattoo, Henna & Face Art in Goa Creative Event Art Services",
+    "blocks": 8,
+    "images": 6
+  }
+]

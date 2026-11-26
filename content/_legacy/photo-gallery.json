@@ -1,0 +1,91 @@
+{
+  "legacyPath": "/photo-gallery.php",
+  "url": "https://www.staystory.in/photo-gallery.php",
+  "status": 200,
+  "title": "Photo Gallery | Stay Story",
+  "description": "",
+  "keywords": "",
+  "h1": "",
+  "blocks": [
+    {
+      "heading": "Photo Gallery",
+      "level": "h2",
+      "paragraphs": [
+        "home",
+        "//",
+        "Photo Gallery"
+      ]
+    }
+  ],
+  "cards": [],
+  "images": [
+    {
+      "src": "https://www.staystory.in/assets/img/logo.png",
+      "alt": "logo"
+    },
+    {
+      "src": "https://www.staystory.in/assets/upload/image/photogallery/1010261775384940.jpeg",
+      "alt": "Photo Gallery 1"
+    },
+    {
+      "src": "https://www.staystory.in/assets/upload/image/photogallery/5844611775384926.jpeg",
+      "alt": "Photo Gallery 2"
+    },
+    {
+      "src": "https://www.staystory.in/assets/upload/image/photogallery/4999541775384915.jpeg",
+      "alt": "Photo Gallery 3"
+    },
+    {
+      "src": "https://www.staystory.in/assets/upload/image/photogallery/809281775384906.jpeg",
+      "alt": "Photo Gallery 4"
+    },
+    {
+      "src": "https://www.staystory.in/assets/upload/image/photogallery/6318001775384897.jpeg",
+      "alt": "Photo Gallery 5"
+    },
+    {
+      "src": "https://www.staystory.in/assets/upload/image/photogallery/6797311775384891.jpeg",
+      "alt": "Photo Gallery 6"
+    },
+    {
+      "src": "https://www.staystory.in/assets/upload/image/photogallery/4823861775384885.jpeg",
+      "alt": "Photo Gallery 7"
+    },
+    {
+      "src": "https://www.staystory.in/assets/upload/image/photogallery/668651775384880.jpeg",
+      "alt": "Photo Gallery 8"
+    },
+    {
+      "src": "https://www.staystory.in/assets/upload/image/photogallery/1456861775384872.jpeg",
+      "alt": "Photo Gallery 9"
+    },
+    {
+      "src": "https://www.staystory.in/assets/upload/image/photogallery/6907981775384866.jpeg",
+      "alt": "Photo Gallery 10"
+    },
+    {
+      "src": "https://www.staystory.in/assets/upload/image/photogallery/527431775384861.jpeg",
+      "alt": "Photo Gallery 11"
+    },
+    {
+      "src": "https://www.staystory.in/assets/upload/image/photogallery/361251775384855.jpeg",
+      "alt": "Photo Gallery 12"
+    },
+    {
+      "src": "https://www.staystory.in/assets/upload/image/photogallery/5087991775384850.jpeg",
+      "alt": "Photo Gallery 13"
+    },
+    {
+      "src": "https://www.staystory.in/assets/upload/image/photogallery/5050241775384845.jpeg",
+      "alt": "Photo Gallery 14"
+    },
+    {
+      "src": "https://www.staystory.in/assets/upload/image/photogallery/9980161775384838.jpeg",
+      "alt": "Photo Gallery 15"
+    },
+    {
+      "src": "https://www.staystory.in/assets/upload/image/photogallery/6775811775384832.jpeg",
+      "alt": "Photo Gallery 16"
+    }
+  ]
+}

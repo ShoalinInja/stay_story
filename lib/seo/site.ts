@@ -19,14 +19,13 @@ type PageMeta = {
   absoluteTitle?: boolean;
   keywords?: string[];
   image?: MediaRef | null;
-  noindex?: boolean;
 };
 
 /**
  * Title, description, canonical, Open Graph and Twitter for one page.
  * Metadata merges shallowly, so openGraph/twitter are always complete here (images included).
  */
-export function pageMetadata({ title, description, path, absoluteTitle, keywords, image, noindex }: PageMeta): Metadata {
+export function pageMetadata({ title, description, path, absoluteTitle, keywords, image }: PageMeta): Metadata {
   const ogTitle = absoluteTitle || path === "/" ? title : `${title} | ${SITE_NAME}`;
   const images = [image && !image.hasBakedText ? { url: image.src, width: image.width, height: image.height, alt: image.alt } : DEFAULT_OG];
   return {
@@ -36,6 +35,5 @@ export function pageMetadata({ title, description, path, absoluteTitle, keywords
     alternates: { canonical: path },
     openGraph: { type: "website", siteName: SITE_NAME, locale: "en_IN", url: path, title: ogTitle, description, images },
     twitter: { card: "summary_large_image", title: ogTitle, description, images },
-    ...(noindex && { robots: { index: false, follow: false } }),
   };
 }

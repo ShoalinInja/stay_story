@@ -1,7 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { Suspense } from "react";
-import { getAreas, getSite, getStays } from "@/lib/content";
+import { getSite, getStays } from "@/lib/content";
 import { Button } from "@/components/primitives";
 import { EnquiryModal } from "@/components/forms/EnquiryModal";
 import { SearchBar } from "@/components/home/SearchBar";
@@ -9,7 +9,7 @@ import { UI, telHref } from "./copy";
 import { HeaderCentre } from "./HeaderCentre";
 import { MegaMenu } from "./MegaMenu";
 import { MobileNav } from "./MobileNav";
-import { areaSearchOptions } from "./search-options";
+import { getSearchOptions } from "@/components/home/search-options";
 import { StickyHeader } from "./StickyHeader";
 
 export type HeaderProps = {
@@ -21,11 +21,11 @@ export type HeaderProps = {
 export const FOOTER_NAV_ID = "footer-nav";
 
 export async function Header({ variant }: HeaderProps) {
-  const [site, areas, stays] = await Promise.all([getSite(), getAreas(), getStays()]);
+  const [site, options, stays] = await Promise.all([getSite(), getSearchOptions(), getStays()]);
   const nav = <MegaMenu groups={site.nav} label={UI.menu} className="hidden xl:block" />;
   const search = (
     <div className="flex min-w-0 items-center gap-2">
-      <SearchBar variant="compact" options={areaSearchOptions(areas)} className="hidden md:flex" />
+      <SearchBar variant="compact" options={options} className="hidden md:flex" />
       {/* The mega-menu isn't shown in this variant, so keep the drawer reachable on wide screens too. */}
       <MobileNav groups={site.nav} phone={site.phone} fallbackHref={`#${FOOTER_NAV_ID}`} triggerClassName="hidden xl:flex" />
     </div>

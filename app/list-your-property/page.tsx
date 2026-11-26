@@ -13,7 +13,7 @@ export const metadata: Metadata = {
 
 export default function ListYourPropertyPage() {
   return (
-    <main className="container-site section-y flex-1">
+    <main id="main" className="container-site section-y flex-1">
       <div className="grid gap-10 lg:grid-cols-[1fr_420px]">
         <div>
           <h1 className="type-h1 font-display text-ink">{t.title}</h1>

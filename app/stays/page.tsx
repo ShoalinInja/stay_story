@@ -15,7 +15,7 @@ export async function generateMetadata(): Promise<Metadata> {
 export default async function StaysPage({ searchParams }: PageProps<"/stays">) {
   const cat = await loadStaysCategory();
   return (
-    <main className="container-site section-y flex-1">
+    <main id="main" className="container-site section-y flex-1">
       <header className="max-w-3xl">
         <h1 className="type-h1 font-display text-ink">{cat?.tagline}</h1>
         {cat?.intro && <p className="mt-3 type-body text-ink-2">{cat.intro}</p>}

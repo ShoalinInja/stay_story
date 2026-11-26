@@ -34,7 +34,7 @@ export default async function ServiceDetail({ params }: PageProps<"/[category]/[
   const source = `service-detail:${category.slug}/${item.slug}`;
 
   return (
-    <main className="flex-1 pb-20 lg:pb-0">
+    <main id="main" className="flex-1 pb-20 lg:pb-0">
       <ServiceHero title={item.title} lead={item.summary} image={item.hero}>
         <PriceBlock
           amount={item.priceFrom}

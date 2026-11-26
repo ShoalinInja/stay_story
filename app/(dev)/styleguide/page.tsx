@@ -105,7 +105,7 @@ function Label({ children }: { children: ReactNode }) {
 
 export default function StyleguidePage() {
   return (
-    <main className="container-site pb-24">
+    <main id="main" className="container-site pb-24">
       <header className="py-10">
         <p className="type-meta">Dev only · noindex</p>
         <h1 className="type-h1">StayStory styleguide</h1>

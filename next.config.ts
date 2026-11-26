@@ -2,10 +2,14 @@ import type { NextConfig } from "next";
 import { PHASE_PRODUCTION_BUILD } from "next/constants";
 import { content } from "./content";
 import { findPlaceholders } from "./lib/content/placeholders";
+import { privacy, terms } from "./content/legal";
 
 export default function config(phase: string): NextConfig {
   if (phase === PHASE_PRODUCTION_BUILD && process.env.ALLOW_PLACEHOLDERS !== "true") {
-    const bad = findPlaceholders(content);
+    const legalDrafts = Object.entries({ privacy, terms })
+      .filter(([, doc]) => doc.sections.some((s) => s.needsReview))
+      .map(([k]) => `legal:${k}`);
+    const bad = [...findPlaceholders(content), ...legalDrafts];
     if (bad.length) {
       throw new Error(
         `Placeholder / needsReview content would ship to production (set ALLOW_PLACEHOLDERS=true to override):\n  ${bad.join("\n  ")}`,

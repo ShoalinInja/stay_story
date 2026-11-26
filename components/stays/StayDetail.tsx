@@ -9,7 +9,7 @@ import {
 } from "@/components/primitives";
 import { resolveIcon } from "@/lib/icons";
 import type { Area, ServiceItem, Stay } from "@/lib/content/types";
-import { Breadcrumbs } from "./Breadcrumbs";
+import { Breadcrumbs } from "@/components/layout/Breadcrumbs";
 import { AMENITIES, TYPE_LABELS, copy } from "./copy";
 import { cleanFirst, stayMode, stayPrice } from "./price";
 import { SectionTabs, type SectionLink } from "./SectionTabs";
@@ -55,11 +55,10 @@ export function StayDetail({ stay, area, addOns, related }: Props) {
   const sections: SectionLink[] = (Object.keys(show) as (keyof typeof show)[]).filter((k) => show[k]).map((k) => ({ id: k, label: t.tabs[k] }));
 
   return (
-    <main className="flex-1 pb-24 lg:pb-0">
+    <main id="main" className="flex-1 pb-24 lg:pb-0">
       <div className="container-site pt-6">
         <Breadcrumbs
           items={[
-            { label: t.breadcrumbsHome, href: "/" },
             { label: t.breadcrumbsStays, href: "/stays" },
             ...(area ? [{ label: area.name, href: `/areas/${area.key}` }] : []),
             { label: stay.name, href: `/stays/${stay.slug}` },

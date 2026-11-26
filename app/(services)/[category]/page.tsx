@@ -27,7 +27,7 @@ export default async function CategoryLanding({ params }: PageProps<"/[category]
   const { slug, title, tagline, intro, cover, items, whyUs, faqs } = category;
 
   return (
-    <main className="flex-1">
+    <main id="main" className="flex-1">
       <ServiceHero title={title} lead={intro ?? tagline} image={cover}>
         {intro && <p className="mt-2 type-meta text-muted-text">{tagline}</p>}
       </ServiceHero>

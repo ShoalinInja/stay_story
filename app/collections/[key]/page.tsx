@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import Image from "next/image";
 import { notFound } from "next/navigation";
-import { Breadcrumbs } from "@/components/stays/Breadcrumbs";
+import { Breadcrumbs } from "@/components/layout/Breadcrumbs";
 import { copy } from "@/components/stays/copy";
 import { loadCollections, loadStays } from "@/components/stays/data";
 import { StayGrid, StaysEmpty } from "@/components/stays/StayGrid";
@@ -29,8 +29,8 @@ export default async function CollectionPage({ params }: PageProps<"/collections
   const stays = await loadStays({ collection: c.key });
 
   return (
-    <main className="container-site section-y flex-1">
-      <Breadcrumbs items={[{ label: copy.detail.breadcrumbsHome, href: "/" }, { label: copy.detail.breadcrumbsStays, href: "/stays" }, { label: c.title, href: `/collections/${c.key}` }]} />
+    <main id="main" className="container-site section-y flex-1">
+      <Breadcrumbs items={[{ label: copy.detail.breadcrumbsStays, href: "/stays" }, { label: c.title, href: `/collections/${c.key}` }]} />
       <header className="mt-6 grid items-center gap-8 md:grid-cols-[1fr_380px]">
         <div>
           <h1 className="type-h1 font-display text-ink">{c.title}</h1>

@@ -5,7 +5,7 @@ import { notFound } from "next/navigation";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger, Chip } from "@/components/primitives";
 import { resolveIcon } from "@/lib/icons";
 import type { StayType } from "@/lib/content/types";
-import { Breadcrumbs } from "./Breadcrumbs";
+import { Breadcrumbs } from "@/components/layout/Breadcrumbs";
 import { copy } from "./copy";
 import { loadStays, loadStaysService } from "./data";
 import { StayGrid, StaysEmpty } from "./StayGrid";
@@ -39,9 +39,9 @@ export async function TypeLanding({ slug, path, listing, listingTitle = copy.typ
   if (!item) notFound();
 
   return (
-    <main className="flex-1">
+    <main id="main" className="flex-1">
       <section className="container-site pt-6 pb-12 md:pb-16">
-        <Breadcrumbs items={[{ label: copy.detail.breadcrumbsHome, href: "/" }, { label: copy.detail.breadcrumbsStays, href: "/stays" }, { label: item.title, href: path }]} />
+        <Breadcrumbs items={[{ label: copy.detail.breadcrumbsStays, href: "/stays" }, { label: item.title, href: path }]} />
         <div className="mt-6 grid items-center gap-8 md:grid-cols-2">
           <div>
             <h1 className="type-h1 font-display text-ink">{item.title}</h1>

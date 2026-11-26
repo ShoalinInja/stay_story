@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
-import { Breadcrumbs } from "@/components/stays/Breadcrumbs";
+import { Breadcrumbs } from "@/components/layout/Breadcrumbs";
 import { copy } from "@/components/stays/copy";
 import { loadAreas, loadStays } from "@/components/stays/data";
 import { StayGrid, StaysEmpty } from "@/components/stays/StayGrid";
@@ -28,8 +28,8 @@ export default async function AreaPage({ params }: PageProps<"/areas/[area]">) {
   const stays = await loadStays({ area: area.key });
 
   return (
-    <main className="container-site section-y flex-1">
-      <Breadcrumbs items={[{ label: copy.detail.breadcrumbsHome, href: "/" }, { label: copy.detail.breadcrumbsStays, href: "/stays" }, { label: area.name, href: `/areas/${area.key}` }]} />
+    <main id="main" className="container-site section-y flex-1">
+      <Breadcrumbs items={[{ label: copy.detail.breadcrumbsStays, href: "/stays" }, { label: area.name, href: `/areas/${area.key}` }]} />
       <header className="mt-6 max-w-3xl">
         <h1 className="type-h1 font-display text-ink">{copy.area.heading(area.name)}</h1>
         <p className="mt-3 type-body text-ink-2">{area.intro}</p>

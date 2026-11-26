@@ -115,7 +115,7 @@
 }
 
 /* Type scale — use these classes, not ad-hoc sizes */
-@utility text-h1 {
+@utility type-h1 {
   font-family: var(--font-display);
   font-weight: 600;
   font-size: 2rem;
@@ -125,27 +125,27 @@
     line-height: 3.5rem;
   }
 }
-@utility text-h2 {
+@utility type-h2 {
   font-family: var(--font-display);
   font-weight: 600;
   font-size: 1.75rem;
   line-height: 2.25rem;
 }
-@utility text-h3 {
+@utility type-h3 {
   font-weight: 600;
   font-size: 1rem;
   line-height: 1.5rem;
 }
-@utility text-body {
+@utility type-body {
   font-size: 0.9375rem;
   line-height: 1.5rem;
 }
-@utility text-meta {
+@utility type-meta {
   font-size: 0.8125rem;
   line-height: 1.25rem;
   color: var(--muted-text);
 }
-@utility text-price {
+@utility type-price {
   font-weight: 700;
   font-size: 1.25rem;
   line-height: 1.75rem;
@@ -176,7 +176,7 @@
     @apply font-sans;
   }
   body {
-    @apply bg-background text-foreground text-body antialiased;
+    @apply bg-background text-foreground type-body antialiased;
   }
   :focus-visible {
     outline: 2px solid var(--ring);

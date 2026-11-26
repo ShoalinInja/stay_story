@@ -30,7 +30,7 @@ Spec of record: [`docs/BRIEF.md`](docs/BRIEF.md).
 ## Design tokens (`app/globals.css`)
 
 Utilities: `bg-ink text-ink-2 text-muted-text text-muted-2 border-line border-line-soft bg-cream bg-surface bg-surface-2 bg-cta bg-brand text-brand-strong bg-brand-tint text-star bg-footer-bg text-footer-text text-success bg-whatsapp`.
-Type: `text-h1 text-h2 text-h3 text-body text-meta text-price`, plus `font-display` (Playfair) and `font-sans` (Inter).
+Type: `type-h1 type-h2 type-h3 type-body type-meta type-price` (prefixed `type-`, not `text-`, because `cn` treats unknown `text-*` as a colour and drops it), plus `font-display` (Playfair) and `font-sans` (Inter).
 Layout: `container-site` (1200px), `section-y`. Radius: `rounded-card` (12), `rounded-input` (8), `rounded-full`. Shadow: `shadow-card`, `shadow-card-hover`.
 **Orange text or links must use `text-brand-strong`.** `--brand` on white fails AA.
 
@@ -43,3 +43,10 @@ Layout: `container-site` (1200px), `section-y`. Radius: `rounded-card` (12), `ro
 ## Done gate for every agent
 
 `pnpm typecheck && pnpm lint && pnpm build` green before reporting. Touch nothing outside your owned paths, and list any shared-file requests in your report.
+
+## Contract notes (Phase 0 decisions)
+
+- **`content/**` is loaded by `next.config.ts`**, so use relative imports only: no `@/` alias, no `server-only`, no `next/*` imports. Type-only imports from `../lib/content/types` are fine. JSON imports must also survive config loading, so verify with `pnpm build`.
+- **Redirects are `statusCode: 301`**, as the brief requires. `permanent: true` would give a 308. To match the trailing slash in one hop, use `source: "/villas-goa.php{/}?"`. Query strings pass through to the destination.
+- **Worktrees:** parallel agents run in their own git worktree. Run `pnpm install` first, then `ALLOW_PLACEHOLDERS=true pnpm build` (`.env.local` is not in the worktree), and commit to the worktree branch before reporting.
+- **Write gate:** a local hook denies the *first* Write/Edit of each file and asks for four facts (callers, no duplicate, data shape, instruction). State them in one line and retry. Do not disable the hook.

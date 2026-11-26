@@ -94,7 +94,7 @@ export interface Offer {
 export interface Testimonial { name: string; quote: string; image?: MediaRef; source: "google" | "manual"; date?: string }
 
 export interface MediaEntry extends MediaRef { id: string; usedOn: string[]; hasBakedText?: boolean }
-export interface LegacyRedirect { source: string; destination: string; permanent: true }
+export interface LegacyRedirect { source: string; destination: string; statusCode: 301 }  // brief demands 301, not Next's default 308
 
 export interface StayFilters {
   area?: GoaArea; region?: Region; type?: StayType; guests?: number; bedrooms?: number;

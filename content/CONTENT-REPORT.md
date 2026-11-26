@@ -123,6 +123,63 @@ I viewed all 85 legacy images and wrote alt text for each.
 - The gallery appears to be a single villa, and the 6 placeholder stays reuse those photos. **Real photography per property is the top content need.**
 - WebP files are capped at 1920 px wide for banners, 1600 px for gallery images and 1200 px for covers, at quality 78. The total is 7.8 MB, with a 16 px blur placeholder for each image. Originals are in `public/media/legacy/_raw/`, which is gitignored.
 - The logo is saved as `public/media/brand/logo.png` plus `logo.webp` (383×149). It is a raster PNG; an SVG trace was not attempted. **Request an SVG from the designer.**
+- `usedOn` records where each image appeared on the **legacy** site, mapped to the matching new route. It does not record where the new content uses the image.
+
+## Redirects
+
+`content/redirects.ts` has 34 rows, all `statusCode: 301`, with sources written as `/x.php{/}?`. They are **validated structurally only**; no runtime 301 has been observed yet. A8 should confirm that `/villas-goa.php/` (with the trailing slash, and with a query string) reaches `/stays/villas` in **one** 301, with no framework trailing-slash redirect firing first.
+
+## Lead requests
+
+1. **Baked-text images in `hero`, `cover` and `feature.image`.** These fields use baked-text posters that are only 500×500 or 400×400:
+   - 20 service-item `hero` images (every non-stays item);
+   - 5 category `cover` images (all except Stays);
+   - 5 `site.nav[].feature.image` (all except Stays).
+
+   `MediaRef` has no `hasBakedText`, so A3, A4 and A6 cannot tell these apart and may overlay titles on them. Ask: add `hasBakedText?: boolean` to `MediaRef` (A1 will populate it from the manifest), or have UI agents render these fields as framed card images with no text overlay. Fallback if neither: A1 swaps them to gallery ids. That would put villa interiors on non-stay pages, which is misleading, so it is not done by default.
+2. **Wire `scripts/validate-content.ts` into `pnpm test`.** The `test` glob only covers `lib/**`. Suggested: `"test": "tsx --test 'lib/**/*.test.ts' && tsx scripts/validate-content.ts"`.
+3. **Update BRIEF §6 from 30 to 34 legacy URLs**, so `scripts/check-redirects.ts` (A8) expects 34.
+4. **Add a repository helper for listing media by prefix**, e.g. `getMediaList(prefix)`. Without it, `/gallery` and the home gallery mosaic cannot list `gallery-*` images; the repository only exposes `getMedia(id)`.
+5. **Fix the fresh-checkout typecheck.** `pnpm typecheck` fails until a build has generated `LayoutProps`, so `typecheck && lint && build` breaks on a clean clone. Consider `next typegen` before `tsc`.
+6. **Exclude `stays` from A6's service whitelist.** `getCategories()` now returns `stays` with 4 items. A5 reads the type-landing copy with `getService("stays", "villas" | "apartments-hotels" | "long-term-rentals" | "property-sales")`.
+7. **Carry the legacy `google-site-verification` meta tag over (A8)** so Search Console keeps working. The tag is in the `<head>` of every live legacy page.
+8. **Resolve icon names.** `icon` strings in `sections`, `features` and `trust` are lucide-react kebab-case names (e.g. `chef-hat`, `plane-landing`), and nothing maps them to components yet.
+9. **Add a placeholder flag to `Collection`.** It has none, so the pet-friendly collection ships live even though the copy is now conditional.
+
+## New structure per service item
+
+Generated from `content/`. Each item also has `idealFor`, `related` and `seo`.
+
+| Item | Summary words | Sections (headings) | FAQs |
+|---|---|---|---|
+| `stays/villas` | 25 | Space and privacy · Close to the action · Made for every group · Easy, flexible booking · Add-ons on request | 2 |
+| `stays/apartments-hotels` | 28 | Furnished apartments · Hotels with full service · Locations that fit you · Short or extended stays · Verified and well kept | 2 |
+| `stays/long-term-rentals` | 23 | Move-in ready homes · Built for remote work · Flexible terms · North or South Goa · Transparent agreements | 2 |
+| `stays/property-sales` | 24 | Homes and investments · Guided start to finish · Rental income potential · Prime locations · Verified, compliant listings | 2 |
+| `travel/airport-transfers` | 24 | Timed to your flight · Vehicles for every group · Drivers who know Goa · No haggling · Clear pricing, real support | 2 |
+| `travel/chauffeur` | 26 | Professional chauffeurs · Premium vehicle options · Business, leisure, events · Your schedule, your plan · Safety first | 2 |
+| `travel/self-drive-cars` | 22 | Cars for every trip · Go where you like · Flexible plans · Quick, simple handover · Safe and reliable | 2 |
+| `travel/bike-rentals` | 23 | Scooters and motorbikes · Made for Goa's lanes · Budget-friendly plans · Pickup or delivery · Ride with confidence | 2 |
+| `experiences/yacht-cruises` | 24 | Private charters · Sunset on the Arabian Sea · Parties on the water · Onboard comforts · Safe hands | 2 |
+| `experiences/shisha` | 25 | Delivered to your space · Curated flavours · Made for gatherings · Clean and safe · Hands-free hosting | 2 |
+| `experiences/workshops-activities` | 27 | Creative workshops · Culture and local life · Group and team fun · Shaped around you · Trusted providers | 2 |
+| `experiences/wellness` | 26 | Yoga for every level · Meditation and mindfulness · Holistic therapies · Your own wellness plan · Calm settings, expert guides | 2 |
+| `experiences/vip-club-access` | 28 | Skip the queue · Tables and seating · Events and DJ nights · Made for celebrations · Local help on the night | 2 |
+| `events/party-planning` | 23 | Planned around you · Venue and setup · Music and entertainment · Food and drinks · Fully managed | 2 |
+| `events/weddings` | 28 | End-to-end planning · Beach, villa or indoors · Décor and styling · Trusted vendors · Guests looked after | 2 |
+| `events/bachelor-parties` | 25 | Tailored to your crew · Private villa parties · Yacht celebrations · Club nights, sorted · Add-ons on tap | 2 |
+| `events/private-events` | 22 | Any size, any occasion · Venue and setup · Corporate-ready · Hospitality and entertainment · Managed on the day | 2 |
+| `concierge/private-chef` | 27 | A chef at your stay · Menus made for you · Catering for events · Quality on every plate · Daily meals or one night | 2 |
+| `concierge/bartenders` | 26 | Signature cocktails · Full bar setup · A menu for your event · Any occasion · Experienced staff | 2 |
+| `concierge/special-requests` | 22 | Cakes made to order · Surprise setups · Flowers and gifts · On time, as planned · Pairs with your event | 2 |
+| `concierge/babysitters` *(placeholder)* | 19 | Peace of mind · Made for family trips · Pairs with your plans · How to arrange it | 1 |
+| `concierge/essentials-delivery` *(placeholder)* | 24 | Daily needs, delivered · More time for Goa · Part of one service · How to arrange it | 1 |
+| `entertainment/djs-singers` | 27 | DJs who read the crowd · Live vocals · Your sound, your way · Professional sound · Solo set to full setup | 2 |
+| `entertainment/dancers-performers` | 25 | Styles for every stage · Choreographed for you · Keeps guests engaged · Polished execution · Staging support | 2 |
+| `entertainment/makeup-styling` | 27 | Every look, done well · Hair and grooming · Bridal and events · We come to you · Clean and hygienic | 2 |
+| `entertainment/tattoo-henna` | 24 | Temporary tattoos · Henna, old and new · Face art for all ages · Designed to your theme · Safe materials | 2 |
+
+
 
 ## Claims the brief requires but the legacy pages don't support
 

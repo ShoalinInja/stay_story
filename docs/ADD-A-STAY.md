@@ -82,7 +82,7 @@ If `pnpm build` prints a list starting with `Placeholder / needsReview content w
 | `badges` | Optional: `new`, `best-rated`, `pet-friendly` |
 | `rating` | **Leave this out** unless you have real reviews, e.g. `{ value: 4.8, count: 32, source: "google" }`. Never invent a rating. |
 | `featured` | `true` to show the stay in the home page rails |
-| `faqs` | Questions and answers about this stay. Remove `needsReview: true` (or use a plain `{ q, a }`) once you have checked the answer. |
+| `faqs` | Questions and answers about this stay. The sample files write them as `draft("Question?", "Answer.")`, which keeps them hidden on the live site. Once an answer is checked, rewrite it as `{ q: "Question?", a: "Answer." }`. |
 
 ## Good to know
 

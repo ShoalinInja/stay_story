@@ -52,7 +52,7 @@ export const concierge: ServiceCategory = {
         draft("What cuisines can the chef cook?", "Traditional Goan, Indian and international dishes, tailored to your menu."),
         draft("Do you cater large events?", "Yes. Full-service catering covers private parties, weddings and corporate gatherings."),
       ],
-      related: ["bartenders", "special-requests", "babysitters"],
+      related: ["bartenders", "special-requests"],
       seo: {
         title: "Private Chef & Catering in Goa | Stay Story",
         description: "Book a private chef for your Goa villa or full-service catering for events. Goan, Indian and international menus made for you.",
@@ -79,7 +79,7 @@ export const concierge: ServiceCategory = {
         draft("Do you bring glassware and equipment?", "Yes. Bar services include setup, equipment, glassware and service staff."),
         draft("Can the drinks menu be customised?", "Yes. Menus are tailored to your preferences, event type and guests."),
       ],
-      related: ["private-chef", "special-requests", "essentials-delivery"],
+      related: ["private-chef", "special-requests"],
       seo: {
         title: "Bartenders & Mixologists in Goa for Events | Stay Story",
         description: "Hire professional bartenders and mixologists in Goa with a complete bar setup and custom cocktail menu for parties, weddings and events.",
@@ -106,7 +106,7 @@ export const concierge: ServiceCategory = {
         draft("Can you set up a surprise at our villa?", "Yes. Room decorations and surprise setups can be arranged at your stay."),
         draft("Do you deliver flowers?", "Yes. Flower deliveries and gift arrangements are available."),
       ],
-      related: ["private-chef", "bartenders", "babysitters"],
+      related: ["private-chef", "bartenders"],
       seo: {
         title: "Custom Cakes & Surprise Setups in Goa | Stay Story",
         description: "Custom cakes, surprise room decorations, flowers and gifts for birthdays, anniversaries and proposals in Goa, delivered on time.",

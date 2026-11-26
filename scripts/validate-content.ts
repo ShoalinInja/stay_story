@@ -18,8 +18,11 @@ for (const cat of content.categories) {
   check(n >= 4 && n <= 6, `category ${cat.key}: ${n} FAQs (want 4–6)`);
   check(!!cat.faqs?.every((f) => f.needsReview), `category ${cat.key}: every drafted FAQ needs needsReview`);
   const slugs = new Set(cat.items.map((i) => i.slug));
+  const placeholderSlugs = new Set(cat.items.filter((i) => i.isPlaceholder).map((i) => i.slug));
   for (const it of cat.items) {
     const id = `${cat.key}/${it.slug}`;
+    // Placeholders are dropped in production, so a live item linking to one would render a dead card.
+    if (!it.isPlaceholder) for (const r of it.related) check(!placeholderSlugs.has(r), `${id}: related "${r}" is a placeholder`);
     check(it.category === cat.key, `${id}: category mismatch`);
     check(words(it.summary) <= 40, `${id}: summary ${words(it.summary)} words (max 40)`);
     check(it.sections.length >= 4 && it.sections.length <= 6, `${id}: ${it.sections.length} sections (want 4–6)`);

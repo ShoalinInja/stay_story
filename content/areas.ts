@@ -8,7 +8,7 @@ const area = (key: GoaArea, name: string, region: Region, intro: string): Area =
     key, name, region, intro,
     seo: {
       title: `Villas & Stays in ${where} | Stay Story`,
-      description: `Handpicked villas, apartments and long stays in ${where}, plus travel, experiences and events arranged by Stay Story's local team.`,
+      description: `Planning a stay in ${where}? Tell Stay Story's local team what you need and we will help with villas, apartments, travel, experiences and events.`,
       keywords: [`villas in ${name}`, `stay in ${name}`, `${name} Goa`],
     },
   };
@@ -20,7 +20,7 @@ export const areas: Area[] = [
   area("anjuna", "Anjuna", "north-goa",
     "Anjuna is one of North Goa's best-known beach villages, with a rocky shoreline, sunset cafés and a long-running weekly flea market. It has drawn free spirits since the hippie era, and its music scene still pulls a crowd. Days here are for beach shacks and market browsing; nights lean lively. Stay a little inland for quieter lanes while keeping the action close by."),
   area("vagator", "Vagator", "north-goa",
-    "Vagator is known for dramatic red laterite cliffs that drop onto small, sheltered coves, with the ruins of Chapora Fort watching over the river mouth. It is a favourite for sunset views and a buzzing evening scene, yet its beaches feel more tucked away than Goa's busier strips. Villas here pair easy access to Anjuna and Siolim with a strong sense of place."),
+    "Vagator is known for dramatic red laterite cliffs that drop onto small, sheltered coves, with the ruins of Chapora Fort watching over the river mouth. It is a favourite for sunset views and a buzzing evening scene, yet its beaches feel more tucked away than Goa's busier strips. A stay here pairs easy access to Anjuna and Siolim with a strong sense of place."),
   area("assagao", "Assagao", "north-goa",
     "Assagao is a leafy inland village in North Goa, often called one of the prettiest in the state. Think heritage Portuguese houses, tree-lined lanes, design stores and some of Goa's most talked-about cafés and restaurants. It feels calm, green and residential, yet the beaches of Anjuna and Vagator are within easy reach. Ideal for travellers who prefer charm and good food over beach crowds."),
   area("morjim", "Morjim", "north-goa",

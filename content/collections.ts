@@ -35,9 +35,9 @@ export const collections: Collection[] = [
   {
     key: "pet-friendly",
     title: "Pet-Friendly Stays",
-    description: "Stays that welcome the whole family, four-legged members included. Tell us about your pet when you enquire and we will confirm the house rules.",
+    description: "Travelling with a pet? Tell us about them when you enquire and we will check which stays can welcome the whole family.",
     image: media("gallery-16"),
-    seo: { title: "Pet-Friendly Villas in Goa | Stay Story", description: "Goa stays that welcome pets. Share your pet's details when you enquire and Stay Story will confirm suitable options." },
+    seo: { title: "Pet-Friendly Stays in Goa | Stay Story", description: "Travelling to Goa with a pet? Share your pet's details with Stay Story and we will check which stays can welcome them." },
   },
   {
     key: "party-villas",

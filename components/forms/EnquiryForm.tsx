@@ -1,6 +1,9 @@
-// CONTRACT STUB (Lead). A7 owns the implementation; keep the exported props signature stable.
-// Works without JS: native POST to /api/enquiry, which redirects to /thank-you.
+// Server Component: reads site contact details, then renders the interactive client form.
+// Works without JS: a native POST to /api/enquiry, which 303-redirects to /thank-you.
+// From a Client Component, render <EnquiryFormClient> and pass `whatsapp` / `phone` down instead.
 import type { Enquiry } from "@/lib/content/types";
+import { getSite } from "@/lib/content";
+import { EnquiryFormClient } from "./EnquiryFormClient";
 
 export type EnquiryVariant = "stay" | "service" | "callback" | "property-owner" | "contact";
 
@@ -17,16 +20,7 @@ export type EnquiryFormProps = {
   className?: string;
 };
 
-export function EnquiryForm({ variant, source, staySlug, serviceSlug, submitLabel, className }: EnquiryFormProps) {
-  return (
-    <form method="post" action="/api/enquiry" className={className}>
-      <input type="hidden" name="type" value={variant === "contact" ? "general" : variant} />
-      <input type="hidden" name="source" value={source} />
-      {staySlug && <input type="hidden" name="staySlug" value={staySlug} />}
-      {serviceSlug && <input type="hidden" name="serviceSlug" value={serviceSlug} />}
-      <label className="block">Name <input name="name" required autoComplete="name" className="border" /></label>
-      <label className="block">Phone <input name="phone" required type="tel" autoComplete="tel" className="border" /></label>
-      <button type="submit" className="bg-cta px-4 py-2 text-white">{submitLabel ?? "Enquire Now"}</button>
-    </form>
-  );
+export async function EnquiryForm(props: EnquiryFormProps) {
+  const site = await getSite();
+  return <EnquiryFormClient {...props} whatsapp={site.whatsapp} phone={site.phone} />;
 }

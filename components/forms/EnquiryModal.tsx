@@ -1,5 +1,6 @@
-// CONTRACT STUB (Lead). A7 owns the implementation; keep the exported props signature stable.
-// Used for "Request Callback", "Get in Touch", "Enquire Now" triggers across the site.
+// Server Component: renders the server EnquiryForm inside the client Modal. Keep the props signature stable.
+// Used for "Request Callback", "Get in Touch", "Enquire Now" triggers. Render it from a Server Component
+// (or pass it into a Client Component as children/props).
 import type { ReactNode } from "react";
 import { Modal } from "@/components/primitives";
 import { EnquiryForm, type EnquiryFormProps } from "./EnquiryForm";

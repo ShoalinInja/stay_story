@@ -76,6 +76,8 @@ export function Rail({ label, children, options, autoplay, className }: RailProp
   }, [api, autoplayMs, paused, reducedMotion]);
 
   const onKeyDown = (e: React.KeyboardEvent) => {
+    // Nested widgets (tabs, comboboxes, portalled dialogs) handle their own arrows.
+    if (e.defaultPrevented || !e.currentTarget.contains(e.target as Node)) return;
     const target = e.target as HTMLElement;
     if (target.closest("input, textarea, select, [contenteditable='true']")) return;
     if (e.key === "ArrowLeft") {
@@ -125,8 +127,9 @@ export function RailTrack({ children, slideClassName = "basis-[280px] sm:basis-[
   const { viewportRef } = useRail();
   const slides = React.Children.toArray(children);
   return (
-    <div ref={viewportRef} className="overflow-hidden">
-      <div className={cn("-ml-4 flex touch-pan-y", className)}>
+    // Vertical padding keeps card hover lift, shadow and focus outlines from being clipped.
+    <div ref={viewportRef} className="-my-4 overflow-hidden">
+      <div className={cn("-ml-4 flex touch-pan-y py-4", className)}>
         {slides.map((child, i) => (
           <div
             key={React.isValidElement(child) && child.key != null ? child.key : i}
@@ -145,10 +148,17 @@ export function RailTrack({ children, slideClassName = "basis-[280px] sm:basis-[
 
 type ArrowProps = { label?: string; className?: string };
 
+// aria-disabled (not disabled) so keyboard focus isn't dropped to <body> at the ends.
 export function RailPrev({ label = "Previous", className }: ArrowProps) {
   const { api, canPrev } = useRail();
   return (
-    <Button variant="icon-circle" aria-label={label} disabled={!canPrev} onClick={() => api?.scrollPrev()} className={className}>
+    <Button
+      variant="icon-circle"
+      aria-label={label}
+      aria-disabled={!canPrev}
+      onClick={() => canPrev && api?.scrollPrev()}
+      className={cn("aria-disabled:pointer-events-auto aria-disabled:cursor-default", className)}
+    >
       <ChevronLeft aria-hidden className="size-5" />
     </Button>
   );
@@ -157,7 +167,13 @@ export function RailPrev({ label = "Previous", className }: ArrowProps) {
 export function RailNext({ label = "Next", className }: ArrowProps) {
   const { api, canNext } = useRail();
   return (
-    <Button variant="icon-circle" aria-label={label} disabled={!canNext} onClick={() => api?.scrollNext()} className={className}>
+    <Button
+      variant="icon-circle"
+      aria-label={label}
+      aria-disabled={!canNext}
+      onClick={() => canNext && api?.scrollNext()}
+      className={cn("aria-disabled:pointer-events-auto aria-disabled:cursor-default", className)}
+    >
       <ChevronRight aria-hidden className="size-5" />
     </Button>
   );

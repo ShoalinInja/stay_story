@@ -278,8 +278,10 @@ export default function StyleguidePage() {
           <SectionHeader title="Pick a Destination" actions={<RailArrows />} />
           <RailTrack slideClassName="basis-[220px]">
             {RAIL_ITEMS.map((area) => (
-              <Card key={area} className="flex h-40 items-end bg-cream p-4">
-                <p className="type-h3">{area}</p>
+              <Card key={area} interactive asChild className="flex h-40 items-end bg-cream p-4">
+                <Link href={`/areas/${area.toLowerCase()}`}>
+                  <span className="type-h3">{area}</span>
+                </Link>
               </Card>
             ))}
           </RailTrack>

@@ -21,8 +21,9 @@ export function AccordionTrigger({ className, ...props }: React.ComponentProps<t
   return (
     <UiAccordionTrigger
       className={cn(
-        "min-h-11 items-center rounded-none py-4 type-h3 text-ink hover:no-underline",
-        "focus-visible:border-transparent focus-visible:ring-0 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ring",
+        // type-h3 metrics spelled out: cn can't see type-h3 conflicting with shadcn's text-sm/font-medium.
+        "min-h-11 items-center rounded-none py-4 text-base leading-6 font-semibold text-ink hover:no-underline",
+        "focus-visible:border-transparent focus-visible:ring-0 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-solid focus-visible:outline-ring",
         className,
       )}
       {...props}

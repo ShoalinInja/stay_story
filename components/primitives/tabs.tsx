@@ -32,7 +32,7 @@ export function TabsTrigger({ className, ...props }: React.ComponentProps<typeof
     <UiTabsTrigger
       className={cn(
         "h-11 flex-none rounded-none px-0 text-sm font-semibold text-muted-text hover:text-ink data-active:text-ink",
-        "focus-visible:ring-0 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ring",
+        "focus-visible:ring-0 focus-visible:outline-2 focus-visible:-outline-offset-2 focus-visible:outline-solid focus-visible:outline-ring", // inset: the list scrolls horizontally and would clip it
         "after:bg-ink group-data-horizontal/tabs:after:bottom-0",
         className,
       )}
@@ -42,5 +42,5 @@ export function TabsTrigger({ className, ...props }: React.ComponentProps<typeof
 }
 
 export function TabsContent({ className, ...props }: React.ComponentProps<typeof UiTabsContent>) {
-  return <UiTabsContent className={cn("type-body", className)} {...props} />;
+  return <UiTabsContent className={cn("type-body focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-solid focus-visible:outline-ring", className)} {...props} />;
 }

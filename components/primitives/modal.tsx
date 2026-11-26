@@ -6,10 +6,9 @@ import {
   Dialog,
   DialogClose,
   DialogContent,
-  DialogDescription,
-  DialogTitle,
   DialogTrigger,
 } from "@/components/ui/dialog";
+import { Dialog as DialogPrimitive } from "radix-ui";
 import { cn } from "@/lib/utils";
 import { Button } from "./button";
 
@@ -46,7 +45,7 @@ export function Modal({
         className={cn("max-h-[90dvh] overflow-y-auto rounded-card bg-surface p-6 sm:max-w-lg", className)}
       >
         <div className="flex items-start justify-between gap-4">
-          <DialogTitle className="type-h2 text-ink">{title}</DialogTitle>
+          <DialogPrimitive.Title className="type-h2 text-ink">{title}</DialogPrimitive.Title>
           <DialogClose asChild>
             <Button variant="ghost" size="md" className="-mt-2 -mr-2 size-11 p-0" aria-label={closeLabel}>
               <X aria-hidden className="size-5" />
@@ -54,9 +53,9 @@ export function Modal({
           </DialogClose>
         </div>
         {description ? (
-          <DialogDescription className="type-body text-muted-text">{description}</DialogDescription>
+          <DialogPrimitive.Description className="type-body text-muted-text">{description}</DialogPrimitive.Description>
         ) : (
-          <DialogDescription className="sr-only">{title}</DialogDescription>
+          <DialogPrimitive.Description className="sr-only">{title}</DialogPrimitive.Description>
         )}
         {children}
       </DialogContent>

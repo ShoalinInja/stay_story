@@ -1,0 +1,326 @@
+{
+  "about": {
+    "alt": "Stay Story “About Us” collage: a host in a dark suit framed by scenes labelled Stays, Events & Celebrations, Experiences, Deliveries, Dining & Concierge and Artists & Entertainment",
+    "hasBakedText": true
+  },
+  "airport-transfers-banner": {
+    "alt": "Airliner on a runway beside the headline “Start and end your journey the right way: smooth pickups, stress-free drop-offs”",
+    "hasBakedText": true
+  },
+  "airport-transfers-cover": {
+    "alt": "Chauffeur holding a car door open for a couple at an airport, under the title “Airport Transfers”",
+    "hasBakedText": true
+  },
+  "apartments-hotels-banner": {
+    "alt": "Four-poster hotel bedroom in a gold circular frame beside the headline “Comfortable stays, just like home”",
+    "hasBakedText": true
+  },
+  "apartments-hotels-cover": {
+    "alt": "Couple on a balcony overlooking a resort pool and sea at sunset, under the title “Apartments & Hotels”",
+    "hasBakedText": true
+  },
+  "artists-entertainment-banner": {
+    "alt": "DJ at a mixing deck with inset photos of a singer and a bride’s makeup, beside the headline “Bring life to every celebration”",
+    "hasBakedText": true
+  },
+  "artists-entertainment-cover": {
+    "alt": "DJ, belly dancer, makeup artist and henna artist at a candlelit party, under the script title “Artists & Entertainment”",
+    "hasBakedText": true
+  },
+  "bachelor-party-banner": {
+    "alt": "Polaroid-style photos of friends toasting at a party beside the headline “Celebrate freedom before the big day”",
+    "hasBakedText": true
+  },
+  "bachelor-party-cover": {
+    "alt": "Four men in sunglasses clinking beer bottles on a boat deck, under the title “Bachelor Experiences”",
+    "hasBakedText": true
+  },
+  "bartenders-mixologists-banner": {
+    "alt": "Two bartenders shaking cocktails at a backlit bar beside the headline “Every sip tells a story”",
+    "hasBakedText": true
+  },
+  "bartenders-mixologists-cover": {
+    "alt": "Bartender pouring a red cocktail into a coupe glass, under the title “Bartenders & Mixologists”",
+    "hasBakedText": true
+  },
+  "bike-rentals-banner": {
+    "alt": "Yellow motorbike on a white background beside the headline “Explore Goa on two wheels”",
+    "hasBakedText": true
+  },
+  "bike-rentals-cover": {
+    "alt": "Rider’s view over motorbike handlebars on a coastal road at sunset, under the title “Bike Rentals”",
+    "hasBakedText": true
+  },
+  "cake-special-requests-banner": {
+    "alt": "Chocolate and strawberry cream cakes beside the headline “Sweet surprises, perfectly delivered”",
+    "hasBakedText": true
+  },
+  "cake-special-requests-cover": {
+    "alt": "Tiered birthday cake with gold detailing and fairy lights, under the title “Cake & Special Requests”",
+    "hasBakedText": true
+  },
+  "chauffeur-services-banner": {
+    "alt": "Uniformed chauffeur opening a car door for a passenger, beside the headline “Drive in comfort, arrive in style”",
+    "hasBakedText": true
+  },
+  "chauffeur-services-cover": {
+    "alt": "Chauffeur driving a couple along a palm-lined coastal road at sunset, under the title “Chauffeur Services”",
+    "hasBakedText": true
+  },
+  "dancers-performers-banner": {
+    "alt": "Two street dancers mid-move on a purple background beside the headline “Move to the rhythm, feel the energy”",
+    "hasBakedText": true
+  },
+  "dancers-performers-cover": {
+    "alt": "Carnival dancer in a feathered headdress and a fire performer, under the title “Dancers & Performers”",
+    "hasBakedText": true
+  },
+  "dining-concierge-banner": {
+    "alt": "Smiling chef with plated dishes beside the headline “Luxury dining, personalized care”",
+    "hasBakedText": true
+  },
+  "dining-concierge-cover": {
+    "alt": "Chef, bartender and a mother reading to a child around a candlelit seaside dinner table, under the script title “Dining & Concierge”",
+    "hasBakedText": true
+  },
+  "djs-singers-banner": {
+    "alt": "Singer performing into a microphone under pink stage light, beside the headline “Feel the beat, live the music”",
+    "hasBakedText": true
+  },
+  "djs-singers-cover": {
+    "alt": "DJ in headphones and a singer with a microphone at a lit-up party, under the title “DJs & Singers”",
+    "hasBakedText": true
+  },
+  "events-celebrations-banner": {
+    "alt": "White floral wedding arch with inset catering and toast photos, beside the headline “Celebrate every moment in style”",
+    "hasBakedText": true
+  },
+  "events-celebrations-cover": {
+    "alt": "Bride and groom dancing under a floral arch while friends toast at a beach party, under the script title “Events & Celebrations”",
+    "hasBakedText": true
+  },
+  "experiences-banner": {
+    "alt": "Cruise ship at sea with hexagon photos of yoga, groups and travellers, beside the headline “Live the moments, not just the destination”",
+    "hasBakedText": true
+  },
+  "experiences-cover": {
+    "alt": "Couple relaxing on a beach lounge with a shisha and fruit platter, a yacht offshore, under the script title “Experiences”",
+    "hasBakedText": true
+  },
+  "gallery-01": {
+    "alt": "Bedroom with a dark-wood four-poster bed, wooden floor, wall-mounted TV and tall windows onto a green garden"
+  },
+  "gallery-02": {
+    "alt": "Bright living room with a marble floor, armchairs and a wooden TV unit, glass doors opening onto a pool and palms"
+  },
+  "gallery-03": {
+    "alt": "View from a glass balcony down to a plunge pool and white sun loungers, surrounded by palm trees"
+  },
+  "gallery-04": {
+    "alt": "Dining table laid in blue for eight beside an open white kitchen"
+  },
+  "gallery-05": {
+    "alt": "Bedroom with a pale-wood four-poster bed, floral wallpaper and a striped daybed"
+  },
+  "gallery-06": {
+    "alt": "Green vintage dressing table with an ornate gold mirror and a pink pouf"
+  },
+  "gallery-07": {
+    "alt": "Reading nook with a bright blue bookshelf, white chaise longue and framed artwork, opening into a bedroom"
+  },
+  "gallery-08": {
+    "alt": "Upstairs landing with a grey sofa, framed paintings and a staircase with a wooden railing"
+  },
+  "gallery-09": {
+    "alt": "Pink-toned bedroom with a wooden four-poster bed, checked wallpaper, sheer curtains and a TV"
+  },
+  "gallery-10": {
+    "alt": "Four-poster bed with striped cushions facing glass doors that open onto a balcony and palm trees"
+  },
+  "gallery-11": {
+    "alt": "Spacious bedroom with a four-poster bed, pink curtains, two armchairs and wooden floors"
+  },
+  "gallery-12": {
+    "alt": "Covered balcony with wicker chairs and a glass table, overlooking coconut palms and green fields"
+  },
+  "gallery-13": {
+    "alt": "Modern bathroom with a glass shower enclosure, wide mirror and stone vanity"
+  },
+  "gallery-14": {
+    "alt": "Long lap pool lined with white loungers and a wicker side table beside glass-fronted rooms"
+  },
+  "gallery-15": {
+    "alt": "Lap pool running alongside a modern two-storey villa with glass doors and tropical planting"
+  },
+  "gallery-16": {
+    "alt": "Pool at dusk beside a glass-fronted villa, framed by palms and dense greenery"
+  },
+  "home-banner-1103571775316870": {
+    "alt": "Traveller facing landmark photos in hexagon frames beside the headline “Travel easy, explore freely”",
+    "hasBakedText": true
+  },
+  "home-banner-1284321775316851": {
+    "alt": "Modern house with a pool in a gold frame beside the headline “Settle in comfort, stay without limits”",
+    "hasBakedText": true
+  },
+  "home-banner-2328461775316862": {
+    "alt": "Four-poster bedroom with hexagon room photos beside the headline “Feel at home, wherever you stay”",
+    "hasBakedText": true
+  },
+  "home-banner-2800241775316876": {
+    "alt": "Four-poster villa bedroom beside the headline “Luxury living for every short escape: stay private, stay comfortable, stay unforgettable”",
+    "hasBakedText": true
+  },
+  "home-banner-295081775316857": {
+    "alt": "Modern two-storey house with interior insets beside the headline “Find your dream property in Goa”",
+    "hasBakedText": true
+  },
+  "home-banner-4405971775316841": {
+    "alt": "Airliner on a runway beside the headline “Start and end your journey the right way”",
+    "hasBakedText": true
+  },
+  "home-banner-8664261775316846": {
+    "alt": "Floral four-poster hotel bedroom in a gold circle beside the headline “Comfortable stays, just like home”",
+    "hasBakedText": true
+  },
+  "home-front-banner": {
+    "alt": "Stay Story collage of a beachfront villa, yacht and chauffeur car above six tiles: Stay, Travel, Experiences, Events & Celebrations, Dining & Concierge, Artists & Entertainment",
+    "hasBakedText": true
+  },
+  "long-term-rentals-banner": {
+    "alt": "Modern house with a pool in a gold frame beside the headline “Settle in comfort, stay without limits”",
+    "hasBakedText": true
+  },
+  "long-term-rentals-cover": {
+    "alt": "Woman on a balcony of a furnished living room overlooking hills and sea, under the title “Long-Term Rentals”",
+    "hasBakedText": true
+  },
+  "makeup-styling-banner": {
+    "alt": "Bride in traditional jewellery with makeup insets beside the headline “Look confident, feel unforgettable”",
+    "hasBakedText": true
+  },
+  "makeup-styling-cover": {
+    "alt": "Makeup artist brushing a bride’s face, under the title “Makeup & Styling”",
+    "hasBakedText": true
+  },
+  "party-planning-banner": {
+    "alt": "Crowd dancing under party lights beside the headline “I plan it, you enjoy it”",
+    "hasBakedText": true
+  },
+  "party-planning-cover": {
+    "alt": "Friends with sparklers and drinks at a poolside night party, under the title “Party Planning”",
+    "hasBakedText": true
+  },
+  "private-chef-catering-banner": {
+    "alt": "Chef in whites beside a plated dish and the headline “Fine dining, served just for you”",
+    "hasBakedText": true
+  },
+  "private-chef-catering-cover": {
+    "alt": "Chef serving a couple at a candlelit seaside table, under the title “Private Chef & Catering”",
+    "hasBakedText": true
+  },
+  "private-events-banner": {
+    "alt": "Candlelit banquet tables with glassware beside the headline “Exclusive events, personally yours”",
+    "hasBakedText": true
+  },
+  "private-events-cover": {
+    "alt": "Two couples toasting champagne at an evening gathering, under the title “Private Events”",
+    "hasBakedText": true
+  },
+  "property-sales-banner": {
+    "alt": "Modern two-storey house with interior insets beside the headline “Find your dream property in Goa”",
+    "hasBakedText": true
+  },
+  "property-sales-cover": {
+    "alt": "Couple looking over a villa pool and palms at sunset, under the title “Property Sales”",
+    "hasBakedText": true
+  },
+  "self-drive-cars-banner": {
+    "alt": "Grey SUV on an orange background beside the headline “Your journey, your rules, your road”",
+    "hasBakedText": true
+  },
+  "self-drive-cars-cover": {
+    "alt": "Driver’s view of a coastal road at sunset through a car windscreen, under the title “Self-Drive Cars”",
+    "hasBakedText": true
+  },
+  "shisha-experience-banner": {
+    "alt": "Hookah with coloured smoke on a dark background beside the headline “Relax, unwind, indulge in every puff”",
+    "hasBakedText": true
+  },
+  "shisha-experience-cover": {
+    "alt": "Couple sharing a hookah on a terrace at sunset, under the title “Shisha Experience”",
+    "hasBakedText": true
+  },
+  "spiritual-wellness-banner": {
+    "alt": "Woman holding a yoga pose beside the headline “Reconnect within, feel true peace”",
+    "hasBakedText": true
+  },
+  "spiritual-wellness-cover": {
+    "alt": "Woman meditating cross-legged on rocks by the sea at sunset, under the title “Spiritual & Wellness”",
+    "hasBakedText": true
+  },
+  "stay-banner": {
+    "alt": "Four-poster bedroom with hexagon room photos beside the headline “Feel at home, wherever you stay”",
+    "hasBakedText": true
+  },
+  "stay-cover": {
+    "alt": "Couple outside a pool villa with a “For Sale” sign in the garden, under the script title “Stay”",
+    "hasBakedText": true
+  },
+  "tattoo-henna-face-art-banner": {
+    "alt": "Close-up of henna-decorated hands with insets beside the headline “Art that speaks without words”",
+    "hasBakedText": true
+  },
+  "tattoo-henna-face-art-cover": {
+    "alt": "Artists applying henna and a temporary tattoo, under the title “Tattoo / Henna / Face Art”",
+    "hasBakedText": true
+  },
+  "travel-services-banner": {
+    "alt": "Traveller facing landmark photos in hexagon frames beside the headline “Travel easy, explore freely”",
+    "hasBakedText": true
+  },
+  "travel-services-cover": {
+    "alt": "Couple walking past chauffeured cars with an aircraft overhead, under the script title “Travel”",
+    "hasBakedText": true
+  },
+  "villas-banner": {
+    "alt": "Four-poster villa bedroom beside the headline “Luxury living for every short escape”",
+    "hasBakedText": true
+  },
+  "villas-cover": {
+    "alt": "Two-storey villa with a pool and palms at sunset, under the title “Villas (Short Stay)”",
+    "hasBakedText": true
+  },
+  "vip-club-access-banner": {
+    "alt": "Nightclub lounge with red lighting and insets beside the headline “Step into the world of exclusive nights”",
+    "hasBakedText": true
+  },
+  "vip-club-access-cover": {
+    "alt": "Couple with champagne in a crowded nightclub, under the title “VIP Club Access”",
+    "hasBakedText": true
+  },
+  "wedding-services-banner": {
+    "alt": "Wedding photos of mehndi hands and garlands in a flower shape beside the headline “Crafting weddings that feel like a dream”",
+    "hasBakedText": true
+  },
+  "wedding-services-cover": {
+    "alt": "Bride and groom by the sea at sunset under a floral arch, under the title “Wedding Services”",
+    "hasBakedText": true
+  },
+  "workshops-activities-banner": {
+    "alt": "Instructor leading a hands-on class around a table beside the headline “Learn, create, experience more”",
+    "hasBakedText": true
+  },
+  "workshops-activities-cover": {
+    "alt": "Couple shaping clay on a pottery wheel, under the title “Workshops & Activities”",
+    "hasBakedText": true
+  },
+  "yacht-cruises-banner": {
+    "alt": "Cruise ship and speedboat on turquoise water beside the headline “Sail into luxury, experience the ocean”",
+    "hasBakedText": true
+  },
+  "yacht-cruises-cover": {
+    "alt": "Couple at a yacht rail watching the sun set over the sea, under the title “Yacht & Cruises”",
+    "hasBakedText": true
+  }
+}

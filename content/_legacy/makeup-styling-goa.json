@@ -1,0 +1,119 @@
+{
+  "legacyPath": "/makeup-styling-goa.php",
+  "url": "https://www.staystory.in/makeup-styling-goa.php",
+  "status": 200,
+  "title": "Makeup & Styling in Goa | Professional Artists",
+  "description": "Book makeup and styling in Goa with professional artists for weddings, parties, and events by Stay Story.",
+  "keywords": "makeup artist Goa, styling services Goa, bridal makeup Goa, party makeup Goa, hair styling Goa, professional makeup Goa, beauty services Goa, Goa makeup artist, Stay Story makeup Goa",
+  "h1": "Makeup & Styling in Goa - Professional Beauty & Grooming Services",
+  "blocks": [
+    {
+      "heading": "Professional Makeup & Styling Services in Goa",
+      "level": "h3",
+      "paragraphs": [
+        "Looking your best for a special occasion requires skill, creativity, and attention to detail. Stay Story offers professional makeup and styling services in Goa, providing expert artists who deliver customized looks for every event. Whether it’s a wedding, party, photoshoot, or private celebration, our services ensure you feel confident and well-prepared."
+      ]
+    },
+    {
+      "heading": "Expert Makeup Artists for Every Occasion",
+      "level": "h3",
+      "paragraphs": [
+        "Our experienced makeup artists specialize in a wide range of styles, from natural and subtle looks to glamorous and high-definition makeup. We use high-quality products and professional techniques to ensure long-lasting results. Each session is tailored to suit your skin type, preferences, and event requirements."
+      ]
+    },
+    {
+      "heading": "Personalized Styling & Grooming Services",
+      "level": "h3",
+      "paragraphs": [
+        "In addition to makeup, Stay Story offers styling services that include hair styling, grooming, and overall look coordination. Our experts help you achieve a complete appearance that complements your outfit and event theme. From traditional styles to modern trends, we create looks that enhance your personality."
+      ]
+    },
+    {
+      "heading": "Bridal & Event Makeup Services",
+      "level": "h3",
+      "paragraphs": [
+        "Weddings and special occasions require detailed planning, and our makeup services are designed to meet those expectations. Whether it’s bridal makeup, pre-wedding functions, or party styling, we ensure a flawless finish that looks great both in person and in photographs."
+      ]
+    },
+    {
+      "heading": "On-Location Services for Convenience",
+      "level": "h3",
+      "paragraphs": [
+        "Stay Story provides on-location makeup and styling services, allowing you to get ready in the comfort of your villa, apartment, or hotel. This adds convenience and saves time, especially during busy event schedules."
+      ]
+    },
+    {
+      "heading": "High-Quality Products & Hygiene Standards",
+      "level": "h3",
+      "paragraphs": [
+        "We prioritize hygiene and safety by using clean tools and premium products. Our artists follow professional standards to ensure a safe and comfortable experience for every client."
+      ]
+    },
+    {
+      "heading": "Why Choose Stay Story for Makeup & Styling?",
+      "level": "h3",
+      "paragraphs": [
+        "Stay Story combines experienced professionals with personalized service to deliver high-quality results. Our focus on detail, reliability, and customer satisfaction ensures that you receive a seamless and enjoyable experience."
+      ]
+    },
+    {
+      "heading": "Book Your Makeup & Styling Service Today",
+      "level": "h3",
+      "paragraphs": [
+        "Prepare for your special occasion with confidence by booking makeup and styling services with Stay Story in Goa. From subtle elegance to bold transformations, we provide everything you need to look your best. Contact us today to schedule your appointment."
+      ]
+    }
+  ],
+  "cards": [
+    {
+      "href": "https://www.staystory.in/tattoo-henna-face-art-goa.php",
+      "image": "https://www.staystory.in/assets/upload/pages/cover/8651591775495824.png",
+      "title": "Tattoo / Henna / Face Art",
+      "text": "Book tattoo, henna, and face art services in Goa with Stay Story. Add creativity and fun to your events with professional artists and custom designs."
+    },
+    {
+      "href": "https://www.staystory.in/makeup-styling-goa.php",
+      "image": "https://www.staystory.in/assets/upload/pages/cover/4441121775495819.png",
+      "title": "Makeup & Styling",
+      "text": "Book makeup and styling services in Goa with Stay Story. Get professional artists for weddings, parties, and special events with customized looks."
+    },
+    {
+      "href": "https://www.staystory.in/dancers-performers-goa.php",
+      "image": "https://www.staystory.in/assets/upload/pages/cover/8575061775495811.png",
+      "title": "Dancers & Performers",
+      "text": "Hire dancers and performers in Goa with Stay Story. Add energy and excitement to your events with professional performances and live entertainment."
+    },
+    {
+      "href": "https://www.staystory.in/djs-singers-in-goa.php",
+      "image": "https://www.staystory.in/assets/upload/pages/cover/279351775495804.png",
+      "title": "DJs & Singers",
+      "text": "Book DJs and singers in Goa with Stay Story. Enjoy live music, DJ performances, and professional entertainment for parties, weddings, and events."
+    }
+  ],
+  "images": [
+    {
+      "src": "https://www.staystory.in/assets/img/logo.png",
+      "alt": "logo"
+    },
+    {
+      "src": "https://www.staystory.in/assets/upload/pages/banner/1715651775448974.jpg",
+      "alt": "Makeup & Styling"
+    },
+    {
+      "src": "https://www.staystory.in/assets/upload/pages/cover/4441121775495819.png",
+      "alt": ""
+    },
+    {
+      "src": "https://www.staystory.in/assets/upload/pages/cover/8651591775495824.png",
+      "alt": "Tattoo / Henna / Face Art"
+    },
+    {
+      "src": "https://www.staystory.in/assets/upload/pages/cover/8575061775495811.png",
+      "alt": "Dancers & Performers"
+    },
+    {
+      "src": "https://www.staystory.in/assets/upload/pages/cover/279351775495804.png",
+      "alt": "DJs & Singers"
+    }
+  ]
+}

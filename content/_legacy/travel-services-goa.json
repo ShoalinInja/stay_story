@@ -1,0 +1,116 @@
+{
+  "legacyPath": "/travel-services-goa.php",
+  "url": "https://www.staystory.in/travel-services-goa.php",
+  "status": 200,
+  "title": "Travel Services in Goa | Car Rental & Transfers",
+  "description": "Book travel services in Goa including airport transfers, car rentals, chauffeur and bike hire with Stay Story for a smooth travel experience.",
+  "keywords": "travel services Goa, airport transfer Goa, car rental Goa, chauffeur service Goa, bike rental Goa, self drive cars Goa, Goa transport services, Goa travel solutions, Stay Story travel Goa",
+  "h1": "Reliable Travel Services in Goa – Transfers, Rentals & Chauffeurs",
+  "blocks": [
+    {
+      "heading": "Seamless Travel Solutions in Goa with Stay Story",
+      "level": "h3",
+      "paragraphs": [
+        "Navigating Goa becomes effortless with Stay Story’s professional travel services. Whether you're arriving at the airport, planning daily commutes, or exploring hidden gems, we offer reliable and flexible transportation options tailored to your needs. Our goal is to ensure that your journey across Goa is smooth, safe, and enjoyable."
+      ]
+    },
+    {
+      "heading": "Airport Transfers for Stress-Free Arrivals",
+      "level": "h3",
+      "paragraphs": [
+        "Start your trip without hassle with our dependable airport transfer services. Stay Story provides timely pickups and drop-offs, ensuring you reach your destination comfortably. Our drivers are experienced, punctual, and familiar with Goa’s routes, allowing you to relax after your journey while we handle the logistics."
+      ]
+    },
+    {
+      "heading": "Chauffeur Services for Premium Comfort",
+      "level": "h3",
+      "paragraphs": [
+        "For those seeking a more refined travel experience, our chauffeur-driven services offer convenience and luxury. Whether for business travel, special occasions, or sightseeing, our professional chauffeurs ensure a comfortable ride with a focus on safety and punctuality. Enjoy Goa without worrying about navigation or parking."
+      ]
+    },
+    {
+      "heading": "Self-Drive Cars for Complete Freedom",
+      "level": "h3",
+      "paragraphs": [
+        "Prefer to explore at your own pace? Stay Story offers a range of well-maintained self-drive cars, giving you the flexibility to travel independently. From compact cars to premium vehicles, choose what suits your travel style and enjoy the freedom to discover Goa on your own terms."
+      ]
+    },
+    {
+      "heading": "Bike Rentals for Local Exploration",
+      "level": "h3",
+      "paragraphs": [
+        "Experience Goa like a local with our affordable and convenient bike rental services. Ideal for short distances and scenic routes, bikes allow you to navigate narrow lanes, beaches, and markets with ease. It’s the perfect option for solo travelers and couples looking for a more immersive experience."
+      ]
+    },
+    {
+      "heading": "Why Choose Stay Story for Travel Services?",
+      "level": "h3",
+      "paragraphs": [
+        "Stay Story combines convenience, reliability, and affordability in every travel solution. Our well-maintained vehicles, professional drivers, and customer-focused approach ensure a smooth travel experience. We prioritize safety, punctuality, and transparency, making us a trusted choice for travel services in Goa."
+      ]
+    },
+    {
+      "heading": "Book Your Travel Services Today",
+      "level": "h3",
+      "paragraphs": [
+        "Whether you need airport transfers, a chauffeur-driven car, or a rental vehicle, Stay Story has you covered. Simplify your travel plans and enjoy a seamless journey across Goa. Contact us today to book your travel service and explore Goa with confidence."
+      ]
+    }
+  ],
+  "cards": [
+    {
+      "href": "https://www.staystory.in/bike-rentals-goa.php",
+      "image": "https://www.staystory.in/assets/upload/pages/cover/4343121775492438.png",
+      "title": "Bike Rentals",
+      "text": "Rent bikes in Goa with Stay Story. Choose from scooters and motorbikes for easy, affordable, and flexible travel across beaches and local spots."
+    },
+    {
+      "href": "https://www.staystory.in/self-drive-cars-goa.php",
+      "image": "https://www.staystory.in/assets/upload/pages/cover/7796361775492447.png",
+      "title": "Self-Drive Cars",
+      "text": "Rent self-drive cars in Goa with Stay Story. Choose from a range of well-maintained vehicles and explore Goa at your own pace with complete freedom."
+    },
+    {
+      "href": "https://www.staystory.in/chauffeur-services-goa.php",
+      "image": "https://www.staystory.in/assets/upload/pages/cover/1767701775492455.png",
+      "title": "Chauffeur Services",
+      "text": "Hire chauffeur services in Goa with Stay Story. Enjoy professional drivers, luxury vehicles, and comfortable travel for business, leisure, and events."
+    },
+    {
+      "href": "https://www.staystory.in/airport-transfers-goa.php",
+      "image": "https://www.staystory.in/assets/upload/pages/cover/1891401775492465.png",
+      "title": "Airport Transfers",
+      "text": "Book airport transfers in Goa with Stay Story. Enjoy safe, timely pickup and drop services with professional drivers and comfortable vehicles."
+    }
+  ],
+  "images": [
+    {
+      "src": "https://www.staystory.in/assets/img/logo.png",
+      "alt": "logo"
+    },
+    {
+      "src": "https://www.staystory.in/assets/upload/tourpackage/type/banner/1329701775363928.jpg",
+      "alt": "Travel"
+    },
+    {
+      "src": "https://www.staystory.in/assets/upload/tourpackage/type/cover/6427431775384574.png",
+      "alt": ""
+    },
+    {
+      "src": "https://www.staystory.in/assets/upload/pages/cover/4343121775492438.png",
+      "alt": "Bike Rentals"
+    },
+    {
+      "src": "https://www.staystory.in/assets/upload/pages/cover/7796361775492447.png",
+      "alt": "Self-Drive Cars"
+    },
+    {
+      "src": "https://www.staystory.in/assets/upload/pages/cover/1767701775492455.png",
+      "alt": "Chauffeur Services"
+    },
+    {
+      "src": "https://www.staystory.in/assets/upload/pages/cover/1891401775492465.png",
+      "alt": "Airport Transfers"
+    }
+  ]
+}

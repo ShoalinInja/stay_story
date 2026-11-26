@@ -1,0 +1,112 @@
+{
+  "legacyPath": "/long-term-rentals-goa.php",
+  "url": "https://www.staystory.in/long-term-rentals-goa.php",
+  "status": 200,
+  "title": "Long-Term Rentals in Goa | Homes & Apartments",
+  "description": "Find long-term rentals in Goa including furnished homes and apartments for extended stays with Stay Story. Flexible and affordable options.",
+  "keywords": "long term rentals Goa, monthly rentals Goa, furnished homes Goa, apartments for rent Goa, villas for rent Goa, extended stay Goa, Goa rental properties, digital nomad Goa stay, Stay Story rentals Goa",
+  "h1": "Long-Term Rentals in Goa Comfortable Homes for Extended Stays",
+  "blocks": [
+    {
+      "heading": "Find the Perfect Long-Term Rental in Goa",
+      "level": "h3",
+      "paragraphs": [
+        "Goa has become a preferred destination for extended stays, attracting remote workers, entrepreneurs, and families looking for a relaxed lifestyle. Stay Story offers a curated selection of long-term rental properties designed to provide comfort, convenience, and a sense of home. Whether you are relocating, working remotely, or planning an extended vacation, we help you find the ideal space that fits your lifestyle."
+      ]
+    },
+    {
+      "heading": "Fully Furnished Homes for Hassle-Free Living",
+      "level": "h3",
+      "paragraphs": [
+        "Our long-term rental properties include fully furnished apartments, villas, and independent homes equipped with all essential amenities. From functional kitchens and comfortable living areas to reliable utilities and modern interiors, each property is ready for immediate move-in. This eliminates the need for additional setup and allows you to settle in quickly."
+      ]
+    },
+    {
+      "heading": "Ideal for Remote Work & Digital Nomads",
+      "level": "h3",
+      "paragraphs": [
+        "With the rise of remote work, Goa has become a hotspot for digital nomads. Stay Story provides properties with reliable internet connectivity, peaceful environments, and work-friendly setups. Whether you prefer a quiet residential area or a vibrant neighborhood, we offer options that support productivity and work-life balance."
+      ]
+    },
+    {
+      "heading": "Flexible Rental Options & Competitive Pricing",
+      "level": "h3",
+      "paragraphs": [
+        "We understand that long-term stays require flexibility. Stay Story offers rental options that can be tailored to your duration and budget. From monthly rentals to extended lease agreements, our services are designed to provide value without compromising on quality."
+      ]
+    },
+    {
+      "heading": "Prime Locations Across Goa",
+      "level": "h3",
+      "paragraphs": [
+        "Our properties are located in some of Goa’s most desirable areas, offering easy access to beaches, markets, cafes, and essential services. Whether you prefer North Goa’s lively atmosphere or South Goa’s serene surroundings, we help you find a location that suits your lifestyle preferences."
+      ]
+    },
+    {
+      "heading": "Why Choose Stay Story for Long-Term Rentals?",
+      "level": "h3",
+      "paragraphs": [
+        "Stay Story stands out for its trusted network, verified properties, and personalized support. We ensure transparency in rental agreements and provide assistance throughout your stay. Our local expertise allows us to match you with the right property while simplifying the entire rental process."
+      ]
+    },
+    {
+      "heading": "Secure Your Long-Term Rental Today",
+      "level": "h3",
+      "paragraphs": [
+        "Make Goa your home with Stay Story’s long-term rental services. Explore a wide range of properties designed for extended living and enjoy a seamless rental experience. Contact us today to find your ideal long-term home in Goa."
+      ]
+    }
+  ],
+  "cards": [
+    {
+      "href": "https://www.staystory.in/property-sales-goa.php",
+      "image": "https://www.staystory.in/assets/upload/pages/cover/3991961775491456.png",
+      "title": "Property Sales",
+      "text": "Explore property sales in Goa with Stay Story. Buy villas, apartments, and investment properties with expert guidance and verified listings."
+    },
+    {
+      "href": "https://www.staystory.in/long-term-rentals-goa.php",
+      "image": "https://www.staystory.in/assets/upload/pages/cover/700831775491447.png",
+      "title": "Long-Term Rentals",
+      "text": "Find long-term rentals in Goa with Stay Story. Explore fully furnished homes, apartments, and villas for extended stays with flexible and affordable options."
+    },
+    {
+      "href": "https://www.staystory.in/apartments-hotels-goa.php",
+      "image": "https://www.staystory.in/assets/upload/pages/cover/6600181775491435.png",
+      "title": "Apartments & Hotels",
+      "text": "Find the best apartments and hotels in Goa with Stay Story. Enjoy fully furnished stays, modern amenities, and convenient locations for short or extended visits."
+    },
+    {
+      "href": "https://www.staystory.in/villas-goa.php",
+      "image": "https://www.staystory.in/assets/upload/pages/cover/7491161775491425.png",
+      "title": "Villas (Short Stay)",
+      "text": "Book luxury villas in Goa for short stays with Stay Story. Enjoy private pools, premium amenities, and fully furnished villas for a perfect getaway."
+    }
+  ],
+  "images": [
+    {
+      "src": "https://www.staystory.in/assets/img/logo.png",
+      "alt": "logo"
+    },
+    {
+      "src": "https://www.staystory.in/assets/upload/pages/banner/2851351775365679.jpg",
+      "alt": "Long-Term Rentals"
+    },
+    {
+      "src": "https://www.staystory.in/assets/upload/pages/cover/700831775491447.png",
+      "alt": ""
+    },
+    {
+      "src": "https://www.staystory.in/assets/upload/pages/cover/3991961775491456.png",
+      "alt": "Property Sales"
+    },
+    {
+      "src": "https://www.staystory.in/assets/upload/pages/cover/6600181775491435.png",
+      "alt": "Apartments & Hotels"
+    },
+    {
+      "src": "https://www.staystory.in/assets/upload/pages/cover/7491161775491425.png",
+      "alt": "Villas (Short Stay)"
+    }
+  ]
+}

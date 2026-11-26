@@ -1,0 +1,46 @@
+{
+  "slug": "your-villa-name",
+  "name": "Your Villa Name",
+  "type": "villa",
+  "area": "siolim",
+  "region": "north-goa",
+  "headline": "One line that sells the stay (under 15 words)",
+  "description": "Two or three short paragraphs about the home. Blank line between paragraphs.",
+  "bedrooms": 3,
+  "baths": 3,
+  "maxGuests": 6,
+  "pricePerNight": 15000,
+  "priceNote": "Per night + taxes",
+  "monthlyRent": null,
+  "salePrice": null,
+  "images": [
+    { "src": "/media/stays/your-villa-name/01.webp", "alt": "Describe what is in the photo", "width": 1600, "height": 1067 }
+  ],
+  "amenities": ["private-pool", "wifi", "ac", "kitchen", "parking"],
+  "highlights": ["Private pool", "Walk to the beach", "Chef on request"],
+  "spaces": [
+    { "name": "Living room", "description": "One sentence about the space." }
+  ],
+  "meals": "A private chef can be arranged on request.",
+  "policies": {
+    "checkIn": "2:00 PM",
+    "checkOut": "11:00 AM",
+    "rules": ["No smoking indoors", "Valid photo ID required for all guests"],
+    "cancellation": "Describe your cancellation policy."
+  },
+  "location": {
+    "lat": 15.6316,
+    "lng": 73.7554,
+    "nearby": [{ "name": "Vagator beach", "distance": "10 min drive" }]
+  },
+  "addOns": [
+    { "category": "concierge", "slug": "private-chef" },
+    { "category": "travel", "slug": "airport-transfers" }
+  ],
+  "faqs": [
+    { "q": "A question guests often ask", "a": "Your answer." }
+  ],
+  "collections": ["pool-villas"],
+  "badges": ["new"],
+  "featured": false
+}

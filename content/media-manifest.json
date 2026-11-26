@@ -1,0 +1,1122 @@
+[
+  {
+    "id": "about",
+    "src": "/media/legacy/about.webp",
+    "alt": "Stay Story “About Us” collage: a host in a dark suit framed by scenes labelled Stays, Events & Celebrations, Experiences, Deliveries, Dining & Concierge and Artists & Entertainment",
+    "width": 500,
+    "height": 500,
+    "blurDataURL": "data:image/webp;base64,UklGRn4AAABXRUJQVlA4IHIAAAAwAgCdASoQABAAA4BaJbACdAYv/lX7b8WYAADifS3osYZAVopAbk2PdAsds0AwnyMG4MIXxmBlhGqtdBMouJf1p9kwKGw1vZKjzYZkBbZiuBDyNeG4oUIMdP1GL6T1J6dWGf3juVlphUgO0u2X+00WAAA=",
+    "usedOn": [
+      "/about"
+    ],
+    "hasBakedText": true
+  },
+  {
+    "id": "airport-transfers-banner",
+    "src": "/media/legacy/airport-transfers-banner.webp",
+    "alt": "Airliner on a runway beside the headline “Start and end your journey the right way: smooth pickups, stress-free drop-offs”",
+    "width": 1890,
+    "height": 945,
+    "blurDataURL": "data:image/webp;base64,UklGRlQAAABXRUJQVlA4IEgAAAAQAgCdASoQAAgAA4BaJYgCdAELYLUVItogAP7yLusYkpnmB3sah0CwDKBQ2mxQBzFMEJ1Om+qoCa1t/eyEoRy6hzpdm4X5kAA=",
+    "usedOn": [
+      "/travel/airport-transfers"
+    ],
+    "hasBakedText": true
+  },
+  {
+    "id": "airport-transfers-cover",
+    "src": "/media/legacy/airport-transfers-cover.webp",
+    "alt": "Chauffeur holding a car door open for a couple at an airport, under the title “Airport Transfers”",
+    "width": 500,
+    "height": 500,
+    "blurDataURL": "data:image/webp;base64,UklGRnAAAABXRUJQVlA4IGQAAABQAgCdASoQABAAA4BaJYwCdAENyPBRgzWbnIAA/spZXGlbFoxVCHAlJeGorfcZA79lqO4ic7CvMM+fLIaxoA3G9LB39Bg4aM+xgtk/MlbZ/6ejUhYO6V2CpYQ03mFruMTDuUAA",
+    "usedOn": [
+      "/travel",
+      "/travel/airport-transfers",
+      "/travel/bike-rentals",
+      "/travel/chauffeur",
+      "/travel/self-drive-cars"
+    ],
+    "hasBakedText": true
+  },
+  {
+    "id": "apartments-hotels-banner",
+    "src": "/media/legacy/apartments-hotels-banner.webp",
+    "alt": "Four-poster hotel bedroom in a gold circular frame beside the headline “Comfortable stays, just like home”",
+    "width": 1890,
+    "height": 945,
+    "blurDataURL": "data:image/webp;base64,UklGRmYAAABXRUJQVlA4IFoAAABQAgCdASoQAAgAA4BaJYgCsAYrnwn+JY9By4gA/uhb3Y3CGOlDRQyJRZwgAoBfns9iONbv9HM9Oot7hDEFE7H2qRMEQWm/UqOa5NYzHkQwulhxJyOGs/iAAAA=",
+    "usedOn": [
+      "/stays/apartments-hotels"
+    ],
+    "hasBakedText": true
+  },
+  {
+    "id": "apartments-hotels-cover",
+    "src": "/media/legacy/apartments-hotels-cover.webp",
+    "alt": "Couple on a balcony overlooking a resort pool and sea at sunset, under the title “Apartments & Hotels”",
+    "width": 500,
+    "height": 500,
+    "blurDataURL": "data:image/webp;base64,UklGRn4AAABXRUJQVlA4IHIAAAAQAgCdASoQABAAA4BaJZgCdADxAr7TZ34AAP4LdbboPRJ9mmtdf3LmgVpkkeNsBzLLXvXyd52iZUkTjeVRhj/rMvYPs8VS2HNO4Fqof2tkA+KfrLNL/P7kN7mzblWXAZ5ReqfvLSPNKEy1BgY6TN7QAAA=",
+    "usedOn": [
+      "/property-sales",
+      "/stays",
+      "/stays/apartments-hotels",
+      "/stays/long-term-rentals",
+      "/stays/villas"
+    ],
+    "hasBakedText": true
+  },
+  {
+    "id": "artists-entertainment-banner",
+    "src": "/media/legacy/artists-entertainment-banner.webp",
+    "alt": "DJ at a mixing deck with inset photos of a singer and a bride’s makeup, beside the headline “Bring life to every celebration”",
+    "width": 1890,
+    "height": 945,
+    "blurDataURL": "data:image/webp;base64,UklGRmgAAABXRUJQVlA4IFwAAAAQAgCdASoQAAgAA4BaJbACdAEWPa/MLFOAAP27bV6VoNp/fpeI7NsQ46vNbaNsNNGF3ofQMm4B/DzdwQlyF+wGA7Jh1kA+8XDq7e32Vu3yDtcGiHdlsepjLNYAAA==",
+    "usedOn": [
+      "/entertainment"
+    ],
+    "hasBakedText": true
+  },
+  {
+    "id": "artists-entertainment-cover",
+    "src": "/media/legacy/artists-entertainment-cover.webp",
+    "alt": "DJ, belly dancer, makeup artist and henna artist at a candlelit party, under the script title “Artists & Entertainment”",
+    "width": 400,
+    "height": 400,
+    "blurDataURL": "data:image/webp;base64,UklGRnoAAABXRUJQVlA4IG4AAABwAgCdASoQABAAA4BaJbACdAdwLhFtg3gSv6wAAP6r5bWs8C+FQAhHtut6LU0RjJ3xkKMutXPef8vUZKtWV9Avf0DTDjTHHCVXbdRuQFX3DLK+wDpmZo0NmSYgxPW9Ox0a59Ceuuvz5HwvRuqQAA==",
+    "usedOn": [
+      "/",
+      "/entertainment"
+    ],
+    "hasBakedText": true
+  },
+  {
+    "id": "bachelor-party-banner",
+    "src": "/media/legacy/bachelor-party-banner.webp",
+    "alt": "Polaroid-style photos of friends toasting at a party beside the headline “Celebrate freedom before the big day”",
+    "width": 1890,
+    "height": 945,
+    "blurDataURL": "data:image/webp;base64,UklGRmQAAABXRUJQVlA4IFgAAABQAgCdASoQAAgAA4BaJQBOgMVa36woAGIwfKgA/vBKMpAxJqhx4XqHHF3P/EqICE99uo2hwJNsvI6b0fCzPqxujaLPd9QXKyju5n+AoraDr+MtklZ0uAAA",
+    "usedOn": [
+      "/events/bachelor-parties"
+    ],
+    "hasBakedText": true
+  },
+  {
+    "id": "bachelor-party-cover",
+    "src": "/media/legacy/bachelor-party-cover.webp",
+    "alt": "Four men in sunglasses clinking beer bottles on a boat deck, under the title “Bachelor Experiences”",
+    "width": 500,
+    "height": 500,
+    "blurDataURL": "data:image/webp;base64,UklGRn4AAABXRUJQVlA4IHIAAAAwAgCdASoQABAAA4BaJaACdAEQE/nW1Q6EgAD+o3x9592MuqggMJrZicZtEF/+qU8yHVibO38s4+zxn5xtATfqmEmJGOmJ0YsTCuYIXEHEIvdpCVb6L5m3/8/v8MadmFJuELz/Vybe5Yghuk/iZ5GlYAA=",
+    "usedOn": [
+      "/events",
+      "/events/bachelor-parties",
+      "/events/party-planning",
+      "/events/private-events",
+      "/events/weddings"
+    ],
+    "hasBakedText": true
+  },
+  {
+    "id": "bartenders-mixologists-banner",
+    "src": "/media/legacy/bartenders-mixologists-banner.webp",
+    "alt": "Two bartenders shaking cocktails at a backlit bar beside the headline “Every sip tells a story”",
+    "width": 1890,
+    "height": 945,
+    "blurDataURL": "data:image/webp;base64,UklGRlIAAABXRUJQVlA4IEYAAAAQAgCdASoQAAgAA4BaJZQC7AEPSb3olKAAAP7xnj6kQyaF7JYB67dLRe0udNaG/AmGpNxrT/FeU+Y4Bbp2HnoOabMBUgAA",
+    "usedOn": [
+      "/concierge/bartenders"
+    ],
+    "hasBakedText": true
+  },
+  {
+    "id": "bartenders-mixologists-cover",
+    "src": "/media/legacy/bartenders-mixologists-cover.webp",
+    "alt": "Bartender pouring a red cocktail into a coupe glass, under the title “Bartenders & Mixologists”",
+    "width": 500,
+    "height": 500,
+    "blurDataURL": "data:image/webp;base64,UklGRn4AAABXRUJQVlA4IHIAAAAwAgCdASoQABAAA4BaJZgCdAYuRwH1+Ir3AAD+71BL6siikg3EMsnacLMcE1vg7HadUOvwTJuV6rlg0m4AVDsIqyanDy8OFaS8hUI/9sbX1gzY5IBI58pdn8bxOYF9tNjA/RVMP5msR6S6XIbE0wJ5oAA=",
+    "usedOn": [
+      "/concierge",
+      "/concierge/bartenders",
+      "/concierge/private-chef",
+      "/concierge/special-requests"
+    ],
+    "hasBakedText": true
+  },
+  {
+    "id": "bike-rentals-banner",
+    "src": "/media/legacy/bike-rentals-banner.webp",
+    "alt": "Yellow motorbike on a white background beside the headline “Explore Goa on two wheels”",
+    "width": 1890,
+    "height": 945,
+    "blurDataURL": "data:image/webp;base64,UklGRmoAAABXRUJQVlA4IF4AAADwAQCdASoQAAgAA4BaJbACdAEN00dXgcAA/vCMCiqT3IWGlsLdLvpxfMnd+5rBnDI8db3ucOy21vUCVQhzBGrkp7ui8EQ3TN2KkBxmu64gQ54gP0gXd0CiNGtNhAAA",
+    "usedOn": [
+      "/travel/bike-rentals"
+    ],
+    "hasBakedText": true
+  },
+  {
+    "id": "bike-rentals-cover",
+    "src": "/media/legacy/bike-rentals-cover.webp",
+    "alt": "Rider’s view over motorbike handlebars on a coastal road at sunset, under the title “Bike Rentals”",
+    "width": 500,
+    "height": 500,
+    "blurDataURL": "data:image/webp;base64,UklGRm4AAABXRUJQVlA4IGIAAAAQAgCdASoQABAAA4BaJQBOgCG+GC9CP1PAAP7YPq8sh/3xr8k8xWAnbHZxv5dvfRv0Q/taY25KxnorDHvNHI9BoC12QnKomDbrAPKCg5J+v3/hCMf3685md8ZT6Dw/12hwAA==",
+    "usedOn": [
+      "/travel",
+      "/travel/airport-transfers",
+      "/travel/bike-rentals",
+      "/travel/chauffeur",
+      "/travel/self-drive-cars"
+    ],
+    "hasBakedText": true
+  },
+  {
+    "id": "cake-special-requests-banner",
+    "src": "/media/legacy/cake-special-requests-banner.webp",
+    "alt": "Chocolate and strawberry cream cakes beside the headline “Sweet surprises, perfectly delivered”",
+    "width": 1890,
+    "height": 945,
+    "blurDataURL": "data:image/webp;base64,UklGRlYAAABXRUJQVlA4IEoAAACwAQCdASoQAAgAA4BaJQBOgCFscXeEAP7yNXuUQRXQf2Anns/3+SA1OOLC+u1OKwuznmA+n/osfzqyMA2ITqEyA3kB/YnyA6qAAA==",
+    "usedOn": [
+      "/concierge/special-requests"
+    ],
+    "hasBakedText": true
+  },
+  {
+    "id": "cake-special-requests-cover",
+    "src": "/media/legacy/cake-special-requests-cover.webp",
+    "alt": "Tiered birthday cake with gold detailing and fairy lights, under the title “Cake & Special Requests”",
+    "width": 500,
+    "height": 500,
+    "blurDataURL": "data:image/webp;base64,UklGRnoAAABXRUJQVlA4IG4AAAAQAgCdASoQABAAA4BaJbACdAEN0vGfWm5AAP7Sa6gaGbKwH57tddGpAVvTymMuMccwD2HcUxNnmSHdklhMvVIYoWMf9CfS7/2czWmoNMypTJ6CAHLy//kQAg97D/WvOeusytlmT8qS/K1ePQAAAA==",
+    "usedOn": [
+      "/concierge",
+      "/concierge/bartenders",
+      "/concierge/private-chef",
+      "/concierge/special-requests"
+    ],
+    "hasBakedText": true
+  },
+  {
+    "id": "chauffeur-services-banner",
+    "src": "/media/legacy/chauffeur-services-banner.webp",
+    "alt": "Uniformed chauffeur opening a car door for a passenger, beside the headline “Drive in comfort, arrive in style”",
+    "width": 1890,
+    "height": 945,
+    "blurDataURL": "data:image/webp;base64,UklGRmAAAABXRUJQVlA4IFQAAAAQAgCdASoQAAgAA4BaJYgC7AELyLQGZtqAAP70nk43X+yICJpNbnz0zPQLeaBKK9qmOi74Cca+W8iXlz4kOzAVZoN1RtoQOcyKU8it2Y/GeUoAAAA=",
+    "usedOn": [
+      "/travel/chauffeur"
+    ],
+    "hasBakedText": true
+  },
+  {
+    "id": "chauffeur-services-cover",
+    "src": "/media/legacy/chauffeur-services-cover.webp",
+    "alt": "Chauffeur driving a couple along a palm-lined coastal road at sunset, under the title “Chauffeur Services”",
+    "width": 500,
+    "height": 500,
+    "blurDataURL": "data:image/webp;base64,UklGRnwAAABXRUJQVlA4IHAAAAAwAgCdASoQABAAA4BaJQBOgMYdxbd0rgroAAD+T6kEW3zVAYEnCqbb0CJNlOATnmGSvBsbTYQ1JvbUrbUhoNgPC0VL1h5BZ511/tgVTTiG+ozWCDRLedMEIWQVf8DrCmcUKNPJyenfQxBxIb2AWAAA",
+    "usedOn": [
+      "/travel",
+      "/travel/airport-transfers",
+      "/travel/bike-rentals",
+      "/travel/chauffeur",
+      "/travel/self-drive-cars"
+    ],
+    "hasBakedText": true
+  },
+  {
+    "id": "dancers-performers-banner",
+    "src": "/media/legacy/dancers-performers-banner.webp",
+    "alt": "Two street dancers mid-move on a purple background beside the headline “Move to the rhythm, feel the energy”",
+    "width": 1890,
+    "height": 945,
+    "blurDataURL": "data:image/webp;base64,UklGRlQAAABXRUJQVlA4IEgAAAAwAgCdASoQAAgAA4BaJagCdAELzw7s5mr8AAD+wE78ChgitcAI5STWmlHHMLAsXZcDj8/dbtLn97FYuC+2TwgMzb+RtuwRgAA=",
+    "usedOn": [
+      "/entertainment/dancers-performers"
+    ],
+    "hasBakedText": true
+  },
+  {
+    "id": "dancers-performers-cover",
+    "src": "/media/legacy/dancers-performers-cover.webp",
+    "alt": "Carnival dancer in a feathered headdress and a fire performer, under the title “Dancers & Performers”",
+    "width": 500,
+    "height": 500,
+    "blurDataURL": "data:image/webp;base64,UklGRoIAAABXRUJQVlA4IHYAAAAwAgCdASoQABAAA4BaJbACdAEPhvtq/cgUAAD+0PrJCL64lMKdSK8Df31U7vQiXX7p+DK0RPJ+jbxFrn3/d0cPAjRaLajEyxICxqNqvw1LdVlgH2Bv2poWn/gGhfKAnL1pKCrzGQJrzzygCkVyRjT36EkoAAAA",
+    "usedOn": [
+      "/entertainment",
+      "/entertainment/dancers-performers",
+      "/entertainment/djs-singers",
+      "/entertainment/makeup-styling",
+      "/entertainment/tattoo-henna"
+    ],
+    "hasBakedText": true
+  },
+  {
+    "id": "dining-concierge-banner",
+    "src": "/media/legacy/dining-concierge-banner.webp",
+    "alt": "Smiling chef with plated dishes beside the headline “Luxury dining, personalized care”",
+    "width": 1890,
+    "height": 945,
+    "blurDataURL": "data:image/webp;base64,UklGRmQAAABXRUJQVlA4IFgAAAAwAgCdASoQAAgAA4BaJZgCdAEQe7RRoVcBAAD+8jV7jc44pYn4a4a1BeGaDuaVFnX1V6mCOYQ0F8emTuvbQ2I/cg0b6+AZ07noO+tT6gQmANNKSGGAXgAA",
+    "usedOn": [
+      "/concierge"
+    ],
+    "hasBakedText": true
+  },
+  {
+    "id": "dining-concierge-cover",
+    "src": "/media/legacy/dining-concierge-cover.webp",
+    "alt": "Chef, bartender and a mother reading to a child around a candlelit seaside dinner table, under the script title “Dining & Concierge”",
+    "width": 400,
+    "height": 400,
+    "blurDataURL": "data:image/webp;base64,UklGRnYAAABXRUJQVlA4IGoAAADwAQCdASoQABAAA4BaJbACdAEHEAqqzAAA/q0yUWhn1YltMWh/C5xzz4BDLnKaQi6u25rogkGfO2EgfIfXpVDlfWfAKFeGNHox9wYHoZiuOiINrsHh/8wxmalWIN0XyaSqkML43mxIAAAA",
+    "usedOn": [
+      "/",
+      "/concierge"
+    ],
+    "hasBakedText": true
+  },
+  {
+    "id": "djs-singers-banner",
+    "src": "/media/legacy/djs-singers-banner.webp",
+    "alt": "Singer performing into a microphone under pink stage light, beside the headline “Feel the beat, live the music”",
+    "width": 1890,
+    "height": 945,
+    "blurDataURL": "data:image/webp;base64,UklGRmgAAABXRUJQVlA4IFwAAADwAQCdASoQAAgAA4BaJbACdAEUnLlHGVAA/jNNhDrz6helpsqU2ejqVt7WRwhqapV9MluLxJy+ZCPbe2vwhaSUB31qh6wA5wh3+Sezkm0P93Hc06PNjYZt2AAAAA==",
+    "usedOn": [
+      "/entertainment/djs-singers"
+    ],
+    "hasBakedText": true
+  },
+  {
+    "id": "djs-singers-cover",
+    "src": "/media/legacy/djs-singers-cover.webp",
+    "alt": "DJ in headphones and a singer with a microphone at a lit-up party, under the title “DJs & Singers”",
+    "width": 500,
+    "height": 500,
+    "blurDataURL": "data:image/webp;base64,UklGRnwAAABXRUJQVlA4IHAAAAAwAgCdASoQABAAA4BaJbACdAYw7QovJuPcAAD+5bvjN8D4Ick53YIWYsaHrmPO/lqWuSRoULWvVbwS4sVj5KhedAsZKQFH090ssSo6uGmFQFwjzVfS28r++52cA9AH30qZpySDc6MSEeBJYIATgAAA",
+    "usedOn": [
+      "/entertainment",
+      "/entertainment/dancers-performers",
+      "/entertainment/djs-singers",
+      "/entertainment/makeup-styling",
+      "/entertainment/tattoo-henna"
+    ],
+    "hasBakedText": true
+  },
+  {
+    "id": "events-celebrations-banner",
+    "src": "/media/legacy/events-celebrations-banner.webp",
+    "alt": "White floral wedding arch with inset catering and toast photos, beside the headline “Celebrate every moment in style”",
+    "width": 1890,
+    "height": 945,
+    "blurDataURL": "data:image/webp;base64,UklGRlgAAABXRUJQVlA4IEwAAAAQAgCdASoQAAgAA4BaJQBOgCFw58TI//8AAP7zzo3SB1Sso6DxgLS7V952V2RgmttSHnif0xbksyUn3eMvDJsv3Z8AAZiEWnlqKAAA",
+    "usedOn": [
+      "/events"
+    ],
+    "hasBakedText": true
+  },
+  {
+    "id": "events-celebrations-cover",
+    "src": "/media/legacy/events-celebrations-cover.webp",
+    "alt": "Bride and groom dancing under a floral arch while friends toast at a beach party, under the script title “Events & Celebrations”",
+    "width": 400,
+    "height": 400,
+    "blurDataURL": "data:image/webp;base64,UklGRn4AAABXRUJQVlA4IHIAAAAQAgCdASoQABAAA4BaJbACdAYvXjXjFIvAAP7R+ZrbAqlkuLr2bXIhN855n3V6pKchgg/Yng4huk65qErG/UNEEXTmnMxjMC9J8EWoqwhVPS9iNxR9U1rX0WF3aE/EIs1ANtLmhmjkJ55KwHVytWYQAAA=",
+    "usedOn": [
+      "/",
+      "/events"
+    ],
+    "hasBakedText": true
+  },
+  {
+    "id": "experiences-banner",
+    "src": "/media/legacy/experiences-banner.webp",
+    "alt": "Cruise ship at sea with hexagon photos of yoga, groups and travellers, beside the headline “Live the moments, not just the destination”",
+    "width": 1890,
+    "height": 945,
+    "blurDataURL": "data:image/webp;base64,UklGRl4AAABXRUJQVlA4IFIAAADwAQCdASoQAAgAA4BaJZACdAEKmVSKCIAA/u3hviaB3S05zU6xgdY1JbcnAqt8oukRfbx3hyo4aYlZUMOVdOQA1E8kF5kl/JwL8YATWDYuQAAA",
+    "usedOn": [
+      "/experiences"
+    ],
+    "hasBakedText": true
+  },
+  {
+    "id": "experiences-cover",
+    "src": "/media/legacy/experiences-cover.webp",
+    "alt": "Couple relaxing on a beach lounge with a shisha and fruit platter, a yacht offshore, under the script title “Experiences”",
+    "width": 400,
+    "height": 400,
+    "blurDataURL": "data:image/webp;base64,UklGRoIAAABXRUJQVlA4IHYAAABQAgCdASoQABAAA4BaJbACdAYwxwPqfoSre4AA/DDCMMblysDWyejEpMJWU6rONms+EbzPA+l0aTxYOkLDm05zzApl95KCvFTEzTW7XGPKXAo57ql3VJ64J4pkxbvLPNd4hPEO/o9ntl+aeWcLdYNar7DlfAAA",
+    "usedOn": [
+      "/",
+      "/experiences"
+    ],
+    "hasBakedText": true
+  },
+  {
+    "id": "gallery-01",
+    "src": "/media/legacy/gallery-01.webp",
+    "alt": "Bedroom with a dark-wood four-poster bed, wooden floor, wall-mounted TV and tall windows onto a green garden",
+    "width": 1137,
+    "height": 792,
+    "blurDataURL": "data:image/webp;base64,UklGRmAAAABXRUJQVlA4IFQAAADwAQCdASoQAAsAA4BaJagCdADp9OM9cwAA/a7VmBYHdublC/w+aubAZEwGPKmQycTuTfCHPL89BycYx9vGTG9mXo2Kk/4dIorS2Ck5sVz58xzFAAA=",
+    "usedOn": [
+      "/",
+      "/gallery"
+    ]
+  },
+  {
+    "id": "gallery-02",
+    "src": "/media/legacy/gallery-02.webp",
+    "alt": "Bright living room with a marble floor, armchairs and a wooden TV unit, glass doors opening onto a pool and palms",
+    "width": 1129,
+    "height": 722,
+    "blurDataURL": "data:image/webp;base64,UklGRmwAAABXRUJQVlA4IGAAAADwAQCdASoQAAoAA4BaJQBdgB8zWRDUvxgA/qbL0gWiy7dhbaUM/iopw/i98lQ7PX8JCpkxSoxXIywdWoRKwgDI+3DM2BIezBFRojddXC7Dh5gNN8IBC3ljljGTRvwAAAA=",
+    "usedOn": [
+      "/",
+      "/gallery"
+    ]
+  },
+  {
+    "id": "gallery-03",
+    "src": "/media/legacy/gallery-03.webp",
+    "alt": "View from a glass balcony down to a plunge pool and white sun loungers, surrounded by palm trees",
+    "width": 1140,
+    "height": 792,
+    "blurDataURL": "data:image/webp;base64,UklGRmIAAABXRUJQVlA4IFYAAADwAQCdASoQAAsAA4BaJaAAAxf/tm3hl0AA99/5nzpXufOhkMlz40XaBvIHzz5Le67lUCx2zelnpGEAwcvmo7/MhDITNtWPidJHyBt5WlL9OSseSpKgAA==",
+    "usedOn": [
+      "/",
+      "/gallery"
+    ]
+  },
+  {
+    "id": "gallery-04",
+    "src": "/media/legacy/gallery-04.webp",
+    "alt": "Dining table laid in blue for eight beside an open white kitchen",
+    "width": 1145,
+    "height": 792,
+    "blurDataURL": "data:image/webp;base64,UklGRmwAAABXRUJQVlA4IGAAAAAwAgCdASoQAAsAA4BaJZgCdH8ADqsqr7muAAD4L6+hptsjK9cgVkLXj3LnjwrfXVxqVeP3ginOcqy7hyqsKJsBuDvpz5IQ0E7wHYvVBA4wbj5LUZdi8HiaDKELJQQyaAA=",
+    "usedOn": [
+      "/",
+      "/gallery"
+    ]
+  },
+  {
+    "id": "gallery-05",
+    "src": "/media/legacy/gallery-05.webp",
+    "alt": "Bedroom with a pale-wood four-poster bed, floral wallpaper and a striped daybed",
+    "width": 1132,
+    "height": 750,
+    "blurDataURL": "data:image/webp;base64,UklGRmYAAABXRUJQVlA4IFoAAAAwAgCdASoQAAsAA4BaJbACdAD5PZvT1bSFAADiKhouZ9I1WpzSCtlfOw342eDyil4jZXgFMTnItnpNcCkvtpjatNPGkfM3X2AD1NFx8O3NHq9+R2EOCGPAAAA=",
+    "usedOn": [
+      "/",
+      "/gallery"
+    ]
+  },
+  {
+    "id": "gallery-06",
+    "src": "/media/legacy/gallery-06.webp",
+    "alt": "Green vintage dressing table with an ornate gold mirror and a pink pouf",
+    "width": 1280,
+    "height": 1003,
+    "blurDataURL": "data:image/webp;base64,UklGRmgAAABXRUJQVlA4IFwAAACwAQCdASoQAA0AA4BaJbACdACk8gBAAP7D+mqkFNFUnpdlLnEDr6uSmMZ9Aqcsza8YbaB/5PXkKV+XxXbHFx9D1gf8BIAkG3b6eivm1KDK833V+7Zf03l8lVKAAA==",
+    "usedOn": [
+      "/",
+      "/gallery"
+    ]
+  },
+  {
+    "id": "gallery-07",
+    "src": "/media/legacy/gallery-07.webp",
+    "alt": "Reading nook with a bright blue bookshelf, white chaise longue and framed artwork, opening into a bedroom",
+    "width": 1188,
+    "height": 756,
+    "blurDataURL": "data:image/webp;base64,UklGRnYAAABXRUJQVlA4IGoAAAAQAgCdASoQAAoAA4BaJbACdAEetXS7mKQAAOI32dQmv8IasaqyNaYj/VO9KZ5k3xzZVAp1/OJ1ydGKzjCzpTa6aYSqYOaqSCf2SPjUSCMmStYDiF9DilTQ1n+JCAcPInhISjWSQY5V0AAA",
+    "usedOn": [
+      "/",
+      "/gallery"
+    ]
+  },
+  {
+    "id": "gallery-08",
+    "src": "/media/legacy/gallery-08.webp",
+    "alt": "Upstairs landing with a grey sofa, framed paintings and a staircase with a wooden railing",
+    "width": 1156,
+    "height": 755,
+    "blurDataURL": "data:image/webp;base64,UklGRloAAABXRUJQVlA4IE4AAADwAQCdASoQAAoAA4BaJYwCw7Dw6wqW4wAA/s3epCdb5W0fykH5nabl2dOz/NxerIjwuxrS7+ThMvOAj9X7k6nNng/wqm9zFJCfdygAAAA=",
+    "usedOn": [
+      "/",
+      "/gallery"
+    ]
+  },
+  {
+    "id": "gallery-09",
+    "src": "/media/legacy/gallery-09.webp",
+    "alt": "Pink-toned bedroom with a wooden four-poster bed, checked wallpaper, sheer curtains and a TV",
+    "width": 1103,
+    "height": 792,
+    "blurDataURL": "data:image/webp;base64,UklGRm4AAABXRUJQVlA4IGIAAAAQAgCdASoQAAwAA4BaJbACdAEUUzILIIgAAP7q6VMEJz7B+cw83bD51ES1ZvsetTVDgWq98iF8V2ZH29L+qesu4Pk3jTQ8hVxTHMW7ymjgAL29JdPiTAk/I7fzTeh80WgAAA==",
+    "usedOn": [
+      "/",
+      "/gallery"
+    ]
+  },
+  {
+    "id": "gallery-10",
+    "src": "/media/legacy/gallery-10.webp",
+    "alt": "Four-poster bed with striped cushions facing glass doors that open onto a balcony and palm trees",
+    "width": 1188,
+    "height": 792,
+    "blurDataURL": "data:image/webp;base64,UklGRlgAAABXRUJQVlA4IEwAAADwAQCdASoQAAsAA4BaJYgCdACv7RhpFAAA9ZBgpsCYjYILHuXEU5JG0yXq3qr3wKgTfFavLZqWDSFjaa+KYaX/jVhluZWr1pBMWAAA",
+    "usedOn": [
+      "/",
+      "/gallery"
+    ]
+  },
+  {
+    "id": "gallery-11",
+    "src": "/media/legacy/gallery-11.webp",
+    "alt": "Spacious bedroom with a four-poster bed, pink curtains, two armchairs and wooden floors",
+    "width": 1188,
+    "height": 792,
+    "blurDataURL": "data:image/webp;base64,UklGRmYAAABXRUJQVlA4IFoAAAAwAgCdASoQAAsAA4BaJZgCdAC9Bj4rEgMIAADxOitfI5apjDRvT5lNZVjB4ox8yQ/6liLdA3Pk1b54+R3RBt7M8ljgCXie8sAiN0k/NFQTHo015HO9KjAAAAA=",
+    "usedOn": [
+      "/",
+      "/gallery"
+    ]
+  },
+  {
+    "id": "gallery-12",
+    "src": "/media/legacy/gallery-12.webp",
+    "alt": "Covered balcony with wicker chairs and a glass table, overlooking coconut palms and green fields",
+    "width": 1188,
+    "height": 792,
+    "blurDataURL": "data:image/webp;base64,UklGRm4AAABXRUJQVlA4IGIAAABQAgCdASoQAAsAA4BaJYwCdAYtBgJTDUdy7AAA/t1YyNpd8xMVG3OhznAZTZbO7dNZjqWI1/P+mGaXI8Y75rXgFOPfkBcK0jDP7LLApKNvhRRRTnstawD8cH4HyoXheRAAAA==",
+    "usedOn": [
+      "/",
+      "/gallery"
+    ]
+  },
+  {
+    "id": "gallery-13",
+    "src": "/media/legacy/gallery-13.webp",
+    "alt": "Modern bathroom with a glass shower enclosure, wide mirror and stone vanity",
+    "width": 1188,
+    "height": 792,
+    "blurDataURL": "data:image/webp;base64,UklGRmYAAABXRUJQVlA4IFoAAADwAQCdASoQAAsAA4BaJZgCdADva+e+80AA/cG3eF4J6CjRRpUOdpTOlmSPKJsfq3FD1rfUi+EVNE29mTQ8EcttDcnudUK+ZCyjtE5LhF+ofFwyGIVpNpSwAAA=",
+    "usedOn": [
+      "/gallery"
+    ]
+  },
+  {
+    "id": "gallery-14",
+    "src": "/media/legacy/gallery-14.webp",
+    "alt": "Long lap pool lined with white loungers and a wicker side table beside glass-fronted rooms",
+    "width": 1188,
+    "height": 763,
+    "blurDataURL": "data:image/webp;base64,UklGRnQAAABXRUJQVlA4IGgAAADQAgCdASoQAAoAA4BaJYwCsIDa4AWfN0uIWXKrRCyAAP7O5o0Lj2aPKlcisbOhSMNzUlb1qWDdhHB9V55FsGjl3fZODyrKOW+tGQHRvXJPIi82hw/f09I/IvQqDGykQGbgHxKaXugAAA==",
+    "usedOn": [
+      "/gallery"
+    ]
+  },
+  {
+    "id": "gallery-15",
+    "src": "/media/legacy/gallery-15.webp",
+    "alt": "Lap pool running alongside a modern two-storey villa with glass doors and tropical planting",
+    "width": 1188,
+    "height": 792,
+    "blurDataURL": "data:image/webp;base64,UklGRl4AAABXRUJQVlA4IFIAAACQAQCdASoQAAsAA4BaJYgAAWcjIAAA/uYkvexvM/z++N4aM3cT7DvtiX4ceTzWZG7atIGxj68/qzsqkKPAJKIYGAjIdrddfjMk2575B8uyIAAA",
+    "usedOn": [
+      "/gallery"
+    ]
+  },
+  {
+    "id": "gallery-16",
+    "src": "/media/legacy/gallery-16.webp",
+    "alt": "Pool at dusk beside a glass-fronted villa, framed by palms and dense greenery",
+    "width": 1188,
+    "height": 792,
+    "blurDataURL": "data:image/webp;base64,UklGRmQAAABXRUJQVlA4IFgAAADwAQCdASoQAAsAA4BaJbACdADaVQHa1oAA/bmNtkgrhuKS+ZiaysbeUY+bIOyaiMeZDd/iDOxwK7SO87ilQWlOMESkClYFW0Hgo0t2gbUo5dT91uRfXIAA",
+    "usedOn": [
+      "/gallery"
+    ]
+  },
+  {
+    "id": "home-banner-1103571775316870",
+    "src": "/media/legacy/home-banner-1103571775316870.webp",
+    "alt": "Traveller facing landmark photos in hexagon frames beside the headline “Travel easy, explore freely”",
+    "width": 1890,
+    "height": 945,
+    "blurDataURL": "data:image/webp;base64,UklGRmgAAABXRUJQVlA4IFwAAAAwAgCdASoQAAgAA4BaJbACdAYoBknflSZI4ADieodprFCSkMNQLmFuucB7920xcbpqGirKHgXkp32aOx8Eg7rl/hAuE5OzaWiEqf0dob+i7zYxYy47tGDNygAAAA==",
+    "usedOn": [
+      "/"
+    ],
+    "hasBakedText": true
+  },
+  {
+    "id": "home-banner-1284321775316851",
+    "src": "/media/legacy/home-banner-1284321775316851.webp",
+    "alt": "Modern house with a pool in a gold frame beside the headline “Settle in comfort, stay without limits”",
+    "width": 1890,
+    "height": 945,
+    "blurDataURL": "data:image/webp;base64,UklGRmAAAABXRUJQVlA4IFQAAADwAQCdASoQAAgAA4BaJYwC7AEKoJ1jCUAA/vSgf6gzbEd8Q9xOOedrKn/Jk8QpCoODHMT1kLdiWx7A7oyW9Xrgqy7QwxRh1YArkGZfE/kLwXwAAAA=",
+    "usedOn": [
+      "/"
+    ],
+    "hasBakedText": true
+  },
+  {
+    "id": "home-banner-2328461775316862",
+    "src": "/media/legacy/home-banner-2328461775316862.webp",
+    "alt": "Four-poster bedroom with hexagon room photos beside the headline “Feel at home, wherever you stay”",
+    "width": 1890,
+    "height": 945,
+    "blurDataURL": "data:image/webp;base64,UklGRm4AAABXRUJQVlA4IGIAAADQAQCdASoQAAgAA4BaJbACdAERGsFAoAD+4dHc0dY7JYTlvVMP0755fN8BQu5EinCPQffAwei2mB1iDztlvhTskyFT0inDIE0LB6j1U2JAG22Hj+L/UWFHGed745bs1fkAAA==",
+    "usedOn": [
+      "/"
+    ],
+    "hasBakedText": true
+  },
+  {
+    "id": "home-banner-2800241775316876",
+    "src": "/media/legacy/home-banner-2800241775316876.webp",
+    "alt": "Four-poster villa bedroom beside the headline “Luxury living for every short escape: stay private, stay comfortable, stay unforgettable”",
+    "width": 1890,
+    "height": 945,
+    "blurDataURL": "data:image/webp;base64,UklGRlwAAABXRUJQVlA4IFAAAABQAgCdASoQAAgAA4BaJaAC7AYrxwUJLyykkIAA/usnng9PokF76n6Gcth1rj/Gcr1VjbxArN+PdRkgqSPvFMkX6o+xQJe3NQJ5vnFf2rrEAA==",
+    "usedOn": [
+      "/"
+    ],
+    "hasBakedText": true
+  },
+  {
+    "id": "home-banner-295081775316857",
+    "src": "/media/legacy/home-banner-295081775316857.webp",
+    "alt": "Modern two-storey house with interior insets beside the headline “Find your dream property in Goa”",
+    "width": 1890,
+    "height": 945,
+    "blurDataURL": "data:image/webp;base64,UklGRlgAAABXRUJQVlA4IEwAAADQAQCdASoQAAgAA4BaJQBOgCFwh+SFwAD+8jvmrD3QhI7DnwsupIzqg9dV9lxc+vyTr6UEiUvTxQywef6qOBQ1oknCUTAHmh567oAA",
+    "usedOn": [
+      "/"
+    ],
+    "hasBakedText": true
+  },
+  {
+    "id": "home-banner-4405971775316841",
+    "src": "/media/legacy/home-banner-4405971775316841.webp",
+    "alt": "Airliner on a runway beside the headline “Start and end your journey the right way”",
+    "width": 1890,
+    "height": 945,
+    "blurDataURL": "data:image/webp;base64,UklGRlQAAABXRUJQVlA4IEgAAAAQAgCdASoQAAgAA4BaJYgCdAELYLUVItogAP7yLusYkpnmB3sah0CwDKBQ2mxQBzFMEJ1Om+qoCa1t/eyEoRy6hzpdm4X5kAA=",
+    "usedOn": [
+      "/"
+    ],
+    "hasBakedText": true
+  },
+  {
+    "id": "home-banner-8664261775316846",
+    "src": "/media/legacy/home-banner-8664261775316846.webp",
+    "alt": "Floral four-poster hotel bedroom in a gold circle beside the headline “Comfortable stays, just like home”",
+    "width": 1890,
+    "height": 945,
+    "blurDataURL": "data:image/webp;base64,UklGRmYAAABXRUJQVlA4IFoAAABQAgCdASoQAAgAA4BaJYgCsAYrnwn+JY9By4gA/uhb3Y3CGOlDRQyJRZwgAoBfns9iONbv9HM9Oot7hDEFE7H2qRMEQWm/UqOa5NYzHkQwulhxJyOGs/iAAAA=",
+    "usedOn": [
+      "/"
+    ],
+    "hasBakedText": true
+  },
+  {
+    "id": "home-front-banner",
+    "src": "/media/legacy/home-front-banner.webp",
+    "alt": "Stay Story collage of a beachfront villa, yacht and chauffeur car above six tiles: Stay, Travel, Experiences, Events & Celebrations, Dining & Concierge, Artists & Entertainment",
+    "width": 570,
+    "height": 611,
+    "blurDataURL": "data:image/webp;base64,UklGRowAAABXRUJQVlA4IIAAAADwAwCdASoQABEAPu1iqU2ppaOiMAgBMB2JYgCdAYww4QSy74WInA+AAOJ4JlfinqaUE395qeI85CntSmIFE1aiCe8sWxWZqvHqqAOC1HTS6ttp4UvjNYKWnboNnQsF+sMzz1/7eTyM1yL4OD+1mOdLpnsvvJGxK2j2OgdBN7AAAA==",
+    "usedOn": [
+      "/"
+    ],
+    "hasBakedText": true
+  },
+  {
+    "id": "long-term-rentals-banner",
+    "src": "/media/legacy/long-term-rentals-banner.webp",
+    "alt": "Modern house with a pool in a gold frame beside the headline “Settle in comfort, stay without limits”",
+    "width": 1890,
+    "height": 945,
+    "blurDataURL": "data:image/webp;base64,UklGRmAAAABXRUJQVlA4IFQAAADwAQCdASoQAAgAA4BaJYwC7AEKoJ1jCUAA/vSgf6gzbEd8Q9xOOedrKn/Jk8QpCoODHMT1kLdiWx7A7oyW9Xrgqy7QwxRh1YArkGZfE/kLwXwAAAA=",
+    "usedOn": [
+      "/stays/long-term-rentals"
+    ],
+    "hasBakedText": true
+  },
+  {
+    "id": "long-term-rentals-cover",
+    "src": "/media/legacy/long-term-rentals-cover.webp",
+    "alt": "Woman on a balcony of a furnished living room overlooking hills and sea, under the title “Long-Term Rentals”",
+    "width": 500,
+    "height": 500,
+    "blurDataURL": "data:image/webp;base64,UklGRnQAAABXRUJQVlA4IGgAAADwAQCdASoQABAAA4BaJZgCdAD1i9z9VAAA4lAL6lf1iIO9eGAoneYBvETHCnuYbTFh8O4Hj29E6xhqot/tQHXmTkC3tnT2o0Trl9xl5OQH451PHWJ+w/WR+gL43ES1TIvl0zYKsgAAAA==",
+    "usedOn": [
+      "/property-sales",
+      "/stays",
+      "/stays/apartments-hotels",
+      "/stays/long-term-rentals",
+      "/stays/villas"
+    ],
+    "hasBakedText": true
+  },
+  {
+    "id": "makeup-styling-banner",
+    "src": "/media/legacy/makeup-styling-banner.webp",
+    "alt": "Bride in traditional jewellery with makeup insets beside the headline “Look confident, feel unforgettable”",
+    "width": 1890,
+    "height": 945,
+    "blurDataURL": "data:image/webp;base64,UklGRmAAAABXRUJQVlA4IFQAAADwAQCdASoQAAgAA4BaJYgCdAD2OOIhmkAA9FDyg34uVj27LE2Yw/2PkaWHQBY2VZGle2E5A1+Z5vT0XEyop6OxZ9Fq7BwSlrCXlcOu6e06AH0AAAA=",
+    "usedOn": [
+      "/entertainment/makeup-styling"
+    ],
+    "hasBakedText": true
+  },
+  {
+    "id": "makeup-styling-cover",
+    "src": "/media/legacy/makeup-styling-cover.webp",
+    "alt": "Makeup artist brushing a bride’s face, under the title “Makeup & Styling”",
+    "width": 500,
+    "height": 500,
+    "blurDataURL": "data:image/webp;base64,UklGRn4AAABXRUJQVlA4IHIAAAAwAgCdASoQABAAA4BaJaACdAD0ZGlHTQDuAAD+0mj6e+5O4VXr5tWdZL2mY9sQISWuNu1mEnGPLW+OS9QjqtrJOnM2wvKnfnQauaphZ5q19KtTQX16QZJw5/amhS+UxxHY7vu80joHvWmNNcB/6UogAAA=",
+    "usedOn": [
+      "/entertainment",
+      "/entertainment/dancers-performers",
+      "/entertainment/djs-singers",
+      "/entertainment/makeup-styling",
+      "/entertainment/tattoo-henna"
+    ],
+    "hasBakedText": true
+  },
+  {
+    "id": "party-planning-banner",
+    "src": "/media/legacy/party-planning-banner.webp",
+    "alt": "Crowd dancing under party lights beside the headline “I plan it, you enjoy it”",
+    "width": 1890,
+    "height": 945,
+    "blurDataURL": "data:image/webp;base64,UklGRl4AAABXRUJQVlA4IFIAAAAQAgCdASoQAAgAA4BaJYgCdAEfsiRQR4nkAP7rJ34tfItxBUJ4/DysRckAxiEGbrTi73Hu5pObG/MkXl7qGpIzhu9uzrOXNDq2kCPF///ngAAA",
+    "usedOn": [
+      "/events/party-planning"
+    ],
+    "hasBakedText": true
+  },
+  {
+    "id": "party-planning-cover",
+    "src": "/media/legacy/party-planning-cover.webp",
+    "alt": "Friends with sparklers and drinks at a poolside night party, under the title “Party Planning”",
+    "width": 500,
+    "height": 500,
+    "blurDataURL": "data:image/webp;base64,UklGRoQAAABXRUJQVlA4IHgAAAAwAgCdASoQABAAA4BaJbACdAYwnvmCK6pIAAD+7Q9jRoi6SRBBCwPiB4sMomADTm0vLsXxLxVIcXz769T6md9jq6KJeHvvA/oWDb+RQlMgy4lh/e05qW74z/JA3N0Ia4h5e0pZUvhyIBUeDDsBA71nnL3ygVcAgAA=",
+    "usedOn": [
+      "/events",
+      "/events/bachelor-parties",
+      "/events/party-planning",
+      "/events/private-events",
+      "/events/weddings"
+    ],
+    "hasBakedText": true
+  },
+  {
+    "id": "private-chef-catering-banner",
+    "src": "/media/legacy/private-chef-catering-banner.webp",
+    "alt": "Chef in whites beside a plated dish and the headline “Fine dining, served just for you”",
+    "width": 1890,
+    "height": 945,
+    "blurDataURL": "data:image/webp;base64,UklGRmQAAABXRUJQVlA4IFgAAADwAQCdASoQAAgAA4BaJQBOgMWgtZjmysAA3/1jeVc3e/KGtJ3x/wGzOu2EXL9Vkvlu8GTaphy+z+cJyZMlbRo/4fl9Kk01VZG03YJebXc+3neywYzfQAAA",
+    "usedOn": [
+      "/concierge/private-chef"
+    ],
+    "hasBakedText": true
+  },
+  {
+    "id": "private-chef-catering-cover",
+    "src": "/media/legacy/private-chef-catering-cover.webp",
+    "alt": "Chef serving a couple at a candlelit seaside table, under the title “Private Chef & Catering”",
+    "width": 500,
+    "height": 500,
+    "blurDataURL": "data:image/webp;base64,UklGRn4AAABXRUJQVlA4IHIAAABQAgCdASoQABAAA4BaJbACdAYvDqypCid9uUAA/t28YUp9J8DJsBLCuJzbyHhxaP/4g8sgjlPj6FSCAHOocuCaMzyJjjNF84tiPThVnxDZCcahbuZ72JdOvxvHbwswbsHHLrlGigfsFOADlGucQ/JTOAA=",
+    "usedOn": [
+      "/concierge",
+      "/concierge/bartenders",
+      "/concierge/private-chef",
+      "/concierge/special-requests"
+    ],
+    "hasBakedText": true
+  },
+  {
+    "id": "private-events-banner",
+    "src": "/media/legacy/private-events-banner.webp",
+    "alt": "Candlelit banquet tables with glassware beside the headline “Exclusive events, personally yours”",
+    "width": 1890,
+    "height": 945,
+    "blurDataURL": "data:image/webp;base64,UklGRmIAAABXRUJQVlA4IFYAAAAQAgCdASoQAAgAA4BaJYwCdAEPfrCLuYwAAP7n7iq6mSgbTufvGu9M9wPlG1SstYY0i1/AQdIhh56cJuwLq7HDsI+WaXi+n4QawDbogTpRiBaA/gAAAA==",
+    "usedOn": [
+      "/events/private-events"
+    ],
+    "hasBakedText": true
+  },
+  {
+    "id": "private-events-cover",
+    "src": "/media/legacy/private-events-cover.webp",
+    "alt": "Two couples toasting champagne at an evening gathering, under the title “Private Events”",
+    "width": 500,
+    "height": 500,
+    "blurDataURL": "data:image/webp;base64,UklGRoAAAABXRUJQVlA4IHQAAABQAgCdASoQABAAA4BaJbACdAYxFvIZu2WAhUAA/t4DsH9pbCtsxudpl0Mo7xS8lb26A0SU8B2gkBjbTgIlfaCG3VA0Po5rpOlLg8bRSS+WyFD9qGWrDisv9dJMuljP/LPfBOmEyPI8NSZJv18L7vQAHW3gAA==",
+    "usedOn": [
+      "/events",
+      "/events/bachelor-parties",
+      "/events/party-planning",
+      "/events/private-events",
+      "/events/weddings"
+    ],
+    "hasBakedText": true
+  },
+  {
+    "id": "property-sales-banner",
+    "src": "/media/legacy/property-sales-banner.webp",
+    "alt": "Modern two-storey house with interior insets beside the headline “Find your dream property in Goa”",
+    "width": 1890,
+    "height": 945,
+    "blurDataURL": "data:image/webp;base64,UklGRlgAAABXRUJQVlA4IEwAAADQAQCdASoQAAgAA4BaJQBOgCFwh+SFwAD+8jveISm3OP5+Rmq4Ox/eOsjRMLOM/913vxzfHZPtgTHtg01xvjidfGi8WxgvYZY+HAAA",
+    "usedOn": [
+      "/property-sales"
+    ],
+    "hasBakedText": true
+  },
+  {
+    "id": "property-sales-cover",
+    "src": "/media/legacy/property-sales-cover.webp",
+    "alt": "Couple looking over a villa pool and palms at sunset, under the title “Property Sales”",
+    "width": 500,
+    "height": 500,
+    "blurDataURL": "data:image/webp;base64,UklGRnIAAABXRUJQVlA4IGYAAAAQAgCdASoQABAAA4BaJYgCdADwT0hYr6IEAP7XwgKRmEpHbSAExrj97E3/mIswcL9ArhCCY+dQFUjWq38AWBfu7RJdcRNbBRNez0LzLFUCf+/4xzM7rlZ52dYNFgkYBEfMm7DzgAA=",
+    "usedOn": [
+      "/property-sales",
+      "/stays",
+      "/stays/apartments-hotels",
+      "/stays/long-term-rentals",
+      "/stays/villas"
+    ],
+    "hasBakedText": true
+  },
+  {
+    "id": "self-drive-cars-banner",
+    "src": "/media/legacy/self-drive-cars-banner.webp",
+    "alt": "Grey SUV on an orange background beside the headline “Your journey, your rules, your road”",
+    "width": 1890,
+    "height": 945,
+    "blurDataURL": "data:image/webp;base64,UklGRmoAAABXRUJQVlA4IF4AAAAQAgCdASoQAAgAA4BaJbACdAEQZ1ww6/BAAP7rMpmKdL+eM+njctBmgk1+MEQ6G21Dryy3NnUXEs0ftcByXUlfFLKZ+d+dnmuZhxzcD+VsO5oCwjfs7YU6bZsLrLAA",
+    "usedOn": [
+      "/travel/self-drive-cars"
+    ],
+    "hasBakedText": true
+  },
+  {
+    "id": "self-drive-cars-cover",
+    "src": "/media/legacy/self-drive-cars-cover.webp",
+    "alt": "Driver’s view of a coastal road at sunset through a car windscreen, under the title “Self-Drive Cars”",
+    "width": 500,
+    "height": 500,
+    "blurDataURL": "data:image/webp;base64,UklGRnAAAABXRUJQVlA4IGQAAABwAgCdASoQABAAA4BaJYgCdAYwn2wpSyKxuyYAAP64JWDAVY2UzIb7FlWMQiygUfdW7ovOxXhm5c1iMoYJMbIQPALoosfOGzWZIWtizjAy24S/X8Dmb3bhmBOZwO3iLn/YPwAA",
+    "usedOn": [
+      "/travel",
+      "/travel/airport-transfers",
+      "/travel/bike-rentals",
+      "/travel/chauffeur",
+      "/travel/self-drive-cars"
+    ],
+    "hasBakedText": true
+  },
+  {
+    "id": "shisha-experience-banner",
+    "src": "/media/legacy/shisha-experience-banner.webp",
+    "alt": "Hookah with coloured smoke on a dark background beside the headline “Relax, unwind, indulge in every puff”",
+    "width": 1890,
+    "height": 945,
+    "blurDataURL": "data:image/webp;base64,UklGRloAAABXRUJQVlA4IE4AAADwAQCdASoQAAgAA4BaJYwCdAEO/zO+R6AA/u+OP4EZAzf6EffKkQhb+dPUGsBsP4ed/C01WM0Ct0Jh2RAqwY88LzIggOw2vNyHYE1OIAA=",
+    "usedOn": [
+      "/experiences/shisha"
+    ],
+    "hasBakedText": true
+  },
+  {
+    "id": "shisha-experience-cover",
+    "src": "/media/legacy/shisha-experience-cover.webp",
+    "alt": "Couple sharing a hookah on a terrace at sunset, under the title “Shisha Experience”",
+    "width": 500,
+    "height": 500,
+    "blurDataURL": "data:image/webp;base64,UklGRnwAAABXRUJQVlA4IHAAAABwAgCdASoQABAAA4BaJaACdBHAH/kv9v9X01PIAP7X7PsSHHGSa8j8aDszr773nMOXAg07y20Laomx7Go+cj5m/DwuHZ3bGwPEU1fYEPqkRAj19Dc4PI/vP1hM05NpI24aldqC7gmN4syLVVJEhbgA",
+    "usedOn": [
+      "/experiences",
+      "/experiences/shisha",
+      "/experiences/vip-club-access",
+      "/experiences/wellness",
+      "/experiences/workshops-activities",
+      "/experiences/yacht-cruises"
+    ],
+    "hasBakedText": true
+  },
+  {
+    "id": "spiritual-wellness-banner",
+    "src": "/media/legacy/spiritual-wellness-banner.webp",
+    "alt": "Woman holding a yoga pose beside the headline “Reconnect within, feel true peace”",
+    "width": 1890,
+    "height": 945,
+    "blurDataURL": "data:image/webp;base64,UklGRlQAAABXRUJQVlA4IEgAAADwAQCdASoQAAgAA4BaJZwAAu0MLRQ+DuAA/vCH1bxcVh8ojCwhBohISVeqQ+PXCpM7v5i7jwZTt4QKtTbD3gC/hCjPBsBNgAA=",
+    "usedOn": [
+      "/experiences/wellness"
+    ],
+    "hasBakedText": true
+  },
+  {
+    "id": "spiritual-wellness-cover",
+    "src": "/media/legacy/spiritual-wellness-cover.webp",
+    "alt": "Woman meditating cross-legged on rocks by the sea at sunset, under the title “Spiritual & Wellness”",
+    "width": 500,
+    "height": 500,
+    "blurDataURL": "data:image/webp;base64,UklGRm4AAABXRUJQVlA4IGIAAAAQAgCdASoQABAAA4BaJZgCdAENWXo8IbQgAP7oM0ziXovyj/2sawTDrLzwSRlxJsFydZVKqIkjoIEjdzw3HYEK0Fx0WYl0v6wdX+OXGLptD95WKQtfatSUtcwYXtFATwAAAA==",
+    "usedOn": [
+      "/experiences",
+      "/experiences/shisha",
+      "/experiences/vip-club-access",
+      "/experiences/wellness",
+      "/experiences/workshops-activities",
+      "/experiences/yacht-cruises"
+    ],
+    "hasBakedText": true
+  },
+  {
+    "id": "stay-banner",
+    "src": "/media/legacy/stay-banner.webp",
+    "alt": "Four-poster bedroom with hexagon room photos beside the headline “Feel at home, wherever you stay”",
+    "width": 1890,
+    "height": 945,
+    "blurDataURL": "data:image/webp;base64,UklGRm4AAABXRUJQVlA4IGIAAADQAQCdASoQAAgAA4BaJbACdAERGsFAoAD+4dHc0dY7JYTlvVMP0755fN8BQu5EinCPQffAwei2mB1iDztlvhTskyFT0inDIE0LB6j1U2JAG22Hj+L/UWFHGed745bs1fkAAA==",
+    "usedOn": [
+      "/stays"
+    ],
+    "hasBakedText": true
+  },
+  {
+    "id": "stay-cover",
+    "src": "/media/legacy/stay-cover.webp",
+    "alt": "Couple outside a pool villa with a “For Sale” sign in the garden, under the script title “Stay”",
+    "width": 400,
+    "height": 400,
+    "blurDataURL": "data:image/webp;base64,UklGRoQAAABXRUJQVlA4IHgAAABQAgCdASoQABAAA4BaJbACdAYxPjIxcJyaZEgA/QFg8BTXGQNkIWQ1osL5wval04OEzMt9MO6IiBOmew+wolsK8LzjpbctJe901EYFvSfDucvT3yLMyh3+dCXOkyYxQovEdXLcopIBZ4dtqox/+Rdrx+o0tRAAAAA=",
+    "usedOn": [
+      "/",
+      "/stays"
+    ],
+    "hasBakedText": true
+  },
+  {
+    "id": "tattoo-henna-face-art-banner",
+    "src": "/media/legacy/tattoo-henna-face-art-banner.webp",
+    "alt": "Close-up of henna-decorated hands with insets beside the headline “Art that speaks without words”",
+    "width": 1890,
+    "height": 945,
+    "blurDataURL": "data:image/webp;base64,UklGRmAAAABXRUJQVlA4IFQAAADQAQCdASoQAAgAA4BaJZAC7AEKZZTGgAD+7Qnfb6LJVIhSmy1H6RRNifS6dBLbepazJRiw4uJkpyY1o2E8FXaQaE3xSHZLZarzy718vMX8aduAAAA=",
+    "usedOn": [
+      "/entertainment/tattoo-henna"
+    ],
+    "hasBakedText": true
+  },
+  {
+    "id": "tattoo-henna-face-art-cover",
+    "src": "/media/legacy/tattoo-henna-face-art-cover.webp",
+    "alt": "Artists applying henna and a temporary tattoo, under the title “Tattoo / Henna / Face Art”",
+    "width": 500,
+    "height": 500,
+    "blurDataURL": "data:image/webp;base64,UklGRn4AAABXRUJQVlA4IHIAAABwAgCdASoQABAAA4BaJbACdAYxFwK6j/LvagwAAP7duSNmhwjbxLvVp5cPcKW+ofnwaauNkb3z8ZmM99eG5CBZ0S9GarMEMYJQIJ03bDjByTaE+vGdfiFD8R0IZj4pdAr3zm6o9fSHLs8DulDf0JYDgAA=",
+    "usedOn": [
+      "/entertainment",
+      "/entertainment/dancers-performers",
+      "/entertainment/djs-singers",
+      "/entertainment/makeup-styling",
+      "/entertainment/tattoo-henna"
+    ],
+    "hasBakedText": true
+  },
+  {
+    "id": "travel-services-banner",
+    "src": "/media/legacy/travel-services-banner.webp",
+    "alt": "Traveller facing landmark photos in hexagon frames beside the headline “Travel easy, explore freely”",
+    "width": 1890,
+    "height": 945,
+    "blurDataURL": "data:image/webp;base64,UklGRmgAAABXRUJQVlA4IFwAAAAwAgCdASoQAAgAA4BaJbACdAYoBknflSZI4ADieodprFCSkMNQLmFuucB7920xcbpqGirKHgXkp32aOx8Eg7rl/hAuE5OzaWiEqf0dob+i7zYxYy47tGDNygAAAA==",
+    "usedOn": [
+      "/travel"
+    ],
+    "hasBakedText": true
+  },
+  {
+    "id": "travel-services-cover",
+    "src": "/media/legacy/travel-services-cover.webp",
+    "alt": "Couple walking past chauffeured cars with an aircraft overhead, under the script title “Travel”",
+    "width": 400,
+    "height": 400,
+    "blurDataURL": "data:image/webp;base64,UklGRoAAAABXRUJQVlA4IHQAAABwAgCdASoQABAAA4BaJZgCdH8AguSt8bOJvPCwAP64PlqPttu8J8D1MxWXGEStN2lECVZ6xnHG7Y6Uy11hc0RMMWM9zmgc6blLfDUzRUgypLx5pzI+mbviig1fUdcEdGo1FssjDdEJRZ8/nm+HBlTmEgAAAA==",
+    "usedOn": [
+      "/",
+      "/travel"
+    ],
+    "hasBakedText": true
+  },
+  {
+    "id": "villas-banner",
+    "src": "/media/legacy/villas-banner.webp",
+    "alt": "Four-poster villa bedroom beside the headline “Luxury living for every short escape”",
+    "width": 1890,
+    "height": 945,
+    "blurDataURL": "data:image/webp;base64,UklGRlwAAABXRUJQVlA4IFAAAAAwAgCdASoQAAgAA4BaJaAC7AYrdwUI9K9DoAD+6yeeD08xeuo2TEOnc325MPhMqTyFDqkAisYckBN9TbbjWTLh/DnhzyOzOFB7Vf+QSHAAAA==",
+    "usedOn": [
+      "/stays/villas"
+    ],
+    "hasBakedText": true
+  },
+  {
+    "id": "villas-cover",
+    "src": "/media/legacy/villas-cover.webp",
+    "alt": "Two-storey villa with a pool and palms at sunset, under the title “Villas (Short Stay)”",
+    "width": 500,
+    "height": 500,
+    "blurDataURL": "data:image/webp;base64,UklGRooAAABXRUJQVlA4IH4AAAAwAgCdASoQABAAA4BaJagCdAYsP2XGD11/KAD+arTBbTuqHELXuT6v8m7xrj7Pc0UrNLXZ65Vw+JLbsYjU7Z3hZeBEVFdLjFkYXfqP8ixjuGvBar8uxyDNS+M3G/atoSN2+bYJP/wB5PYzbw5+fGDTDyjZ2p5zXOgltY4HAAA=",
+    "usedOn": [
+      "/property-sales",
+      "/stays",
+      "/stays/apartments-hotels",
+      "/stays/long-term-rentals",
+      "/stays/villas"
+    ],
+    "hasBakedText": true
+  },
+  {
+    "id": "vip-club-access-banner",
+    "src": "/media/legacy/vip-club-access-banner.webp",
+    "alt": "Nightclub lounge with red lighting and insets beside the headline “Step into the world of exclusive nights”",
+    "width": 1890,
+    "height": 945,
+    "blurDataURL": "data:image/webp;base64,UklGRlgAAABXRUJQVlA4IEwAAADQAQCdASoQAAgAA4BaJYgCdAD0PzmJmAD+rNhWmXehttQA1Smq/QhnNsEbinDWi+4IIpwZIO4SToUAEpQ6AHEFBsVbBJpIA8lkAAAA",
+    "usedOn": [
+      "/experiences/vip-club-access"
+    ],
+    "hasBakedText": true
+  },
+  {
+    "id": "vip-club-access-cover",
+    "src": "/media/legacy/vip-club-access-cover.webp",
+    "alt": "Couple with champagne in a crowded nightclub, under the title “VIP Club Access”",
+    "width": 500,
+    "height": 500,
+    "blurDataURL": "data:image/webp;base64,UklGRnQAAABXRUJQVlA4IGgAAADwAQCdASoQABAAA4BaJbACdAD0ZIxO1SAA/u9p/XN5VPkZ7HswyjoljC/mG5MDuKLAM9MzWQAJxHddDDVlGdKqcuQMwwrdtrGUaqz6c/KMCuSFk+Fn7Nx7mUoYWMjAx0tEXzkbycAAAA==",
+    "usedOn": [
+      "/experiences",
+      "/experiences/shisha",
+      "/experiences/vip-club-access",
+      "/experiences/wellness",
+      "/experiences/workshops-activities",
+      "/experiences/yacht-cruises"
+    ],
+    "hasBakedText": true
+  },
+  {
+    "id": "wedding-services-banner",
+    "src": "/media/legacy/wedding-services-banner.webp",
+    "alt": "Wedding photos of mehndi hands and garlands in a flower shape beside the headline “Crafting weddings that feel like a dream”",
+    "width": 1890,
+    "height": 945,
+    "blurDataURL": "data:image/webp;base64,UklGRmIAAABXRUJQVlA4IFYAAADwAQCdASoQAAgAA4BaJagCdADdjIiBgcAA/q0iL2Kspt5IJqxl1OYBkPZ6QtzPOAFlPHX163ZMz91+zXnQRKc0VEKLLGKZtzkvD/QOvm/s+HdMiDwAAA==",
+    "usedOn": [
+      "/events/weddings"
+    ],
+    "hasBakedText": true
+  },
+  {
+    "id": "wedding-services-cover",
+    "src": "/media/legacy/wedding-services-cover.webp",
+    "alt": "Bride and groom by the sea at sunset under a floral arch, under the title “Wedding Services”",
+    "width": 500,
+    "height": 500,
+    "blurDataURL": "data:image/webp;base64,UklGRnQAAABXRUJQVlA4IGgAAADwAQCdASoQABAAA4BaJaACdADs+QpxtSgA/oZ20whEFW6IUjys+ATo2hQPE6egXCBD78DdZ4Jqd3CwKzlpCD0PfeU96z+axCf4GOz1fSL7yYoZNengH2nd+CcTkvdR2DBDdKG/LykAAA==",
+    "usedOn": [
+      "/events",
+      "/events/bachelor-parties",
+      "/events/party-planning",
+      "/events/private-events",
+      "/events/weddings"
+    ],
+    "hasBakedText": true
+  },
+  {
+    "id": "workshops-activities-banner",
+    "src": "/media/legacy/workshops-activities-banner.webp",
+    "alt": "Instructor leading a hands-on class around a table beside the headline “Learn, create, experience more”",
+    "width": 1890,
+    "height": 945,
+    "blurDataURL": "data:image/webp;base64,UklGRl4AAABXRUJQVlA4IFIAAAAwAgCdASoQAAgAA4BaJYgCdAYuvwO2k7UnQAD+5og94n5AKkGSFPwaftQrgpCYiTZHsN1tDrkfm/890xn0rRgsE8YR+A7ApVjA1uQpGkrzQAAA",
+    "usedOn": [
+      "/experiences/workshops-activities"
+    ],
+    "hasBakedText": true
+  },
+  {
+    "id": "workshops-activities-cover",
+    "src": "/media/legacy/workshops-activities-cover.webp",
+    "alt": "Couple shaping clay on a pottery wheel, under the title “Workshops & Activities”",
+    "width": 500,
+    "height": 500,
+    "blurDataURL": "data:image/webp;base64,UklGRngAAABXRUJQVlA4IGwAAAAwAgCdASoQABAAA4BaJZACdAYvNkjj/+5qAAD7penlZAUt+3CS8lHHWPiU1yA+FJ+i4AxhEub6m/l3N0RRhpH87aqBNkSxS1TrHTTwPl5nDCF8AcrP3+fwsftW7D/i/UmjoPkKj/gy23sMwAA=",
+    "usedOn": [
+      "/experiences",
+      "/experiences/shisha",
+      "/experiences/vip-club-access",
+      "/experiences/wellness",
+      "/experiences/workshops-activities",
+      "/experiences/yacht-cruises"
+    ],
+    "hasBakedText": true
+  },
+  {
+    "id": "yacht-cruises-banner",
+    "src": "/media/legacy/yacht-cruises-banner.webp",
+    "alt": "Cruise ship and speedboat on turquoise water beside the headline “Sail into luxury, experience the ocean”",
+    "width": 1890,
+    "height": 945,
+    "blurDataURL": "data:image/webp;base64,UklGRlwAAABXRUJQVlA4IFAAAADwAQCdASoQAAgAA4BaJYgCdAEK5ctDy5gA/pPWGLldkgjRj7DgAG00DyBforHjUb4c39GpZJ5238qf/dP17SFLlEWXBEwaiFkJTdAQXgAAAA==",
+    "usedOn": [
+      "/experiences/yacht-cruises"
+    ],
+    "hasBakedText": true
+  },
+  {
+    "id": "yacht-cruises-cover",
+    "src": "/media/legacy/yacht-cruises-cover.webp",
+    "alt": "Couple at a yacht rail watching the sun set over the sea, under the title “Yacht & Cruises”",
+    "width": 500,
+    "height": 500,
+    "blurDataURL": "data:image/webp;base64,UklGRnAAAABXRUJQVlA4IGQAAAAwAgCdASoQABAAA4BaJZACdAEPELgt9iqMQAD+65mFAB9g9DpnZLbt5SsJAbWeeLyPKWaWHOPAHNWzJ4KBoYeQfSIEtmKs5BF+v4r6Pa4DkhmvXVl3S5egkHIKYYsFKiZOQAAA",
+    "usedOn": [
+      "/experiences",
+      "/experiences/shisha",
+      "/experiences/vip-club-access",
+      "/experiences/wellness",
+      "/experiences/workshops-activities",
+      "/experiences/yacht-cruises"
+    ],
+    "hasBakedText": true
+  }
+]

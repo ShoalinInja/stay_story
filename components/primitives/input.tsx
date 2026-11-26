@@ -12,7 +12,7 @@ export type InputProps = React.ComponentProps<"input"> & {
 };
 
 export const inputClass =
-  "h-11 w-full rounded-input border border-line bg-surface px-3 type-body text-ink placeholder:text-muted-text hover:border-ink-2 disabled:cursor-not-allowed disabled:bg-surface-2 disabled:opacity-60 aria-invalid:border-destructive";
+  "h-11 w-full rounded-input border border-line bg-surface px-3 type-body text-ink placeholder:text-muted-text hover:border-ink-2 disabled:cursor-not-allowed disabled:bg-surface-2 disabled:opacity-60 aria-invalid:border-destructive focus-within:outline-2 focus-within:outline-offset-2 focus-within:outline-ring";
 
 export function Input({ id, label, hint, error, className, wrapperClassName, ...props }: InputProps) {
   const hintId = hint ? `${id}-hint` : undefined;

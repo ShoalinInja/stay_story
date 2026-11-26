@@ -36,7 +36,7 @@ for (const url of PAGES) {
   });
 }
 
-test.fixme("D10: native date inputs show the focus ring", async ({ page }) => {
+test("D10: native date inputs show the focus ring", async ({ page }) => {
   await page.goto("/travel/airport-transfers");
   const date = page.locator('main input[type="date"]').first();
   await date.focus();

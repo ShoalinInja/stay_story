@@ -107,17 +107,11 @@ test("form post success: 303 to /thank-you", async () => {
   assert.equal(res.headers.get("location"), "/thank-you");
 });
 
-test("form post failure: 303 back to the same-origin referrer with ?enquiry=error", async () => {
+test("form post failure: 303 to the static /enquiry-error page", async () => {
   const { d } = deps();
   const res = await handleEnquiry(form({ ...lead, phone: "1" }), d);
   assert.equal(res.status, 303);
-  assert.equal(res.headers.get("location"), "/stays/casa?x=1&enquiry=error");
-});
-
-test("form post failure with a foreign referrer goes to / (no open redirect)", async () => {
-  const { d } = deps();
-  const res = await handleEnquiry(form({ ...lead, phone: "1" }, "https://evil.example/x"), d);
-  assert.equal(res.headers.get("location"), "/?enquiry=error");
+  assert.equal(res.headers.get("location"), "/enquiry-error");
 });
 
 test("form post: UTM params are recovered from the referrer page URL and sent to sinks", async () => {

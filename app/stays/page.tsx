@@ -21,7 +21,8 @@ export default async function StaysPage({ searchParams }: PageProps<"/stays">) {
         {cat?.intro && <p className="mt-3 type-body text-ink-2">{cat.intro}</p>}
       </header>
       {/* searchParams are request-time under Cache Components: read them inside the boundary. */}
-      <Suspense fallback={<div className="mt-8 h-96 animate-pulse rounded-card bg-surface-2" />}>
+      {/* Fallback is the unfiltered listing (prerendered), so the page works without JS (BRIEF §7). */}
+      <Suspense fallback={<Listing searchParams={Promise.resolve({})} />}>
         <Listing searchParams={searchParams} />
       </Suspense>
     </main>

@@ -28,9 +28,16 @@ const MOSAIC_MIN = 5;
 export function StayGallery({ images, labels }: { images: MediaRef[]; labels: Labels }) {
   const [open, setOpen] = React.useState(false);
   const [index, setIndex] = React.useState(0);
+  // Controlled Modal has no trigger, so restore focus to whatever opened it (WCAG 2.4.3).
+  const opener = React.useRef<HTMLElement | null>(null);
   const show = (i: number) => {
+    opener.current = document.activeElement as HTMLElement | null;
     setIndex(i);
     setOpen(true);
+  };
+  const onOpenChange = (o: boolean) => {
+    setOpen(o);
+    if (!o) requestAnimationFrame(() => opener.current?.focus());
   };
   if (images.length === 0) return null;
 
@@ -41,7 +48,7 @@ export function StayGallery({ images, labels }: { images: MediaRef[]; labels: La
       ) : (
         <HeroStrip images={images} labels={labels} onOpen={show} />
       )}
-      <Lightbox images={images} labels={labels} open={open} onOpenChange={setOpen} index={index} setIndex={setIndex} />
+      <Lightbox images={images} labels={labels} open={open} onOpenChange={onOpenChange} index={index} setIndex={setIndex} />
     </>
   );
 }
@@ -75,7 +82,7 @@ function Mosaic({ images, labels, onOpen }: { images: MediaRef[]; labels: Labels
         const i = j + 1;
         const isLast = i === MOSAIC_MIN - 1;
         return (
-          <Tile key={img.src + i} img={img} label={labels.photo[i]} onClick={() => onOpen(i)} sizes="300px" className="hidden md:block">
+          <Tile key={img.src + i} img={img} label={isLast && extra > 0 && !img.hasBakedText ? `${labels.photo[i]}, ${labels.more}` : labels.photo[i]} onClick={() => onOpen(i)} sizes="300px" className="hidden md:block">
             {isLast && extra > 0 && !img.hasBakedText && (
               <span className="absolute inset-0 grid place-items-center bg-black/45 text-lg font-semibold text-white">{labels.more}</span>
             )}

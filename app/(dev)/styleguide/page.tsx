@@ -51,11 +51,11 @@ const SWATCHES = [
   ["surface-2", "bg-surface-2", "#F9FAFB"],
   ["cta", "bg-cta", "#1D1C2B"],
   ["brand", "bg-brand", "#FB9D5C"],
-  ["brand-strong", "bg-brand-strong", "#C2611F"],
+  ["brand-strong", "bg-brand-strong", "#AD5419"],
   ["brand-tint", "bg-brand-tint", "#FDE6D3"],
   ["star", "bg-star", "#E89B00"],
   ["footer-bg", "bg-footer-bg", "#1E1E1E"],
-  ["success", "bg-success", "#1F9D55"],
+  ["success", "bg-success", "#178045"],
   ["whatsapp", "bg-whatsapp", "#25D366"],
 ] as const;
 

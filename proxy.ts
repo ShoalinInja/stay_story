@@ -19,6 +19,6 @@ export function proxy(request: NextRequest) {
 }
 
 export const config = {
-  // Pages only: skip Next internals and anything with a file extension (images, sitemap.xml, robots.txt).
-  matcher: ["/((?!_next/|.*\\.[\\w]+$).*)"],
+  // Pages only: skip Next internals and files (images, sitemap.xml, robots.txt), but not .php: unknown legacy URLs must 404.
+  matcher: ["/((?!_next/|.*\\.(?!php$)\\w+$).*)"],
 };

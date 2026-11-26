@@ -49,7 +49,7 @@ test("stay detail gallery opens the lightbox and closes with Escape", async ({ p
 });
 
 // D2: the lightbox is a controlled Modal with no Radix trigger, so on close focus falls to <body>.
-test.fixme("D2: closing the stay lightbox returns focus to the opener", async ({ page }) => {
+test("D2: closing the stay lightbox returns focus to the opener", async ({ page }) => {
   await page.goto("/stays/casa-siolim");
   const trigger = page.getByRole("button", { name: "View photos" });
   await trigger.click();
@@ -100,21 +100,21 @@ test.describe("no JavaScript", () => {
       page.getByRole("region", { name: "Send an enquiry" }).getByRole("button", { name: "Enquire Now" }).click(),
     ]);
     expect(res.status()).toBe(303);
-    // No sinks in this build → handler redirects back with ?enquiry=error (with sinks it would be /thank-you).
-    expect(res.headers().location).toMatch(/^\/contact\?enquiry=error$|^\/thank-you$/);
-    await page.waitForURL(/enquiry=error|thank-you/);
+    // No sinks in this build → static /enquiry-error (with sinks it would be /thank-you).
+    expect(res.headers().location).toMatch(/^\/(enquiry-error|thank-you)$/);
+    await page.waitForURL(/enquiry-error|thank-you/);
     await expect(page.getByRole("heading", { level: 1 })).toBeVisible();
   });
 
-  // D4: request-time content streams into <div hidden id="S:n"> and is revealed by an inline $RC script.
-  // Without JS it stays hidden, so the ?enquiry=error banner never shows and the visitor gets no feedback.
-  test.fixme("D4: no-JS enquiry failure shows the call fallback banner", async ({ page }) => {
-    await page.goto("/contact?enquiry=error");
-    await expect(page.getByRole("alert").locator('a[href^="tel:+91"]')).toBeVisible();
+  // D4 (fixed): failures land on a static page, so the call fallback shows without JS.
+  test("D4: no-JS enquiry failure page shows the call fallback", async ({ page }) => {
+    await page.goto("/enquiry-error");
+    await expect(page.getByRole("alert")).toBeVisible();
+    await expect(page.locator('main a[href^="tel:+91"]')).toBeVisible();
   });
 
-  // D3: same cause; the /stays grid and filter form live in the Suspense hole, so no-JS visitors see a skeleton.
-  test.fixme("D3: /stays lists stays and the filter form without JS", async ({ page }) => {
+  // D3 (fixed): the Suspense fallback is the prerendered unfiltered listing.
+  test("D3: /stays lists stays and the filter form without JS", async ({ page }) => {
     await page.goto("/stays?type=long-term");
     await expect(page.locator('main a[href="/stays/panjim-long-stay-residence"]:visible').first()).toBeVisible();
     await expect(page.getByRole("form", { name: "Filters" })).toBeVisible();

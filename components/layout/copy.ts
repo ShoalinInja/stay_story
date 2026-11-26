@@ -61,11 +61,6 @@ export const UI = {
     categories: "Plan your Goa trip",
     home: "Back to home",
   },
-  enquiryError: {
-    /** Followed by the phone link (and WhatsApp when set). */
-    message: "We couldn't send your enquiry. Please call us on",
-    or: "or",
-  },
   legalDraft:"Draft for legal review. This text has not yet been approved.",
 } as const;
 

@@ -4,7 +4,6 @@ import "./globals.css";
 import { Toaster } from "@/components/primitives";
 import { AnnouncementBar } from "@/components/layout/AnnouncementBar";
 import { UI } from "@/components/layout/copy";
-import { EnquiryErrorNotice } from "@/components/layout/EnquiryErrorNotice";
 import { FloatingActions } from "@/components/layout/FloatingActions";
 import { Footer } from "@/components/layout/Footer";
 import { Header } from "@/components/layout/Header";
@@ -32,7 +31,6 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
         <a href="#main" className="sr-only focus:not-sr-only focus:fixed focus:top-2 focus:left-2 focus:z-50 focus:rounded-input focus:bg-surface focus:px-4 focus:py-2 focus:shadow-card">
           {UI.skip}
         </a>
-        <EnquiryErrorNotice />
         <AnnouncementBar />
         <Header />
         {/* Not a <main>: every page renders its own <main id="main">, the skip-link target. */}

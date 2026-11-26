@@ -9,8 +9,8 @@ import type { ContentBundle } from "./content/types";
  * or it 404s — A9's E2E route sweep catches that.
  */
 const STATIC_TOP = new Set([
-  "about", "gallery", "contact", "privacy", "terms", "thank-you", "stays", "property-sales",
-  "areas", "collections", "list-your-property", "styleguide",
+  "about", "gallery", "contact", "privacy", "terms", "thank-you", "enquiry-error", "stays", "property-sales",
+  "list-your-property", "styleguide", // areas/collections have no index page: nested only
 ]);
 const STAY_TYPE_LANDINGS = ["villas", "apartments-hotels", "long-term-rentals"];
 // Metadata image routes (opengraph-image, icon …) may hang off any page.

@@ -52,7 +52,7 @@ test("every app/ static page is whitelisted in STATIC_TOP (else the proxy 404s i
 
 // D9: STATIC_TOP whitelists "areas" and "collections", which have no index page, so /areas and
 // /collections pass the proxy and render the not-found UI with a 200 (soft 404).
-test.fixme("D9: every STATIC_TOP entry has an app/ page", () => {
+test("D9: every STATIC_TOP entry has an app/ page", () => {
   const pages = new Set(appStaticPages());
   expect(staticTop().filter((s) => !pages.has(s))).toEqual([]);
 });
@@ -79,7 +79,7 @@ for (const route of UNKNOWN) {
   });
 }
 
-test.fixme("D9: /areas and /collections index paths return 404", async ({ request }) => {
+test("D9: /areas and /collections index paths return 404", async ({ request }) => {
   for (const route of ["/areas", "/collections"]) {
     expect((await request.get(route, { maxRedirects: 0 })).status(), route).toBe(404);
   }
@@ -87,7 +87,7 @@ test.fixme("D9: /areas and /collections index paths return 404", async ({ reques
 
 // D1: unknown *.php paths skip proxy.ts (its matcher excludes anything with an extension) and render the
 // not-found UI with a 200 status: a soft 404 on exactly the URL shape old backlinks use.
-test.fixme("D1: 404 for unknown legacy-style .php path", async ({ request }) => {
+test("D1: 404 for unknown legacy-style .php path", async ({ request }) => {
   const res = await request.get("/does-not-exist.php", { maxRedirects: 0 });
   expect(res.status()).toBe(404);
 });

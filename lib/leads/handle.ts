@@ -91,12 +91,8 @@ export async function handleEnquiry(req: Request, deps: HandlerDeps): Promise<Re
 
   const reply = (status: number, body: EnquiryResponse): Response => {
     if (!isForm) return Response.json(body, { status });
-    let location = "/thank-you";
-    if (!body.ok) {
-      const back = new URL(referer ? referer.pathname + referer.search : "/", "http://x");
-      back.searchParams.set("enquiry", "error");
-      location = back.pathname + back.search;
-    }
+    // Static pages: a query-param banner would stream hidden under Cache Components and never show without JS.
+    const location = body.ok ? "/thank-you" : "/enquiry-error";
     return new Response(null, { status: 303, headers: { location } });
   };
   const fail = (status: number, error: EnquiryErrorCode, extra: Partial<EnquiryResponse> = {}) =>

@@ -16,12 +16,6 @@ const PAGES: Record<string, string> = {
 };
 const VIEWPORTS = { mobile: { width: 375, height: 812 }, desktop: { width: 1280, height: 800 } };
 
-/** Rules with an open defect in QA-REPORT.md. Excluded from the sweep, asserted by the fixme tests below. */
-const KNOWN: Record<string, string> = {
-  "color-contrast": "D5 (brand-strong 4.18:1) + D6 (success 3.49:1)",
-  "label-content-name-mismatch": "D7 (gallery '+N More' tile)",
-};
-
 async function blockingViolations(page: Page, rules?: string[]) {
   const builder = new AxeBuilder({ page }).withTags(TAGS);
   if (rules) builder.withRules(rules);
@@ -38,22 +32,9 @@ for (const [vpName, viewport] of Object.entries(VIEWPORTS)) {
       test(`${name} (${url}) has no serious/critical violations`, async ({ page }) => {
         await page.goto(url);
         await page.waitForLoadState("networkidle");
-        const blocking = (await blockingViolations(page)).filter((v) => !(v.id in KNOWN));
+        const blocking = (await blockingViolations(page));
         expect(blocking, JSON.stringify(blocking, null, 2)).toEqual([]);
       });
     }
-  });
-}
-
-for (const [rule, defect] of Object.entries(KNOWN)) {
-  test.fixme(`${defect}: axe ${rule} clean on every template`, async ({ page }) => {
-    const failures: Record<string, unknown> = {};
-    for (const url of Object.values(PAGES)) {
-      await page.goto(url);
-      await page.waitForLoadState("networkidle");
-      const v = await blockingViolations(page, [rule]);
-      if (v.length) failures[url] = v;
-    }
-    expect(failures, JSON.stringify(failures, null, 2)).toEqual({});
   });
 }

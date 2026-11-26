@@ -22,7 +22,7 @@ Rebuild staystory.in (Stay Story Goa) in Next.js. The current site is a PHP temp
 
 ## 2. Design system
 ### 2.1 Tokens
-Implemented in `app/globals.css`. The palette is ink #1E1E1E, ink-2 #394050, muted #6D717F, muted-2 #9FA2AE, line #D2D2D2, line-soft #E5E7EA, cream #FAF7F2, cta #1D1C2B, brand #FB9D5C, brand-strong #C2611F (use it for orange text), brand-tint #FDE6D3, star #E89B00, footer #1E1E1E/#FAF7F2, success #1F9D55, whatsapp #25D366.
+Implemented in `app/globals.css`. The palette is ink #1E1E1E, ink-2 #394050, muted #6D717F, muted-2 #9FA2AE, line #D2D2D2, line-soft #E5E7EA, cream #FAF7F2, cta #1D1C2B, brand #FB9D5C, brand-strong #AD5419 (use it for orange text), brand-tint #FDE6D3, star #E89B00, footer #1E1E1E/#FAF7F2, success #178045, whatsapp #25D366.
 Radius 12 for cards and images, 8 for inputs and chips, full for pills. Card shadow lifts on hover with translateY(-2px).
 Type: H1 48/56 Playfair 600 (mobile 32/40) · H2 28/36 Playfair 600 · H3 16/24 Inter 600 · body 15/24 · meta 13/20 muted · price 20/28 Inter 700.
 Container is 1200px with `px-4 md:px-6`. Sections use `py-12 md:py-16` and alternate surface and cream. Motion is 200ms ease-out. Carousels never autoplay faster than 5s. Respect `prefers-reduced-motion`.

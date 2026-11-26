@@ -15,6 +15,8 @@ export default function config(phase: string): NextConfig {
 
   return {
     cacheComponents: true,
+    // proxy.ts strips trailing slashes itself, so legacy "/x.php/" hits its 301 in one hop (config redirects run first).
+    skipTrailingSlashRedirect: true,
     partialPrefetching: true,
     images: { formats: ["image/avif", "image/webp"] },
     async redirects() {

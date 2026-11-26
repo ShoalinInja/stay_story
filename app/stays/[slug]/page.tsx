@@ -1,7 +1,10 @@
 import type { Metadata } from "next";
+import { pageMetadata } from "@/lib/seo/site";
 import { notFound } from "next/navigation";
 import { loadAddOns, loadAreas, loadStay, loadStays } from "@/components/stays/data";
 import { StayDetail } from "@/components/stays/StayDetail";
+import { faqLd, stayLd } from "@/lib/seo/schema";
+import { JsonLd } from "@/lib/seo/JsonLd";
 
 // Cache Components requires ≥1 param. In production there may be no live stays yet,
 // so fall back to a sentinel that resolves to notFound().
@@ -20,13 +23,14 @@ export async function generateStaticParams() {
 export async function generateMetadata({ params }: PageProps<"/stays/[slug]">): Promise<Metadata> {
   const stay = await loadStay((await params).slug);
   if (!stay) return {};
-  const cover = stay.images.find((i) => !i.hasBakedText);
-  return {
-    title: stay.seo?.title ? { absolute: stay.seo.title } : stay.name,
+  return pageMetadata({
+    title: stay.seo?.title ?? stay.name,
+    absoluteTitle: !!stay.seo?.title,
     description: stay.seo?.description ?? stay.headline,
-    alternates: { canonical: `/stays/${stay.slug}` },
-    openGraph: cover ? { images: [{ url: cover.src, width: cover.width, height: cover.height, alt: cover.alt }] } : undefined,
-  };
+    keywords: stay.seo?.keywords,
+    path: `/stays/${stay.slug}`,
+    image: stay.images.find((i) => !i.hasBakedText),
+  });
 }
 
 export default async function StayPage({ params }: PageProps<"/stays/[slug]">) {
@@ -39,5 +43,11 @@ export default async function StayPage({ params }: PageProps<"/stays/[slug]">) {
   // Same region first, then the rest.
   const related = [...others.filter((s) => s.region === stay.region), ...others.filter((s) => s.region !== stay.region)].slice(0, RELATED_MAX);
 
-  return <StayDetail stay={stay} area={areas.find((a) => a.key === stay.area)} addOns={addOns} related={related} />;
+  const area = areas.find((a) => a.key === stay.area);
+  return (
+    <>
+      <JsonLd data={[stayLd(stay, area), faqLd(stay.faqs)]} />
+      <StayDetail stay={stay} area={area} addOns={addOns} related={related} />
+    </>
+  );
 }

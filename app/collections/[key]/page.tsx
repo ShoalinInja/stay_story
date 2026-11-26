@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { pageMetadata } from "@/lib/seo/site";
 import Image from "next/image";
 import { notFound } from "next/navigation";
 import { Breadcrumbs } from "@/components/layout/Breadcrumbs";
@@ -20,7 +21,7 @@ async function findCollection(key: string) {
 
 export async function generateMetadata({ params }: PageProps<"/collections/[key]">): Promise<Metadata> {
   const c = await findCollection((await params).key);
-  return c ? { title: { absolute: c.seo.title }, description: c.seo.description, alternates: { canonical: `/collections/${c.key}` } } : {};
+  return c ? pageMetadata({ title: c.seo.title, absoluteTitle: true, description: c.seo.description, keywords: c.seo.keywords, path: `/collections/${c.key}`, image: c.image }) : {};
 }
 
 export default async function CollectionPage({ params }: PageProps<"/collections/[key]">) {

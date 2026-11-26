@@ -1,11 +1,14 @@
 import type { ReactNode } from "react";
 import type { Metadata } from "next";
+import { pageMetadata } from "@/lib/seo/site";
 import Image from "next/image";
 import { notFound } from "next/navigation";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger, Chip } from "@/components/primitives";
 import { resolveIcon } from "@/lib/icons";
 import type { StayType } from "@/lib/content/types";
 import { Breadcrumbs } from "@/components/layout/Breadcrumbs";
+import { faqLd } from "@/lib/seo/schema";
+import { JsonLd } from "@/lib/seo/JsonLd";
 import { copy } from "./copy";
 import { loadStays, loadStaysService } from "./data";
 import { StayGrid, StaysEmpty } from "./StayGrid";
@@ -20,7 +23,7 @@ export async function TypeListing({ types, empty, source, stayMode }: { types: S
 
 export async function typeLandingMetadata(slug: string, path: string): Promise<Metadata> {
   const item = await loadStaysService(slug);
-  return item ? { title: { absolute: item.seo.title }, description: item.seo.description, keywords: item.seo.keywords, alternates: { canonical: path } } : {};
+  return item ? pageMetadata({ title: item.seo.title, absoluteTitle: true, description: item.seo.description, keywords: item.seo.keywords, path, image: item.hero }) : {};
 }
 
 type Props = {
@@ -40,6 +43,7 @@ export async function TypeLanding({ slug, path, listing, listingTitle = copy.typ
 
   return (
     <main id="main" className="flex-1">
+      <JsonLd data={faqLd(item.faqs)} />
       <section className="container-site pt-6 pb-12 md:pb-16">
         <Breadcrumbs items={[{ label: copy.detail.breadcrumbsStays, href: "/stays" }, { label: item.title, href: path }]} />
         <div className="mt-6 grid items-center gap-8 md:grid-cols-2">

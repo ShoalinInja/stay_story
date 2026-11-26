@@ -1,15 +1,12 @@
 import type { Metadata } from "next";
+import { pageMetadata } from "@/lib/seo/site";
 import { Check } from "lucide-react";
 import { EnquiryForm } from "@/components/forms/EnquiryForm";
 import { copy } from "@/components/stays/copy";
 
 const t = copy.listYourProperty;
 
-export const metadata: Metadata = {
-  title: t.title,
-  description: t.intro,
-  alternates: { canonical: "/list-your-property" },
-};
+export const metadata: Metadata = pageMetadata({ title: t.title, description: t.intro, path: "/list-your-property" });
 
 export default function ListYourPropertyPage() {
   return (

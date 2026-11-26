@@ -1,5 +1,6 @@
 import { Suspense } from "react";
 import type { Metadata } from "next";
+import { pageMetadata } from "@/lib/seo/site";
 import { AMENITIES, copy } from "@/components/stays/copy";
 import { loadAreas, loadStays, loadStaysCategory } from "@/components/stays/data";
 import { FilterBar } from "@/components/stays/FilterBar";
@@ -9,7 +10,7 @@ import type { AmenityKey } from "@/lib/content/types";
 
 export async function generateMetadata(): Promise<Metadata> {
   const cat = await loadStaysCategory();
-  return cat ? { title: { absolute: cat.seo.title }, description: cat.seo.description, alternates: { canonical: "/stays" } } : {};
+  return cat ? pageMetadata({ title: cat.seo.title, absoluteTitle: true, description: cat.seo.description, keywords: cat.seo.keywords, path: "/stays" }) : {};
 }
 
 export default async function StaysPage({ searchParams }: PageProps<"/stays">) {

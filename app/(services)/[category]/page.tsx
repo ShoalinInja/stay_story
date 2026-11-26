@@ -1,4 +1,8 @@
 import type { Metadata } from "next";
+import { pageMetadata } from "@/lib/seo/site";
+import { breadcrumbLd, faqLd } from "@/lib/seo/schema";
+import { JsonLd } from "@/lib/seo/JsonLd";
+import { UI } from "@/components/layout/copy";
 import { EnquiryForm } from "@/components/forms/EnquiryForm";
 import { SectionHeader } from "@/components/primitives";
 import { SERVICES_COPY } from "@/components/services/copy";
@@ -13,8 +17,8 @@ export function generateStaticParams() {
 }
 
 export async function generateMetadata({ params }: PageProps<"/[category]">): Promise<Metadata> {
-  const { seo } = await loadCategory((await params).category);
-  return { title: { absolute: seo.title }, description: seo.description, keywords: seo.keywords };
+  const { seo, slug, cover } = await loadCategory((await params).category);
+  return pageMetadata({ title: seo.title, absoluteTitle: true, description: seo.description, keywords: seo.keywords, path: `/${slug}`, image: cover });
 }
 
 // Every valid category is prerendered; only unknown URLs render at request time, so blocking is fine.
@@ -28,6 +32,7 @@ export default async function CategoryLanding({ params }: PageProps<"/[category]
 
   return (
     <main id="main" className="flex-1">
+      <JsonLd data={[faqLd(faqs), breadcrumbLd([{ label: UI.home, href: "/" }, { label: title, href: `/${slug}` }])]} />
       <ServiceHero title={title} lead={intro ?? tagline} image={cover}>
         {intro && <p className="mt-2 type-meta text-muted-text">{tagline}</p>}
       </ServiceHero>

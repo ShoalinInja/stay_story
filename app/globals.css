@@ -1,26 +1,196 @@
 @import "tailwindcss";
+@import "tw-animate-css";
+@import "shadcn/tailwind.css";
 
+/* ------------------------------------------------------------------
+   StayStory design tokens (OWNER: Lead — request changes, don't edit)
+   ------------------------------------------------------------------ */
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --ink: #1e1e1e;
+  --ink-2: #394050;
+  --muted-text: #6d717f; /* named --muted-text: shadcn reserves --muted for a surface */
+  --muted-2: #9fa2ae;
+  --line: #d2d2d2;
+  --line-soft: #e5e7ea;
+  --cream: #faf7f2;
+  --surface: #ffffff;
+  --surface-2: #f9fafb;
+  --cta: #1d1c2b;
+  --brand: #fb9d5c;
+  --brand-strong: #c2611f;
+  --brand-tint: #fde6d3;
+  --star: #e89b00;
+  --footer-bg: #1e1e1e;
+  --footer-text: #faf7f2;
+  --success: #1f9d55;
+  --whatsapp: #25d366;
+
+  --shadow-card: 0 1px 2px rgba(0, 0, 0, 0.04), 0 4px 16px rgba(0, 0, 0, 0.06);
+  --shadow-card-hover: 0 8px 24px rgba(0, 0, 0, 0.1);
+
+  /* shadcn/ui semantic variables, mapped onto the tokens above */
+  --radius: 0.75rem; /* 12px */
+  --background: var(--surface);
+  --foreground: var(--ink);
+  --card: var(--surface);
+  --card-foreground: var(--ink);
+  --popover: var(--surface);
+  --popover-foreground: var(--ink);
+  --primary: var(--cta);
+  --primary-foreground: #ffffff;
+  --secondary: var(--surface-2);
+  --secondary-foreground: var(--ink);
+  --muted: var(--surface-2);
+  --muted-foreground: var(--muted-text);
+  --accent: var(--brand-tint);
+  --accent-foreground: var(--ink);
+  --destructive: #c62828;
+  --border: var(--line-soft);
+  --input: var(--line);
+  --ring: var(--brand-strong);
 }
 
 @theme inline {
+  /* brand palette → utilities: bg-ink, text-muted-text, bg-cream, text-brand-strong … */
+  --color-ink: var(--ink);
+  --color-ink-2: var(--ink-2);
+  --color-muted-text: var(--muted-text);
+  --color-muted-2: var(--muted-2);
+  --color-line: var(--line);
+  --color-line-soft: var(--line-soft);
+  --color-cream: var(--cream);
+  --color-surface: var(--surface);
+  --color-surface-2: var(--surface-2);
+  --color-cta: var(--cta);
+  --color-brand: var(--brand);
+  --color-brand-strong: var(--brand-strong);
+  --color-brand-tint: var(--brand-tint);
+  --color-star: var(--star);
+  --color-footer-bg: var(--footer-bg);
+  --color-footer-text: var(--footer-text);
+  --color-success: var(--success);
+  --color-whatsapp: var(--whatsapp);
+
+  /* shadcn semantic */
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+
+  /* type */
+  --font-sans: var(--font-inter), ui-sans-serif, system-ui, sans-serif;
+  --font-display: var(--font-playfair), Georgia, serif;
+  --font-heading: var(--font-display);
+
+  /* radius: card 12 · input/chip 8 · pill full */
+  --radius-sm: 0.5rem;
+  --radius-md: 0.5rem;
+  --radius-lg: 0.75rem;
+  --radius-xl: 0.75rem;
+  --radius-2xl: 1rem;
+  --radius-3xl: 1.25rem;
+  --radius-card: 0.75rem;
+  --radius-input: 0.5rem;
+
+  --shadow-card: var(--shadow-card);
+  --shadow-card-hover: var(--shadow-card-hover);
+
+  --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
+  --default-transition-duration: 200ms;
+  --default-transition-timing-function: var(--ease-out);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+/* Type scale — use these classes, not ad-hoc sizes */
+@utility text-h1 {
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: 2rem;
+  line-height: 2.5rem;
+  @variant md {
+    font-size: 3rem;
+    line-height: 3.5rem;
+  }
+}
+@utility text-h2 {
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: 1.75rem;
+  line-height: 2.25rem;
+}
+@utility text-h3 {
+  font-weight: 600;
+  font-size: 1rem;
+  line-height: 1.5rem;
+}
+@utility text-body {
+  font-size: 0.9375rem;
+  line-height: 1.5rem;
+}
+@utility text-meta {
+  font-size: 0.8125rem;
+  line-height: 1.25rem;
+  color: var(--muted-text);
+}
+@utility text-price {
+  font-weight: 700;
+  font-size: 1.25rem;
+  line-height: 1.75rem;
+}
+
+/* Layout helpers */
+@utility container-site {
+  margin-inline: auto;
+  width: 100%;
+  max-width: 1200px;
+  padding-inline: 1rem;
+  @variant md {
+    padding-inline: 1.5rem;
+  }
+}
+@utility section-y {
+  padding-block: 3rem;
+  @variant md {
+    padding-block: 4rem;
   }
 }
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+  html {
+    @apply font-sans;
+  }
+  body {
+    @apply bg-background text-foreground text-body antialiased;
+  }
+  :focus-visible {
+    outline: 2px solid var(--ring);
+    outline-offset: 2px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
 }

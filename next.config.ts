@@ -1,17 +1,29 @@
 import type { NextConfig } from "next";
+import { PHASE_PRODUCTION_BUILD } from "next/constants";
+import { content } from "./content";
+import { findPlaceholders } from "./lib/content/placeholders";
 
-const nextConfig: NextConfig = {
-  /* config options here */
-  cacheComponents: true,
-  partialPrefetching: true,
-  turbopack: {
-    rules: {
-      "*.css": {
-        loaders: ["@tailwindcss/turbopack"],
-        as: "*.css",
+export default function config(phase: string): NextConfig {
+  if (phase === PHASE_PRODUCTION_BUILD && process.env.ALLOW_PLACEHOLDERS !== "true") {
+    const bad = findPlaceholders(content);
+    if (bad.length) {
+      throw new Error(
+        `Placeholder / needsReview content would ship to production (set ALLOW_PLACEHOLDERS=true to override):\n  ${bad.join("\n  ")}`,
+      );
+    }
+  }
+
+  return {
+    cacheComponents: true,
+    partialPrefetching: true,
+    images: { formats: ["image/avif", "image/webp"] },
+    async redirects() {
+      return content.redirects; // A1 fills content/redirects.ts
+    },
+    turbopack: {
+      rules: {
+        "*.css": { loaders: ["@tailwindcss/turbopack"], as: "*.css" },
       },
     },
-  },
-};
-
-export default nextConfig;
+  };
+}

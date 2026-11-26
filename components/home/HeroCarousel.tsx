@@ -1,6 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
-import { Rail, RailNext, RailPrev, RailTrack } from "@/components/primitives";
+import { AfterLoad, Rail, RailNext, RailPrev, RailTrack } from "@/components/primitives";
 import type { Site } from "@/lib/content";
 import { HOME_COPY } from "./copy";
 
@@ -16,17 +16,14 @@ export function HeroCarousel({ hero }: { hero: Site["hero"] }) {
         <RailTrack slideClassName="basis-full pl-0" className="ml-0">
           {slides.map((s, i) => (
             <div key={s.image.src} className="relative h-[440px] md:h-[520px]">
-              <Image
-                src={s.image.src}
-                alt={s.image.alt}
-                fill
-                sizes="100vw"
-                fetchPriority={i === 0 ? "high" : undefined}
-                loading={i === 0 ? "eager" : undefined}
-                placeholder={s.image.blurDataURL ? "blur" : "empty"}
-                blurDataURL={s.image.blurDataURL}
-                className="object-cover"
-              />
+              {i === 0 ? (
+                <Image src={s.image.src} alt={s.image.alt} fill sizes="100vw" fetchPriority="high" loading="eager" className="object-cover" />
+              ) : (
+                // Later slides wait for window load so they don't slow the LCP image on mobile.
+                <AfterLoad>
+                  <Image src={s.image.src} alt={s.image.alt} fill sizes="100vw" className="object-cover" />
+                </AfterLoad>
+              )}
               <div aria-hidden className="absolute inset-0 bg-black/45" />
               <div className="absolute inset-x-0 bottom-20 flex justify-center md:bottom-24">
                 <Link

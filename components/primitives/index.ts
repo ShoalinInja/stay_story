@@ -27,3 +27,4 @@ export { Sheet, type SheetProps } from "./sheet";
 export { Modal, type ModalProps } from "./modal";
 export { Toaster, toast } from "./toast";
 export { Accordion, AccordionItem, AccordionTrigger, AccordionContent } from "./accordion";
+export { AfterLoad } from "./after-load";

@@ -41,6 +41,7 @@ async function Listing({ searchParams }: Pick<PageProps<"/stays">, "searchParams
     <div className="mt-8 grid gap-8 lg:grid-cols-[260px_1fr]">
       <FilterBar areaOptions={areaOptions} filters={filters} from={from} to={to} total={stays.length} />
       <section aria-label={copy.filters.results(stays.length)}>
+        <h2 className="sr-only">{copy.filters.results(stays.length)}</h2>
         {stays.length > 0 ? (
           <StayGrid stays={stays} className="grid gap-6 sm:grid-cols-2 xl:grid-cols-3" />
         ) : exceedsCapacity(filters.guests, all) ? (

@@ -20,10 +20,17 @@ type CarouselProps = {
 export function CardCarousel({ href, images, label, dotLabels, priority }: CarouselProps) {
   const [viewportRef, api] = useEmblaCarousel({ loop: images.length > 1 });
   const [index, setIndex] = React.useState(0);
+  // Only photos up to one past the furthest slide visited get an <Image>: a grid of 5-photo cards
+  // would otherwise fetch every photo up front (they sit inside the native lazy-load distance).
+  const [reached, setReached] = React.useState(0);
 
   React.useEffect(() => {
     if (!api) return;
-    const sync = () => setIndex(api.selectedScrollSnap());
+    const sync = () => {
+      const i = api.selectedScrollSnap();
+      setIndex(i);
+      setReached((r) => Math.max(r, i + 1));
+    };
     api.on("select", sync).on("reInit", sync);
     return () => {
       api.off("select", sync).off("reInit", sync);
@@ -36,18 +43,20 @@ export function CardCarousel({ href, images, label, dotLabels, priority }: Carou
         <div className="flex touch-pan-y">
           {images.map((img, i) => (
             // Duplicate of the title link for pointer users; keyboard users reach the stay via the title.
-            <Link key={img.src + i} href={href} tabIndex={-1} className="relative aspect-[4/3] min-w-0 shrink-0 grow-0 basis-full bg-surface-2">
-              <Image
-                src={img.src}
-                alt={img.alt}
-                fill
-                sizes="(min-width: 1024px) 360px, (min-width: 640px) 50vw, 100vw"
-                placeholder={img.blurDataURL ? "blur" : "empty"}
-                blurDataURL={img.blurDataURL}
-                fetchPriority={priority && i === 0 ? "high" : undefined}
-                loading={priority && i === 0 ? "eager" : undefined}
-                className="object-cover"
-              />
+            <Link key={img.src + i} href={href} tabIndex={-1} aria-label={i <= reached ? undefined : img.alt} className="relative aspect-[4/3] min-w-0 shrink-0 grow-0 basis-full bg-surface-2">
+              {i <= reached && (
+                <Image
+                  src={img.src}
+                  alt={img.alt}
+                  fill
+                  sizes="(min-width: 1024px) 360px, (min-width: 640px) 50vw, 100vw"
+                  placeholder={img.blurDataURL ? "blur" : "empty"}
+                  blurDataURL={img.blurDataURL}
+                  fetchPriority={priority && i === 0 ? "high" : undefined}
+                  loading={priority && i === 0 ? "eager" : undefined}
+                  className="object-cover"
+                />
+              )}
             </Link>
           ))}
         </div>

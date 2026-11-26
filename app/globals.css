@@ -2,6 +2,16 @@
 @import "tw-animate-css";
 @import "shadcn/tailwind.css";
 
+/* ₹ (U+20B9) lives in Inter's latin-ext file (~85 KB, not preloaded, so it delayed LCP on every priced page).
+   public/fonts/inter-rupee.woff2 is Inter (OFL) subset to that one glyph: pyftsubset --unicodes=U+20B9. */
+@font-face {
+  font-family: "Rupee";
+  font-weight: 100 900;
+  font-display: swap;
+  src: url("/fonts/inter-rupee.woff2") format("woff2");
+  unicode-range: U+20B9;
+}
+
 /* ------------------------------------------------------------------
    StayStory design tokens (OWNER: Lead — request changes, don't edit)
    ------------------------------------------------------------------ */
@@ -92,7 +102,7 @@
   --color-ring: var(--ring);
 
   /* type */
-  --font-sans: var(--font-inter), ui-sans-serif, system-ui, sans-serif;
+  --font-sans: "Rupee", var(--font-inter), ui-sans-serif, system-ui, sans-serif;
   --font-display: var(--font-playfair), Georgia, serif;
   --font-heading: var(--font-display);
 

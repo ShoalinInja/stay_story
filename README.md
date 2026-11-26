@@ -60,7 +60,7 @@ content/
 
 - **Types** are frozen in [`lib/content/types.ts`](lib/content/types.ts). Pages read content only through `lib/content` (server-only).
 - **No copy is hardcoded in components.** Page copy lives in `content/`. Small UI labels live in each feature's `components/*/copy.ts`.
-- **Images with text baked into the pixels** (the legacy posters, flagged `hasBakedText`) are never cropped or overlaid, and are kept out of carousels and cards.
+- **Images with text baked into the pixels** (the legacy posters, flagged `hasBakedText`) are never cropped or overlaid with text. They are kept out of the home hero, and clean photos always come first in cards and galleries.
 
 ### Draft content is blocked in production
 
@@ -72,7 +72,7 @@ Follow [`docs/ADD-A-STAY.md`](docs/ADD-A-STAY.md), written for the owner: photos
 
 ### Add a service
 
-1. Add an item to the right `content/categories/<category>.ts` `items` array. Copy an existing item: it needs slug, title, summary, hero, benefits, FAQs, `related` and SEO.
+1. Add an item to the right `content/categories/<category>.ts` `items` array. Copy an existing item: it needs `slug`, `category`, `title`, `hero`, `summary` (40 words max), 4–6 `sections`, `idealFor`, `faqs`, `related` and `seo`. `priceFrom` and `inclusions` are optional. Set `legacyPath: ""`, because a new service has no old `.php` page.
 2. The page appears at `/<category>/<slug>`, and the sitemap and route index pick it up automatically.
 3. Run `pnpm test` (content validation) and `pnpm build`.
 
@@ -88,7 +88,7 @@ A **new top-level static page** (for example `app/(site)/careers`) must also be 
 
 1. Import the repo into Vercel. The framework is Next.js and pnpm is detected from `packageManager`, so no build settings need changing.
 2. Set the environment variables above for **Production**, and **never** set `ALLOW_PLACEHOLDERS` there. Previews may use `ALLOW_PLACEHOLDERS=true` to show draft content.
-3. **Supabase:** create a project, run `supabase/migrations/0001_enquiries.sql` (it enables RLS with no public policies), and copy the URL and service-role key.
+3. **Supabase:** create a project, run `supabase/migrations/0001_enquiries.sql` (it enables RLS and revokes all table access from the `anon` and `authenticated` roles, so only the server key can write), and copy the URL and service-role key.
 4. **Resend:** verify the sending domain (`staystory.in`: add the SPF, DKIM and DMARC records it gives you), then set `LEAD_FROM_EMAIL` on that domain.
 5. **Upstash:** create a Redis database and set the REST URL and token.
 6. Deploy. On the preview URL:

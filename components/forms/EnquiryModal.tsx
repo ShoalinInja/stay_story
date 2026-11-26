@@ -4,6 +4,7 @@
 import type { ReactNode } from "react";
 import { Modal } from "@/components/primitives";
 import { EnquiryForm, type EnquiryFormProps } from "./EnquiryForm";
+import { FORM_COPY } from "./copy";
 
 export type EnquiryModalProps = EnquiryFormProps & {
   /** The element that opens the modal (a Button, link-styled button, etc.). */
@@ -14,7 +15,7 @@ export type EnquiryModalProps = EnquiryFormProps & {
 
 export function EnquiryModal({ trigger, title, description, ...form }: EnquiryModalProps) {
   return (
-    <Modal trigger={trigger} title={title ?? (form.variant === "callback" ? "Request a callback" : "Send an enquiry")} description={description}>
+    <Modal trigger={trigger} title={title ?? (form.variant === "callback" ? FORM_COPY.modal.callback : FORM_COPY.modal.default)} description={description}>
       <EnquiryForm {...form} />
     </Modal>
   );

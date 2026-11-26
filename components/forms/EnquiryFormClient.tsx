@@ -12,6 +12,7 @@ import { leadWhatsAppMessage, whatsAppUrl } from "@/lib/leads/whatsapp";
 import { formatIndianPhone } from "@/lib/leads/contact";
 import type { EnquiryResponse } from "@/lib/leads/handle";
 import type { EnquiryFormProps } from "./EnquiryForm";
+import { FORM_COPY as T } from "./copy";
 
 export type EnquiryFormClientProps = EnquiryFormProps & {
   /** site.whatsapp; null hides WhatsApp UI. Passed from a server parent. */
@@ -103,7 +104,7 @@ export function EnquiryFormClient({
     if (status.kind === "sent") doneRef.current?.focus();
   }, [status.kind]);
 
-  const contactLine = `Please call ${formatIndianPhone(phone)}${whatsapp ? " or message us on WhatsApp" : ""}.`;
+  const contactLine = T.errors.contactLine(formatIndianPhone(phone), !!whatsapp);
 
   const onValid = async (data: EnquiryData, event?: BaseSyntheticEvent) => {
     const form = event?.target instanceof HTMLFormElement ? event.target : null;
@@ -122,12 +123,12 @@ export function EnquiryFormClient({
       }
       window.turnstile?.reset();
       const message =
-        res.status === 429 ? `You've sent a few enquiries already. ${contactLine}`
-        : res.status === 400 ? `Please check the form and try again. ${body.error === "captcha" ? "The spam check failed. " : ""}`
-        : `We couldn't send your enquiry just now. ${contactLine}`;
+        res.status === 429 ? `${T.errors.rateLimited} ${contactLine}`
+        : res.status === 400 ? (body.error === "captcha" ? `${T.errors.invalid} ${T.errors.captcha}` : T.errors.invalid)
+        : `${T.errors.failed} ${contactLine}`;
       setStatus({ kind: "error", message });
     } catch {
-      setStatus({ kind: "error", message: `We couldn't reach our server. ${contactLine}` });
+      setStatus({ kind: "error", message: `${T.errors.network} ${contactLine}` });
     }
   };
 
@@ -139,11 +140,11 @@ export function EnquiryFormClient({
     return (
       <div role="status" className={cn("flex flex-col items-start gap-3 rounded-card bg-surface-2 p-6", className)}>
         <CircleCheck aria-hidden className="size-8 text-success" />
-        <h3 ref={doneRef} tabIndex={-1} className="type-h3 text-ink">Thank you, we&apos;ve got your enquiry</h3>
-        <p className="type-body text-muted-text">We&apos;ll get back to you shortly{wa ? ". For a faster reply, continue on WhatsApp." : "."}</p>
+        <h3 ref={doneRef} tabIndex={-1} className="type-h3 text-ink">{T.sent.title}</h3>
+        <p className="type-body text-muted-text">{T.sent.body(!!wa)}</p>
         {wa && (
           <Button asChild variant="dark">
-            <a href={wa} target="_blank" rel="noopener noreferrer"><MessageCircle aria-hidden /> Continue on WhatsApp</a>
+            <a href={wa} target="_blank" rel="noopener noreferrer"><MessageCircle aria-hidden /> {T.sent.whatsapp}</a>
           </Button>
         )}
       </div>
@@ -170,17 +171,17 @@ export function EnquiryFormClient({
 
       {/* Honeypot: hidden from people and assistive tech, tempting to bots. */}
       <div aria-hidden className="absolute -left-[9999px] h-px w-px overflow-hidden">
-        <label htmlFor={f("website")}>Leave this field empty</label>
+        <label htmlFor={f("website")}>{T.fields.honeypot}</label>
         <input id={f("website")} type="text" tabIndex={-1} autoComplete="off" {...register("website")} />
       </div>
 
-      <Input id={f("name")} label="Name" autoComplete="name" required error={err("name")} {...register("name")} />
+      <Input id={f("name")} label={T.fields.name} autoComplete="name" required error={err("name")} {...register("name")} />
       <Input
-        id={f("phone")} label="Phone" type="tel" inputMode="tel" autoComplete="tel" required
-        placeholder="+91 98765 43210" error={err("phone")} {...register("phone")}
+        id={f("phone")} label={T.fields.phone} type="tel" inputMode="tel" autoComplete="tel" required
+        placeholder={T.fields.phonePlaceholder} error={err("phone")} {...register("phone")}
       />
       {wantsEmail && (
-        <Input id={f("email")} label="Email (optional)" type="email" autoComplete="email" error={err("email")} {...register("email")} />
+        <Input id={f("email")} label={T.fields.email} type="email" autoComplete="email" error={err("email")} {...register("email")} />
       )}
 
       {isStay && stayMode === "dates" && (
@@ -211,27 +212,27 @@ export function EnquiryFormClient({
           {/* No-JS fallback; the API takes the first non-empty value per field. */}
           <noscript>
             <div className="grid grid-cols-2 gap-3">
-              <Input id={f("ns-in")} name="checkIn" type="date" label="Check-in" />
-              <Input id={f("ns-out")} name="checkOut" type="date" label="Check-out" />
+              <Input id={f("ns-in")} name="checkIn" type="date" label={T.fields.checkIn} />
+              <Input id={f("ns-out")} name="checkOut" type="date" label={T.fields.checkOut} />
             </div>
           </noscript>
         </>
       )}
       {isStay && stayMode === "move-in" && (
-        <Input id={f("moveIn")} label="Preferred move-in month" type="month" error={err("moveIn")} {...register("moveIn")} />
+        <Input id={f("moveIn")} label={T.fields.moveIn} type="month" error={err("moveIn")} {...register("moveIn")} />
       )}
       {((isStay && stayMode === "site-visit") || variant === "service") && (
         <Input
-          id={f("date")} label={variant === "service" ? "Preferred date (optional)" : "Preferred site-visit date"}
+          id={f("date")} label={variant === "service" ? T.fields.serviceDate : T.fields.siteVisitDate}
           type="date" defaultValue={defaults?.checkIn} error={err("checkIn")} {...register("checkIn")}
         />
       )}
 
       {wantsGuests && (
         <div className="grid grid-cols-2 gap-3">
-          <Input id={f("adults")} label="Adults" type="number" min={1} max={99} inputMode="numeric" defaultValue={defaults?.adults ?? 2} error={err("adults")} {...register("adults")} />
+          <Input id={f("adults")} label={T.fields.adults} type="number" min={1} max={99} inputMode="numeric" defaultValue={defaults?.adults ?? 2} error={err("adults")} {...register("adults")} />
           {isStay && (
-            <Input id={f("children")} label="Children" type="number" min={0} max={99} inputMode="numeric" defaultValue={defaults?.children ?? 0} error={err("children")} {...register("children")} />
+            <Input id={f("children")} label={T.fields.children} type="number" min={0} max={99} inputMode="numeric" defaultValue={defaults?.children ?? 0} error={err("children")} {...register("children")} />
           )}
         </div>
       )}
@@ -239,7 +240,7 @@ export function EnquiryFormClient({
       {wantsMessage && (
         <div className="flex flex-col gap-1.5">
           <label htmlFor={f("message")} className="text-sm font-semibold text-ink">
-            {variant === "property-owner" ? "About your property (location, type, bedrooms)" : messageRequired ? "Message" : "Message (optional)"}
+            {variant === "property-owner" ? T.fields.propertyMessage : messageRequired ? T.fields.message : T.fields.messageOptional}
           </label>
           <textarea
             id={f("message")} rows={4} required={messageRequired}
@@ -265,11 +266,11 @@ export function EnquiryFormClient({
           <p className="type-body text-ink">{status.message}</p>
           <div className="flex flex-wrap gap-2">
             <Button asChild variant="outline" size="sm">
-              <a href={`tel:${phone}`}><Phone aria-hidden /> Call us</a>
+              <a href={`tel:${phone}`}><Phone aria-hidden /> {T.errors.call}</a>
             </Button>
             {errorWa && (
               <Button asChild variant="outline" size="sm">
-                <a href={errorWa} target="_blank" rel="noopener noreferrer"><MessageCircle aria-hidden /> WhatsApp us</a>
+                <a href={errorWa} target="_blank" rel="noopener noreferrer"><MessageCircle aria-hidden /> {T.errors.whatsapp}</a>
               </Button>
             )}
           </div>
@@ -277,7 +278,7 @@ export function EnquiryFormClient({
       )}
 
       <Button type="submit" size="lg" disabled={hydrated && (!isValid || isSubmitting)} aria-busy={isSubmitting || undefined}>
-        {isSubmitting ? "Sending…" : (submitLabel ?? (variant === "callback" ? "Request a callback" : "Enquire Now"))}
+        {isSubmitting ? T.submit.sending : (submitLabel ?? (variant === "callback" ? T.submit.callback : T.submit.default))}
       </Button>
     </form>
   );

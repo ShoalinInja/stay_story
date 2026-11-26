@@ -54,7 +54,7 @@ pnpm test:e2e            # E2E_PORT=xxxx to change the port
 - **D1 fix:** the proxy matcher now runs on `.php` paths.
 - **D10 fix:** `inputClass` gets a `focus-within` outline.
 
-Ranked by severity. Each has a `test.fixme` named with its ID, so fixing it means deleting `.fixme` and watching the test pass.
+Ranked by severity. A9 filed each one with a `test.fixme` named after its ID. For every fixed defect, `.fixme` has been removed and the test passes.
 
 ### D3 · High · FIXED · `/stays` listing and filters are invisible without JavaScript
 - **Where:** `app/stays/page.tsx:24-26` (the `<Suspense>` around `<Listing>`).
@@ -131,9 +131,9 @@ Ranked by severity. Each has a `test.fixme` named with its ID, so fixing it mean
 
 ## Lead requests
 
-- `package.json` (Lead-owned) now has `"test:e2e": "playwright test"` and devDeps `@playwright/test`, `@axe-core/playwright`, as instructed in the A9 task.
+- Done: `package.json` (Lead-owned) now has `"test:e2e": "playwright test"` and devDeps `@playwright/test`, `@axe-core/playwright`, as instructed in the A9 task.
 - Playwright artifacts go to `.next/e2e-results/`, which is already git-ignored, so `.gitignore` needs no change.
-- `.claude/agents/qa.md` says A9 owns `tests/**`, but the task and this branch use `e2e/**`. Please update `OWNERSHIP.md` and `qa.md` to match.
+- ~~`.claude/agents/qa.md` says A9 owns `tests/**`, but the task and this branch use `e2e/**`.~~ Done: `OWNERSHIP.md` and `qa.md` now say `e2e/**`.
 - CI: run `ALLOW_PLACEHOLDERS=true pnpm build && npx playwright install --with-deps chromium && pnpm test:e2e`.
 
 ## Lighthouse (Lead, mobile, lighthouse@12, local `next start`)

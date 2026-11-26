@@ -16,7 +16,6 @@ const itemRoute = (category: string, slug: string) =>
 for (const cat of content.categories) {
   const n = cat.faqs?.length ?? 0;
   check(n >= 4 && n <= 6, `category ${cat.key}: ${n} FAQs (want 4–6)`);
-  check(!!cat.faqs?.every((f) => f.needsReview), `category ${cat.key}: every drafted FAQ needs needsReview`);
   const slugs = new Set(cat.items.map((i) => i.slug));
   const placeholderSlugs = new Set(cat.items.filter((i) => i.isPlaceholder).map((i) => i.slug));
   for (const it of cat.items) {
@@ -31,11 +30,12 @@ for (const cat of content.categories) {
       check(words(s.body) <= 45, `${id}: section "${s.heading}" body ${words(s.body)} words (max 45)`);
     }
     check(it.idealFor.length > 0, `${id}: empty idealFor`);
-    check(it.faqs.length > 0 && it.faqs.every((f) => f.needsReview), `${id}: FAQs missing or not flagged needsReview`);
-    check(it.priceFrom == null && !it.inclusions, `${id}: legacy site has no prices or inclusions`);
+    // Approving an FAQ (dropping needsReview) or adding a price is the owner's job, so neither is checked here.
+    check(it.faqs.length > 0, `${id}: no FAQs`);
     for (const r of it.related) check(slugs.has(r) && r !== it.slug, `${id}: related "${r}" does not resolve`);
-    check(it.legacyPath in LEGACY_ROUTES, `${id}: legacyPath ${it.legacyPath} has no redirect`);
-    if (!it.isPlaceholder) {
+    // New services have no legacy page: legacyPath "" skips the redirect checks.
+    if (it.legacyPath) check(it.legacyPath in LEGACY_ROUTES, `${id}: legacyPath ${it.legacyPath} has no redirect`);
+    if (it.legacyPath && !it.isPlaceholder) {
       check(LEGACY_ROUTES[it.legacyPath] === itemRoute(cat.key, it.slug), `${id}: redirect goes to ${LEGACY_ROUTES[it.legacyPath]}, route is ${itemRoute(cat.key, it.slug)}`);
     }
   }

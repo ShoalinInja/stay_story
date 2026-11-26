@@ -8,7 +8,7 @@ This is what the Stay Story team needs to supply, confirm or decide. Items marke
 |---|---|---|---|
 | 1 | **6 placeholder stays** (sample villas, apartments, a long-term rental and a for-sale villa, with no real listings behind them): casa-siolim, vagator-cliffside-villa, assagao-garden-house, south-goa-beach-apartment, panjim-long-stay-residence, morjim-riverside-villa-for-sale | `content/stays/` | Add real stays (`docs/ADD-A-STAY.md`), then delete these files and remove them from `content/stays/index.ts`. |
 | 2 | **2 unconfirmed services**: Babysitters and Essentials delivery. They are not clearly offered on the old site. | `content/categories/concierge.ts` | Confirm each one (remove `isPlaceholder`) or delete it. |
-| 3 | **90 FAQs drafted from old-site claims**, split as: home 6; stays 5 + 2 per stay type; travel, events and concierge 5 each + 2 per service; experiences and entertainment 4 each + 2 per service; 1 per placeholder stay or service | `content/**` (`draft(...)`) | Read each one. Approve by changing `draft("Q", "A")` to `{ q: "Q", a: "A" }`, or delete it. |
+| 3 | **90 FAQs drafted from old-site claims**: home page 6; category pages 28 (stays 5, travel 5, events 5, concierge 5, experiences 4, entertainment 4); 2 on each of the 24 confirmed service and stay-type pages (48); 1 on each placeholder stay and service (8) | `content/site.ts`, `content/categories/*.ts`, `content/stays/*.ts` (`draft(...)`) | Read each one. Approve by changing `draft("Q", "A")` to `{ q: "Q", a: "A" }`, or delete it. |
 | 4 | **Privacy policy (7 sections) and Terms (8 sections)**: plain-language drafts, **not legal advice** | `content/legal.ts` | Have them reviewed. Then delete each `needsReview: true`. |
 
 ## Business details to supply
@@ -52,4 +52,5 @@ This is what the Stay Story team needs to supply, confirm or decide. Items marke
 ## Known limits (no action needed unless you disagree)
 
 - Without JavaScript, `/stays` shows every stay. Filtering through the URL (for example from the home search bar) needs JavaScript.
+- When a filtered link such as `/stays?area=…` is opened directly, the full list is briefly part of the page before the filtered results replace it in the same response. Changing a filter on the page swaps the results without that flash.
 - `/areas` and `/collections` have no index pages, only the individual area and collection pages.

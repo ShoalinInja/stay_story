@@ -5,9 +5,12 @@ import { getSite } from "@/lib/content";
 import { Button } from "@/components/primitives";
 import { formatIndianPhone } from "@/lib/leads/contact";
 import { whatsAppUrl } from "@/lib/leads/whatsapp";
+import { FORM_COPY } from "@/components/forms/copy";
+
+const T = FORM_COPY.enquiryError;
 
 export const metadata: Metadata = {
-  title: "We couldn't send your enquiry",
+  title: T.metaTitle,
   robots: { index: false, follow: false },
 };
 
@@ -17,26 +20,26 @@ export default async function EnquiryErrorPage() {
   return (
     <main id="main" className="container-site section-y flex flex-1 flex-col items-center text-center">
       <CircleAlert aria-hidden className="size-12 text-brand-strong" />
-      <h1 className="type-h1 mt-4 font-display text-ink">We couldn&apos;t send your enquiry</h1>
+      <h1 className="type-h1 mt-4 font-display text-ink">{T.title}</h1>
       <p role="alert" className="type-body mt-3 max-w-prose text-muted-text">
-        Your details didn&apos;t reach us. Go back and check the form, or call or message the {site.name} team directly.
+        {T.body(site.name)}
       </p>
       <div className="mt-8 flex flex-wrap justify-center gap-3">
         <Button asChild variant="dark" size="lg">
           <a href={`tel:${site.phone}`}>
-            <Phone aria-hidden /> Call {formatIndianPhone(site.phone)}
+            <Phone aria-hidden /> {FORM_COPY.call(formatIndianPhone(site.phone))}
           </a>
         </Button>
         {site.whatsapp && (
           <Button asChild variant="outline" size="lg">
-            <a href={whatsAppUrl(site.whatsapp, `Hi ${site.name}, I tried to send an enquiry on your website.`)} target="_blank" rel="noopener noreferrer">
-              <MessageCircle aria-hidden /> WhatsApp us
+            <a href={whatsAppUrl(site.whatsapp, T.whatsappMessage(site.name))} target="_blank" rel="noopener noreferrer">
+              <MessageCircle aria-hidden /> {FORM_COPY.whatsapp}
             </a>
           </Button>
         )}
       </div>
       <Link href="/" className="type-body mt-8 text-brand-strong underline underline-offset-4">
-        Back to home
+        {FORM_COPY.home}
       </Link>
     </main>
   );

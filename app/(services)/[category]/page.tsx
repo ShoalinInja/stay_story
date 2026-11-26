@@ -17,8 +17,9 @@ export async function generateMetadata({ params }: PageProps<"/[category]">): Pr
   return { title: { absolute: seo.title }, description: seo.description, keywords: seo.keywords };
 }
 
-// params awaited outside Suspense so notFound() sends a real 404 status. Every valid category is
-// prerendered, so only unknown (404) URLs block; `instant = false` opts the segment out of the shell check.
+// Every valid category is prerendered; only unknown URLs render at request time, so blocking is fine.
+// Under Cache Components the first hit on an unknown URL still streams 200 + noindex (later hits 404);
+// a hard first-hit 404 needs a proxy.ts check (Lead).
 export const instant = false;
 
 export default async function CategoryLanding({ params }: PageProps<"/[category]">) {

@@ -13,5 +13,4 @@ export const SERVICES_COPY = {
   priceSuffix: "+ taxes",
   related: "Related services",
   enquireCta: "Enquire Now",
-  viewService: "View details",
 } as const;

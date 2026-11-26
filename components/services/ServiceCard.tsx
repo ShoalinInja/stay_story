@@ -23,7 +23,7 @@ export function ServiceCard({ item, categorySlug, headingLevel: Heading = "h3" }
         />
         <div className="flex flex-1 flex-col gap-2 p-4">
           <Heading className="type-h3 text-ink">
-            <Link href={`/${categorySlug}/${item.slug}`} className="after:absolute after:inset-0 focus-visible:outline-none">
+            <Link href={`/${categorySlug}/${item.slug}`} className="after:absolute after:inset-0 after:rounded-card focus-visible:outline-none focus-visible:after:outline-2 focus-visible:after:-outline-offset-2 focus-visible:after:outline-ring">
               {item.title}
             </Link>
           </Heading>

@@ -44,7 +44,8 @@ export function CardCarousel({ href, images, label, dotLabels, priority }: Carou
                 sizes="(min-width: 1024px) 360px, (min-width: 640px) 50vw, 100vw"
                 placeholder={img.blurDataURL ? "blur" : "empty"}
                 blurDataURL={img.blurDataURL}
-                priority={priority && i === 0}
+                fetchPriority={priority && i === 0 ? "high" : undefined}
+                loading={priority && i === 0 ? "eager" : undefined}
                 className="object-cover"
               />
             </Link>

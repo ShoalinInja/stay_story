@@ -56,7 +56,8 @@ function Tile({ img, label, onClick, priority, sizes, className, children }: {
         alt={img.alt}
         fill
         sizes={sizes}
-        priority={priority}
+        fetchPriority={priority ? "high" : undefined}
+        loading={priority ? "eager" : undefined}
         placeholder={img.blurDataURL ? "blur" : "empty"}
         blurDataURL={img.blurDataURL}
         className="object-cover transition-transform duration-200 motion-safe:group-hover:scale-[1.02]"

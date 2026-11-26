@@ -46,7 +46,8 @@ export default async function CollectionPage({ params }: PageProps<"/collections
           placeholder={c.image.blurDataURL ? "blur" : "empty"}
           blurDataURL={c.image.blurDataURL}
           sizes="(min-width: 768px) 380px, 100vw"
-          priority
+          fetchPriority="high"
+          loading="eager"
           className="aspect-[4/3] w-full rounded-card object-cover"
         />
       </header>

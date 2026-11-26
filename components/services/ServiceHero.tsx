@@ -20,7 +20,8 @@ export function ServiceHero({ title, lead, image, children }: Props) {
           width={image.width}
           height={image.height}
           sizes="(min-width: 768px) 420px, 100vw"
-          priority
+          fetchPriority="high"
+          loading="eager"
           placeholder={image.blurDataURL ? "blur" : "empty"}
           blurDataURL={image.blurDataURL}
           className="mx-auto h-auto w-full max-w-[420px] rounded-card object-contain shadow-card"

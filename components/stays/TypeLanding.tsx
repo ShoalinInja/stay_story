@@ -68,7 +68,8 @@ export async function TypeLanding({ slug, path, listing, listingTitle = copy.typ
             placeholder={item.hero.blurDataURL ? "blur" : "empty"}
             blurDataURL={item.hero.blurDataURL}
             sizes="(min-width: 768px) 600px, 100vw"
-            priority
+            fetchPriority="high"
+            loading="eager"
             className="aspect-[4/3] w-full rounded-card object-cover"
           />
         </div>

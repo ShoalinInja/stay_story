@@ -21,7 +21,8 @@ export function HeroCarousel({ hero }: { hero: Site["hero"] }) {
                 alt={s.image.alt}
                 fill
                 sizes="100vw"
-                preload={i === 0}
+                fetchPriority={i === 0 ? "high" : undefined}
+                loading={i === 0 ? "eager" : undefined}
                 placeholder={s.image.blurDataURL ? "blur" : "empty"}
                 blurDataURL={s.image.blurDataURL}
                 className="object-cover"

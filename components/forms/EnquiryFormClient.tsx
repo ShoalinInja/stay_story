@@ -39,12 +39,14 @@ function readAttribution(): Record<string, string> {
   } catch {
     /* storage blocked: current URL only */
   }
-  return {
+  const all: Record<string, string> = {
     ...stored,
     ...fromUrl,
     page: window.location.pathname,
-    ...(document.referrer ? { referrer: document.referrer.slice(0, 500) } : {}),
+    ...(document.referrer ? { referrer: document.referrer } : {}),
   };
+  // Match the schema caps so a long tracking param never turns into a 400.
+  return Object.fromEntries(Object.entries(all).slice(0, 20).map(([k, v]) => [k.slice(0, 50), String(v).slice(0, 500)]));
 }
 
 declare global {
@@ -159,10 +161,12 @@ export function EnquiryFormClient({
       onSubmit={handleSubmit(onValid)}
       className={cn("flex flex-col gap-4", className)}
     >
-      <input type="hidden" {...register("type")} />
-      <input type="hidden" {...register("source")} />
-      {staySlug && <input type="hidden" {...register("staySlug")} />}
-      {serviceSlug && <input type="hidden" {...register("serviceSlug")} />}
+      {/* Plain inputs with real values: register() only fills the DOM after hydration, and no-JS posts need these.
+          The JS path gets them from defaultValues. */}
+      <input type="hidden" name="type" value={type} />
+      <input type="hidden" name="source" value={source} />
+      {staySlug && <input type="hidden" name="staySlug" value={staySlug} />}
+      {serviceSlug && <input type="hidden" name="serviceSlug" value={serviceSlug} />}
 
       {/* Honeypot: hidden from people and assistive tech, tempting to bots. */}
       <div aria-hidden className="absolute -left-[9999px] h-px w-px overflow-hidden">
@@ -219,15 +223,15 @@ export function EnquiryFormClient({
       {((isStay && stayMode === "site-visit") || variant === "service") && (
         <Input
           id={f("date")} label={variant === "service" ? "Preferred date (optional)" : "Preferred site-visit date"}
-          type="date" error={err("checkIn")} {...register("checkIn")}
+          type="date" defaultValue={defaults?.checkIn} error={err("checkIn")} {...register("checkIn")}
         />
       )}
 
       {wantsGuests && (
         <div className="grid grid-cols-2 gap-3">
-          <Input id={f("adults")} label="Adults" type="number" min={1} max={99} inputMode="numeric" error={err("adults")} {...register("adults")} />
+          <Input id={f("adults")} label="Adults" type="number" min={1} max={99} inputMode="numeric" defaultValue={defaults?.adults ?? 2} error={err("adults")} {...register("adults")} />
           {isStay && (
-            <Input id={f("children")} label="Children" type="number" min={0} max={99} inputMode="numeric" error={err("children")} {...register("children")} />
+            <Input id={f("children")} label="Children" type="number" min={0} max={99} inputMode="numeric" defaultValue={defaults?.children ?? 0} error={err("children")} {...register("children")} />
           )}
         </div>
       )}
@@ -241,6 +245,7 @@ export function EnquiryFormClient({
             id={f("message")} rows={4} required={messageRequired}
             aria-invalid={err("message") ? true : undefined}
             aria-describedby={err("message") ? f("message-error") : undefined}
+            defaultValue={defaults?.message}
             className={cn(inputClass, "h-auto py-2")}
             {...register("message")}
           />

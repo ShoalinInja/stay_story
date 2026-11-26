@@ -15,6 +15,18 @@ export type * from "./types";
  */
 
 const showDraft = placeholdersAllowed();
+
+// Copy the manifest's hasBakedText flag onto every MediaRef that points at a poster image,
+// so components can check `img.hasBakedText` without a lookup.
+const bakedSrcs = new Set(content.media.filter((m) => m.hasBakedText).map((m) => m.src));
+function flagBaked<T>(v: T): T {
+  if (Array.isArray(v)) return v.map(flagBaked) as T;
+  if (!v || typeof v !== "object") return v;
+  const o = Object.fromEntries(Object.entries(v).map(([k, x]) => [k, flagBaked(x)]));
+  if (typeof o.src === "string" && bakedSrcs.has(o.src)) o.hasBakedText = true;
+  return o as T;
+}
+const data = flagBaked(content);
 const reviewed = (faqs: Faq[] = []) => (showDraft ? faqs : faqs.filter((f) => !f.needsReview));
 const live = <T extends { isPlaceholder?: boolean }>(xs: T[]) => (showDraft ? xs : xs.filter((x) => !x.isPlaceholder));
 
@@ -51,17 +63,17 @@ export function filterStays(all: Stay[], f: StayFilters = {}): Stay[] {
 }
 
 export async function getStays(f: StayFilters = {}): Promise<Stay[]> {
-  return filterStays(live(content.stays), f).map(visibleStay);
+  return filterStays(live(data.stays), f).map(visibleStay);
 }
 export async function getStay(slug: string): Promise<Stay | null> {
-  const s = live(content.stays).find((x) => x.slug === slug);
+  const s = live(data.stays).find((x) => x.slug === slug);
   return s ? visibleStay(s) : null;
 }
 export async function getCategories(): Promise<ServiceCategory[]> {
-  return content.categories.map(visibleCategory);
+  return data.categories.map(visibleCategory);
 }
 export async function getCategory(slug: string): Promise<ServiceCategory | null> {
-  const c = content.categories.find((x) => x.slug === slug);
+  const c = data.categories.find((x) => x.slug === slug);
   return c ? visibleCategory(c) : null;
 }
 export async function getService(category: string, slug: string): Promise<ServiceItem | null> {
@@ -69,15 +81,20 @@ export async function getService(category: string, slug: string): Promise<Servic
   return c?.items.find((i) => i.slug === slug) ?? null;
 }
 export async function getSite(): Promise<Site> {
-  return { ...content.site, faqs: reviewed(content.site.faqs) };
+  return { ...data.site, faqs: reviewed(data.site.faqs) };
 }
-export async function getAreas(): Promise<Area[]> { return content.areas }
-export async function getCollections(): Promise<Collection[]> { return content.collections }
-export async function getOffers(): Promise<Offer[]> { return content.offers }
-export async function getTestimonials(): Promise<Testimonial[]> { return content.testimonials }
+export async function getAreas(): Promise<Area[]> { return data.areas }
+export async function getCollections(): Promise<Collection[]> { return live(data.collections) }
+export async function getOffers(): Promise<Offer[]> { return data.offers }
+export async function getTestimonials(): Promise<Testimonial[]> { return data.testimonials }
 export async function getMedia(id: string): Promise<MediaEntry | null> {
-  return content.media.find((m) => m.id === id) ?? null;
+  return data.media.find((m) => m.id === id) ?? null;
 }
-export function getLegacyRedirects(): LegacyRedirect[] { return content.redirects }
+/** e.g. getMediaList({ idPrefix: "gallery" }) for /gallery and the home mosaic. Poster images excluded unless asked. */
+export async function getMediaList(o: { idPrefix?: string; usedOn?: string; includeBaked?: boolean } = {}): Promise<MediaEntry[]> {
+  return data.media.filter((m) =>
+    (!o.idPrefix || m.id.startsWith(o.idPrefix)) && (!o.usedOn || m.usedOn.includes(o.usedOn)) && (o.includeBaked || !m.hasBakedText));
+}
+export function getLegacyRedirects(): LegacyRedirect[] { return data.redirects }
 
 export type { ContentBundle };

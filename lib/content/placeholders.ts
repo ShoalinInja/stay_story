@@ -14,6 +14,7 @@ export function findPlaceholders(c: ContentBundle): string[] {
       it.faqs.forEach((f, i) => f.needsReview && out.push(`service:${cat.key}/${it.slug}:faq[${i}]`));
     }
   }
+  for (const col of c.collections) if (col.isPlaceholder) out.push(`collection:${col.key}`);
   c.site.faqs.forEach((f, i) => f.needsReview && out.push(`site:faq[${i}]`));
   return out;
 }

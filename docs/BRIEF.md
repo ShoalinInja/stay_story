@@ -142,7 +142,7 @@ sitemap.xml robots.txt opengraph-image
 | Carousel a11y | Labelled prev/next, `aria-roledescription="carousel"`, no focus traps, pause on hover/focus |
 
 ## 8. Definition of done
-- [ ] All 30 legacy URLs 301 (script passes)
+- [ ] All 34 legacy URLs 301 (script passes)
 - [ ] Every page is built from `/content`
 - [ ] `/styleguide` matches the tokens; StayVista-like with zero StayVista assets or copy
 - [ ] Enquiry works on ≥1 sink, with the WhatsApp handoff and a GA4 event

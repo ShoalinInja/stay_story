@@ -13,7 +13,7 @@ export type AmenityKey =
   | "housekeeping" | "caretaker" | "chef-on-request" | "bbq" | "garden" | "tv" | "washing-machine"
   | "workspace" | "pet-friendly" | "lift" | "security" | "beach-access" | "gym";
 
-export interface MediaRef { src: string; alt: string; width: number; height: number; blurDataURL?: string }
+export interface MediaRef { src: string; alt: string; width: number; height: number; blurDataURL?: string; hasBakedText?: boolean }  // hasBakedText: poster with text in the pixels — never overlay text or crop it as a background
 
 /** Cross-link to a service item, e.g. { category: "experiences", slug: "yacht-cruises" } */
 export interface ServiceRef { category: Exclude<CategoryKey, "stays">; slug: string }
@@ -85,7 +85,7 @@ export interface Site {
 }
 
 export interface Area { key: GoaArea; name: string; region: Region; intro: string; image?: MediaRef; seo: Seo }
-export interface Collection { key: CollectionKey; title: string; description: string; image: MediaRef; seo: Seo }
+export interface Collection { key: CollectionKey; title: string; description: string; image: MediaRef; seo: Seo; isPlaceholder?: boolean }
 
 export interface Offer {
   id: string; kind: "stay" | "experience"; title: string; description: string;
@@ -93,7 +93,7 @@ export interface Offer {
 }
 export interface Testimonial { name: string; quote: string; image?: MediaRef; source: "google" | "manual"; date?: string }
 
-export interface MediaEntry extends MediaRef { id: string; usedOn: string[]; hasBakedText?: boolean }
+export interface MediaEntry extends MediaRef { id: string; usedOn: string[] }
 export interface LegacyRedirect { source: string; destination: string; statusCode: 301 }  // brief demands 301, not Next's default 308
 
 export interface StayFilters {

@@ -1,10 +1,11 @@
 import type { Metadata } from "next";
+import { pageMetadata } from "@/lib/seo/site";
 import { getMediaList } from "@/lib/content";
 import { Breadcrumbs } from "@/components/layout/Breadcrumbs";
 import { UI } from "@/components/layout/copy";
 import { GalleryGrid } from "./GalleryGrid";
 
-export const metadata: Metadata = { title: UI.pages.gallery, description: UI.gallery.intro };
+export const metadata: Metadata = pageMetadata({ title: UI.pages.gallery, description: UI.gallery.intro, path: "/gallery" });
 
 export default async function GalleryPage() {
   const photos = await getMediaList({ idPrefix: "gallery" });

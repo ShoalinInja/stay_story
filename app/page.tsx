@@ -1,4 +1,8 @@
 import { Fragment, type ReactNode } from "react";
+import type { Metadata } from "next";
+import { faqLd, organizationLd } from "@/lib/seo/schema";
+import { JsonLd } from "@/lib/seo/JsonLd";
+import { pageMetadata } from "@/lib/seo/site";
 import {
   getAreas,
   getCategories,
@@ -27,6 +31,11 @@ import {
   TrustBlock,
 } from "@/components/home/sections";
 import { TileRail } from "@/components/home/TileRail";
+
+export async function generateMetadata(): Promise<Metadata> {
+  const { seo } = await getSite();
+  return pageMetadata({ title: seo.title, absoluteTitle: true, description: seo.description, keywords: seo.keywords, path: "/" });
+}
 
 // Static: no searchParams, no request APIs, no Date.now() — `/` prerenders.
 export default async function Home() {
@@ -69,6 +78,7 @@ export default async function Home() {
 
   return (
     <main id="main" className="flex-1 bg-surface">
+      <JsonLd data={[organizationLd(site), faqLd(site.faqs)]} />
       <HeroCarousel hero={site.hero} />
       <div className="relative z-20 container-site -mt-10">
         <SearchBar options={searchOptions} />

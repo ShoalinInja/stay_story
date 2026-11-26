@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { pageMetadata } from "@/lib/seo/site";
 import Image from "next/image";
 import { CircleCheck } from "lucide-react";
 import { getMedia, getSite } from "@/lib/content";
@@ -9,7 +10,7 @@ import { UI } from "@/components/layout/copy";
 
 export async function generateMetadata(): Promise<Metadata> {
   const { about } = await getSite();
-  return { title: UI.pages.about, description: about.headline };
+  return pageMetadata({ title: UI.pages.about, description: about.headline, path: "/about" });
 }
 
 export default async function AboutPage() {

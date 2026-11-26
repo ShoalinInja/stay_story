@@ -1,11 +1,12 @@
 import type { Metadata } from "next";
+import { pageMetadata } from "@/lib/seo/site";
 import { Mail, MapPin, MessageCircle, Phone } from "lucide-react";
 import { getSite } from "@/lib/content";
 import { EnquiryForm } from "@/components/forms/EnquiryForm";
 import { Breadcrumbs } from "@/components/layout/Breadcrumbs";
 import { UI, formatPhone, mapsHref, telHref, waHref } from "@/components/layout/copy";
 
-export const metadata: Metadata = { title: UI.pages.contact, description: UI.contact.intro };
+export const metadata: Metadata = pageMetadata({ title: UI.pages.contact, description: UI.contact.intro, path: "/contact" });
 
 const row = "flex items-start gap-3";
 const icon = "mt-0.5 size-5 shrink-0 text-brand-strong";

@@ -1,4 +1,8 @@
 import type { Metadata } from "next";
+import { pageMetadata } from "@/lib/seo/site";
+import { breadcrumbLd, faqLd, serviceLd } from "@/lib/seo/schema";
+import { JsonLd } from "@/lib/seo/JsonLd";
+import { UI } from "@/components/layout/copy";
 import { getCategory } from "@/lib/content";
 import { resolveIcon } from "@/lib/icons";
 import { EnquiryForm } from "@/components/forms/EnquiryForm";
@@ -18,8 +22,8 @@ export async function generateStaticParams() {
 
 export async function generateMetadata({ params }: PageProps<"/[category]/[slug]">): Promise<Metadata> {
   const { category, slug } = await params;
-  const { seo } = (await loadService(category, slug)).item;
-  return { title: { absolute: seo.title }, description: seo.description, keywords: seo.keywords };
+  const { seo, hero } = (await loadService(category, slug)).item;
+  return pageMetadata({ title: seo.title, absoluteTitle: true, description: seo.description, keywords: seo.keywords, path: `/${category}/${slug}`, image: hero });
 }
 
 // Every valid item is prerendered; only unknown URLs render at request time, so blocking is fine.
@@ -35,6 +39,7 @@ export default async function ServiceDetail({ params }: PageProps<"/[category]/[
 
   return (
     <main id="main" className="flex-1 pb-20 lg:pb-0">
+      <JsonLd data={[serviceLd(item, category), faqLd(item.faqs), breadcrumbLd([{ label: UI.home, href: "/" }, { label: category.title, href: `/${category.slug}` }, { label: item.title, href: `/${category.slug}/${item.slug}` }])]} />
       <ServiceHero title={item.title} lead={item.summary} image={item.hero}>
         <PriceBlock
           amount={item.priceFrom}

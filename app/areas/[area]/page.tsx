@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { pageMetadata } from "@/lib/seo/site";
 import { notFound } from "next/navigation";
 import { Breadcrumbs } from "@/components/layout/Breadcrumbs";
 import { copy } from "@/components/stays/copy";
@@ -19,7 +20,7 @@ async function findArea(key: string) {
 
 export async function generateMetadata({ params }: PageProps<"/areas/[area]">): Promise<Metadata> {
   const area = await findArea((await params).area);
-  return area ? { title: { absolute: area.seo.title }, description: area.seo.description, keywords: area.seo.keywords, alternates: { canonical: `/areas/${area.key}` } } : {};
+  return area ? pageMetadata({ title: area.seo.title, absoluteTitle: true, description: area.seo.description, keywords: area.seo.keywords, path: `/areas/${area.key}`, image: area.image }) : {};
 }
 
 export default async function AreaPage({ params }: PageProps<"/areas/[area]">) {

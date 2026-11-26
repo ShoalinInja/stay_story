@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Inter, Playfair_Display } from "next/font/google";
 import "./globals.css";
+import { SITE_NAME, SITE_URL } from "@/lib/seo/site";
 import { Toaster } from "@/components/primitives";
 import { AnnouncementBar } from "@/components/layout/AnnouncementBar";
 import { UI } from "@/components/layout/copy";
@@ -17,10 +18,16 @@ const playfair = Playfair_Display({
   display: "swap",
 });
 
+// Legacy Search Console token from staystory.in's <head>, kept so verification survives the cutover.
+const LEGACY_GOOGLE_VERIFICATION = "48uGtrzRyeqlaJ6l5gaUYk6bn8KysztdHWq6qr0MEVY";
+
 export const metadata: Metadata = {
-  metadataBase: new URL(process.env.NEXT_PUBLIC_SITE_URL ?? "https://www.staystory.in"),
-  title: { default: "Stay Story Goa", template: "%s | Stay Story Goa" },
+  metadataBase: new URL(SITE_URL),
+  title: { default: SITE_NAME, template: `%s | ${SITE_NAME}` },
   description: "Villas, stays, travel, experiences and events in Goa, handled end to end.",
+  verification: { google: process.env.GOOGLE_SITE_VERIFICATION || LEGACY_GOOGLE_VERIFICATION },
+  openGraph: { type: "website", siteName: SITE_NAME, locale: "en_IN" },
+  twitter: { card: "summary_large_image" },
 };
 
 // A3 (shell-navigation) owns the <body> contents: header, footer, floating actions.

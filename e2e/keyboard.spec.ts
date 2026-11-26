@@ -23,7 +23,7 @@ for (const url of PAGES) {
       const r = await page.evaluate(() => {
         const el = document.activeElement as HTMLElement | null;
         if (!el || el === document.body) return null;
-        // Native date inputs focus an inner segment that Chrome highlights itself (manual check in QA-REPORT).
+        // D10: native date inputs get only Chrome's pale segment highlight, no ring. Excluded here, tracked below.
         if (el instanceof HTMLInputElement && el.type === "date") return null;
         const shows = (s: CSSStyleDeclaration) =>
           (s.outlineStyle !== "none" && parseFloat(s.outlineWidth) > 0) || s.boxShadow !== "none";
@@ -35,3 +35,14 @@ for (const url of PAGES) {
     expect(missing).toEqual([]);
   });
 }
+
+test.fixme("D10: native date inputs show the focus ring", async ({ page }) => {
+  await page.goto("/travel/airport-transfers");
+  const date = page.locator('main input[type="date"]').first();
+  await date.focus();
+  const ringed = await date.evaluate((el) => {
+    const s = getComputedStyle(el);
+    return (s.outlineStyle !== "none" && parseFloat(s.outlineWidth) > 0) || s.boxShadow !== "none";
+  });
+  expect(ringed).toBe(true);
+});

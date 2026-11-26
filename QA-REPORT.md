@@ -9,17 +9,19 @@ pnpm test:e2e            # E2E_PORT=xxxx to change the port
 
 ## Result
 
-**158 passed · 6 fixme (known defects) · 0 failed** in about 12 s. `pnpm typecheck` (needs `ALLOW_PLACEHOLDERS=true` in a worktree without `.env.local`), `pnpm lint` and `pnpm test` are green.
+**165 tests: 156 passed · 9 fixme (known defects) · 0 failed** in about 10 s. `pnpm typecheck` (needs `ALLOW_PLACEHOLDERS=true` in a worktree without `.env.local`), `pnpm lint` and `pnpm test` are green.
 
 | Area | Spec | Tests | Result |
 |---|---|---|---|
-| STATIC_TOP ↔ `app/` route dirs (drift guard) | `e2e/routes.spec.ts` | 1 | pass |
-| Every content route returns 200 (home, 12 static, 3 stay types, 6 stays, 5 categories + 26 items, 11 areas, 6 collections) | routes | 70 | pass |
+| Every `app/` static page is in STATIC_TOP (drift guard) | `e2e/routes.spec.ts` | 1 | pass |
+| Every STATIC_TOP entry has an `app/` page (reverse drift guard) | routes | 1 | **fixme D9** |
+| Every route returns 200 **and** renders a real `<h1>`, not the not-found page (home, 10 static pages, 3 stay types, 6 stays, 5 categories + 26 items, 11 areas, 6 collections) | routes | 64 | pass |
+| `/areas` and `/collections` index paths return 404 | routes | 1 | **fixme D9** |
 | Unknown paths return 404 with the branded page (9 shapes) | routes | 9 | pass |
 | Unknown `*.php` path returns 404 | routes | 1 | **fixme D1** |
 | 34 legacy URLs: one-hop 301, also with a trailing slash and a query string; destination is 200 | routes | 35 | pass |
 | Trailing slash returns 308 to the slashless URL | routes | 4 | pass |
-| axe WCAG 2.2 AA, 9 templates × 375 / 1280, zero serious or critical | `e2e/a11y.spec.ts` | 18 | pass (with D5–D7 rules excluded) |
+| axe WCAG 2.2 AA, 9 templates × 375 / 1280, zero serious or critical | `e2e/a11y.spec.ts` | 18 | pass (the D5–D7 rules are excluded on every page until those defects are fixed) |
 | axe `color-contrast`, `label-content-name-mismatch` | a11y | 2 | **fixme D5, D6, D7** |
 | Search bar → `/stays?area=siolim&guests=2`, filtered grid | `e2e/flows.spec.ts` | 1 | pass |
 | Filter bar changes the URL and the results | flows | 1 | pass |
@@ -37,29 +39,35 @@ pnpm test:e2e            # E2E_PORT=xxxx to change the port
 | Skip link is the first tab stop, visible, and the next Tab lands in `#main` | flows | 1 | pass |
 | No WhatsApp UI while `site.whatsapp` is null (4 templates) | flows | 4 | pass |
 | No positive `tabindex` (5 templates) | `e2e/keyboard.spec.ts` | 5 | pass |
-| Visible focus indicator on the first 40 tab stops (5 templates) | keyboard | 5 | pass |
+| Visible focus indicator on the first 40 tab stops (5 templates; outline or box-shadow on the element or its `::after`) | keyboard | 5 | pass (native date inputs excluded, see D10) |
+| Native date input shows a focus ring | keyboard | 1 | **fixme D10** |
 
 ## Defects
 
 Ranked by severity. Each has a `test.fixme` named with its ID, so fixing it means deleting `.fixme` and watching the test pass.
 
 ### D3 · High · `/stays` listing and filters are invisible without JavaScript
-- **Where:** `app/stays/page.tsx:25-27` (the `<Suspense>` around `<Listing>`).
+- **Where:** `app/stays/page.tsx:24-26` (the `<Suspense>` around `<Listing>`).
 - **Repro:** Disable JS and open `/stays?type=long-term`. Only the skeleton shows: no cards and no filter form. The real markup is in the HTML, inside `<div hidden id="S:1">`.
 - **Cause:** With Cache Components, request-time content (here `searchParams`) streams into a hidden `<div>`, and an inline `$RC(...)` script swaps it in. Without JS that script never runs. BRIEF §7 says "JS disabled: Nav, listing and enquiry still work".
 - **Suggested fix:** Make the Suspense **fallback** a working, static listing: the unfiltered `StayGrid` plus the `FilterBar` GET form, with no skeleton. Client navigation still streams the filtered version. Alternatively, `/stays` could read no `searchParams` on the server at all and filter in a client component, but that loses no-JS filtering. Lowest-effort stopgap (Lead call): `<noscript><style>{"div[hidden][id^='S:']{display:block!important}"}</style></noscript>` in the root layout. The content then shows at the end of `<body>`, after the footer, so the stopgap is weak.
 
 ### D4 · High · No-JS enquiry failure gives the visitor no feedback
-- **Where:** `lib/leads/handle.ts:93-97` redirects to `?enquiry=error`, and `components/layout/EnquiryErrorBanner.tsx:15` reads it with `useSearchParams` inside Suspense (`EnquiryErrorNotice.tsx:9`).
+- **Where:** `lib/leads/handle.ts:92-100` (`reply`) redirects to `?enquiry=error`, and `components/layout/EnquiryErrorBanner.tsx:15` reads it with `useSearchParams` inside Suspense (`EnquiryErrorNotice.tsx:9`).
 - **Repro:** Disable JS, submit the `/contact` form while every sink is failing (or none is configured in production). You get a 303 back to `/contact?enquiry=error`, and the page looks exactly like before. The lead is lost and the visitor believes it was sent.
-- **Cause:** Same streaming cause as D3: the banner exists only in the hidden Suspense segment.
+- **Cause:** The server HTML for `/contact?enquiry=error` contains no `role="alert"` at all. `useSearchParams()` in a client component inside Suspense bails out to client-only rendering, so the banner only exists once JS runs. The effect is the same as D3: without JS there is no feedback.
 - **Suggested fix:** On failure, redirect no-JS posts to a static route that needs no request data, for example `/thank-you/error` or `/enquiry-failed`: a prerendered page with the call fallback (`site.phone`, and WhatsApp when it is set). Keep `?enquiry=error` for the JS banner if you like.
 
 ### D1 · Medium · Unknown `.php` URLs are soft 404s (200 status)
-- **Where:** `proxy.ts:31`. The matcher `/((?!_next/|.*\\.[\\w]+$).*)` skips every path that has an extension.
+- **Where:** `proxy.ts:23`. The matcher `/((?!_next/|.*\\.[\\w]+$).*)` skips every path that has an extension.
 - **Repro:** `curl -I /does-not-exist.php` returns **200** with the not-found UI. The 34 known `.php` URLs are fine because next.config redirects run before the proxy.
 - **Impact:** Old or mistyped backlinks in the `*.php` shape get a 200, which search engines index as soft 404s.
-- **Suggested fix:** Also match `.php` paths: `matcher: ["/((?!_next/|.*\\.[\\w]+$).*)", "/:path*.php"]`. `isKnownPath` already returns false for them, so they rewrite to the 404.
+- **Suggested fix (untested; check it against `node_modules/next/dist/docs` and the D1 fixme test):** Stop excluding `.php` in the existing regex, so the lookahead skips every extension except `.php`: `matcher: ["/((?!_next/|.*\\.(?!php$)\\w+$).*)"]`. `isKnownPath` already returns false for these paths, so they rewrite to the 404. The 34 known URLs still 301 first, because config redirects run before the proxy.
+
+### D9 · Medium · `/areas` and `/collections` are soft 404s (200 status)
+- **Where:** `lib/routing.ts:11-14`. `STATIC_TOP` whitelists `"areas"` and `"collections"`, but `app/areas/` and `app/collections/` contain only `[area]`/`[key]`. They have no `page.tsx`.
+- **Repro:** `curl -I /areas` and `curl -I /collections` both return **200**, with no `<h1>` in the HTML; the not-found UI is rendered on the client.
+- **Suggested fix:** Remove `"areas"` and `"collections"` from `STATIC_TOP`. The `nested` map already admits `/areas/<key>` and `/collections/<key>`. If index pages are wanted later, add them and put the entries back. The reverse drift test (fixme D9) guards this.
 
 ### D2 · Medium · Stay lightbox drops focus to `<body>` on close (WCAG 2.4.3)
 - **Where:** `components/stays/StayGallery.tsx:44` and `:128`. `Lightbox` is a controlled `Modal` with no `trigger`, so Radix has nothing to restore focus to.
@@ -84,6 +92,11 @@ Ranked by severity. Each has a `test.fixme` named with its ID, so fixing it mean
 - **Impact:** On Vercel the platform overwrites the header, so the impact is low there. On any other host, or a direct origin hit, a bot can rotate the header to bypass the limiter.
 - **Suggested fix:** On Vercel, prefer `x-real-ip` (set by the platform) or `@vercel/functions` `ipAddress(request)`. Elsewhere, take the right-most untrusted hop, not the first.
 
+### D10 · Low · Native date inputs have no focus ring (WCAG 2.4.7)
+- **Where:** `components/primitives/input.tsx:14` (`inputClass`), used by `type="date"` and `type="month"` fields (service "Preferred date", site visit, move-in month, no-JS dates).
+- **Repro:** On `/travel/airport-transfers`, Tab into "Preferred date (optional)". The only cue is Chrome's pale blue highlight on the `dd` segment; there is no outline on the field. `:focus-visible` doesn't match because focus sits on an inner shadow segment.
+- **Suggested patch (one line, A2):** add `focus-within:outline-2 focus-within:outline-offset-2 focus-within:outline-ring` to `inputClass`.
+
 ### Informational (no action)
 - After a client-side navigation, Next 16 keeps the previous route mounted with `display:none`, so the DOM briefly holds two `<main id="main">`. The visible one is first, and the skip link still lands correctly (checked after a forward and a back navigation). Tests scope to `main:visible`.
 - `MobileBottomBar` (Call · Enquire) is also in a streamed Suspense segment (`BottomBarGate`), so it does not show without JS. Phones without JS still have the header phone link, so this is minor and shares the D3 cause.
@@ -100,7 +113,7 @@ Ranked by severity. Each has a `test.fixme` named with its ID, so fixing it mean
 ## Manual checks still needed
 
 - VoiceOver on macOS Safari and iOS Safari for these: the enquiry modal (announced title, focus trap, return), inline validation (errors are linked via `aria-describedby` but are not a live region, so check they are read on blur), the success `role="status"`, the error `role="alert"`, the mobile menu accordion, and the combobox in "Where in Goa".
-- Safari: `input[type=date]` and `type=month` rendering and focus visibility (the keyboard test skips native date inputs because Chrome draws its own segment highlight), the sticky header, bottom-sheet scroll locking, and `100dvh` sheets on iOS.
+- Safari: `input[type=date]` and `type=month` rendering and focus visibility (see D10), the sticky header, bottom-sheet scroll locking, and `100dvh` sheets on iOS.
 - TalkBack on Android Chrome for the bottom bar and the sheets.
 - 200% zoom and 320px reflow (WCAG 1.4.10) on the stay detail and the filters sheet.
 - `prefers-reduced-motion`: hero and rails don't animate, and nothing autoplays faster than 5 s.

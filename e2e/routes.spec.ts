@@ -1,6 +1,6 @@
 // Route sweep: every content-driven URL is 200, unknown paths are real 404s, legacy URLs 301 once,
 // trailing slashes 308. HTTP only (request fixture), no browser.
-import { readdirSync, readFileSync } from "node:fs";
+import { existsSync, readdirSync, readFileSync } from "node:fs";
 import path from "node:path";
 import { expect, test } from "@playwright/test";
 import { content } from "../content";
@@ -16,21 +16,27 @@ function staticTop(): string[] {
   return [...body.matchAll(/"([^"]+)"/g)].map((m) => m[1]);
 }
 
-/** Top-level static route dirs under app/, flattening (group) folders; skips dynamic, private and api. */
-function appStaticDirs(dir = path.join(ROOT, "app")): string[] {
+/** Top-level static routes under app/ that have a page.tsx, flattening (group) folders; skips dynamic, private and api. */
+function appStaticPages(dir = path.join(ROOT, "app")): string[] {
   return readdirSync(dir, { withFileTypes: true }).flatMap((d) => {
     if (!d.isDirectory()) return [];
-    if (/^\(.+\)$/.test(d.name)) return appStaticDirs(path.join(dir, d.name));
+    if (/^\(.+\)$/.test(d.name)) return appStaticPages(path.join(dir, d.name));
     if (d.name.startsWith("[") || d.name.startsWith("_") || d.name === "api") return [];
-    return [d.name];
+    return existsSync(path.join(dir, d.name, "page.tsx")) ? [d.name] : [];
   });
 }
+
+/** Status alone proves nothing here: a path that passes the proxy but has no page renders not-found with 200. */
+// The not-found copy also sits in every page's RSC payload, so match the rendered <h1> instead.
+const NOT_FOUND_TEXT = "find that page";
+const NOT_FOUND_H1 = /<h1[^>]*>We couldn&#x27;t find that page/;
+const ANY_H1 = /<h1[\s>]/;
 
 function contentRoutes(): string[] {
   const c = content;
   return [
     "/",
-    ...staticTop().map((s) => `/${s}`),
+    ...appStaticPages().map((s) => `/${s}`),
     ...["villas", "apartments-hotels", "long-term-rentals"].map((t) => `/stays/${t}`),
     ...c.stays.map((s) => `/stays/${s.slug}`),
     ...c.categories.filter((cat) => cat.key !== "stays").flatMap((cat) => [`/${cat.slug}`, ...cat.items.map((i) => `/${cat.slug}/${i.slug}`)]),
@@ -39,14 +45,25 @@ function contentRoutes(): string[] {
   ];
 }
 
-test("STATIC_TOP in lib/routing.ts matches the app/ route dirs", () => {
-  expect([...staticTop()].sort()).toEqual([...new Set(appStaticDirs())].sort());
+test("every app/ static page is whitelisted in STATIC_TOP (else the proxy 404s it)", () => {
+  const top = new Set(staticTop());
+  expect(appStaticPages().filter((p) => !top.has(p))).toEqual([]);
+});
+
+// D9: STATIC_TOP whitelists "areas" and "collections", which have no index page, so /areas and
+// /collections pass the proxy and render the not-found UI with a 200 (soft 404).
+test.fixme("D9: every STATIC_TOP entry has an app/ page", () => {
+  const pages = new Set(appStaticPages());
+  expect(staticTop().filter((s) => !pages.has(s))).toEqual([]);
 });
 
 for (const route of contentRoutes()) {
   test(`200 ${route}`, async ({ request }) => {
     const res = await request.get(route, { maxRedirects: 0 });
     expect(res.status()).toBe(200);
+    const html = await res.text();
+    expect(html, "real page renders an <h1> in its HTML").toMatch(ANY_H1);
+    expect(html).not.toMatch(NOT_FOUND_H1);
   });
 }
 
@@ -58,9 +75,15 @@ for (const route of UNKNOWN) {
   test(`404 ${route}`, async ({ request }) => {
     const res = await request.get(route, { maxRedirects: 0 });
     expect(res.status()).toBe(404);
-    expect(await res.text()).toContain("find that page");
+    expect(await res.text()).toContain(NOT_FOUND_TEXT);
   });
 }
+
+test.fixme("D9: /areas and /collections index paths return 404", async ({ request }) => {
+  for (const route of ["/areas", "/collections"]) {
+    expect((await request.get(route, { maxRedirects: 0 })).status(), route).toBe(404);
+  }
+});
 
 // D1: unknown *.php paths skip proxy.ts (its matcher excludes anything with an extension) and render the
 // not-found UI with a 200 status: a soft 404 on exactly the URL shape old backlinks use.

@@ -1,6 +1,6 @@
 "use cache";
 // Cached reads for the stays routes. Content ships with each deploy, so "max" is safe;
-// when the repo becomes remote (Supabase), add cacheTag()s and revalidate on write.
+// if content ever moves to a remote store, add cacheTag()s and revalidate on write.
 import { cacheLife } from "next/cache";
 import { getAreas, getCategory, getCollections, getService, getStay, getStays } from "@/lib/content";
 import type { ServiceItem, ServiceRef, StayFilters } from "@/lib/content/types";

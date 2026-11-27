@@ -1,11 +1,9 @@
 import Link from "next/link";
 import { getCategories } from "@/lib/content";
-import { SearchBar } from "@/components/home/SearchBar";
 import { UI } from "@/components/layout/copy";
-import { getSearchOptions } from "@/components/home/search-options";
 
 export default async function NotFound() {
-  const [categories, options] = await Promise.all([getCategories(), getSearchOptions()]);
+  const categories = await getCategories();
   const t = UI.notFound;
   return (
     <main id="main" className="container-site section-y flex flex-col items-center gap-8 text-center">
@@ -14,7 +12,6 @@ export default async function NotFound() {
         <h1 className="type-h1">{t.title}</h1>
         <p className="type-body text-ink-2">{t.body}</p>
       </div>
-      <SearchBar options={options} className="w-full max-w-3xl" />
       <section aria-labelledby="nf-categories" className="w-full max-w-3xl">
         <h2 id="nf-categories" className="mb-4 type-h2">{t.categories}</h2>
         <ul className="grid gap-3 sm:grid-cols-2 lg:grid-cols-3">

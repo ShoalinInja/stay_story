@@ -28,7 +28,7 @@ const nonEmpty = <T,>(xs: T[]) => (xs.length ? xs : undefined);
 const isoDate = (v: string | undefined) => (v && /^\d{4}-\d{2}-\d{2}$/.test(v) ? v : undefined);
 
 /**
- * `area` comes from the home SearchBar's "Where in Goa" combobox, which mixes areas and stay types,
+ * `area` may hold an area key or a stay type (older shared links mix the two),
  * so it may be an area key, a stay type or a region. An explicit `type` param wins over a type in `area`.
  */
 export function parseStayParams(sp: RawParams, areaKeys: readonly GoaArea[], amenityKeys: readonly AmenityKey[]): ParsedStayParams {

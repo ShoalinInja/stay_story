@@ -18,8 +18,6 @@ import { DestinationPicker } from "@/components/home/DestinationPicker";
 import { FeaturedStays, featuredTabs } from "@/components/home/FeaturedStays";
 import { HeroCarousel } from "@/components/home/HeroCarousel";
 import { Offers } from "@/components/home/Offers";
-import { SearchBar } from "@/components/home/SearchBar";
-import { getSearchOptions } from "@/components/home/search-options";
 import {
   CallbackStrip,
   EnquiryBand,
@@ -39,7 +37,7 @@ export async function generateMetadata(): Promise<Metadata> {
 
 // Static: no searchParams, no request APIs, no Date.now() — `/` prerenders.
 export default async function Home() {
-  const [site, areas, stays, offers, categories, collections, gallery, lypImage, searchOptions] = await Promise.all([
+  const [site, areas, stays, offers, categories, collections, gallery, lypImage] = await Promise.all([
     getSite(),
     getAreas(),
     getStays(),
@@ -48,7 +46,6 @@ export default async function Home() {
     getCollections(),
     getMediaList({ idPrefix: "gallery" }),
     getMedia(HOME_COPY.listYourProperty.imageId),
-    getSearchOptions(),
   ]);
 
   // Category covers are mostly baked-text posters, so every "Plan Your Goa" tile puts its title below the image.
@@ -80,9 +77,6 @@ export default async function Home() {
     <main id="main" className="flex-1 bg-surface">
       <JsonLd data={[organizationLd(site), faqLd(site.faqs)]} />
       <HeroCarousel hero={site.hero} />
-      <div className="relative z-20 container-site -mt-10">
-        <SearchBar options={searchOptions} />
-      </div>
       <CallbackStrip />
       {blocks
         .filter(([, show]) => show)

@@ -71,7 +71,7 @@ export interface Site {
   phone: string;                 // E.164, e.g. "+918160182809"
   whatsapp: string | null;       // null hides all WhatsApp UI
   contactEmail: string;
-  address: { line: string; locality: string; region: string; postalCode: string; country: "IN"; lat: number; lng: number };
+  address: { line: string; locality: string; region: string; postalCode: string; country: "IN" };
   socials: { platform: string; url: string }[];  // [] hides icons
   nav: NavGroup[];
   announcement: { text: string; code?: string; href?: string } | null;

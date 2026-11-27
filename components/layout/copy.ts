@@ -66,6 +66,7 @@ export const UI = {
 
 export const telHref = (phone: string) => `tel:${phone}`;
 export const waHref = (whatsapp: string) => `https://wa.me/${whatsapp.replace(/\D/g, "")}`;
-export const mapsHref = (a: Site["address"]) => `https://www.google.com/maps/search/?api=1&query=${a.lat},${a.lng}`;
+export const mapsHref = (a: Site["address"]) =>
+  `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(`${a.line}, ${a.locality}, ${a.region} ${a.postalCode}`)}`;
 /** "+918160182809" → "+91 81601 82809"; other formats pass through. */
 export const formatPhone = (phone: string) => phone.replace(/^\+91(\d{5})(\d{5})$/, "+91 $1 $2");

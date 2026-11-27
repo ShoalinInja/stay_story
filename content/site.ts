@@ -79,17 +79,15 @@ export const site: Site = {
   name: "Stay Story",
   tagline: "Villa | Apartment | Hotel | Plot",
   logo: LOGO,
-  phone: "+918160182809",
-  whatsapp: null, // unconfirmed with owner: null hides all WhatsApp UI
-  contactEmail: "kishankumar0520@gmail.com", // owner to swap for a domain address
+  phone: "+918828191510",
+  whatsapp: "+918828191510", // set to null to hide all WhatsApp UI if this number is not on WhatsApp
+  contactEmail: "shaikh.injamul.06905@gmail.com",
   address: {
-    line: "Home no 02, Circle, Pernem, Chopdem",
+    line: "Ayan Hotels & Resorts, next to Aquarius, Marna",
     locality: "Siolim",
     region: "Goa",
-    postalCode: "403512",
+    postalCode: "403517",
     country: "IN",
-    lat: 15.631582,
-    lng: 73.755411,
   },
   socials: [],
   nav,

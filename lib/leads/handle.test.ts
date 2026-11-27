@@ -6,7 +6,6 @@ const lead = { type: "callback", name: "Asha Rao", phone: "+91 98765 43210", sou
 const silent = { info: () => {}, warn: () => {}, error: () => {} };
 const ALL_SINKS = {
   RESEND_API_KEY: "re_x", LEAD_TO_EMAIL: "to@x.in", LEAD_FROM_EMAIL: "from@x.in",
-  SUPABASE_URL: "https://db.supabase.co", SUPABASE_SERVICE_ROLE_KEY: "srk",
   SHEET_WEBHOOK_URL: "https://hook.example/sheet",
 };
 
@@ -40,15 +39,15 @@ const form = (body: Record<string, string>, referer = "http://localhost/stays/ca
   });
 
 test("200 when one sink fails but another succeeds", async () => {
-  const { d, hits } = deps({ failing: ["resend", "supabase"] });
+  const { d, hits } = deps({ failing: ["resend"] });
   const res = await handleEnquiry(json(lead), d);
   assert.equal(res.status, 200);
   assert.equal((await res.json()).ok, true);
-  assert.equal(hits.length, 3, "all three sinks attempted");
+  assert.equal(hits.length, 2, "both sinks attempted");
 });
 
 test("502 with Call/WhatsApp fallback and no error detail when every sink fails", async () => {
-  const { d } = deps({ failing: ["resend", "supabase", "hook"] });
+  const { d } = deps({ failing: ["resend", "hook"] });
   const res = await handleEnquiry(json(lead), d);
   assert.equal(res.status, 502);
   const body = await res.json();

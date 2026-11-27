@@ -26,7 +26,6 @@ export function organizationLd(site: Site): Node {
       postalCode: a.postalCode,
       addressCountry: a.country,
     },
-    geo: { "@type": "GeoCoordinates", latitude: a.lat, longitude: a.lng },
     areaServed: { "@type": "State", name: "Goa" },
     ...(site.socials.length > 0 && { sameAs: site.socials.map((s) => s.url) }),
   };

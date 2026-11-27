@@ -1,22 +1,9 @@
 // TEMPORARY (A4): home-page labels that are not in /content yet. Lead will move these into `site`.
-// Plain data only — imported by the client SearchBar too, so no server-only imports here.
-import type { GoaArea, StayType } from "@/lib/content/types";
+// Plain data only: imported by client components too, so no server-only imports here.
+import type { GoaArea } from "@/lib/content/types";
 
 export const HOME_COPY = {
   hero: { carouselLabel: "Goa highlights", prev: "Previous slide", next: "Next slide" },
-  search: {
-    where: "Where in Goa",
-    wherePlaceholder: "Anywhere in Goa",
-    areasGroup: "Areas",
-    typesGroup: "Stay types",
-    checkIn: "Check-in",
-    checkOut: "Check-out",
-    datesTitle: "Select dates",
-    datesError: "Choose a check-out date after check-in",
-    guests: "Guests",
-    submit: "Search",
-    formLabel: "Search stays",
-  },
   callback: { text: "Finding the right Goa stay should be easy. We're here to help!", cta: "Request Callback" },
   destinations: { title: "Pick a Destination", carouselLabel: "Goa destinations" },
   featured: {
@@ -56,14 +43,6 @@ export const HOME_COPY = {
     body: "Tell us what you need and our local team will come back with options.",
   },
 } as const;
-
-/** "Where in Goa" stay types (for-sale is not a stay search). */
-export const STAY_TYPE_LABELS: Partial<Record<StayType, string>> = {
-  villa: "Villas",
-  apartment: "Apartments",
-  hotel: "Hotels",
-  "long-term": "Long-term rentals",
-};
 
 /** Lucide icon per area for the DestinationPicker (Area has no icon field yet). */
 export const AREA_ICONS: Record<GoaArea, string> = {

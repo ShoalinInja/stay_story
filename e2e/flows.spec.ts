@@ -1,5 +1,8 @@
 // Critical user flows against the production build (no lead sinks configured, so the API returns 502).
 import { expect, test, type Page } from "@playwright/test";
+import { site } from "../content/site";
+
+const WA = site.whatsapp?.replace(/\D/g, "");
 
 // The enquiry limiter allows 5 posts / 10 min per IP; give each test its own "IP" so runs don't collide.
 const fakeIp = () => `10.${(Math.random() * 255) | 0}.${(Math.random() * 255) | 0}.${(Math.random() * 255) | 0}`;
@@ -14,19 +17,6 @@ async function fillContactForm(page: Page) {
   await form.getByRole("textbox", { name: "Message" }).fill("Looking for a villa for four in December.");
   return form;
 }
-
-test("search bar submit routes to /stays with params and filtered results", async ({ page }) => {
-  await page.goto("/");
-  const search = page.getByRole("search", { name: "Search stays" });
-  await search.getByRole("combobox", { name: "Where in Goa" }).click();
-  await page.getByRole("option", { name: "Siolim" }).click();
-  await search.getByRole("button", { name: "Search" }).click();
-  await expect(page).toHaveURL(/\/stays\?area=siolim&guests=2$/);
-  // Next keeps the previous route mounted but hidden after client navigation, so scope to the visible <main>.
-  const main = page.locator("main:visible");
-  await expect(main.locator('a[href="/stays/casa-siolim"]').first()).toBeVisible();
-  await expect(main.locator('a[href="/stays/vagator-cliffside-villa"]')).toHaveCount(0);
-});
 
 test("filter bar changes update the URL and results", async ({ page }) => {
   await page.goto("/stays");
@@ -85,7 +75,9 @@ test("enquiry submit with no sinks configured falls back gracefully to Call us",
   const alert = form.getByRole("alert");
   await expect(alert).toContainText("couldn't send");
   await expect(alert.getByRole("link", { name: "Call us" })).toHaveAttribute("href", /^tel:\+91/);
-  await expect(alert.getByRole("link", { name: /WhatsApp/ })).toHaveCount(0); // site.whatsapp is null
+  const wa = alert.getByRole("link", { name: /WhatsApp/ });
+  if (WA) await expect(wa).toHaveAttribute("href", new RegExp(`wa\\.me/${WA}`));
+  else await expect(wa).toHaveCount(0);
   expect(errors).toEqual([]);
 });
 
@@ -190,9 +182,15 @@ test("skip link is first in tab order and moves focus into #main", async ({ page
 });
 
 for (const route of ["/", "/stays/casa-siolim", "/contact", "/travel/airport-transfers"]) {
-  test(`no WhatsApp UI when site.whatsapp is null: ${route}`, async ({ page }) => {
+  test(`WhatsApp UI follows site.whatsapp: ${route}`, async ({ page }) => {
     await page.goto(route);
-    await expect(page.locator('a[href*="wa.me"], a[href*="whatsapp.com"]')).toHaveCount(0);
-    await expect(page.getByText(/whatsapp/i).filter({ visible: true })).toHaveCount(0);
+    const links = page.locator('a[href*="wa.me"], a[href*="whatsapp.com"]');
+    if (!WA) {
+      await expect(links).toHaveCount(0);
+      await expect(page.getByText(/whatsapp/i).filter({ visible: true })).toHaveCount(0);
+      return;
+    }
+    expect(await links.count()).toBeGreaterThan(0);
+    for (const href of await links.evaluateAll((as) => as.map((a) => a.getAttribute("href") ?? ""))) expect(href).toContain(`wa.me/${WA}`);
   });
 }

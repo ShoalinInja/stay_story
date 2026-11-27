@@ -9,7 +9,7 @@ import type {
 export type * from "./types";
 
 /**
- * Typed content repository. v1 is file-backed (/content). A later SupabaseContentRepo
+ * Typed content repository. v1 is file-backed (/content). A later remote-backed repo
  * implements the same functions; UI imports only from "@/lib/content".
  * Async on purpose so the backing store can become remote without touching callers.
  */

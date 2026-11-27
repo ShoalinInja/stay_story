@@ -49,27 +49,6 @@ export function configuredSinks(env: Env, fetchFn: typeof fetch): Sink[] {
     });
   }
 
-  if (env.SUPABASE_URL && env.SUPABASE_SERVICE_ROLE_KEY) {
-    const key = env.SUPABASE_SERVICE_ROLE_KEY;
-    sinks.push({
-      name: "supabase",
-      send: (l) =>
-        post(
-          fetchFn,
-          `${env.SUPABASE_URL!.replace(/\/$/, "")}/rest/v1/enquiries`,
-          { apikey: key, authorization: `Bearer ${key}`, prefer: "return=minimal" },
-          {
-            type: l.type, name: l.name, phone: l.phone, email: l.email ?? null, message: l.message ?? null,
-            stay_slug: l.staySlug ?? null, service_slug: l.serviceSlug ?? null,
-            check_in: l.checkIn ?? null, check_out: l.checkOut ?? null,
-            move_in_month: l.moveIn ? `${l.moveIn}-01` : null,
-            adults: l.adults ?? null, children: l.children ?? null, rooms: l.rooms ?? null, budget: l.budget ?? null,
-            source: l.source, utm: l.utm ?? {}, ip: l.ip, user_agent: l.userAgent, created_at: l.createdAt,
-          },
-        ),
-    });
-  }
-
   if (env.SHEET_WEBHOOK_URL) {
     sinks.push({ name: "sheet", send: (l) => post(fetchFn, env.SHEET_WEBHOOK_URL!, {}, l) });
   }

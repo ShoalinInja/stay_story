@@ -18,9 +18,21 @@ This is what the Stay Story team needs to supply, confirm or decide. Items marke
 | 5 | **WhatsApp number**: confirm +91 88281 91510 is on WhatsApp | It is set as `site.whatsapp`, so every WhatsApp button and the post-enquiry hand-off use it. If the number isn't on WhatsApp, set `whatsapp: null` in `content/site.ts` to hide them. |
 | 6 | **Domain email** (for example `hello@staystory.in`) | The site shows a personal Gmail address (`site.contactEmail`). A domain address looks more trustworthy, and verifying the domain in Resend lets leads be sent from it. |
 | 7 | **Social profile URLs** (Instagram, Facebook and so on) | `site.socials` is empty, so the footer shows no social links. |
-| 8 | **Real stats and guest reviews**, if you have them | The stats band and testimonials stay hidden until real data exists. Nothing is invented. |
+| 8 | **Trust content**: real data only. Each slot is built and stays hidden until you fill it. | The content check rejects data that doesn't look real. See *Trust content* below. |
 | 9 | **SVG logo** | Only a PNG exists. An SVG is sharper and lighter. |
 | 10 | **Real stay photos**: 5+ landscape photos per stay, at least 1600 px wide, with no text, logos or phone numbers in the image | The old site's photos are mostly posters with baked-in text, so they can't be used in cards, the hero or galleries. |
+
+### Trust content: where each piece goes
+
+| What you supply | Put it in | Shows up as |
+|---|---|---|
+| Google rating, review count and your Google reviews link | `content/site.ts` → `reviews: { rating: 4.8, count: 112, url: "https://…" }` | "★ 4.8 on Google · 112 reviews" under the hero headline, and "Read all 112 reviews on Google" above the guest quotes |
+| How fast you really reply | `content/site.ts` → `replyTime: "within 30 minutes, 9 am–9 pm"` | "Replies within …" in the hero, and "We usually reply …" under every enquiry button, after sending, and on the thank-you page |
+| 3+ real guest reviews (first name, words, month, stay) | `content/index.ts` → `testimonials: [{ name: "Priya S.", quote: "…", source: "google", date: "2026-10", stay: "Casa Siolim" }]` | "What Guests Say" on the home page (first 3) |
+| Host or founder: name, role, 2–3 lines, a real photo | Photo in `public/media/`, registered in `content/media-manifest.json`; then `content/site.ts` → `host: { name, role, bio, photo: media("host-photo") }` | "Meet Your Host" on the home and About pages |
+| Real numbers (years, stays hosted, guests) | `content/site.ts` → `stats: [{ label: "Guests hosted", value: "2,400+" }]` | The numbers band on the home page |
+
+Copy reviews word for word and only with the guest's permission (Google reviews are public, but ask anyway). Never round a rating up.
 
 ## Claims to confirm or remove
 

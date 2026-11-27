@@ -18,23 +18,23 @@ If you would rather not edit files, fill in `content/stays/_TEMPLATE.json` with 
 
 ## 2. Add the photos
 
-1. Choose a short web name (the **slug**) for the stay, such as `casa-siolim`. Use lowercase letters, numbers and hyphens only. This becomes the page address: `staystory.in/stays/casa-siolim`.
+1. Choose a short web name (the **slug**) for the stay, such as `3-bhk-luxury-villa-with-pool-siolim`. Use lowercase letters, numbers and hyphens only. This becomes the page address: `staystory.in/stays/3-bhk-luxury-villa-with-pool-siolim`.
 2. Create a folder `public/media/stays/<slug>/` and put the photos in it, named `01.jpg`, `02.jpg` and so on. `01` is the main photo.
 3. Write down each photo's width and height in pixels. On a Mac, select the file and press ⌘I; on Windows, right-click it and open **Properties → Details**.
 
 ## 3. Create the stay file
 
-1. In `content/stays/`, copy `casa-siolim.ts` and rename the copy to `<slug>.ts`.
+1. In `content/stays/`, copy `3-bhk-luxury-villa-with-pool-siolim.ts` and rename the copy to `<slug>.ts`.
 2. Open it and change every value. `_TEMPLATE.json` shows the same fields with example values.
 3. For each photo, replace the `media(...)` list with entries like this:
    ```ts
    images: [
-     { src: "/media/stays/casa-siolim/01.jpg", alt: "Pool and sun loungers at dusk", width: 1600, height: 1067 },
+     { src: "/media/stays/my-new-villa/01.jpg", alt: "Pool and sun loungers at dusk", width: 1600, height: 1067 },
    ],
    ```
    The `alt` text describes what the photo shows, for visitors using screen readers. Keep it specific, for example "Four-poster bed facing the balcony", not "bedroom".
-4. **Delete the line `isPlaceholder: true,`.** Until you do, the stay never appears on the live site.
-5. Rename the variable on the `export const` line (for example `export const casaSiolim`) to match your stay.
+4. If the file has a line `isPlaceholder: true,`, **delete it**. Until you do, the stay never appears on the live site.
+5. Rename the variable on the `export const` line (for example `export const luxuryVilla3BhkSiolim`) to match your stay.
 
 ## 4. Switch it on
 
@@ -86,6 +86,6 @@ If `pnpm build` prints a list starting with `Placeholder / needsReview content w
 
 ## Good to know
 
-- **Placeholders are hidden in production.** The six sample stays (`casa-siolim`, `vagator-cliffside-villa`, `assagao-garden-house`, `south-goa-beach-apartment`, `panjim-long-stay-residence`, `morjim-riverside-villa-for-sale`) are illustrations only. Delete them once your real stays are live.
+- **Placeholders are hidden in production.** A stay with `isPlaceholder: true` only shows in preview builds.
 - **Prices and ratings must be real.** The site hides empty blocks automatically, so leaving something out is always better than guessing.
 - **Photos with text baked in** (banners with headlines or phone numbers) look broken under the site's own headings. Use clean photos only.

@@ -3,9 +3,11 @@ import assert from "node:assert/strict";
 import { content } from "../content";
 import { buildRouteIndex, isKnownPath } from "./routing";
 
-const live = buildRouteIndex(content, false);
-const draft = buildRouteIndex(content, true);
-const placeholderStay = content.stays.find((s) => s.isPlaceholder)!.slug;
+// A synthetic draft stay, so the placeholder test does not depend on sample content existing.
+const placeholderStay = "draft-only-villa";
+const withDraft = { ...content, stays: [...content.stays, { ...content.stays[0], slug: placeholderStay, isPlaceholder: true }] };
+const live = buildRouteIndex(withDraft, false);
+const draft = buildRouteIndex(withDraft, true);
 const service = content.categories.find((c) => c.key === "experiences")!;
 
 test("known routes pass", () => {

@@ -45,7 +45,9 @@ const plural = (n: number, one: string, many: string) => `${n} ${n === 1 ? one :
 export const copy = {
   card: {
     // Price and guest count are never shown: both are shared on enquiry (owner decision, Nov 2026).
-    meta: (s: Pick<Stay, "bedrooms" | "baths">) => `${plural(s.bedrooms, "Room", "Rooms")} + ${plural(s.baths, "Bath", "Baths")}`,
+    // baths: 0 means "not confirmed", so it is left out.
+    meta: (s: Pick<Stay, "bedrooms" | "baths">) =>
+      [plural(s.bedrooms, "Room", "Rooms"), s.baths > 0 && plural(s.baths, "Bath", "Baths")].filter(Boolean).join(" + "),
     onEnquiry: "Rates on enquiry",
     view: (name: string) => `View ${name}`,
     save: (name: string) => `Save ${name}`,

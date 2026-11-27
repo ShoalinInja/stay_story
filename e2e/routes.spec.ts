@@ -108,7 +108,7 @@ for (const [from, to] of Object.entries(LEGACY_ROUTES)) {
   });
 }
 
-for (const route of ["/stays/", "/about/", "/travel/airport-transfers/", "/stays/casa-siolim/"]) {
+for (const route of ["/stays/", "/about/", "/travel/airport-transfers/", "/stays/4-bhk-luxury-villa-with-pool/"]) {
   test(`308 ${route} → slashless`, async ({ request, baseURL }) => {
     const res = await request.get(route, { maxRedirects: 0 });
     expect(res.status()).toBe(308);

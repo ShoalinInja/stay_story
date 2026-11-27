@@ -1,7 +1,7 @@
 // Keyboard/focus: every tab stop shows a visible focus indicator, and nothing uses a positive tabindex.
 import { expect, test } from "@playwright/test";
 
-const PAGES = ["/", "/stays", "/stays/casa-siolim", "/travel/airport-transfers", "/contact"];
+const PAGES = ["/", "/stays", "/stays/4-bhk-luxury-villa-with-pool", "/travel/airport-transfers", "/contact"];
 const TAB_STOPS = 40;
 
 for (const url of PAGES) {

@@ -6,7 +6,7 @@ const TAGS = ["wcag2a", "wcag2aa", "wcag21a", "wcag21aa", "wcag22aa"];
 const PAGES: Record<string, string> = {
   home: "/",
   stays: "/stays",
-  "stay detail": "/stays/casa-siolim",
+  "stay detail": "/stays/4-bhk-luxury-villa-with-pool",
   "stay-type landing": "/stays/villas",
   "service category": "/travel",
   "service item": "/travel/airport-transfers",

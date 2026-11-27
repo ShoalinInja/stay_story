@@ -67,7 +67,7 @@ Some content is marked `isPlaceholder: true` (sample stays, unconfirmed services
 
 ### Add a stay
 
-Follow [`docs/ADD-A-STAY.md`](docs/ADD-A-STAY.md), written for the owner: photos go in `public/media/stays/<slug>/`, then copy `content/stays/casa-siolim.ts`, register the file in `content/stays/index.ts`, and run `pnpm test`. Delete the placeholder stays once real ones exist.
+Follow [`docs/ADD-A-STAY.md`](docs/ADD-A-STAY.md), written for the owner: photos go in `public/media/stays/<slug>/`, then copy `content/stays/3-bhk-luxury-villa-with-pool-siolim.ts`, register the file in `content/stays/index.ts`, and run `pnpm test`. Delete the placeholder stays once real ones exist.
 
 ### Add a service
 

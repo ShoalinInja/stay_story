@@ -23,16 +23,15 @@ test("filter bar changes update the URL and results", async ({ page }) => {
   const filters = page.getByRole("complementary").getByRole("form", { name: "Filters" });
   // Retry until hydrated: a change made before React attaches its handler is a no-op.
   await expect(async () => {
-    await filters.getByRole("combobox", { name: "Stay type" }).selectOption("long-term");
-    await expect(page).toHaveURL(/[?&]type=long-term/, { timeout: 1000 });
+    await filters.getByRole("combobox", { name: "Stay type" }).selectOption("villa");
+    await expect(page).toHaveURL(/[?&]type=villa/, { timeout: 1000 });
   }).toPass();
   const main = page.locator("main:visible");
-  await expect(main.locator('a[href="/stays/panjim-long-stay-residence"]').first()).toBeVisible();
-  await expect(main.locator('a[href="/stays/casa-siolim"]')).toHaveCount(0);
+  await expect(main.locator('a[href="/stays/4-bhk-luxury-villa-with-pool"]').first()).toBeVisible();
 });
 
 test("stay detail gallery opens the lightbox and closes with Escape", async ({ page }) => {
-  await page.goto("/stays/casa-siolim");
+  await page.goto("/stays/4-bhk-luxury-villa-with-pool");
   await page.getByRole("button", { name: "View photos" }).click();
   const dialog = page.getByRole("dialog");
   await expect(dialog).toBeVisible();
@@ -43,7 +42,7 @@ test("stay detail gallery opens the lightbox and closes with Escape", async ({ p
 
 // D2: the lightbox is a controlled Modal with no Radix trigger, so on close focus falls to <body>.
 test("D2: closing the stay lightbox returns focus to the opener", async ({ page }) => {
-  await page.goto("/stays/casa-siolim");
+  await page.goto("/stays/4-bhk-luxury-villa-with-pool");
   const trigger = page.getByRole("button", { name: "View photos" });
   await trigger.click();
   await expect(page.getByRole("dialog")).toBeVisible();
@@ -118,13 +117,13 @@ test.describe("no JavaScript", () => {
   // filtered URLs (e.g. ?type=long-term) still show every stay; the filter form itself works once JS runs.
   test("D3: /stays lists stays and the filter form without JS", async ({ page }) => {
     await page.goto("/stays");
-    await expect(page.locator('main a[href="/stays/panjim-long-stay-residence"]:visible').first()).toBeVisible();
+    await expect(page.locator('main a[href="/stays/4-bhk-luxury-villa-with-pool"]:visible').first()).toBeVisible();
     await expect(page.getByRole("form", { name: "Filters" })).toBeVisible();
   });
 
   test("static pages keep nav, content and the enquiry form without JS", async ({ page }) => {
-    await page.goto("/stays/casa-siolim");
-    await expect(page.getByRole("heading", { level: 1, name: "Casa Siolim" })).toBeVisible();
+    await page.goto("/stays/4-bhk-luxury-villa-with-pool");
+    await expect(page.getByRole("heading", { level: 1, name: "4 BHK Luxury Villa with Pool" })).toBeVisible();
     await expect(page.locator("main form[action='/api/enquiry']:visible").first()).toBeVisible();
     await page.goto("/travel/airport-transfers");
     await expect(page.getByRole("heading", { level: 1 })).toBeVisible();
@@ -190,7 +189,7 @@ test("skip link is first in tab order and moves focus into #main", async ({ page
   expect(await page.evaluate(() => !!document.activeElement?.closest("#main"))).toBe(true);
 });
 
-for (const route of ["/", "/stays/casa-siolim", "/contact", "/travel/airport-transfers"]) {
+for (const route of ["/", "/stays/4-bhk-luxury-villa-with-pool", "/contact", "/travel/airport-transfers"]) {
   test(`WhatsApp UI follows site.whatsapp: ${route}`, async ({ page }) => {
     await page.goto(route);
     const links = page.locator('a[href*="wa.me"], a[href*="whatsapp.com"]');

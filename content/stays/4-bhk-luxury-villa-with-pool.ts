@@ -1,21 +1,20 @@
-// PLACEHOLDER until the owner confirms the facts (isPlaceholder: true keeps it off the live site).
-// Photos and video are the real shoot of this villa (Google Photos album + walkthrough video, Nov 2026).
+// Real shoot of this villa (owner's Google Photos album + walkthrough video, Nov 2026).
 // Taken from the photos: 4 bedrooms, 4 bathrooms, private pool, garden, covered patio, dining for eight.
-// TO CONFIRM before going live: villa name and slug, area + map pin, check-in/out times,
-// house rules, cancellation policy. Then delete `isPlaceholder: true`.
-// Price and guest count are never shown on the site (shared on enquiry).
+// Price, guest count, check-in/out, rules and cancellation are shared on enquiry, never shown.
+// Area and map pin are assumed (Siolim); confirm with the owner.
 import type { Stay } from "../../lib/content/types";
 import { media } from "../media";
 
-const photo = (n: number) => media(`gallery-four-bedroom-pool-villa-${String(n).padStart(2, "0")}`);
+export const photo4Bhk = (n: number) => media(`gallery-four-bedroom-pool-villa-${String(n).padStart(2, "0")}`);
 const DIR = "/media/stays/four-bedroom-pool-villa";
+const photo = photo4Bhk;
 
-export const fourBedroomPoolVilla: Stay = {
-  slug: "four-bedroom-pool-villa",
-  name: "Four-Bedroom Pool Villa",
+export const luxuryVilla4Bhk: Stay = {
+  slug: "4-bhk-luxury-villa-with-pool",
+  name: "4 BHK Luxury Villa with Pool",
   type: "villa",
-  area: "siolim", // TO CONFIRM
-  region: "north-goa", // TO CONFIRM
+  area: "siolim", // assumed; confirm
+  region: "north-goa",
   headline: "A white two-storey villa with a private pool, lawn and four en-suite bedrooms",
   description: [
     "A bright two-storey villa set around a private pool and lawn, framed by palms. The open-plan living room, dining table for eight and breakfast bar with its leaf mural all look out to the garden.",
@@ -39,12 +38,12 @@ export const fourBedroomPoolVilla: Stay = {
   ],
   video: { src: `${DIR}/tour.mp4`, poster: `${DIR}/tour-poster.webp`, width: 720, height: 1280 },
   policies: {
-    checkIn: "To be confirmed",
-    checkOut: "To be confirmed",
+    checkIn: "Shared on enquiry",
+    checkOut: "Shared on enquiry",
     rules: [],
-    cancellation: "To be confirmed at the time of booking.",
+    cancellation: "Shared on enquiry.",
   },
-  location: { lat: 15.6316, lng: 73.7554, nearby: [] }, // TO CONFIRM: map pin
+  location: { lat: 15.6316, lng: 73.7554, nearby: [] }, // Siolim village centre; replace with the villa pin
   addOns: [
     { category: "concierge", slug: "private-chef" },
     { category: "travel", slug: "airport-transfers" },
@@ -53,5 +52,4 @@ export const fourBedroomPoolVilla: Stay = {
   faqs: [],
   collections: ["pool-villas", "group-stays"],
   featured: true,
-  isPlaceholder: true,
 };

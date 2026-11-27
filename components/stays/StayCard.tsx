@@ -12,6 +12,9 @@ export type StayCardProps = {
   stay: Stay;
   /** true for the first above-the-fold card only (LCP). */
   priority?: boolean;
+  /** Morph the cover into the detail hero on click. Off for related-stay cards on a detail page,
+   *  or every related stay would also pair with its own card on the next detail page. */
+  morph?: boolean;
   className?: string;
 };
 
@@ -20,7 +23,7 @@ const MAX_CARD_PHOTOS = 5;
 /** Area key → display name ("south-goa" → "South Goa"); avoids a content lookup per card. */
 const areaName = (key: string) => key.split("-").map((w) => w[0].toUpperCase() + w.slice(1)).join(" ");
 
-export function StayCard({ stay, priority, className }: StayCardProps) {
+export function StayCard({ stay, priority, morph = true, className }: StayCardProps) {
   const href = `/stays/${stay.slug}`;
   const images = cleanFirst(stay.images).slice(0, MAX_CARD_PHOTOS);
   // Text overlays (rating, badge) only when the cover photo is text-free.
@@ -35,6 +38,7 @@ export function StayCard({ stay, priority, className }: StayCardProps) {
           {images.length > 0 ? (
             <CardCarousel
               href={href}
+              slug={morph ? stay.slug : undefined}
               images={images}
               label={copy.card.photos(stay.name)}
               dotLabels={images.map((_, i) => copy.card.photo(i + 1, images.length))}

@@ -74,6 +74,7 @@ export function StayDetail({ stay, area, addOns, related }: Props) {
         </header>
         <div className="mt-6">
           <StayGallery
+            slug={stay.slug}
             images={images}
             labels={{
               gallery: copy.card.photos(stay.name),
@@ -262,7 +263,7 @@ export function StayDetail({ stay, area, addOns, related }: Props) {
               <RailArrows />
             </div>
             <RailTrack>
-              {related.map((s) => <StayCard key={s.slug} stay={s} />)}
+              {related.map((s) => <StayCard key={s.slug} stay={s} morph={false} />)}
             </RailTrack>
           </Rail>
         </section>

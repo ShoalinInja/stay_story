@@ -200,7 +200,9 @@ Ordered by impact on enquiries.
 
 ## 6. Implementation order
 
-**Status (27 Nov 2026):** phases 1–3 are done. What was built differs from the plan above in three places:
+**Status (27 Nov 2026):** phases 1–4 are done. What was built differs from the plan above in these places:
+- **Stay photo morph** uses React's `<ViewTransition>` (`StayPhoto` in `components/stays/StayCardParts.tsx`), because Next route changes are client-side, so the CSS-only `view-transition-name` in §4.11 never fires on link clicks. Only cards that link *to* a detail page carry the name: related-stay cards on a detail page use `morph={false}`, or each would also fly to its twin on the next page. A click before the page has hydrated is a normal page load with no morph.
+- **Lightbox** keeps the modal's fade-and-scale entrance (phase 2), and each photo now fades in when you step through. A thumbnail-to-lightbox morph was left out: it fights Radix's portal and focus handling for little gain.
 - **Scroll reveal** uses CSS scroll-driven animation (`@utility reveal` in `globals.css`, `animation-timeline: view()`) instead of the `IntersectionObserver` component in §4.4. It needs no JS, no `html.js` class and no hydration. Browsers without support, no-JS visitors and reduced-motion users simply see the content. It is applied to every `h2` `SectionHeader`.
 - **Hero slide change** still slides. A true crossfade needs `embla-carousel-fade`, a new dependency. The load-time image settle and the staged text are in.
 - **Transition lists must name `translate` and `scale`** as well as `transform`. Tailwind 4 writes `scale-*`, `translate-*` and `rotate-*` to those separate CSS properties, so a list with only `transform` makes them jump. `media-zoom` and every `transition-[…]` list follow this rule.

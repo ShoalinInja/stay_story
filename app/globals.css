@@ -135,6 +135,7 @@
   --animate-check-draw: check-draw 500ms var(--ease-out) 120ms both;
   --animate-hero-settle: hero-settle 900ms var(--ease-out) both;
   --animate-rise: rise var(--dur-slow) var(--ease-out) both;
+  --animate-photo-in: photo-in var(--dur-base) var(--ease-out) both;
   --animate-heart-pop: heart-pop var(--dur-base) var(--ease-out);
   --animate-accordion-down: accordion-down var(--dur-base) var(--ease-in-out);
   --animate-accordion-up: accordion-up var(--dur-fast) var(--ease-in);
@@ -156,6 +157,9 @@
 @keyframes rise {
   from { opacity: 0; transform: translateY(12px); }
 }
+@keyframes photo-in {
+  from { opacity: 0; transform: scale(0.985); }
+}
 @keyframes heart-pop {
   50% { transform: scale(1.2); }
 }
@@ -171,6 +175,29 @@
 ::view-transition-old(root),
 ::view-transition-new(root) {
   animation-duration: var(--dur-base);
+}
+/* Clicks during a transition reach the live page instead of the snapshot overlay. */
+::view-transition {
+  pointer-events: none;
+}
+/* Stay photo morph (card cover -> detail hero). The brief blur hides scaling artefacts mid-flight. */
+::view-transition-group(.morph) {
+  animation-duration: var(--dur-slow);
+  animation-timing-function: var(--ease-in-out);
+}
+::view-transition-image-pair(.morph) {
+  animation-name: via-blur;
+}
+@keyframes via-blur {
+  30% { filter: blur(3px); }
+}
+@media (prefers-reduced-motion: reduce) {
+  ::view-transition-old(*),
+  ::view-transition-new(*),
+  ::view-transition-group(*) {
+    animation-duration: 0s !important;
+    animation-delay: 0s !important;
+  }
 }
 
 /* Type scale — use these classes, not ad-hoc sizes */

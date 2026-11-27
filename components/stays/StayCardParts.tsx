@@ -10,14 +10,30 @@ import type { MediaRef } from "@/lib/content/types";
 
 type CarouselProps = {
   href: string;
+  /** Stay slug: names the cover photo so it morphs into the detail page hero. */
+  slug?: string;
   images: MediaRef[];
   label: string;
   dotLabels: string[];
   priority?: boolean;
 };
 
+/**
+ * Shared-element morph between a stay's card cover and its detail page hero (React <ViewTransition>;
+ * Next route navigations are transitions, so it runs on click). Unsupported browsers just navigate.
+ * The name must be unique on a page: each stay appears once per page.
+ */
+export function StayPhoto({ slug, children }: { slug?: string; children: React.ReactElement }) {
+  if (!slug) return children;
+  return (
+    <React.ViewTransition name={`stay-${slug}`} share="morph" default="none">
+      {children}
+    </React.ViewTransition>
+  );
+}
+
 /** Swipeable photo strip with dots. Without JS the first photo shows and the rest stay clipped. */
-export function CardCarousel({ href, images, label, dotLabels, priority }: CarouselProps) {
+export function CardCarousel({ href, slug, images, label, dotLabels, priority }: CarouselProps) {
   const [viewportRef, api] = useEmblaCarousel({ loop: images.length > 1 });
   const [index, setIndex] = React.useState(0);
   // Only photos up to one past the furthest slide visited get an <Image>: a grid of 5-photo cards
@@ -47,6 +63,7 @@ export function CardCarousel({ href, images, label, dotLabels, priority }: Carou
             // Duplicate of the title link for pointer users; keyboard users reach the stay via the title.
             <Link key={img.src + i} href={href} tabIndex={-1} aria-label={i <= reached ? undefined : img.alt} className="relative aspect-[4/3] min-w-0 shrink-0 grow-0 basis-full overflow-hidden bg-surface-2">
               {i <= reached && (
+                <StayPhoto slug={i === 0 ? slug : undefined}>
                 <Image
                   src={img.src}
                   alt={img.alt}
@@ -58,6 +75,7 @@ export function CardCarousel({ href, images, label, dotLabels, priority }: Carou
                   loading={priority && i === 0 ? "eager" : undefined}
                   className="media-zoom object-cover group-hover/card:scale-[1.04]"
                 />
+                </StayPhoto>
               )}
             </Link>
           ))}

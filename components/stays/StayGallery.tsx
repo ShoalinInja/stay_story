@@ -6,6 +6,7 @@ import { ChevronLeft, ChevronRight, Images } from "lucide-react";
 import { Button, Modal } from "@/components/primitives";
 import { cn } from "@/lib/utils";
 import type { MediaRef } from "@/lib/content/types";
+import { StayPhoto } from "./StayCardParts";
 
 type Labels = {
   gallery: string;
@@ -25,7 +26,7 @@ const MOSAIC_MIN = 5;
  * <5 photos: single hero with a thumbnail strip (BRIEF §7). Callers pass clean-first images
  * so the "+N More" overlay never sits on a poster with baked-in text.
  */
-export function StayGallery({ images, labels }: { images: MediaRef[]; labels: Labels }) {
+export function StayGallery({ images, labels, slug }: { images: MediaRef[]; labels: Labels; slug?: string }) {
   const [open, setOpen] = React.useState(false);
   const [index, setIndex] = React.useState(0);
   // Controlled Modal has no trigger, so restore focus to whatever opened it (WCAG 2.4.3).
@@ -44,20 +45,23 @@ export function StayGallery({ images, labels }: { images: MediaRef[]; labels: La
   return (
     <>
       {images.length >= MOSAIC_MIN ? (
-        <Mosaic images={images} labels={labels} onOpen={show} />
+        <Mosaic images={images} labels={labels} onOpen={show} slug={slug} />
       ) : (
-        <HeroStrip images={images} labels={labels} onOpen={show} />
+        <HeroStrip images={images} labels={labels} onOpen={show} slug={slug} />
       )}
       <Lightbox images={images} labels={labels} open={open} onOpenChange={onOpenChange} index={index} setIndex={setIndex} />
     </>
   );
 }
 
-function Tile({ img, label, onClick, priority, sizes, className, children }: {
+function Tile({ img, label, onClick, priority, sizes, className, children, slug }: {
   img: MediaRef; label: string; onClick: () => void; priority?: boolean; sizes: string; className?: string; children?: React.ReactNode;
+  /** Set on the main photo only: the card cover morphs into it. */
+  slug?: string;
 }) {
   return (
     <button type="button" onClick={onClick} aria-label={label} className={cn("group relative overflow-hidden bg-surface-2", className)}>
+      <StayPhoto slug={slug}>
       <Image
         src={img.src}
         alt={img.alt}
@@ -69,16 +73,17 @@ function Tile({ img, label, onClick, priority, sizes, className, children }: {
         blurDataURL={img.blurDataURL}
         className="media-zoom group-hover:scale-[1.04] object-cover"
       />
+      </StayPhoto>
       {children}
     </button>
   );
 }
 
-function Mosaic({ images, labels, onOpen }: { images: MediaRef[]; labels: Labels; onOpen: (i: number) => void }) {
+function Mosaic({ images, labels, onOpen, slug }: { images: MediaRef[]; labels: Labels; onOpen: (i: number) => void; slug?: string }) {
   const extra = images.length - MOSAIC_MIN;
   return (
     <div className="relative grid h-[280px] grid-cols-4 grid-rows-2 gap-2 overflow-hidden rounded-card md:h-[440px]">
-      <Tile img={images[0]} label={labels.photo[0]} onClick={() => onOpen(0)} priority sizes="(min-width: 768px) 600px, 100vw" className="col-span-4 row-span-2 md:col-span-2" />
+      <Tile img={images[0]} label={labels.photo[0]} onClick={() => onOpen(0)} priority sizes="(min-width: 768px) 600px, 100vw" className="col-span-4 row-span-2 md:col-span-2" slug={slug} />
       {images.slice(1, MOSAIC_MIN).map((img, j) => {
         const i = j + 1;
         const isLast = i === MOSAIC_MIN - 1;
@@ -98,12 +103,12 @@ function Mosaic({ images, labels, onOpen }: { images: MediaRef[]; labels: Labels
   );
 }
 
-function HeroStrip({ images, labels, onOpen }: { images: MediaRef[]; labels: Labels; onOpen: (i: number) => void }) {
+function HeroStrip({ images, labels, onOpen, slug }: { images: MediaRef[]; labels: Labels; onOpen: (i: number) => void; slug?: string }) {
   const [active, setActive] = React.useState(0);
   return (
     <div>
       <div className="relative aspect-[16/9] max-h-[460px] w-full overflow-hidden rounded-card">
-        <Tile img={images[active]} label={labels.photo[active]} onClick={() => onOpen(active)} priority sizes="(min-width: 1200px) 1200px, 100vw" className="absolute inset-0 size-full" />
+        <Tile img={images[active]} label={labels.photo[active]} onClick={() => onOpen(active)} priority sizes="(min-width: 1200px) 1200px, 100vw" className="absolute inset-0 size-full" slug={active === 0 ? slug : undefined} />
       </div>
       {images.length > 1 && (
         <ul className="mt-2 flex gap-2 overflow-x-auto" aria-label={labels.gallery}>
@@ -142,7 +147,8 @@ function Lightbox({ images, labels, open, onOpenChange, index, setIndex }: {
         }}
       >
         <div className="relative aspect-[3/2] w-full overflow-hidden rounded-input bg-surface-2">
-          <Image src={img.src} alt={img.alt} fill sizes="(min-width: 1024px) 960px, 100vw" className="object-contain" />
+          {/* key: each photo change remounts, so the new photo fades in instead of swapping. */}
+          <Image key={img.src} src={img.src} alt={img.alt} fill sizes="(min-width: 1024px) 960px, 100vw" className="animate-photo-in object-contain" />
         </div>
         {n > 1 && (
           <div className="mt-3 flex items-center justify-between">

@@ -37,7 +37,7 @@ export function CollectionTile({ href, title, image, layout = "overlay", classNa
         alt=""
         fill
         sizes="(min-width: 1024px) 280px, 60vw"
-        className="object-cover transition-transform duration-200 ease-out group-hover:scale-[1.03] motion-reduce:transition-none"
+        className="media-zoom group-hover:scale-[1.04] object-cover"
       />
       <span aria-hidden className="absolute inset-x-0 bottom-0 h-1/2 bg-gradient-to-t from-black/75 to-transparent" />
       <span className="absolute inset-x-4 bottom-4 font-display text-xl font-semibold text-white">{title}</span>

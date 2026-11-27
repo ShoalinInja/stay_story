@@ -67,7 +67,7 @@ function Tile({ img, label, onClick, priority, sizes, className, children }: {
         loading={priority ? "eager" : undefined}
         placeholder={img.blurDataURL ? "blur" : "empty"}
         blurDataURL={img.blurDataURL}
-        className="object-cover transition-transform duration-200 motion-safe:group-hover:scale-[1.02]"
+        className="media-zoom group-hover:scale-[1.04] object-cover"
       />
       {children}
     </button>

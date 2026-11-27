@@ -17,7 +17,7 @@ export function HeroCarousel({ hero }: { hero: Site["hero"] }) {
           {slides.map((s, i) => (
             <div key={s.image.src} className="relative h-[440px] md:h-[520px]">
               {i === 0 ? (
-                <Image src={s.image.src} alt={s.image.alt} fill sizes="100vw" fetchPriority="high" loading="eager" className="object-cover" />
+                <Image src={s.image.src} alt={s.image.alt} fill sizes="100vw" fetchPriority="high" loading="eager" className="animate-hero-settle object-cover" />
               ) : (
                 // Later slides wait for window load so they don't slow the LCP image on mobile.
                 <AfterLoad>
@@ -28,7 +28,7 @@ export function HeroCarousel({ hero }: { hero: Site["hero"] }) {
               <div className="absolute inset-x-0 bottom-20 flex justify-center md:bottom-24">
                 <Link
                   href={s.cta.href}
-                  className="inline-flex min-h-11 items-center rounded-full border border-white px-6 text-sm font-semibold text-white transition-colors hover:bg-white hover:text-ink"
+                  className="inline-flex min-h-11 animate-rise items-center rounded-full border border-white px-6 text-sm font-semibold text-white transition-colors [animation-delay:160ms] hover:bg-white hover:text-ink"
                 >
                   {s.cta.label}
                 </Link>
@@ -40,8 +40,9 @@ export function HeroCarousel({ hero }: { hero: Site["hero"] }) {
         <RailNext label={T.next} className="absolute right-4 bottom-20 z-10 md:top-1/2 md:bottom-auto md:-translate-y-1/2" />
       </Rail>
       <div className="pointer-events-none absolute inset-x-0 top-0 bottom-32 flex flex-col items-center justify-center px-4 text-center">
-        <h1 className="max-w-3xl font-display type-h1 text-white">{hero.headline}</h1>
-        {hero.sub && <p className="mt-3 max-w-xl type-body text-white/90">{hero.sub}</p>}
+        {/* Staged entrance: headline, then subtitle 80 ms later (transform + opacity only; the LCP is the photo). */}
+        <h1 className="max-w-3xl animate-rise font-display type-h1 text-white">{hero.headline}</h1>
+        {hero.sub && <p className="mt-3 max-w-xl animate-rise type-body text-white/90 [animation-delay:80ms]">{hero.sub}</p>}
       </div>
     </div>
   );

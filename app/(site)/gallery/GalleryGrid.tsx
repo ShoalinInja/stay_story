@@ -54,7 +54,7 @@ export function GalleryGrid({ photos }: { photos: MediaRef[] }) {
                 sizes="(min-width: 1024px) 290px, (min-width: 768px) 33vw, 50vw"
                 placeholder={p.blurDataURL ? "blur" : "empty"}
                 blurDataURL={p.blurDataURL}
-                className="object-cover transition-transform duration-200 group-hover:scale-[1.03]"
+                className="media-zoom group-hover:scale-[1.04] object-cover"
               />
             </a>
           </li>

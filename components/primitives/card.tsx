@@ -17,7 +17,7 @@ export function Card({ interactive = false, asChild = false, className, ...props
       className={cn(
         "overflow-hidden rounded-card bg-surface text-ink shadow-card",
         interactive &&
-          "transition-[box-shadow,transform] hover:shadow-card-hover focus-within:shadow-card-hover motion-safe:hover:-translate-y-0.5",
+          "group/card transition-[box-shadow,transform,translate,scale] duration-(--dur-slow) hover:shadow-card-hover focus-within:shadow-card-hover motion-safe:hover:-translate-y-0.5",
         className,
       )}
       {...props}

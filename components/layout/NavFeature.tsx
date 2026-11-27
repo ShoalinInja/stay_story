@@ -22,7 +22,7 @@ export function NavFeature({ feature, onNavigate }: { feature: Feature; onNaviga
           placeholder={image.blurDataURL ? "blur" : "empty"}
           blurDataURL={image.blurDataURL}
           className={cn(
-            "transition-transform duration-200 group-hover:scale-[1.02]",
+            "media-zoom group-hover:scale-[1.04]",
             image.hasBakedText ? "object-contain" : "object-cover",
           )}
         />

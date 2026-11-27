@@ -5,7 +5,7 @@ import { cn } from "@/lib/utils";
 
 // Server-safe: no hooks. Focus ring comes from the global :focus-visible outline in globals.css.
 export const buttonVariants = cva(
-  "inline-flex shrink-0 items-center justify-center gap-2 font-semibold whitespace-nowrap select-none transition-[background-color,color,border-color,box-shadow,transform] active:scale-[0.98] active:duration-(--dur-instant) disabled:pointer-events-none disabled:opacity-50 aria-disabled:pointer-events-none aria-disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:shrink-0 [&_svg:not([class*='size-'])]:size-4",
+  "inline-flex shrink-0 items-center justify-center gap-2 font-semibold whitespace-nowrap select-none transition-[background-color,color,border-color,box-shadow,transform,translate,scale] active:scale-[0.98] active:duration-(--dur-instant) disabled:pointer-events-none disabled:opacity-50 aria-disabled:pointer-events-none aria-disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:shrink-0 [&_svg:not([class*='size-'])]:size-4",
   {
     variants: {
       variant: {

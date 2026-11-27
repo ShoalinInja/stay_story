@@ -45,7 +45,7 @@ export function CardCarousel({ href, images, label, dotLabels, priority }: Carou
         <div className="flex touch-pan-y">
           {images.map((img, i) => (
             // Duplicate of the title link for pointer users; keyboard users reach the stay via the title.
-            <Link key={img.src + i} href={href} tabIndex={-1} aria-label={i <= reached ? undefined : img.alt} className="relative aspect-[4/3] min-w-0 shrink-0 grow-0 basis-full bg-surface-2">
+            <Link key={img.src + i} href={href} tabIndex={-1} aria-label={i <= reached ? undefined : img.alt} className="relative aspect-[4/3] min-w-0 shrink-0 grow-0 basis-full overflow-hidden bg-surface-2">
               {i <= reached && (
                 <Image
                   src={img.src}
@@ -56,7 +56,7 @@ export function CardCarousel({ href, images, label, dotLabels, priority }: Carou
                   blurDataURL={img.blurDataURL}
                   fetchPriority={priority && i === 0 ? "high" : undefined}
                   loading={priority && i === 0 ? "eager" : undefined}
-                  className="object-cover"
+                  className="media-zoom object-cover group-hover/card:scale-[1.04]"
                 />
               )}
             </Link>
@@ -74,7 +74,7 @@ export function CardCarousel({ href, images, label, dotLabels, priority }: Carou
               onClick={() => api?.scrollTo(i)}
               className="grid size-6 place-items-center"
             >
-              <span className={cn("size-1.5 rounded-full bg-white/60 shadow transition-[transform,background-color] duration-(--dur-base)", i === index && "scale-x-200 bg-white")} />
+              <span className={cn("size-1.5 rounded-full bg-white/60 shadow transition-[transform,translate,scale,background-color] duration-(--dur-base)", i === index && "scale-x-200 bg-white")} />
             </button>
           ))}
         </div>
@@ -94,7 +94,7 @@ export function HeartButton({ label, className }: { label: string; className?: s
       onClick={() => setSaved((s) => !s)}
       className={cn("grid size-11 place-items-center rounded-full bg-black/25 text-white backdrop-blur-sm transition-colors hover:bg-black/40", className)}
     >
-      <Heart aria-hidden className={cn("size-5", saved && "fill-brand text-brand")} />
+      <Heart aria-hidden className={cn("size-5", saved && "animate-heart-pop fill-brand text-brand")} />
     </button>
   );
 }

@@ -200,6 +200,12 @@ Ordered by impact on enquiries.
 
 ## 6. Implementation order
 
+**Status (27 Nov 2026):** phases 1–3 are done. What was built differs from the plan above in three places:
+- **Scroll reveal** uses CSS scroll-driven animation (`@utility reveal` in `globals.css`, `animation-timeline: view()`) instead of the `IntersectionObserver` component in §4.4. It needs no JS, no `html.js` class and no hydration. Browsers without support, no-JS visitors and reduced-motion users simply see the content. It is applied to every `h2` `SectionHeader`.
+- **Hero slide change** still slides. A true crossfade needs `embla-carousel-fade`, a new dependency. The load-time image settle and the staged text are in.
+- **Transition lists must name `translate` and `scale`** as well as `transform`. Tailwind 4 writes `scale-*`, `translate-*` and `rotate-*` to those separate CSS properties, so a list with only `transform` makes them jump. `media-zoom` and every `transition-[…]` list follow this rule.
+
+
 | Phase | Work | Effort | Files |
 |---|---|---|---|
 | **1. Foundation** | Motion tokens, the reduced-motion block, removing `transition-all`, the view-transition rule | ~2 h | `app/globals.css`, `components/ui/*`, `StayCardParts.tsx` |

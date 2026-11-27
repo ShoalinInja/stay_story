@@ -133,6 +133,11 @@
 
   --animate-enter-up: enter-up var(--dur-base) var(--ease-out) both;
   --animate-check-draw: check-draw 500ms var(--ease-out) 120ms both;
+  --animate-hero-settle: hero-settle 900ms var(--ease-out) both;
+  --animate-rise: rise var(--dur-slow) var(--ease-out) both;
+  --animate-heart-pop: heart-pop var(--dur-base) var(--ease-out);
+  --animate-accordion-down: accordion-down var(--dur-base) var(--ease-in-out);
+  --animate-accordion-up: accordion-up var(--dur-fast) var(--ease-in);
 }
 
 :root {
@@ -144,6 +149,15 @@
 
 @keyframes enter-up {
   from { opacity: 0; transform: translateY(6px); }
+}
+@keyframes hero-settle {
+  from { transform: scale(1.04); }
+}
+@keyframes rise {
+  from { opacity: 0; transform: translateY(12px); }
+}
+@keyframes heart-pop {
+  50% { transform: scale(1.2); }
 }
 @keyframes check-draw {
   from { stroke-dashoffset: 1; }
@@ -237,5 +251,26 @@
     animation-iteration-count: 1 !important;
     transition-duration: 0.01ms !important;
     scroll-behavior: auto !important;
+  }
+}
+
+/* Image hover zoom: one slow, soft curve everywhere. Pair with group-hover:scale-[1.04]
+   (Tailwind's hover: only fires on devices that can hover). */
+@utility media-zoom {
+  transition-property: transform, translate, scale;
+  transition-duration: var(--dur-slow);
+  transition-timing-function: var(--ease-out);
+}
+
+/* Scroll reveal: fades and rises as the element scrolls into view. CSS-only (no JS, no hydration);
+   browsers without scroll-driven animations, no-JS visitors and reduced-motion users just see it.
+   Never use above the fold or on forms. */
+@utility reveal {
+  @supports (animation-timeline: view()) {
+    @media (prefers-reduced-motion: no-preference) {
+      animation: rise linear both;
+      animation-timeline: view();
+      animation-range: entry 5% entry 55%;
+    }
   }
 }

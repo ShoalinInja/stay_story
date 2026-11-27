@@ -19,6 +19,8 @@ export type EnquiryFormClientProps = EnquiryFormProps & {
   whatsapp: string | null;
   /** site.phone (E.164) for the "Call us" fallback. */
   phone: string;
+  /** site.replyTime: shown under the submit button and in the success panel. null hides it. */
+  replyTime?: string | null;
 };
 
 const GTM_ID = process.env.NEXT_PUBLIC_GTM_ID;
@@ -58,7 +60,7 @@ declare global {
 }
 
 export function EnquiryFormClient({
-  variant, source, staySlug, serviceSlug, stayMode = "dates", defaults, submitLabel, className, whatsapp, phone,
+  variant, source, staySlug, serviceSlug, stayMode = "dates", defaults, submitLabel, className, whatsapp, phone, replyTime,
 }: EnquiryFormClientProps) {
   const id = useId();
   const hydrated = useHydrated();
@@ -144,6 +146,7 @@ export function EnquiryFormClient({
         <SuccessCheck />
         <h3 ref={doneRef} tabIndex={-1} className="type-h3 text-ink">{T.sent.title}</h3>
         <p className="type-body text-muted-text">{T.sent.body(!!wa)}</p>
+        {replyTime && <p className="type-meta">{T.replyTime(replyTime)}</p>}
         {wa && (
           <Button asChild variant="dark">
             <a href={wa} target="_blank" rel="noopener noreferrer"><MessageCircle aria-hidden /> {T.sent.whatsapp}</a>
@@ -284,6 +287,7 @@ export function EnquiryFormClient({
           <span className="inline-flex animate-enter-up items-center gap-2"><LoaderCircle aria-hidden className="animate-spin" /> {T.submit.sending}</span>
         ) : (submitLabel ?? (variant === "callback" ? T.submit.callback : T.submit.default))}
       </Button>
+      {replyTime && <p className="-mt-2 text-center type-meta">{T.replyTime(replyTime)}</p>}
     </form>
   );
 }

@@ -52,8 +52,18 @@ for (const a of content.areas) check(words(a.intro) >= 60 && words(a.intro) <= 8
 check(content.collections.length === 6, "want 6 collections");
 
 // Site rules from BRIEF §3.5.
-check(content.site.stats === null, "site.stats must stay null until real figures exist");
-check(content.offers.length === 0 && content.testimonials.length === 0, "offers/testimonials must stay empty");
+// Trust content is optional but must look like real data (no invented figures ship by accident).
+for (const s of content.site.stats ?? []) check(!!s.label.trim() && /\d/.test(s.value) && !/^0/.test(s.value), `stat "${s.label}": value must be a real non-zero figure`);
+const r = content.site.reviews;
+if (r) check(r.rating >= 1 && r.rating <= 5 && Number.isInteger(r.count) && r.count > 0 && r.url.startsWith("https://"), "site.reviews: rating 1–5, count > 0, https url");
+if (content.site.replyTime !== null) check(content.site.replyTime.trim().length > 0, "site.replyTime: empty string (use null to hide)");
+const h = content.site.host;
+if (h) check(!!h.name.trim() && !!h.bio.trim() && !h.photo.hasBakedText, "site.host: needs a name, a bio and a text-free photo");
+for (const t of content.testimonials) {
+  check(!!t.name.trim() && t.quote.length > 0 && t.quote.length <= 320, `testimonial by ${t.name}: quote 1–320 characters`);
+  check(!!t.date && /^\d{4}-\d{2}$/.test(t.date), `testimonial by ${t.name}: date "YYYY-MM" is required (real reviews have one)`);
+}
+check(content.offers.length === 0, "offers must stay empty until real offers exist");
 check(content.site.features.length === 8 && content.site.trust.length === 3, "want 8 features and 3 trust items");
 check(content.site.nav.length === 6, "want 6 nav groups");
 // Placeholder items are hidden in production, so linking them from the nav would ship 404s.

@@ -24,6 +24,7 @@ export default async function ThankYouPage() {
       <p className="type-body mt-3 max-w-prose text-muted-text">
         {T.body(site.name)}
       </p>
+      {site.replyTime && <p className="mt-2 type-meta">{FORM_COPY.replyTime(site.replyTime)}</p>}
       <div className="mt-8 flex flex-wrap justify-center gap-3">
         <Button asChild variant="dark" size="lg">
           <a href={`tel:${site.phone}`}>

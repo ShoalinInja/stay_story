@@ -1,3 +1,4 @@
+import type { ReactNode } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { AfterLoad, Rail, RailNext, RailPrev, RailTrack } from "@/components/primitives";
@@ -8,7 +9,7 @@ const AUTOPLAY_MS = 7000;
 const T = HOME_COPY.hero;
 
 /** Full-bleed looping hero. Slides must be clean photos (site.hero.slides is curated text-free). */
-export function HeroCarousel({ hero }: { hero: Site["hero"] }) {
+export function HeroCarousel({ hero, proof }: { hero: Site["hero"]; proof?: ReactNode }) {
   const slides = hero.slides.filter((s) => !s.image.hasBakedText);
   return (
     <div className="relative h-[440px] overflow-hidden bg-cta md:h-[520px]">
@@ -43,6 +44,7 @@ export function HeroCarousel({ hero }: { hero: Site["hero"] }) {
         {/* Staged entrance: headline, then subtitle 80 ms later (transform + opacity only; the LCP is the photo). */}
         <h1 className="max-w-3xl animate-rise font-display type-h1 text-white">{hero.headline}</h1>
         {hero.sub && <p className="mt-3 max-w-xl animate-rise type-body text-white/90 [animation-delay:80ms]">{hero.sub}</p>}
+        {proof && <div className="mt-3 animate-rise [animation-delay:120ms]">{proof}</div>}
       </div>
     </div>
   );

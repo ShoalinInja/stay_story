@@ -93,6 +93,10 @@ export const site: Site = {
   nav,
   announcement: null,
   stats: null, // the legacy counters showed "0k+"; no real figures exist
+  // Trust slots: fill with real data only (docs/OWNER-PUNCHLIST.md item 8). null hides each one.
+  reviews: null, // e.g. { rating: 4.8, count: 112, url: "https://g.page/r/…/review" }
+  replyTime: null, // e.g. "within 30 minutes, 9 am–9 pm"
+  host: null, // e.g. { name: "…", role: "Founder, Stay Story", bio: "…", photo: media("host-…") }
   hero: {
     headline: "Your Trusted Partner for a Complete Goa Experience",
     sub: "Stays, travel, experiences and celebrations, arranged by one local team.",

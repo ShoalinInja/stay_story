@@ -7,6 +7,7 @@ import { Button } from "@/components/primitives";
 import { EnquiryModal } from "@/components/forms/EnquiryModal";
 import { Breadcrumbs } from "@/components/layout/Breadcrumbs";
 import { UI } from "@/components/layout/copy";
+import { HostBlock } from "@/components/home/proof";
 
 export async function generateMetadata(): Promise<Metadata> {
   const { about } = await getSite();
@@ -14,7 +15,7 @@ export async function generateMetadata(): Promise<Metadata> {
 }
 
 export default async function AboutPage() {
-  const [{ about }, collage] = await Promise.all([getSite(), getMedia("about")]);
+  const [{ about, host }, collage] = await Promise.all([getSite(), getMedia("about")]);
   const paragraphs = about.body.split(/\n\s*\n/).filter(Boolean);
   return (
     <main id="main">
@@ -40,6 +41,7 @@ export default async function AboutPage() {
           </div>
         )}
       </section>
+      <HostBlock host={host} />
       <section className="bg-cream">
         <div className="container-site section-y">
           <h2 className="type-h2">{UI.about.why}</h2>

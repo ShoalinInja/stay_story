@@ -22,5 +22,5 @@ export type EnquiryFormProps = {
 
 export async function EnquiryForm(props: EnquiryFormProps) {
   const site = await getSite();
-  return <EnquiryFormClient {...props} whatsapp={site.whatsapp} phone={site.phone} />;
+  return <EnquiryFormClient {...props} whatsapp={site.whatsapp} phone={site.phone} replyTime={site.replyTime} />;
 }

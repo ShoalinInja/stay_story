@@ -76,6 +76,13 @@ export interface Site {
   nav: NavGroup[];
   announcement: { text: string; code?: string; href?: string } | null;
   stats: { label: string; value: string }[] | null;  // null hides Stats block
+  // Trust slots (docs/MOTION-UX-PLAN.md §5). Real data only: each null hides its UI.
+  /** Google Business rating: hero proof line + "Read all reviews" link. */
+  reviews: { rating: number; count: number; url: string } | null;
+  /** Honest reply promise, finishing "We usually reply …", e.g. "within 30 minutes, 9 am–9 pm". */
+  replyTime: string | null;
+  /** Real host or founder: "Meet your host" on home and About. Photo must be a real, text-free photo. */
+  host: { name: string; role: string; bio: string; photo: MediaRef } | null;
   hero: { headline: string; sub?: string; slides: { image: MediaRef; cta: NavLink }[] };
   about: { headline: string; body: string; whyChooseUs: string[]; closing: string };
   features: { icon: string; label: string }[];         // "The StayStory Standard"
@@ -91,7 +98,8 @@ export interface Offer {
   id: string; kind: "stay" | "experience"; title: string; description: string;
   code: string; validTill: string; icon?: MediaRef;
 }
-export interface Testimonial { name: string; quote: string; image?: MediaRef; source: "google" | "manual"; date?: string }
+/** A real guest review. `date` is "YYYY-MM" (when they stayed or reviewed); `stay` is the stay or service name. */
+export interface Testimonial { name: string; quote: string; image?: MediaRef; source: "google" | "manual"; date?: string; stay?: string }
 
 export interface MediaEntry extends MediaRef { id: string; usedOn: string[] }
 export interface LegacyRedirect { source: string; destination: string; statusCode: 301 }  // brief demands 301, not Next's default 308

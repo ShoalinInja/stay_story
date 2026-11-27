@@ -46,6 +46,8 @@ export const FORM_COPY = {
     body: (site: string) => `Your details didn't reach us. Go back and check the form, or call or message the ${site} team directly.`,
     whatsappMessage: (site: string) => `Hi ${site}, I tried to send an enquiry on your website.`,
   },
+  /** site.replyTime finishes the sentence, e.g. "within 30 minutes, 9 am–9 pm". */
+  replyTime: (t: string) => `We usually reply ${t}.`,
   call: (phone: string) => `Call ${phone}`,
   whatsapp: "WhatsApp us",
   home: "Back to home",

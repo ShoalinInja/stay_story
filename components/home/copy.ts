@@ -24,6 +24,21 @@ export const HOME_COPY = {
   features: { title: "The StayStory Standard" },
   trust: { title: "Your Trusted Goa Partner" },
   stats: { title: "Stay Story in Numbers" },
+  proof: {
+    rating: (rating: number) => `★ ${rating.toFixed(1)} on Google`,
+    reviews: (count: number) => `${count.toLocaleString("en-IN")} reviews`,
+    reply: (t: string) => `Replies ${t}`,
+    label: "Why guests trust us",
+  },
+  testimonials: {
+    title: "What Guests Say",
+    readAll: (count: number) => `Read all ${count.toLocaleString("en-IN")} reviews on Google`,
+    meta: (stay: string | undefined, date: string | undefined) =>
+      [stay, date && new Date(`${date}-01T00:00:00Z`).toLocaleDateString("en-IN", { month: "long", year: "numeric", timeZone: "UTC" })]
+        .filter(Boolean)
+        .join(" · "),
+  },
+  host: { title: "Meet Your Host", cta: "Talk to us" },
   gallery: { title: "Moments from Goa", link: { href: "/gallery", label: "View gallery" } },
   listYourProperty: {
     title: "List Your Property with Stay Story",

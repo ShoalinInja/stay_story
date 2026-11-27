@@ -81,7 +81,7 @@ export const site: Site = {
   logo: LOGO,
   phone: "+918828191510",
   whatsapp: "+918828191510", // set to null to hide all WhatsApp UI if this number is not on WhatsApp
-  contactEmail: "shaikh.injamul.06905@gmail.com",
+  contactEmail: "staystory11@gmail.com",
   address: {
     line: "Ayan Hotels & Resorts, next to Aquarius, Marna",
     locality: "Siolim",

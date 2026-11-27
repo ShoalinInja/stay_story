@@ -12,7 +12,7 @@ If you would rather not edit files, fill in `content/stays/_TEMPLATE.json` with 
 |---|---|
 | **Photos** | 5 or more. With fewer than 5, the page shows one large photo instead of a gallery mosaic. Use landscape shots at least 1600 px wide, with **no text, logos or phone numbers on the image**. |
 | **Basics** | Bedrooms, bathrooms, maximum guests, area of Goa. |
-| **Price** | Per night for short stays, per month for long-term rentals, or a sale price. Leave it blank to show "Price on request". |
+| **Price** | Optional and **never shown on the site**: every stay shows "Rates on enquiry", and the price is shared when a guest enquires. Guest count is also not shown; `maxGuests` only powers the "Guests" search filter. |
 | **Location** | Latitude and longitude. In Google Maps, right-click the property, then click the numbers at the top of the menu to copy them. |
 | **House rules** | Check-in and check-out times, rules, and your cancellation policy. |
 
@@ -73,7 +73,7 @@ If `pnpm build` prints a list starting with `Placeholder / needsReview content w
 | `region` | `north-goa` or `south-goa` |
 | `headline` | One line under 15 words that sells the stay |
 | `description` | 2 or 3 short paragraphs. Put a blank line between paragraphs. |
-| `pricePerNight` | A number with no ₹ sign or commas, such as `15000`, or `null` for "Price on request" |
+| `pricePerNight` | Optional, never shown on the site. A number with no ₹ sign or commas, such as `15000`, or `null` |
 | `monthlyRent` / `salePrice` | Only for `long-term` and `for-sale` stays |
 | `amenities` | Choose from: `private-pool`, `shared-pool`, `wifi`, `ac`, `kitchen`, `parking`, `power-backup`, `housekeeping`, `caretaker`, `chef-on-request`, `bbq`, `garden`, `tv`, `washing-machine`, `workspace`, `pet-friendly`, `lift`, `security`, `beach-access`, `gym` |
 | `highlights` | 3 or 4 short selling points |

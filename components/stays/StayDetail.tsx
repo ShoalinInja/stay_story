@@ -1,17 +1,17 @@
 import type { ReactNode } from "react";
 import Image from "next/image";
 import Link from "next/link";
-import { MapPin, Users } from "lucide-react";
+import { BedDouble, MapPin } from "lucide-react";
 import { EnquiryForm } from "@/components/forms/EnquiryForm";
 import { EnquiryModal } from "@/components/forms/EnquiryModal";
 import {
-  Accordion, AccordionContent, AccordionItem, AccordionTrigger, Button, PriceBlock, RailArrows, Rail, RailTrack, RatingPill,
+  Accordion, AccordionContent, AccordionItem, AccordionTrigger, Button, RailArrows, Rail, RailTrack, RatingPill,
 } from "@/components/primitives";
 import { resolveIcon } from "@/lib/icons";
 import type { Area, ServiceItem, Stay } from "@/lib/content/types";
 import { Breadcrumbs } from "@/components/layout/Breadcrumbs";
 import { AMENITIES, TYPE_LABELS, copy } from "./copy";
-import { cleanFirst, stayMode, stayPrice } from "./price";
+import { cleanFirst, stayMode } from "./price";
 import { SectionTabs, type SectionLink } from "./SectionTabs";
 import { StayCard } from "./StayCard";
 import { StayGallery } from "./StayGallery";
@@ -34,9 +34,8 @@ function Section({ id, title, children }: { id: string; title: string; children:
 
 export function StayDetail({ stay, area, addOns, related }: Props) {
   const images = cleanFirst(stay.images);
-  const price = stayPrice(stay);
   const mode = stayMode(stay);
-  const ctaLabel = price.amount == null ? t.quote : mode === "site-visit" ? t.siteVisit : mode === "move-in" ? t.moveIn : t.enquire;
+  const ctaLabel = mode === "site-visit" ? t.siteVisit : mode === "move-in" ? t.moveIn : t.quote;
   const areaLabel = area?.name ?? stay.area;
   const mapUrl = `https://www.google.com/maps/search/?api=1&query=${stay.location.lat},${stay.location.lng}`;
 
@@ -96,7 +95,7 @@ export function StayDetail({ stay, area, addOns, related }: Props) {
           <Section id="overview" title={t.tabs.overview}>
             <p className="type-h3 text-ink">{stay.headline}</p>
             <ul className="mt-4 flex flex-wrap gap-x-6 gap-y-2 type-body text-ink-2">
-              <li className="flex items-center gap-2"><Users aria-hidden className="size-4" />{copy.card.meta(stay)}</li>
+              <li className="flex items-center gap-2"><BedDouble aria-hidden className="size-4" />{copy.card.meta(stay)}</li>
             </ul>
             <div className="mt-4 space-y-3 type-body text-ink-2">
               {paragraphs(stay.description).map((p) => <p key={p}>{p}</p>)}
@@ -251,9 +250,7 @@ export function StayDetail({ stay, area, addOns, related }: Props) {
 
         <aside id="enquire" className="scroll-mt-24 lg:sticky lg:top-20 lg:self-start">
           <div className="rounded-card bg-surface p-5 shadow-card-hover">
-            <PriceBlock amount={price.amount} mode={price.mode} />
-            {price.mode === "per-night" && price.amount != null && <p className="type-meta">{t.forRooms(stay.bedrooms)}</p>}
-            {mode === "dates" && price.amount != null && <p className="mt-2 text-sm font-semibold text-success">{t.bestPrice}</p>}
+            <p className="text-lg font-semibold text-ink">{copy.card.onEnquiry}</p>
             <EnquiryForm
               variant="stay"
               source={`stay-detail:${stay.slug}`}
@@ -290,11 +287,11 @@ export function StayDetail({ stay, area, addOns, related }: Props) {
         </section>
       )}
 
-      {/* Mobile bottom bar: price + jump to the enquiry card (an anchor, so it works without JS). */}
+      {/* Mobile bottom bar: "Rates on enquiry" + jump to the enquiry card (an anchor, so it works without JS). */}
       <div className="fixed inset-x-0 bottom-0 z-30 flex items-center justify-between gap-4 border-t border-line-soft bg-surface px-4 py-3 shadow-card-hover lg:hidden">
-        <PriceBlock amount={price.amount} mode={price.mode} />
+        <p className="font-semibold text-ink">{copy.card.onEnquiry}</p>
         <Button asChild>
-          <a href="#enquire">{price.amount == null ? t.quote : t.enquireShort}</a>
+          <a href="#enquire">{t.quote}</a>
         </Button>
       </div>
     </main>

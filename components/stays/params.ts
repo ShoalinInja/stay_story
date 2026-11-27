@@ -5,7 +5,6 @@ export type RawParams = Record<string, string | string[] | undefined>;
 
 export const STAY_TYPES: readonly StayType[] = ["villa", "apartment", "hotel", "long-term", "for-sale"];
 export const REGIONS: readonly Region[] = ["north-goa", "south-goa"];
-export const SORTS: readonly NonNullable<StayFilters["sort"]>[] = ["featured", "price-asc", "price-desc", "guests"];
 export const MAX_GUESTS_PARAM = 99;
 
 export type ParsedStayParams = {
@@ -39,10 +38,7 @@ export function parseStayParams(sp: RawParams, areaKeys: readonly GoaArea[], ame
     type: oneOf(first(sp.type), STAY_TYPES) ?? oneOf(where, STAY_TYPES),
     guests: int(first(sp.guests), 1, MAX_GUESTS_PARAM),
     bedrooms: int(first(sp.bedrooms), 1, 20),
-    minPrice: int(first(sp.minPrice), 0, 10_000_000),
-    maxPrice: int(first(sp.maxPrice), 0, 10_000_000),
     amenities: nonEmpty(all(sp.amenities).filter((a): a is AmenityKey => (amenityKeys as readonly string[]).includes(a))),
-    sort: oneOf(first(sp.sort), SORTS),
   };
   const clean = Object.fromEntries(Object.entries(filters).filter(([, v]) => v !== undefined)) as StayFilters;
   return { filters: clean, from: isoDate(first(sp.from)), to: isoDate(first(sp.to)) };

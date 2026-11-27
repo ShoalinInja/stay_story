@@ -1,8 +1,9 @@
 // PLACEHOLDER until the owner confirms the facts (isPlaceholder: true keeps it off the live site).
 // Photos and video are the real shoot of this villa (Google Photos album + walkthrough video, Nov 2026).
 // Taken from the photos: 4 bedrooms, 4 bathrooms, private pool, garden, covered patio, dining for eight.
-// TO CONFIRM before going live: villa name and slug, area + map pin, max guests, price,
-// check-in/out times, house rules, cancellation policy. Then delete `isPlaceholder: true`.
+// TO CONFIRM before going live: villa name and slug, area + map pin, check-in/out times,
+// house rules, cancellation policy. Then delete `isPlaceholder: true`.
+// Price and guest count are never shown on the site (shared on enquiry).
 import type { Stay } from "../../lib/content/types";
 import { media } from "../media";
 
@@ -23,7 +24,7 @@ export const fourBedroomPoolVilla: Stay = {
   ].join("\n"),
   bedrooms: 4,
   baths: 4,
-  maxGuests: 8, // TO CONFIRM (4 bedrooms, dining for eight)
+  maxGuests: 8, // not shown; only used by the "Guests" search filter
   pricePerNight: null,
   images: Array.from({ length: 24 }, (_, i) => photo(i + 1)),
   amenities: ["private-pool", "ac", "kitchen", "tv", "garden"],

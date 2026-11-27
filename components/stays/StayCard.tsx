@@ -1,11 +1,11 @@
 // A5 implementation of the Lead's StayCard contract (BRIEF §2.2). StayCardProps is frozen: A4 renders it.
 import Link from "next/link";
 import { ArrowRight, MapPin } from "lucide-react";
-import { Badge, Card, PriceBlock, RatingPill } from "@/components/primitives";
+import { Badge, Card, RatingPill } from "@/components/primitives";
 import { cn } from "@/lib/utils";
 import type { Stay } from "@/lib/content/types";
 import { BADGE_LABELS, copy } from "./copy";
-import { cleanFirst, stayPrice } from "./price";
+import { cleanFirst } from "./price";
 import { CardCarousel, HeartButton } from "./StayCardParts";
 
 export type StayCardProps = {
@@ -29,7 +29,6 @@ export function StayCard({ stay, priority, morph = true, className }: StayCardPr
   // Text overlays (rating, badge) only when the cover photo is text-free.
   const overlayOk = images.length > 0 && !images[0].hasBakedText;
   const badge = stay.badges?.[0];
-  const price = stayPrice(stay);
 
   return (
     <Card asChild interactive className={cn("flex h-full flex-col", className)}>
@@ -64,7 +63,7 @@ export function StayCard({ stay, priority, morph = true, className }: StayCardPr
           </p>
           <p className="type-meta">{copy.card.meta(stay)}</p>
           <div className="mt-auto flex items-end justify-between gap-3 border-t border-line-soft pt-3">
-            <PriceBlock amount={price.amount} mode={price.mode} />
+            <p className="text-sm font-semibold text-ink">{copy.card.onEnquiry}</p>
             <Link
               href={href}
               tabIndex={-1}

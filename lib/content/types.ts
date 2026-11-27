@@ -24,8 +24,8 @@ export interface Seo { title: string; description: string; keywords?: string[]; 
 export interface Stay {
   slug: string; name: string; type: StayType; area: GoaArea; region: Region;
   headline: string; description: string;              // description is markdown
-  bedrooms: number; baths: number; maxGuests: number;
-  pricePerNight: number | null; priceNote?: string;    // null → "Price on request"
+  bedrooms: number; baths: number; maxGuests: number; // maxGuests is internal (guest filter only), never shown
+  pricePerNight: number | null; priceNote?: string;    // internal only: prices are never shown, they are shared on enquiry
   monthlyRent?: number | null; salePrice?: number | null;
   images: MediaRef[];                                  // ≥5 → mosaic, else single-hero layout
   amenities: AmenityKey[]; highlights: string[];
@@ -107,8 +107,7 @@ export interface LegacyRedirect { source: string; destination: string; statusCod
 
 export interface StayFilters {
   area?: GoaArea; region?: Region; type?: StayType; guests?: number; bedrooms?: number;
-  minPrice?: number; maxPrice?: number; amenities?: AmenityKey[]; collection?: CollectionKey; featured?: boolean;
-  sort?: "featured" | "price-asc" | "price-desc" | "guests";
+  amenities?: AmenityKey[]; collection?: CollectionKey; featured?: boolean;
 }
 
 /** Shape of the /content barrel (content/index.ts). A1 fills it. */

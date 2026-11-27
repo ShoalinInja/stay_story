@@ -7,7 +7,7 @@ import { SlidersHorizontal } from "lucide-react";
 import { Button, Sheet, inputClass } from "@/components/primitives";
 import type { StayFilters } from "@/lib/content/types";
 import { AMENITIES, TYPE_LABELS, copy } from "./copy";
-import { SORTS, STAY_TYPES, whereValue } from "./params";
+import { STAY_TYPES, whereValue } from "./params";
 
 type Option = { value: string; label: string };
 
@@ -61,12 +61,6 @@ function FilterForm({ id, live, onDone, ...p }: FilterBarProps & { id: string; l
       {p.from && <input type="hidden" name="from" value={p.from} />}
       {p.to && <input type="hidden" name="to" value={p.to} />}
 
-      <Field id={`${id}-sort`} label={t.sort}>
-        <select id={`${id}-sort`} name="sort" defaultValue={f.sort ?? ""} className={selectClass}>
-          <option value="">{t.sorts.featured}</option>
-          {SORTS.filter((s) => s !== "featured").map((s) => <option key={s} value={s}>{t.sorts[s]}</option>)}
-        </select>
-      </Field>
       <Field id={`${id}-area`} label={t.area}>
         <select id={`${id}-area`} name="area" defaultValue={whereValue(f)} className={selectClass}>
           <option value="">{t.anyArea}</option>
@@ -90,13 +84,6 @@ function FilterForm({ id, live, onDone, ...p }: FilterBarProps & { id: string; l
           </select>
         </Field>
       </div>
-      <fieldset>
-        <legend className="mb-1.5 text-sm font-semibold text-ink">{t.price}</legend>
-        <div className="grid grid-cols-2 gap-3">
-          <input aria-label={t.minPrice} placeholder={t.minPrice} name="minPrice" type="number" inputMode="numeric" min={0} step={500} defaultValue={f.minPrice ?? ""} className={inputClass} />
-          <input aria-label={t.maxPrice} placeholder={t.maxPrice} name="maxPrice" type="number" inputMode="numeric" min={0} step={500} defaultValue={f.maxPrice ?? ""} className={inputClass} />
-        </div>
-      </fieldset>
       <fieldset>
         <legend className="mb-1.5 text-sm font-semibold text-ink">{t.amenities}</legend>
         <ul className="grid grid-cols-2 gap-x-3 gap-y-1 lg:grid-cols-1">

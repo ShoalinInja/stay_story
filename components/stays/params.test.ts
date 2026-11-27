@@ -17,7 +17,7 @@ test("junk is dropped, numbers clamped, amenities whitelisted", () => {
     { area: "nowhere", guests: "-3", bedrooms: "2x", maxPrice: "9000", amenities: ["wifi", "evil"], sort: "drop", from: "2026-12-01", to: "tomorrow" },
     AREAS, AMENITIES,
   );
-  assert.deepEqual(p.filters, { maxPrice: 9000, amenities: ["wifi"] });
+  assert.deepEqual(p.filters, { amenities: ["wifi"] });
   assert.equal(p.from, "2026-12-01");
   assert.equal(p.to, undefined);
   assert.equal(parseStayParams({ guests: "500" }, AREAS, AMENITIES).filters.guests, 99);

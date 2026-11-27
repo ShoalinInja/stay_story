@@ -43,23 +43,15 @@ function matches(s: Stay, f: StayFilters): boolean {
     (!f.type || s.type === f.type) &&
     (!f.guests || s.maxGuests >= f.guests) &&
     (!f.bedrooms || s.bedrooms >= f.bedrooms) &&
-    (f.minPrice == null || (s.pricePerNight ?? Infinity) >= f.minPrice) &&
-    (f.maxPrice == null || (s.pricePerNight ?? -Infinity) <= f.maxPrice) &&
     (!f.amenities?.length || f.amenities.every((a) => s.amenities.includes(a))) &&
     (!f.collection || s.collections.includes(f.collection)) &&
     (f.featured == null || s.featured === f.featured)
   );
 }
 
-const SORTS: Record<NonNullable<StayFilters["sort"]>, (a: Stay, b: Stay) => number> = {
-  featured: (a, b) => Number(b.featured) - Number(a.featured),
-  "price-asc": (a, b) => (a.pricePerNight ?? Infinity) - (b.pricePerNight ?? Infinity),
-  "price-desc": (a, b) => (b.pricePerNight ?? -Infinity) - (a.pricePerNight ?? -Infinity),
-  guests: (a, b) => b.maxGuests - a.maxGuests,
-};
 
 export function filterStays(all: Stay[], f: StayFilters = {}): Stay[] {
-  return all.filter((s) => matches(s, f)).toSorted(SORTS[f.sort ?? "featured"]);
+  return all.filter((s) => matches(s, f)).toSorted((a, b) => Number(b.featured) - Number(a.featured));
 }
 
 export async function getStays(f: StayFilters = {}): Promise<Stay[]> {

@@ -8,9 +8,6 @@ export const SERVICES_COPY = {
   whatYouGet: "What you get",
   idealFor: "Ideal for",
   inclusions: "Inclusions",
-  priceFrom: "Price from",
-  priceOnRequest: "Price on request",
-  priceSuffix: "+ taxes",
   related: "Related services",
   enquireCta: "Enquire Now",
 } as const;

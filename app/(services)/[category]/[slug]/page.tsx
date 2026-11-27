@@ -6,7 +6,7 @@ import { UI } from "@/components/layout/copy";
 import { getCategory } from "@/lib/content";
 import { resolveIcon } from "@/lib/icons";
 import { EnquiryForm } from "@/components/forms/EnquiryForm";
-import { Card, Chip, IconBlob, PriceBlock, Rail, RailArrows, RailProgress, RailTrack, SectionHeader } from "@/components/primitives";
+import { Card, Chip, IconBlob, Rail, RailArrows, RailProgress, RailTrack, SectionHeader } from "@/components/primitives";
 import { SERVICES_COPY } from "@/components/services/copy";
 import { FaqSection } from "@/components/services/FaqSection";
 import { MobileEnquireBar } from "@/components/services/MobileEnquireBar";
@@ -41,13 +41,6 @@ export default async function ServiceDetail({ params }: PageProps<"/[category]/[
     <main id="main" className="flex-1 pb-20 lg:pb-0">
       <JsonLd data={[serviceLd(item, category), faqLd(item.faqs), breadcrumbLd([{ label: UI.home, href: "/" }, { label: category.title, href: `/${category.slug}` }, { label: item.title, href: `/${category.slug}/${item.slug}` }])]} />
       <ServiceHero title={item.title} lead={item.summary} image={item.hero}>
-        <PriceBlock
-          amount={item.priceFrom}
-          prefix={SERVICES_COPY.priceFrom}
-          suffix={SERVICES_COPY.priceSuffix}
-          onRequestLabel={SERVICES_COPY.priceOnRequest}
-          className="mt-6"
-        />
       </ServiceHero>
 
       <div className="container-site section-y grid gap-12 lg:grid-cols-[1fr_360px]">

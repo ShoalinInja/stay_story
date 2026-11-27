@@ -58,10 +58,8 @@ export function stayLd(stay: Stay, area?: Area): Node {
     },
     geo: { "@type": "GeoCoordinates", latitude: stay.location.lat, longitude: stay.location.lng },
     numberOfRooms: stay.bedrooms,
-    occupancy: { "@type": "QuantitativeValue", maxValue: stay.maxGuests },
     petsAllowed: stay.amenities.includes("pet-friendly"),
     amenityFeature: stay.amenities.map((a) => ({ "@type": "LocationFeatureSpecification", name: a, value: true })),
-    ...(stay.pricePerNight != null && { priceRange: `INR ${stay.pricePerNight} per night` }),
     ...(rating && {
       aggregateRating: { "@type": "AggregateRating", ratingValue: rating.value, reviewCount: rating.count, bestRating: 5 },
     }),
@@ -80,9 +78,6 @@ export function serviceLd(item: ServiceItem, category: ServiceCategory): Node {
     ...(!item.hero.hasBakedText && { image: absoluteUrl(item.hero.src) }),
     provider: { "@id": ORG_ID },
     areaServed: { "@type": "State", name: "Goa" },
-    ...(item.priceFrom != null && {
-      offers: { "@type": "Offer", price: item.priceFrom, priceCurrency: "INR", url },
-    }),
   };
 }
 

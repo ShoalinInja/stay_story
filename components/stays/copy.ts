@@ -44,8 +44,9 @@ const plural = (n: number, one: string, many: string) => `${n} ${n === 1 ? one :
 
 export const copy = {
   card: {
-    meta: (s: Pick<Stay, "maxGuests" | "bedrooms" | "baths">) =>
-      `Up to ${plural(s.maxGuests, "Guest", "Guests")} + ${plural(s.bedrooms, "Room", "Rooms")} + ${plural(s.baths, "Bath", "Baths")}`,
+    // Price and guest count are never shown: both are shared on enquiry (owner decision, Nov 2026).
+    meta: (s: Pick<Stay, "bedrooms" | "baths">) => `${plural(s.bedrooms, "Room", "Rooms")} + ${plural(s.baths, "Bath", "Baths")}`,
+    onEnquiry: "Rates on enquiry",
     view: (name: string) => `View ${name}`,
     save: (name: string) => `Save ${name}`,
     photo: (i: number, n: number) => `Show photo ${i} of ${n}`,
@@ -63,12 +64,7 @@ export const copy = {
     bedrooms: "Bedrooms",
     anyBedrooms: "Any",
     bedroomsMin: (n: number) => `${n}+`,
-    price: "Price per night (₹)",
-    minPrice: "Min",
-    maxPrice: "Max",
     amenities: "Amenities",
-    sort: "Sort by",
-    sorts: { featured: "Featured", "price-asc": "Price: low to high", "price-desc": "Price: high to low", guests: "Most guests" },
     apply: "Show stays",
     clear: "Clear all",
     results: (n: number) => plural(n, "stay", "stays"),
@@ -104,8 +100,6 @@ export const copy = {
     prevPhoto: "Previous photo",
     nextPhoto: "Next photo",
     gallery: "Photo gallery",
-    forRooms: (n: number) => `for ${plural(n, "room", "rooms")}`,
-    bestPrice: "Select dates for best price",
     enquire: "Enquire Now",
     enquireShort: "Enquire",
     quote: "Get a Quote",

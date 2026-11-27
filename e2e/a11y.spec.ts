@@ -27,7 +27,8 @@ async function blockingViolations(page: Page, rules?: string[]) {
 
 for (const [vpName, viewport] of Object.entries(VIEWPORTS)) {
   test.describe(`axe @ ${vpName}`, () => {
-    test.use({ viewport });
+    // Scroll reveals leave elements near the fold mid-fade; axe should check the settled colours.
+    test.use({ viewport, reducedMotion: "reduce" });
     for (const [name, url] of Object.entries(PAGES)) {
       test(`${name} (${url}) has no serious/critical violations`, async ({ page }) => {
         await page.goto(url);

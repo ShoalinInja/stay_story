@@ -264,6 +264,11 @@
   body {
     @apply bg-background text-foreground type-body antialiased;
   }
+  /* Sideways scroll reveals must not add a horizontal scrollbar. On #main, not body: the browser hands
+     body's overflow to the viewport. clip (not hidden) keeps sticky elements and view() timelines working. */
+  #main {
+    overflow-x: clip;
+  }
   :focus-visible {
     outline: 2px solid var(--ring);
     outline-offset: 2px;
@@ -289,15 +294,39 @@
   transition-timing-function: var(--ease-out);
 }
 
-/* Scroll reveal: fades and rises as the element scrolls into view. CSS-only (no JS, no hydration);
-   browsers without scroll-driven animations, no-JS visitors and reduced-motion users just see it.
-   Never use above the fold or on forms. */
+/* Scroll reveals: rise, slide in from a side, or zoom in as the element scrolls into view.
+   CSS-only (no JS, no hydration); browsers without scroll-driven animations, no-JS visitors and
+   reduced-motion users just see the content. Never use above the fold or on forms. */
+@keyframes reveal-up {
+  from { opacity: 0; transform: translateY(40px); }
+}
+@keyframes reveal-left {
+  from { opacity: 0; transform: translateX(-56px); }
+}
+@keyframes reveal-right {
+  from { opacity: 0; transform: translateX(56px); }
+}
+@keyframes reveal-zoom {
+  from { opacity: 0; transform: scale(0.9); }
+}
 @utility reveal {
   @supports (animation-timeline: view()) {
     @media (prefers-reduced-motion: no-preference) {
-      animation: rise linear both;
+      animation: var(--reveal, reveal-up) var(--ease-out) both;
       animation-timeline: view();
-      animation-range: entry 5% entry 55%;
+      animation-range: cover 0% cover 30%; /* ~a third of the viewport, so short headings slide too */
     }
   }
+}
+@utility reveal-left {
+  @apply reveal;
+  --reveal: reveal-left;
+}
+@utility reveal-right {
+  @apply reveal;
+  --reveal: reveal-right;
+}
+@utility reveal-zoom {
+  @apply reveal;
+  --reveal: reveal-zoom;
 }

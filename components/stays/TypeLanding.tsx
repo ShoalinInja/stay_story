@@ -81,7 +81,7 @@ export async function TypeLanding({ slug, path, listing, listingTitle = copy.typ
             {item.sections.map((s) => {
               const Icon = resolveIcon(s.icon);
               return (
-                <li key={s.heading} className="rounded-card bg-surface p-6 shadow-card">
+                <li key={s.heading} className="reveal rounded-card bg-surface p-6 shadow-card">
                   <Icon aria-hidden className="size-6 text-brand-strong" />
                   <h2 className="mt-3 type-h3 text-ink">{s.heading}</h2>
                   <p className="mt-1 type-body text-ink-2">{s.body}</p>

@@ -14,4 +14,5 @@ export function media(id: string): MediaRef {
 /** Only the 16 legacy gallery photos are free of baked-in text; use these where text sits over an image. */
 export const CLEAN_PHOTOS = mediaManifest.filter((m) => !m.hasBakedText).map((m) => m.id);
 
-export const LOGO: MediaRef = { src: "/media/brand/logo.png", alt: "Stay Story", width: 383, height: 149 };
+// Transparent PNG (gold cut out of the original black box) so it sits cleanly on the white header.
+export const LOGO: MediaRef = { src: "/media/brand/logo.png", alt: "Stay Story", width: 366, height: 137 };

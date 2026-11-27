@@ -128,7 +128,7 @@ export function RailTrack({ children, slideClassName = "basis-[280px] sm:basis-[
   const slides = React.Children.toArray(children);
   return (
     // Vertical padding keeps card hover lift, shadow and focus outlines from being clipped.
-    <div ref={viewportRef} className="-my-4 overflow-hidden">
+    <div ref={viewportRef} className="reveal-right -my-4 overflow-hidden">
       <div className={cn("-ml-4 flex touch-pan-y py-4", className)}>
         {slides.map((child, i) => (
           <div

@@ -18,7 +18,7 @@ export async function Header() {
     <StickyHeader>
       <div className="container-site flex h-16 items-center gap-4">
         <Link href="/" className="shrink-0">
-          <Image src={site.logo.src} alt={site.name} width={site.logo.width} height={site.logo.height} preload className="h-10 w-auto" sizes="104px" />
+          <Image src={site.logo.src} alt={site.name} width={site.logo.width} height={site.logo.height} preload className="h-11 w-auto md:h-12" sizes="128px" />
         </Link>
         <div className="flex min-w-0 flex-1 justify-center">
           <MegaMenu groups={site.nav} label={UI.menu} className="hidden xl:block" />

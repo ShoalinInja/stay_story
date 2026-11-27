@@ -23,7 +23,7 @@ export function CollectionTile({ href, title, image, layout = "overlay", classNa
             alt={image.alt}
             fill
             sizes="(min-width: 1024px) 280px, 60vw"
-            className={image.hasBakedText ? "object-contain" : "object-cover"}
+            className={cn("media-zoom", image.hasBakedText ? "object-contain group-hover:scale-[1.04]" : "object-cover group-hover:scale-[1.08]")}
           />
         </span>
         <span className="mt-3 block font-display text-lg font-semibold text-ink group-hover:underline">{title}</span>
@@ -37,7 +37,7 @@ export function CollectionTile({ href, title, image, layout = "overlay", classNa
         alt=""
         fill
         sizes="(min-width: 1024px) 280px, 60vw"
-        className="media-zoom group-hover:scale-[1.04] object-cover"
+        className="media-zoom group-hover:scale-[1.08] object-cover"
       />
       <span aria-hidden className="absolute inset-x-0 bottom-0 h-1/2 bg-gradient-to-t from-black/75 to-transparent" />
       <span className="absolute inset-x-4 bottom-4 font-display text-xl font-semibold text-white">{title}</span>

@@ -71,7 +71,7 @@ function Tile({ img, label, onClick, priority, sizes, className, children, slug 
         loading={priority ? "eager" : undefined}
         placeholder={img.blurDataURL ? "blur" : "empty"}
         blurDataURL={img.blurDataURL}
-        className="media-zoom group-hover:scale-[1.04] object-cover"
+        className="media-zoom group-hover:scale-[1.08] object-cover"
       />
       </StayPhoto>
       {children}

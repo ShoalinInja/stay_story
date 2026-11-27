@@ -9,7 +9,7 @@ type Props = { item: ServiceItem; categorySlug: string; headingLevel?: "h2" | "h
 // Heroes are square posters with baked text: show the whole image, no overlay, no crop.
 export function ServiceCard({ item, categorySlug, headingLevel: Heading = "h3" }: Props) {
   return (
-    <Card interactive asChild className="h-full">
+    <Card interactive asChild className="reveal h-full">
       <article className="relative flex flex-col">
         <Image
           src={item.hero.src}
@@ -19,7 +19,7 @@ export function ServiceCard({ item, categorySlug, headingLevel: Heading = "h3" }
           sizes="(min-width: 1024px) 280px, (min-width: 640px) 45vw, 90vw"
           placeholder={item.hero.blurDataURL ? "blur" : "empty"}
           blurDataURL={item.hero.blurDataURL}
-          className="aspect-square w-full bg-cream object-contain"
+          className="media-zoom aspect-square w-full bg-cream object-contain group-hover/card:scale-[1.04]"
         />
         <div className="flex flex-1 flex-col gap-2 p-4">
           <Heading className="type-h3 text-ink">

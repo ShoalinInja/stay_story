@@ -135,7 +135,9 @@ export function StayDetail({ stay, area, addOns, related }: Props) {
                 {stay.spaces?.map((s) => (
                   <li key={s.name}>
                     {s.image && (
-                      <Image src={s.image.src} alt={s.image.alt} width={s.image.width} height={s.image.height} sizes="(min-width: 640px) 380px, 100vw" className="aspect-[4/3] w-full rounded-card object-cover" />
+                      <div className="group overflow-hidden rounded-card">
+                        <Image src={s.image.src} alt={s.image.alt} width={s.image.width} height={s.image.height} sizes="(min-width: 640px) 380px, 100vw" className="media-zoom aspect-[4/3] w-full object-cover group-hover:scale-[1.08]" />
+                      </div>
                     )}
                     <h3 className="mt-3 type-h3 text-ink">{s.name}</h3>
                     <p className="mt-1 type-body text-ink-2">{s.description}</p>

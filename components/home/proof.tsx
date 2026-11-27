@@ -45,7 +45,7 @@ export function Testimonials({ testimonials, reviews, className }: { testimonial
         />
         <ul className="grid gap-6 md:grid-cols-3">
           {testimonials.slice(0, MAX_QUOTES).map((t) => (
-            <li key={t.name + t.quote.slice(0, 20)}>
+            <li key={t.name + t.quote.slice(0, 20)} className="reveal">
               <figure className="flex h-full flex-col gap-4 rounded-card bg-surface p-6 shadow-card">
                 <Quote aria-hidden className="size-6 text-brand-strong" />
                 <blockquote className="flex-1 type-body text-ink">{t.quote}</blockquote>
@@ -73,10 +73,10 @@ export function HostBlock({ host, className }: { host: Site["host"]; className?:
   return (
     <section aria-labelledby="host-title" className={cn("section-y", className)}>
       <div className="container-site grid items-center gap-8 md:grid-cols-[320px_1fr] md:gap-12">
-        <div className="relative aspect-[4/5] overflow-hidden rounded-card shadow-card">
-          <Image src={host.photo.src} alt={host.photo.alt} fill sizes="(min-width: 768px) 320px, 100vw" className="object-cover" />
+        <div className="reveal-left group relative aspect-[4/5] overflow-hidden rounded-card shadow-card">
+          <Image src={host.photo.src} alt={host.photo.alt} fill sizes="(min-width: 768px) 320px, 100vw" className="media-zoom object-cover group-hover:scale-[1.08]" />
         </div>
-        <div className="flex flex-col items-start gap-4">
+        <div className="reveal-right flex flex-col items-start gap-4">
           <h2 id="host-title" className="type-h2 text-ink">{T.host.title}</h2>
           <p className="flex flex-col">
             <span className="text-lg font-semibold text-ink">{host.name}</span>

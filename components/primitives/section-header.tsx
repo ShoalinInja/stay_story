@@ -25,7 +25,7 @@ export function SectionHeader({
   className,
 }: SectionHeaderProps) {
   return (
-    <div className={cn("mb-6 flex flex-wrap items-end justify-between gap-4", Heading === "h2" && "reveal", className)}>
+    <div className={cn("mb-6 flex flex-wrap items-end justify-between gap-4", Heading === "h2" && "reveal-left", className)}>
       <div className="min-w-0">
         <Heading id={id} className={cn(Heading === "h1" ? "type-h1" : "type-h2", "text-ink")}>
           {title}

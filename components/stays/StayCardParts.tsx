@@ -73,7 +73,7 @@ export function CardCarousel({ href, slug, images, label, dotLabels, priority }:
                   blurDataURL={img.blurDataURL}
                   fetchPriority={priority && i === 0 ? "high" : undefined}
                   loading={priority && i === 0 ? "eager" : undefined}
-                  className="media-zoom object-cover group-hover/card:scale-[1.04]"
+                  className="media-zoom object-cover group-hover/card:scale-[1.08]"
                 />
                 </StayPhoto>
               )}

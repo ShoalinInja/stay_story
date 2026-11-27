@@ -52,7 +52,7 @@ export function FeatureGrid({ features, className }: { features: Site["features"
         <SectionHeader id="home-features" title={T.features.title} />
         <ul className="grid grid-cols-2 gap-x-4 gap-y-8 md:grid-cols-4">
           {features.map((f) => (
-            <li key={f.label} className="flex flex-col items-center gap-3 text-center">
+            <li key={f.label} className="reveal flex flex-col items-center gap-3 text-center">
               <IconBlob icon={resolveIcon(f.icon)} />
               <span className="type-h3 text-ink">{f.label}</span>
             </li>
@@ -71,7 +71,7 @@ export function TrustBlock({ trust, className }: { trust: Site["trust"] } & Bg) 
         <SectionHeader id="home-trust" title={T.trust.title} className="justify-center text-center" />
         <ul className="grid gap-8 md:grid-cols-3">
           {trust.map((t) => (
-            <li key={t.title} className="flex flex-col items-center gap-3 text-center">
+            <li key={t.title} className="reveal-zoom flex flex-col items-center gap-3 text-center">
               <IconBlob icon={resolveIcon(t.icon)} size="lg" />
               <h3 className="type-h3 text-ink">{t.title}</h3>
               <p className="max-w-xs type-body text-muted-text">{t.caption}</p>
@@ -92,7 +92,7 @@ export function Stats({ stats, className }: { stats: Site["stats"] } & Bg) {
         <h2 id="home-stats" className="sr-only">{T.stats.title}</h2>
         <dl className="grid grid-cols-2 gap-8 text-center md:grid-cols-4">
           {stats.map((s) => (
-            <div key={s.label} className="flex flex-col-reverse gap-1">
+            <div key={s.label} className="reveal flex flex-col-reverse gap-1">
               <dt className="type-meta">{s.label}</dt>
               <dd className="font-display text-4xl font-semibold text-ink">{s.value}</dd>
             </div>
@@ -114,7 +114,7 @@ export function GalleryMosaic({ images, className }: { images: MediaRef[] } & Bg
             <li
               key={img.src}
               className={cn(
-                "relative overflow-hidden rounded-card",
+                "reveal-zoom group relative overflow-hidden rounded-card",
                 i === 0 && "col-span-2 row-span-2",
                 i === 7 && "md:col-span-2",
               )}
@@ -124,7 +124,7 @@ export function GalleryMosaic({ images, className }: { images: MediaRef[] } & Bg
                 alt={img.alt}
                 fill
                 sizes={i === 0 ? "(min-width: 768px) 50vw, 100vw" : "(min-width: 768px) 25vw, 50vw"}
-                className="object-cover"
+                className="media-zoom object-cover group-hover:scale-[1.08]"
               />
             </li>
           ))}
@@ -139,7 +139,7 @@ export function ListYourProperty({ image, className }: { image: MediaRef | null 
   return (
     <section aria-labelledby="home-lyp" className={cn("section-y", className)}>
       <div className="container-site grid items-center gap-8 md:grid-cols-2 md:gap-12">
-        <div>
+        <div className="reveal-left">
           <h2 id="home-lyp" className="type-h2 text-ink">{L.title}</h2>
           <p className="mt-2 type-body text-muted-text">{L.intro}</p>
           <ul className="mt-6 flex flex-col gap-3">
@@ -154,8 +154,8 @@ export function ListYourProperty({ image, className }: { image: MediaRef | null 
           </Button>
         </div>
         {image && !image.hasBakedText && (
-          <div className="relative aspect-[4/3] overflow-hidden rounded-card">
-            <Image src={image.src} alt={image.alt} fill sizes="(min-width: 768px) 50vw, 100vw" className="object-cover" />
+          <div className="reveal-right group relative aspect-[4/3] overflow-hidden rounded-card">
+            <Image src={image.src} alt={image.alt} fill sizes="(min-width: 768px) 50vw, 100vw" className="media-zoom object-cover group-hover:scale-[1.08]" />
           </div>
         )}
       </div>
@@ -186,7 +186,7 @@ export function EnquiryBand({ className }: Bg) {
   return (
     <section aria-labelledby="home-enquiry" className={cn("section-y", className)}>
       <div className="container-site">
-       <div className="grid items-center gap-8 rounded-card bg-cta p-6 text-white md:grid-cols-2 md:p-10">
+       <div className="reveal grid items-center gap-8 rounded-card bg-cta p-6 text-white md:grid-cols-2 md:p-10">
         <div>
           <h2 id="home-enquiry" className="font-display type-h2 text-white">{T.enquiry.title}</h2>
           <p className="mt-2 type-body text-white/85">{T.enquiry.body}</p>

@@ -47,7 +47,7 @@ export default async function AboutPage() {
           <h2 className="type-h2">{UI.about.why}</h2>
           <ul className="mt-6 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
             {about.whyChooseUs.map((w) => (
-              <li key={w} className="flex items-start gap-3 rounded-card bg-surface p-4 shadow-card">
+              <li key={w} className="reveal flex items-start gap-3 rounded-card bg-surface p-4 shadow-card">
                 <CircleCheck aria-hidden className="mt-0.5 size-5 shrink-0 text-success" />
                 <span className="type-body text-ink">{w}</span>
               </li>

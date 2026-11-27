@@ -36,7 +36,7 @@ export function GalleryGrid({ photos }: { photos: MediaRef[] }) {
     <>
       <ul className="mt-8 grid grid-cols-2 gap-3 md:grid-cols-3 lg:grid-cols-4">
         {photos.map((p, i) => (
-          <li key={p.src}>
+          <li key={p.src} className="reveal-zoom">
             <a
               href={p.src}
               aria-label={UI.gallery.open(p.alt)}
@@ -54,7 +54,7 @@ export function GalleryGrid({ photos }: { photos: MediaRef[] }) {
                 sizes="(min-width: 1024px) 290px, (min-width: 768px) 33vw, 50vw"
                 placeholder={p.blurDataURL ? "blur" : "empty"}
                 blurDataURL={p.blurDataURL}
-                className="media-zoom group-hover:scale-[1.04] object-cover"
+                className="media-zoom group-hover:scale-[1.08] object-cover"
               />
             </a>
           </li>

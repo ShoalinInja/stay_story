@@ -7,7 +7,7 @@ export function StayGrid({ stays, className }: { stays: Stay[]; className?: stri
   return (
     <ul className={className ?? "grid gap-6 sm:grid-cols-2 lg:grid-cols-3"}>
       {stays.map((s, i) => (
-        <li key={s.slug}>
+        <li key={s.slug} className={i === 0 ? undefined : "reveal"}>
           <StayCard stay={s} priority={i === 0} />
         </li>
       ))}

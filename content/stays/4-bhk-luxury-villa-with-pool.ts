@@ -1,7 +1,7 @@
 // Real shoot of this villa (owner's Google Photos album + walkthrough video, Nov 2026).
 // Taken from the photos: 4 bedrooms, 4 bathrooms, private pool, garden, covered patio, dining for eight.
 // Price, guest count, check-in/out, rules and cancellation are shared on enquiry, never shown.
-// Area and map pin are assumed (Siolim); confirm with the owner.
+// Area confirmed by the owner: Siolim. Map pin is the village centre until the exact pin is sent.
 import type { Stay } from "../../lib/content/types";
 import { media } from "../media";
 
@@ -13,7 +13,7 @@ export const luxuryVilla4Bhk: Stay = {
   slug: "4-bhk-luxury-villa-with-pool",
   name: "4 BHK Luxury Villa with Pool",
   type: "villa",
-  area: "siolim", // assumed; confirm
+  area: "siolim",
   region: "north-goa",
   headline: "A white two-storey villa with a private pool, lawn and four en-suite bedrooms",
   description: [

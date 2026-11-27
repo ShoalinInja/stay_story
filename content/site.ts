@@ -15,7 +15,7 @@ const nav: NavGroup[] = [
       { label: "Property Sales", href: "/property-sales" },
       { label: "List Your Property", href: "/list-your-property" },
     ],
-    feature: { title: "Private pool villas", href: "/collections/pool-villas", image: media("gallery-14") },
+    feature: { title: "Private pool villas", href: "/collections/pool-villas", image: media("gallery-four-bedroom-pool-villa-18") },
   },
   {
     label: "Travel",
@@ -100,11 +100,11 @@ export const site: Site = {
   hero: {
     headline: "Your Trusted Partner for a Complete Goa Experience",
     sub: "Stays, travel, experiences and celebrations, arranged by one local team.",
-    // Text-free gallery photos only: every legacy banner has copy baked into the image.
+    // Text-free photos only (every legacy banner has copy baked in). Slides 1-3: the four-bedroom pool villa shoot.
     slides: [
-      { image: media("gallery-15"), cta: { label: "Explore villas", href: "/stays/villas" } },
-      { image: media("gallery-03"), cta: { label: "Explore pool villas", href: "/collections/pool-villas" } },
-      { image: media("gallery-02"), cta: { label: "Explore all stays", href: "/stays" } },
+      { image: media("gallery-four-bedroom-pool-villa-01"), cta: { label: "Explore villas", href: "/stays/villas" } },
+      { image: media("gallery-four-bedroom-pool-villa-05"), cta: { label: "Explore pool villas", href: "/collections/pool-villas" } },
+      { image: media("gallery-four-bedroom-pool-villa-02"), cta: { label: "Explore all stays", href: "/stays" } },
       { image: media("gallery-12"), cta: { label: "Explore long-term rentals", href: "/stays/long-term-rentals" } },
       { image: media("gallery-14"), cta: { label: "Explore celebrations", href: "/events" } },
     ],

@@ -1,0 +1,314 @@
+[
+  {
+    "id": "gallery-four-bedroom-pool-villa-01",
+    "src": "/media/stays/four-bedroom-pool-villa/01.webp",
+    "alt": "Private pool and lawn behind the two-storey villa, framed by palms",
+    "width": 1920,
+    "height": 1280,
+    "blurDataURL": "data:image/webp;base64,UklGRnwAAABXRUJQVlA4IHAAAAAwAgCdASoQAAsAA4BaJbACdAEVvGX0/z+YAAD+BAnMkvfW/fvtlfxyVQmg4mo0SzFyplMemxwWTTHbXMtAGBAojdzzf3X1dKrV0haNSsZAOCxPbB4o21DX38+1S0F9YH5E+kZkD0dhlcsx+T1Vq4AA",
+    "usedOn": [
+      "/stays/four-bedroom-pool-villa",
+      "/gallery"
+    ],
+    "hasBakedText": false
+  },
+  {
+    "id": "gallery-four-bedroom-pool-villa-02",
+    "src": "/media/stays/four-bedroom-pool-villa/02.webp",
+    "alt": "Living room with grey sofas, red armchairs and garden windows, the pool beyond",
+    "width": 1920,
+    "height": 1280,
+    "blurDataURL": "data:image/webp;base64,UklGRnIAAABXRUJQVlA4IGYAAAAwAgCdASoQAAsAA4BaJbACdAYvNgVSvX+I8AD+1tP3tT494s/zcTYQV8uxYdl/wFCR3T5Vp4j5owQazglNaSUBV/pNu65T/wk7/uFWxglGByzOHpsBTV7ZYEAGaFefkFElapYAAAA=",
+    "usedOn": [
+      "/stays/four-bedroom-pool-villa",
+      "/gallery"
+    ],
+    "hasBakedText": false
+  },
+  {
+    "id": "gallery-four-bedroom-pool-villa-03",
+    "src": "/media/stays/four-bedroom-pool-villa/03.webp",
+    "alt": "Mint-green bedroom with a white bed, turquoise cushions and glass doors to the balcony",
+    "width": 1920,
+    "height": 1280,
+    "blurDataURL": "data:image/webp;base64,UklGRmAAAABXRUJQVlA4IFQAAAAQAgCdASoQAAsAA4BaJbACdADHrNjq6qoAAPab9GFqv3sPGb4UpzKHC7AmpJlwtBBnkAYzxRXUjUq0wKjktPvKmcP4eIV0lj64ZWkZDPhPqRFQAAA=",
+    "usedOn": [
+      "/stays/four-bedroom-pool-villa",
+      "/gallery"
+    ],
+    "hasBakedText": false
+  },
+  {
+    "id": "gallery-four-bedroom-pool-villa-04",
+    "src": "/media/stays/four-bedroom-pool-villa/04.webp",
+    "alt": "Dining table for eight with floral chairs beside the breakfast bar",
+    "width": 1920,
+    "height": 1280,
+    "blurDataURL": "data:image/webp;base64,UklGRmwAAABXRUJQVlA4IGAAAABQAgCdASoQAAsAA4BaJbACdLoAEJIYKget5+AA/rISVYS08kYTdIpAVkeUDuTJFrlNNNQUIHRReQnyo0uYF1un01lZKu6+/1iBIDPXrrW/snIxHngd2I7tvYs0fdLsQAA=",
+    "usedOn": [
+      "/stays/four-bedroom-pool-villa",
+      "/gallery"
+    ],
+    "hasBakedText": false
+  },
+  {
+    "id": "gallery-four-bedroom-pool-villa-05",
+    "src": "/media/stays/four-bedroom-pool-villa/05.webp",
+    "alt": "Long blue-tiled pool between the lawn and tropical planting",
+    "width": 1920,
+    "height": 1280,
+    "blurDataURL": "data:image/webp;base64,UklGRn4AAABXRUJQVlA4IHIAAAAwAgCdASoQAAsAA4BaJbACdADp+SNeHzHDAAD9AZh+H5/p6QW/atEmZJeqqEFkHZMbhcJyhP4SNarz+FhZYTRjSAFTE+/NA+8CKJaRPvZF6y2Dw1/gRrvJS1U6bWh/e/Ek5h2ME1tY+16bJnb3AMuoQAA=",
+    "usedOn": [
+      "/stays/four-bedroom-pool-villa",
+      "/gallery"
+    ],
+    "hasBakedText": false
+  },
+  {
+    "id": "gallery-four-bedroom-pool-villa-06",
+    "src": "/media/stays/four-bedroom-pool-villa/06.webp",
+    "alt": "Covered patio with wicker sofas and a coffee table, looking into the house",
+    "width": 1920,
+    "height": 1280,
+    "blurDataURL": "data:image/webp;base64,UklGRmYAAABXRUJQVlA4IFoAAAAQAgCdASoQAAsAA4BaJbACdADDiGlmsslgAP62eZaXsF5LD32+jqd1peCKCQ51l4D4wBlFnPfS8Bp0qpPkUkrG6Lw5QYqXdyYHn4Ptyxk7jgysHju4XsUAAAA=",
+    "usedOn": [
+      "/stays/four-bedroom-pool-villa",
+      "/gallery"
+    ],
+    "hasBakedText": false
+  },
+  {
+    "id": "gallery-four-bedroom-pool-villa-07",
+    "src": "/media/stays/four-bedroom-pool-villa/07.webp",
+    "alt": "Upstairs balcony with a glass railing over a canopy of trees",
+    "width": 1920,
+    "height": 1280,
+    "blurDataURL": "data:image/webp;base64,UklGRmYAAABXRUJQVlA4IFoAAADwAQCdASoQAAsAA4BaJZgCdADRqXiZ4UAA/pTHA0aUAKYupZnqGp7FLHt8zfifhevgeKznVJDUYeWiOoG7qgi+bswlXIfLgo4faH/YpUBfGnfzjCc4/FlowAA=",
+    "usedOn": [
+      "/stays/four-bedroom-pool-villa",
+      "/gallery"
+    ],
+    "hasBakedText": false
+  },
+  {
+    "id": "gallery-four-bedroom-pool-villa-08",
+    "src": "/media/stays/four-bedroom-pool-villa/08.webp",
+    "alt": "Bedroom with a wall of windows onto the trees and a navy armchair",
+    "width": 1920,
+    "height": 1280,
+    "blurDataURL": "data:image/webp;base64,UklGRnAAAABXRUJQVlA4IGQAAAAwAgCdASoQAAsAA4BaJbACdAEeg7K7wVDMAAD86pjNI6jEH1fuc+7Qc0EL9Nq97iWgVNYzuAG5U6bBrbzSbyk6b5ch82xoO5zY69GH4dwQcPX73brXvNqefvHruEG63iwR9zgA",
+    "usedOn": [
+      "/stays/four-bedroom-pool-villa",
+      "/gallery"
+    ],
+    "hasBakedText": false
+  },
+  {
+    "id": "gallery-four-bedroom-pool-villa-09",
+    "src": "/media/stays/four-bedroom-pool-villa/09.webp",
+    "alt": "Cream bedroom with turquoise cushions, a dressing table and an en-suite",
+    "width": 1920,
+    "height": 1280,
+    "blurDataURL": "data:image/webp;base64,UklGRmoAAABXRUJQVlA4IF4AAAAQAgCdASoQAAsAA4BaJbACdADxBmg1wT+AAP7W/xY0CeWk6D+az+/tqr2yS9qdDOWjRUY3GoJup0J95j5DUnue+aBbj/Os7urSGlK8QxhfYouGBBzi75qwh2ZpAAAA",
+    "usedOn": [
+      "/stays/four-bedroom-pool-villa",
+      "/gallery"
+    ],
+    "hasBakedText": false
+  },
+  {
+    "id": "gallery-four-bedroom-pool-villa-10",
+    "src": "/media/stays/four-bedroom-pool-villa/10.webp",
+    "alt": "Bedroom with a sunburst mirror, a writing desk and a turquoise-trimmed bed",
+    "width": 1920,
+    "height": 1280,
+    "blurDataURL": "data:image/webp;base64,UklGRmIAAABXRUJQVlA4IFYAAADQAQCdASoQAAsAA4BaJbACdAD2NInMYAD+alxXSqPtIWGDtH0WcW+RBDt8SoL06mAe/ydjdbhCdgCUjmPLmnyQO9JGoH9+4iP4H8Uhhzse+ty9rIsAAA==",
+    "usedOn": [
+      "/stays/four-bedroom-pool-villa",
+      "/gallery"
+    ],
+    "hasBakedText": false
+  },
+  {
+    "id": "gallery-four-bedroom-pool-villa-11",
+    "src": "/media/stays/four-bedroom-pool-villa/11.webp",
+    "alt": "Bathroom with a bathtub and wood-grain marble walls",
+    "width": 1920,
+    "height": 1280,
+    "blurDataURL": "data:image/webp;base64,UklGRlYAAABXRUJQVlA4IEoAAAAQAgCdASoQAAsAA4BaJbACdAEem3Xlt4QAAP5nSs7vVAStbKxzYBW3hMomiJ4YxDH1yotTeaiSGly3uGOd+Dfj8uHnbLrtoAAAAA==",
+    "usedOn": [
+      "/stays/four-bedroom-pool-villa",
+      "/gallery"
+    ],
+    "hasBakedText": false
+  },
+  {
+    "id": "gallery-four-bedroom-pool-villa-12",
+    "src": "/media/stays/four-bedroom-pool-villa/12.webp",
+    "alt": "Front of the white two-storey villa with a covered porch and paved driveway",
+    "width": 1920,
+    "height": 1280,
+    "blurDataURL": "data:image/webp;base64,UklGRmIAAABXRUJQVlA4IFYAAAAQAgCdASoQAAsAA4BaJZAAAp123C7TuAEAAPzvhVobmnpx0o1D/8EDUEs0bckLrwVfgQXliLDd764fuDVTA9orq6Ls4VSmP5c1Lt35P8GKiFuBZAAAAA==",
+    "usedOn": [
+      "/stays/four-bedroom-pool-villa",
+      "/gallery"
+    ],
+    "hasBakedText": false
+  },
+  {
+    "id": "gallery-four-bedroom-pool-villa-13",
+    "src": "/media/stays/four-bedroom-pool-villa/13.webp",
+    "alt": "Breakfast bar with red stools and a large leaf mural",
+    "width": 1920,
+    "height": 1280,
+    "blurDataURL": "data:image/webp;base64,UklGRmgAAABXRUJQVlA4IFwAAADwAQCdASoQAAsAA4BaJbACdAC3kZ/JLAAA/drGGomgFCcrsTkEgRSNZkIVIsVrzhRq5/yfS79HYecKldobJ9b7686GIXy2T1RdXwmpi3HzbkVRfwH/uiabAAAAAA==",
+    "usedOn": [
+      "/stays/four-bedroom-pool-villa",
+      "/gallery"
+    ],
+    "hasBakedText": false
+  },
+  {
+    "id": "gallery-four-bedroom-pool-villa-14",
+    "src": "/media/stays/four-bedroom-pool-villa/14.webp",
+    "alt": "Fitted white kitchen with a hob, microwave and toaster",
+    "width": 1920,
+    "height": 1280,
+    "blurDataURL": "data:image/webp;base64,UklGRmYAAABXRUJQVlA4IFoAAADQAQCdASoQAAsAA4BaJbACdAD1oZSXAAD+r/Om+cUwwbBcoCmbj5hA+5bs+p5wHF40sqk3fXXAHvB8c5m4vXPJP+tqONLVBrquLC5IPFHX/CHZ4YRbMHtwAAA=",
+    "usedOn": [
+      "/stays/four-bedroom-pool-villa",
+      "/gallery"
+    ],
+    "hasBakedText": false
+  },
+  {
+    "id": "gallery-four-bedroom-pool-villa-15",
+    "src": "/media/stays/four-bedroom-pool-villa/15.webp",
+    "alt": "Staircase opening onto the dining room and living area",
+    "width": 1920,
+    "height": 1280,
+    "blurDataURL": "data:image/webp;base64,UklGRmYAAABXRUJQVlA4IFoAAAAQAgCdASoQAAsAA4BaJbACdAD0TIWOh6gAAP6Y5q1ieb/lhDuQyny5nyHlbksTUD1Sa+XczllHDB+Pm7EwITggtKEDo+UcYv+QZsuXPOrY4x4ItfIkmWfPgAA=",
+    "usedOn": [
+      "/stays/four-bedroom-pool-villa",
+      "/gallery"
+    ],
+    "hasBakedText": false
+  },
+  {
+    "id": "gallery-four-bedroom-pool-villa-16",
+    "src": "/media/stays/four-bedroom-pool-villa/16.webp",
+    "alt": "Open-plan living room with a TV wall, red armchairs and the dining area behind",
+    "width": 1920,
+    "height": 1280,
+    "blurDataURL": "data:image/webp;base64,UklGRm4AAABXRUJQVlA4IGIAAADQAQCdASoQAAsAA4BaJbACdADDKTsEgAD82SfENeapGUq2ElungryglCo3w8/kWdj0rYTZWyw/cGTRrF7H2RacAwfhuGHX8B8Nen9+CPpmek1mTip0cMjX43ajOtcvUYAAAA==",
+    "usedOn": [
+      "/stays/four-bedroom-pool-villa",
+      "/gallery"
+    ],
+    "hasBakedText": false
+  },
+  {
+    "id": "gallery-four-bedroom-pool-villa-17",
+    "src": "/media/stays/four-bedroom-pool-villa/17.webp",
+    "alt": "Patio sofas looking out to the pool and garden",
+    "width": 1920,
+    "height": 1280,
+    "blurDataURL": "data:image/webp;base64,UklGRm4AAABXRUJQVlA4IGIAAAAQAgCdASoQAAsAA4BaJbACdAEK5OjO4ijwAP6zveV6UygHeLIktTEDoEgsTAzHRWuu/jm8RQof2zXdsi0In+1Fot8qUsW4y0lcAmSPAt6O5N/Ea4O3SBR1xbV1JcgSYYAAAA==",
+    "usedOn": [
+      "/stays/four-bedroom-pool-villa",
+      "/gallery"
+    ],
+    "hasBakedText": false
+  },
+  {
+    "id": "gallery-four-bedroom-pool-villa-18",
+    "src": "/media/stays/four-bedroom-pool-villa/18.webp",
+    "alt": "Pool steps and lawn against a garden wall and palms",
+    "width": 1920,
+    "height": 1280,
+    "blurDataURL": "data:image/webp;base64,UklGRmwAAABXRUJQVlA4IGAAAABQAgCdASoQAAsAA4BaJbACdAEW0+9Adq9e9MwA/qzPOP8Y9Oa4eOYktnpu5Pvz3OW2ZEa9EbZmxUTyxHZSuZ2BZllQCd3itUZPEmgWQhKhkCshgu5C5FRb7N5E9tyoAAA=",
+    "usedOn": [
+      "/stays/four-bedroom-pool-villa",
+      "/gallery"
+    ],
+    "hasBakedText": false
+  },
+  {
+    "id": "gallery-four-bedroom-pool-villa-19",
+    "src": "/media/stays/four-bedroom-pool-villa/19.webp",
+    "alt": "Long covered balcony with wicker chairs and views over the trees",
+    "width": 1920,
+    "height": 1280,
+    "blurDataURL": "data:image/webp;base64,UklGRmAAAABXRUJQVlA4IFQAAAAQAgCdASoQAAsAA4BaJYgCdAEUr4RInXQAAOJixmysfNa63eHDhQMRV90tAM0BKA7M8oJJ/xnJ45YhcQUvdKPrDdWGu77TVETYvIT0lI+gVJi4YAA=",
+    "usedOn": [
+      "/stays/four-bedroom-pool-villa",
+      "/gallery"
+    ],
+    "hasBakedText": false
+  },
+  {
+    "id": "gallery-four-bedroom-pool-villa-20",
+    "src": "/media/stays/four-bedroom-pool-villa/20.webp",
+    "alt": "Walk-in shower with marble walls and a glass door",
+    "width": 1920,
+    "height": 1280,
+    "blurDataURL": "data:image/webp;base64,UklGRlYAAABXRUJQVlA4IEoAAADQAQCdASoQAAsAA4BaJbACdAEVgd/Y0AD+5zXj6R+1W0CX7YyabFZ3wfyyemU/cxXJ/Fktr15/f/CteaUUH4eCpf4urZitsAAAAA==",
+    "usedOn": [
+      "/stays/four-bedroom-pool-villa",
+      "/gallery"
+    ],
+    "hasBakedText": false
+  },
+  {
+    "id": "gallery-four-bedroom-pool-villa-21",
+    "src": "/media/stays/four-bedroom-pool-villa/21.webp",
+    "alt": "Bedroom view through sliding glass doors to the balcony and greenery",
+    "width": 1920,
+    "height": 1280,
+    "blurDataURL": "data:image/webp;base64,UklGRmwAAABXRUJQVlA4IGAAAAAwAgCdASoQAAsAA4BaJbACdAYvrR1rShuDAADeXBrqLN3hjklBgTW78asp8OGLTrTzvPy6bIkdGnILphCoXvZpW+pILSzN8urBAJQhRPMz6OGRrtYgGdEOvrkNVbI3AAA=",
+    "usedOn": [
+      "/stays/four-bedroom-pool-villa",
+      "/gallery"
+    ],
+    "hasBakedText": false
+  },
+  {
+    "id": "gallery-four-bedroom-pool-villa-22",
+    "src": "/media/stays/four-bedroom-pool-villa/22.webp",
+    "alt": "Pergola-covered terrace beside the pool, with the lit house behind",
+    "width": 1920,
+    "height": 1280,
+    "blurDataURL": "data:image/webp;base64,UklGRnYAAABXRUJQVlA4IGoAAADwAQCdASoQAAsAA4BaJbACdAC7iLZuLAAA4V3cYc3OPuslakIJHhY3HnG4dhLT48IEQxaXjCDCh+auMIbPzGkGi6vdPHUmsHkt0eVjkv53oKBg4RgXn5IduAgjds05kMLg9H2LPP3EQAAA",
+    "usedOn": [
+      "/stays/four-bedroom-pool-villa",
+      "/gallery"
+    ],
+    "hasBakedText": false
+  },
+  {
+    "id": "gallery-four-bedroom-pool-villa-23",
+    "src": "/media/stays/four-bedroom-pool-villa/23.webp",
+    "alt": "Set dining table for eight under a cove-lit ceiling",
+    "width": 1920,
+    "height": 1280,
+    "blurDataURL": "data:image/webp;base64,UklGRmoAAABXRUJQVlA4IF4AAAAwAgCdASoQAAsAA4BaJbACdAEQRN6Lj3b9QAD+1N91bdYf5YPAb3ZPyckoGA7xfVZ2wfWHozyVdU1bD863GbkigG5kOMg8DmvBg92PB5vs/D/jugnwNmZm/WEnlIAA",
+    "usedOn": [
+      "/stays/four-bedroom-pool-villa",
+      "/gallery"
+    ],
+    "hasBakedText": false
+  },
+  {
+    "id": "gallery-four-bedroom-pool-villa-24",
+    "src": "/media/stays/four-bedroom-pool-villa/24.webp",
+    "alt": "Bathroom with a vessel basin and a glass-walled shower",
+    "width": 1920,
+    "height": 1280,
+    "blurDataURL": "data:image/webp;base64,UklGRmgAAABXRUJQVlA4IFwAAAAwAgCdASoQAAsAA4BaJbACdADhRsKrDmbIAAD+ZiINM5cdZUUAZE4DjVDE5EFOBVlIXQ2eEvnOlj6rqYnAfLKGYylOWVY8899rvR7/nMRd2c3Fz3VHj9DXLAAAAA==",
+    "usedOn": [
+      "/stays/four-bedroom-pool-villa",
+      "/gallery"
+    ],
+    "hasBakedText": false
+  }
+]

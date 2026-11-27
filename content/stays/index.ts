@@ -2,12 +2,14 @@
 import type { Stay } from "../../lib/content/types";
 import { assagaoGardenHouse } from "./assagao-garden-house";
 import { casaSiolim } from "./casa-siolim";
+import { fourBedroomPoolVilla } from "./four-bedroom-pool-villa";
 import { morjimRiversideVillaForSale } from "./morjim-riverside-villa-for-sale";
 import { panjimLongStayResidence } from "./panjim-long-stay-residence";
 import { southGoaBeachApartment } from "./south-goa-beach-apartment";
 import { vagatorCliffsideVilla } from "./vagator-cliffside-villa";
 
 export const stays: Stay[] = [
+  fourBedroomPoolVilla,
   casaSiolim,
   vagatorCliffsideVilla,
   assagaoGardenHouse,

@@ -2,11 +2,11 @@
 
 This is what the Stay Story team needs to supply, confirm or decide. Items marked **🔒 blocks launch** make the production build fail until they are resolved: draft content is never allowed to ship. Running `pnpm build` without `ALLOW_PLACEHOLDERS` prints the exact list.
 
-## 🔒 Content that blocks the production build (98 items, plus legal)
+## 🔒 Content that blocks the production build (99 items, plus legal)
 
 | # | What | Where | How to resolve |
 |---|---|---|---|
-| 1 | **6 placeholder stays** (sample villas, apartments, a long-term rental and a for-sale villa, with no real listings behind them): casa-siolim, vagator-cliffside-villa, assagao-garden-house, south-goa-beach-apartment, panjim-long-stay-residence, morjim-riverside-villa-for-sale | `content/stays/` | Add real stays (`docs/ADD-A-STAY.md`), then delete these files and remove them from `content/stays/index.ts`. |
+| 1 | **7 placeholder stays.** **four-bedroom-pool-villa** has the real photo shoot (24 photos) and video tour; confirm its name, area and map pin, max guests, price, check-in/out, house rules and cancellation in `content/stays/four-bedroom-pool-villa.ts`, then delete `isPlaceholder: true`. The other 6 are samples with no real listing behind them: casa-siolim, vagator-cliffside-villa, assagao-garden-house, south-goa-beach-apartment, panjim-long-stay-residence, morjim-riverside-villa-for-sale | `content/stays/` | Add real stays (`docs/ADD-A-STAY.md`), then delete these files and remove them from `content/stays/index.ts`. |
 | 2 | **2 unconfirmed services**: Babysitters and Essentials delivery. They are not clearly offered on the old site. | `content/categories/concierge.ts` | Confirm each one (remove `isPlaceholder`) or delete it. |
 | 3 | **90 FAQs drafted from old-site claims**: home page 6; category pages 28 (stays 5, travel 5, events 5, concierge 5, experiences 4, entertainment 4); 2 on each of the 24 confirmed service and stay-type pages (48); 1 on each placeholder stay and service (8) | `content/site.ts`, `content/categories/*.ts`, `content/stays/*.ts` (`draft(...)`) | Read each one. Approve by changing `draft("Q", "A")` to `{ q: "Q", a: "A" }`, or delete it. |
 | 4 | **Privacy policy (7 sections) and Terms (8 sections)**: plain-language drafts, **not legal advice** | `content/legal.ts` | Have them reviewed. Then delete each `needsReview: true`. |
@@ -20,7 +20,7 @@ This is what the Stay Story team needs to supply, confirm or decide. Items marke
 | 7 | **Social profile URLs** (Instagram, Facebook and so on) | `site.socials` is empty, so the footer shows no social links. |
 | 8 | **Trust content**: real data only. Each slot is built and stays hidden until you fill it. | The content check rejects data that doesn't look real. See *Trust content* below. |
 | 9 | **SVG logo** | Only a PNG exists. An SVG is sharper and lighter. |
-| 10 | **Real stay photos**: 5+ landscape photos per stay, at least 1600 px wide, with no text, logos or phone numbers in the image | The old site's photos are mostly posters with baked-in text, so they can't be used in cards, the hero or galleries. |
+| 10 | **Real stay photos** (done for the four-bedroom pool villa; still needed for every other stay): 5+ landscape photos per stay, at least 1600 px wide, with no text, logos or phone numbers in the image | The old site's photos are mostly posters with baked-in text, so they can't be used in cards, the hero or galleries. |
 
 ### Trust content: where each piece goes
 

@@ -36,7 +36,7 @@ export const stays: ServiceCategory = {
       category: "stays",
       title: "Luxury Villas (Short Stay)",
       legacyPath: "/villas-goa.php",
-      hero: media("gallery-15"),
+      hero: media("gallery-four-bedroom-pool-villa-01"),
       summary:
         "Private, fully furnished villas for weekends and short holidays in Goa, with pools, generous living spaces and add-on services, close to the beaches and nightlife.",
       sections: [

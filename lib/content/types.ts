@@ -30,6 +30,7 @@ export interface Stay {
   images: MediaRef[];                                  // ≥5 → mosaic, else single-hero layout
   amenities: AmenityKey[]; highlights: string[];
   spaces?: { name: string; description: string; image?: MediaRef }[];
+  video?: { src: string; poster: string; width: number; height: number };  // short silent walkthrough, served from /public
   meals?: string;
   policies: { checkIn: string; checkOut: string; rules: string[]; cancellation: string };
   location: { lat: number; lng: number; nearby: { name: string; distance: string }[] };

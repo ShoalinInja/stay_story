@@ -86,10 +86,11 @@ export const copy = {
     breadcrumbsHome: "Home",
     breadcrumbsStays: "Stays",
     tabs: {
-      overview: "Overview", highlights: "Highlights", policies: "Policies", spaces: "Spaces", reviews: "Reviews",
+      overview: "Overview", highlights: "Highlights", policies: "Policies", spaces: "Spaces", video: "Video tour", reviews: "Reviews",
       amenities: "Amenities", meals: "Meals", location: "Location", experiences: "Experiences", faqs: "FAQs",
     },
     sectionNav: "Sections",
+    videoLabel: (name: string) => `Video tour of ${name}`,
     checkIn: "Check-in",
     checkOut: "Check-out",
     houseRules: "House rules",

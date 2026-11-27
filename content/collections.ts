@@ -8,14 +8,14 @@ export const collections: Collection[] = [
     key: "pool-villas",
     title: "Pool Villas",
     description: "Private villas with their own pool, for lazy afternoons, sunset swims and evenings you never need to leave home for.",
-    image: media("gallery-14"),
+    image: media("gallery-four-bedroom-pool-villa-05"),
     seo: { title: "Private Pool Villas in Goa | Stay Story", description: "Handpicked Goa villas with private pools, spacious living areas and add-on services like private chefs and housekeeping." },
   },
   {
     key: "group-stays",
     title: "Group Stays",
     description: "Spacious villas and homes with room for everyone: shared living and dining spaces, private bedrooms, and a private chef on request to keep the whole group fed.",
-    image: media("gallery-04"),
+    image: media("gallery-four-bedroom-pool-villa-04"),
     seo: { title: "Group Villas & Large Stays in Goa | Stay Story", description: "Villas for families and groups in Goa, with shared spaces, private bedrooms and add-ons from chefs to event setups." },
   },
   {

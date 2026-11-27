@@ -45,6 +45,7 @@ export function StayDetail({ stay, area, addOns, related }: Props) {
     highlights: stay.highlights.length > 0,
     policies: true,
     spaces: !!stay.spaces?.length,
+    video: !!stay.video,
     reviews: !!stay.rating && stay.rating.value > 0,
     amenities: stay.amenities.length > 0,
     meals: !!stay.meals,
@@ -144,6 +145,24 @@ export function StayDetail({ stay, area, addOns, related }: Props) {
                   </li>
                 ))}
               </ul>
+            </Section>
+          )}
+
+          {stay.video && (
+            <Section id="video" title={t.tabs.video}>
+              {/* Portrait phone clip: capped width so it never fills the column; preload="none" keeps it off the page weight until played. */}
+              <video
+                src={stay.video.src}
+                poster={stay.video.poster}
+                width={stay.video.width}
+                height={stay.video.height}
+                controls
+                muted
+                playsInline
+                preload="none"
+                aria-label={t.videoLabel(stay.name)}
+                className="h-auto w-full max-w-sm rounded-card bg-ink shadow-card"
+              />
             </Section>
           )}
 

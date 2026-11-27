@@ -330,3 +330,14 @@
   @apply reveal;
   --reveal: reveal-zoom;
 }
+
+/* Header logo: a gold-to-black gradient drifting across the "S". The span sits over the S and is
+   masked to its exact shape (logo-s-mask.png was cut from the logo). Reduced motion: it holds still. */
+@keyframes logo-sheen {
+  to { background-position: 100% 50%; }
+}
+@utility logo-sheen {
+  background: linear-gradient(110deg, #b89b62 0%, #e2c88e 20%, #1e1e1e 50%, #b89b62 80%, #e2c88e 100%) 0% 50% / 300% 100%;
+  mask: url("/media/brand/logo-s-mask.png") center / 100% 100% no-repeat;
+  animation: logo-sheen 3.5s var(--ease-in-out) infinite alternate;
+}

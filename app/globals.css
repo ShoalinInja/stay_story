@@ -123,9 +123,40 @@
   --shadow-card: var(--shadow-card);
   --shadow-card-hover: var(--shadow-card-hover);
 
+  /* Motion (docs/MOTION-UX-PLAN.md §3): ease-out to enter, ease-in to leave, ease-in-out to move.
+     Durations: duration-(--dur-fast) etc. Animate transform and opacity only. */
   --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
-  --default-transition-duration: 200ms;
+  --ease-in: cubic-bezier(0.55, 0, 1, 0.45);
+  --ease-in-out: cubic-bezier(0.65, 0, 0.35, 1);
+  --default-transition-duration: var(--dur-fast);
   --default-transition-timing-function: var(--ease-out);
+
+  --animate-enter-up: enter-up var(--dur-base) var(--ease-out) both;
+  --animate-check-draw: check-draw 500ms var(--ease-out) 120ms both;
+}
+
+:root {
+  --dur-instant: 100ms; /* press, toggle */
+  --dur-fast: 180ms; /* hover, colour */
+  --dur-base: 280ms; /* menus, popovers, inline messages */
+  --dur-slow: 480ms; /* sheets, modals, reveals */
+}
+
+@keyframes enter-up {
+  from { opacity: 0; transform: translateY(6px); }
+}
+@keyframes check-draw {
+  from { stroke-dashoffset: 1; }
+  to { stroke-dashoffset: 0; }
+}
+
+/* Soft crossfade between pages where the browser supports cross-document view transitions. */
+@view-transition {
+  navigation: auto;
+}
+::view-transition-old(root),
+::view-transition-new(root) {
+  animation-duration: var(--dur-base);
 }
 
 /* Type scale — use these classes, not ad-hoc sizes */

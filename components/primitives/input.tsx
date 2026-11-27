@@ -38,7 +38,7 @@ export function Input({ id, label, hint, error, className, wrapperClassName, ...
         </p>
       )}
       {error && (
-        <p id={errorId} className="text-sm text-destructive">
+        <p id={errorId} className="animate-enter-up text-sm text-destructive">
           {error}
         </p>
       )}

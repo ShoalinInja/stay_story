@@ -74,7 +74,7 @@ export function CardCarousel({ href, images, label, dotLabels, priority }: Carou
               onClick={() => api?.scrollTo(i)}
               className="grid size-6 place-items-center"
             >
-              <span className={cn("size-1.5 rounded-full bg-white/60 shadow transition-all", i === index && "w-3 bg-white")} />
+              <span className={cn("size-1.5 rounded-full bg-white/60 shadow transition-[transform,background-color] duration-(--dur-base)", i === index && "scale-x-200 bg-white")} />
             </button>
           ))}
         </div>

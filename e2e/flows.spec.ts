@@ -21,8 +21,11 @@ async function fillContactForm(page: Page) {
 test("filter bar changes update the URL and results", async ({ page }) => {
   await page.goto("/stays");
   const filters = page.getByRole("complementary").getByRole("form", { name: "Filters" });
-  await filters.getByRole("combobox", { name: "Stay type" }).selectOption("long-term");
-  await expect(page).toHaveURL(/[?&]type=long-term/);
+  // Retry until hydrated: a change made before React attaches its handler is a no-op.
+  await expect(async () => {
+    await filters.getByRole("combobox", { name: "Stay type" }).selectOption("long-term");
+    await expect(page).toHaveURL(/[?&]type=long-term/, { timeout: 1000 });
+  }).toPass();
   const main = page.locator("main:visible");
   await expect(main.locator('a[href="/stays/panjim-long-stay-residence"]').first()).toBeVisible();
   await expect(main.locator('a[href="/stays/casa-siolim"]')).toHaveCount(0);
@@ -48,7 +51,7 @@ test("D2: closing the stay lightbox returns focus to the opener", async ({ page 
   await expect(trigger).toBeFocused();
 });
 
-test("enquiry form shows and links validation errors; submit stays disabled", async ({ page }) => {
+test("enquiry form shows and links validation errors; an invalid submit focuses the first bad field", async ({ page }) => {
   await page.goto("/contact");
   const form = page.getByRole("region", { name: "Send an enquiry" });
   const phone = form.getByRole("textbox", { name: "Phone" });
@@ -60,7 +63,13 @@ test("enquiry form shows and links validation errors; submit stays disabled", as
   expect(describedBy).toBeTruthy();
   await expect(page.locator(`#${describedBy!.split(" ").at(-1)!.replace(/:/g, "\\:")}`)).not.toBeEmpty();
   await expect(phone).toHaveAccessibleDescription(/.+/);
-  await expect(form.getByRole("button", { name: "Enquire Now" })).toBeDisabled();
+  // The submit button stays enabled (a greyed-out button reads as broken); submitting jumps to the first error.
+  const submit = form.getByRole("button", { name: "Enquire Now" });
+  await expect(submit).toBeEnabled();
+  await submit.click();
+  const name = form.getByRole("textbox", { name: "Name" });
+  await expect(name).toBeFocused();
+  await expect(name).toHaveAttribute("aria-invalid", "true");
 });
 
 test("enquiry submit with no sinks configured falls back gracefully to Call us", async ({ page }) => {

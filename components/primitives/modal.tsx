@@ -42,7 +42,11 @@ export function Modal({
       {trigger && <DialogTrigger asChild>{trigger}</DialogTrigger>}
       <DialogContent
         showCloseButton={false}
-        className={cn("max-h-[90dvh] overflow-y-auto rounded-card bg-surface p-6 sm:max-w-lg", className)}
+        className={cn(
+          "max-h-[90dvh] overflow-y-auto rounded-card bg-surface p-6 sm:max-w-lg",
+          "duration-(--dur-slow) ease-out data-open:zoom-in-[0.97] data-open:slide-in-from-bottom-2 data-closed:duration-(--dur-fast) data-closed:ease-in data-closed:zoom-out-[0.98]",
+          className,
+        )}
       >
         <div className="flex items-start justify-between gap-4">
           <DialogPrimitive.Title className="type-h2 text-ink">{title}</DialogPrimitive.Title>

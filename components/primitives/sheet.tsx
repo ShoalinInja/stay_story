@@ -48,7 +48,7 @@ export function Sheet({
         side={side}
         showCloseButton={false}
         className={cn(
-          "gap-0 bg-surface text-ink",
+          "gap-0 bg-surface text-ink duration-(--dur-slow) ease-out data-closed:duration-(--dur-base) data-closed:ease-in",
           side === "bottom" && "max-h-[90dvh] rounded-t-2xl",
           className,
         )}

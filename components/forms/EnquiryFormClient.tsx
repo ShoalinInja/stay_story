@@ -4,7 +4,7 @@ import { useEffect, useId, useRef, useState, useSyncExternalStore, type BaseSynt
 import Script from "next/script";
 import { Controller, useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
-import { CircleCheck, MessageCircle, Phone } from "lucide-react";
+import { LoaderCircle, MessageCircle, Phone } from "lucide-react";
 import { Button, DateRangePicker, Input, inputClass } from "@/components/primitives";
 import { cn } from "@/lib/utils";
 import { enquirySchema, type EnquiryData, type EnquiryInput } from "@/lib/leads/schema";
@@ -74,7 +74,9 @@ export function EnquiryFormClient({
 
   const { register, control, handleSubmit, formState } = useForm<EnquiryInput, unknown, EnquiryData>({
     resolver: zodResolver(enquirySchema),
-    mode: "onChange",
+    // Errors appear after a field is left (then update live). The submit button stays enabled:
+    // an invalid submit focuses the first invalid field and shows its message (shouldFocusError).
+    mode: "onTouched",
     defaultValues: {
       type, source, staySlug, serviceSlug,
       name: "", phone: "", email: "", website: "",
@@ -87,7 +89,7 @@ export function EnquiryFormClient({
       rooms: defaults?.rooms,
     },
   });
-  const { errors, isValid, isSubmitting } = formState;
+  const { errors, isSubmitting } = formState;
   const err = (k: keyof EnquiryInput) => errors[k]?.message as string | undefined;
 
   // First-touch attribution survives client-side navigation within the tab.
@@ -138,8 +140,8 @@ export function EnquiryFormClient({
   if (status.kind === "sent") {
     const wa = waLink(status.lead);
     return (
-      <div role="status" className={cn("flex flex-col items-start gap-3 rounded-card bg-surface-2 p-6", className)}>
-        <CircleCheck aria-hidden className="size-8 text-success" />
+      <div role="status" className={cn("flex animate-enter-up flex-col items-start gap-3 rounded-card bg-surface-2 p-6", className)}>
+        <SuccessCheck />
         <h3 ref={doneRef} tabIndex={-1} className="type-h3 text-ink">{T.sent.title}</h3>
         <p className="type-body text-muted-text">{T.sent.body(!!wa)}</p>
         {wa && (
@@ -250,7 +252,7 @@ export function EnquiryFormClient({
             className={cn(inputClass, "h-auto py-2")}
             {...register("message")}
           />
-          {err("message") && <p id={f("message-error")} className="text-sm text-destructive">{err("message")}</p>}
+          {err("message") && <p id={f("message-error")} className="animate-enter-up text-sm text-destructive">{err("message")}</p>}
         </div>
       )}
 
@@ -262,7 +264,7 @@ export function EnquiryFormClient({
       )}
 
       {status.kind === "error" && (
-        <div role="alert" className="flex flex-col gap-3 rounded-input border border-destructive p-4">
+        <div role="alert" className="flex animate-enter-up flex-col gap-3 rounded-input border border-destructive p-4">
           <p className="type-body text-ink">{status.message}</p>
           <div className="flex flex-wrap gap-2">
             <Button asChild variant="outline" size="sm">
@@ -277,9 +279,21 @@ export function EnquiryFormClient({
         </div>
       )}
 
-      <Button type="submit" size="lg" disabled={hydrated && (!isValid || isSubmitting)} aria-busy={isSubmitting || undefined}>
-        {isSubmitting ? T.submit.sending : (submitLabel ?? (variant === "callback" ? T.submit.callback : T.submit.default))}
+      <Button type="submit" size="lg" disabled={isSubmitting} aria-busy={isSubmitting || undefined}>
+        {isSubmitting ? (
+          <span className="inline-flex animate-enter-up items-center gap-2"><LoaderCircle aria-hidden className="animate-spin" /> {T.submit.sending}</span>
+        ) : (submitLabel ?? (variant === "callback" ? T.submit.callback : T.submit.default))}
       </Button>
     </form>
+  );
+}
+
+/** Success tick: the circle and check stroke draw in (pathLength=1 normalises the dash maths). */
+function SuccessCheck() {
+  return (
+    <svg aria-hidden viewBox="0 0 24 24" className="size-9 text-success" fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="round" strokeLinejoin="round">
+      <circle cx="12" cy="12" r="10" pathLength={1} strokeDasharray={1} className="animate-check-draw" />
+      <path d="m8 12.5 2.8 2.8L16 10" pathLength={1} strokeDasharray={1} className="animate-check-draw [animation-delay:320ms]" />
+    </svg>
   );
 }

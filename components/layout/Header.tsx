@@ -4,6 +4,7 @@ import { getSite } from "@/lib/content";
 import { Button } from "@/components/primitives";
 import { EnquiryModal } from "@/components/forms/EnquiryModal";
 import { UI, telHref } from "./copy";
+import { LogoS } from "./LogoS";
 import { MegaMenu } from "./MegaMenu";
 import { MobileNav } from "./MobileNav";
 import { StickyHeader } from "./StickyHeader";
@@ -19,8 +20,7 @@ export async function Header() {
       <div className="container-site flex h-16 items-center gap-4">
         <Link href="/" className="relative shrink-0">
           <Image src={site.logo.src} alt={site.name} width={site.logo.width} height={site.logo.height} preload className="h-11 w-auto md:h-12" sizes="128px" />
-          {/* The S's box inside logo-white.png (366×137): x 10, y 15, 67×103 px. Recut the mask if the logo changes. */}
-          <span aria-hidden className="logo-sheen absolute top-[10.95%] left-[2.73%] h-[75.18%] w-[18.31%]" />
+          <LogoS />
         </Link>
         <div className="flex min-w-0 flex-1 justify-center">
           <MegaMenu groups={site.nav} label={UI.menu} className="hidden xl:block" />

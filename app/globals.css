@@ -331,13 +331,25 @@
   --reveal: reveal-zoom;
 }
 
-/* Header logo: a gold-to-black gradient drifting across the "S". The span sits over the S and is
-   masked to its exact shape (logo-s-mask.png was cut from the logo). Reduced motion: it holds still. */
-@keyframes logo-sheen {
-  to { background-position: 100% 50%; }
+/* Header logo S (components/layout/LogoS.tsx): writes itself on as a gold-and-black ribbon, then a glint
+   runs along it every few seconds. Masked to the S's exact shape. Reduced motion: drawn, no glint. */
+@keyframes logo-s-write {
+  from { stroke-dashoffset: 1; }
 }
-@utility logo-sheen {
-  background: linear-gradient(110deg, #b89b62 0%, #e2c88e 20%, #1e1e1e 50%, #b89b62 80%, #e2c88e 100%) 0% 50% / 300% 100%;
+@keyframes logo-s-glint {
+  from { stroke-dashoffset: 0.15; }
+  55%, to { stroke-dashoffset: -1; }
+}
+@utility logo-s {
   mask: url("/media/brand/logo-s-mask.png") center / 100% 100% no-repeat;
-  animation: logo-sheen 3.5s var(--ease-in-out) infinite alternate;
+}
+@utility logo-s-ink {
+  stroke-dasharray: 1 1;
+  animation: logo-s-write 1.6s var(--ease-in-out) both;
+}
+@utility logo-s-glint {
+  stroke-dasharray: 0.15 2;
+  stroke-dashoffset: -1;
+  opacity: 0.9;
+  animation: logo-s-glint 5s var(--ease-in-out) 2s infinite;
 }

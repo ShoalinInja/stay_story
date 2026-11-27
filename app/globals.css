@@ -331,25 +331,45 @@
   --reveal: reveal-zoom;
 }
 
-/* Header logo S (components/layout/LogoS.tsx): writes itself on as a gold-and-black ribbon, then a glint
-   runs along it every few seconds. Masked to the S's exact shape. Reduced motion: drawn, no glint. */
-@keyframes logo-s-write {
-  from { stroke-dashoffset: 1; }
+/* Header logo (components/layout/BrandLogo.tsx), "gold ink signature": the word writes on left to right with a
+   bright gold edge, the house and tagline settle in, then a soft light crosses the logo every 6 s. Plays on full
+   page loads (the header stays put during in-site navigation). Reduced motion: the logo is simply shown. */
+.brand-band,
+.brand-sheen {
+  opacity: 0;
+  filter: brightness(1.75) saturate(0.8);
+  mask-image: linear-gradient(90deg, transparent 38%, #000 46% 49%, transparent 56%);
 }
-@keyframes logo-s-glint {
-  from { stroke-dashoffset: 0.15; }
-  55%, to { stroke-dashoffset: -1; }
+.brand-word,
+.brand-band,
+.brand-sheen {
+  mask-size: 300% 100%;
+  mask-repeat: no-repeat;
+  mask-position: 0% 0;
 }
-@utility logo-s {
-  mask: url("/media/brand/logo-s-mask.png") center / 100% 100% no-repeat;
+@keyframes brand-wipe {
+  from { mask-position: 100% 0; }
 }
-@utility logo-s-ink {
-  stroke-dasharray: 1 1;
-  animation: logo-s-write 1.6s var(--ease-in-out) both;
+@keyframes brand-band {
+  0% { opacity: 1; mask-position: 100% 0; }
+  92% { opacity: 1; }
+  to { opacity: 0; mask-position: 0% 0; }
 }
-@utility logo-s-glint {
-  stroke-dasharray: 0.15 2;
-  stroke-dashoffset: -1;
-  opacity: 0.9;
-  animation: logo-s-glint 5s var(--ease-in-out) 2s infinite;
+@keyframes brand-sheen {
+  0% { opacity: 0.9; mask-position: 100% 0; }
+  24%, to { opacity: 0.9; mask-position: 0% 0; }
+}
+@keyframes brand-rise {
+  from { opacity: 0; transform: translateY(6%); }
+}
+@media (prefers-reduced-motion: no-preference) {
+  .brand-pin { animation: brand-rise 0.5s var(--ease-out) both; }
+  .brand-word {
+    mask-image: linear-gradient(90deg, #000 0 45%, transparent 55%);
+    animation: brand-wipe 2.2s cubic-bezier(0.45, 0, 0.25, 1) 0.25s both;
+  }
+  .brand-band { animation: brand-band 2.2s cubic-bezier(0.45, 0, 0.25, 1) 0.25s both; }
+  .brand-house { animation: brand-rise 0.8s var(--ease-out) 2.05s both; }
+  .brand-tag { animation: enter-up 0.7s var(--ease-out) 2.45s both; }
+  .brand-sheen { animation: brand-sheen 6s cubic-bezier(0.45, 0, 0.25, 1) 3.6s infinite; }
 }

@@ -77,7 +77,7 @@ const nav: NavGroup[] = [
 
 export const site: Site = {
   name: "Stay Story",
-  tagline: "Villa | Apartment | Hotel | Plot",
+  tagline: "Villas | Apartments | Yachts",
   logo: LOGO,
   phone: "+918828191510",
   whatsapp: "+918828191510", // set to null to hide all WhatsApp UI if this number is not on WhatsApp

@@ -14,5 +14,6 @@ export function media(id: string): MediaRef {
 /** Only the 16 legacy gallery photos are free of baked-in text; use these where text sits over an image. */
 export const CLEAN_PHOTOS = mediaManifest.filter((m) => !m.hasBakedText).map((m) => m.id);
 
-// Gold on solid white (the original black box removed) to match the white header.
-export const LOGO: MediaRef = { src: "/media/brand/logo-white.png", alt: "Stay Story", width: 366, height: 137 };
+// Gold mark (pin, wordmark, house) on transparent, for structured data. The header builds the logo from
+// separate layers (components/layout/BrandLogo.tsx) with the tagline as live text.
+export const LOGO: MediaRef = { src: "/media/brand/logo-mark.png", alt: "Stay Story", width: 366, height: 137 };

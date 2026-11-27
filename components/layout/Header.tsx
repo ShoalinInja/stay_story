@@ -1,10 +1,9 @@
-import Image from "next/image";
 import Link from "next/link";
 import { getSite } from "@/lib/content";
 import { Button } from "@/components/primitives";
 import { EnquiryModal } from "@/components/forms/EnquiryModal";
 import { UI, telHref } from "./copy";
-import { LogoS } from "./LogoS";
+import { BrandLogo } from "./BrandLogo";
 import { MegaMenu } from "./MegaMenu";
 import { MobileNav } from "./MobileNav";
 import { StickyHeader } from "./StickyHeader";
@@ -18,9 +17,8 @@ export async function Header() {
   return (
     <StickyHeader>
       <div className="container-site flex h-16 items-center gap-4">
-        <Link href="/" className="relative shrink-0">
-          <Image src={site.logo.src} alt={site.name} width={site.logo.width} height={site.logo.height} preload className="h-11 w-auto md:h-12" sizes="128px" />
-          <LogoS />
+        <Link href="/" className="shrink-0">
+          <BrandLogo name={site.name} tagline={site.tagline} />
         </Link>
         <div className="flex min-w-0 flex-1 justify-center">
           <MegaMenu groups={site.nav} label={UI.menu} className="hidden xl:block" />

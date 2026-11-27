@@ -122,7 +122,7 @@ I viewed all 85 legacy images and wrote alt text for each.
 - The covers and banners look AI-generated, and several show claims that are **not on the pages**: "24/7 pickup & support", "24/7 guest support", "Helmets included", "Insured vehicles", "Casino fun", "Room/villa babysitting", "Healthy cuisine", "Fire shows", and a property spec ("3 Bedroom · 2 Living Room · 2 Bathroom"). None of these were used in the copy.
 - The gallery appears to be a single villa, and the 6 placeholder stays reuse those photos. **Real photography per property is the top content need.**
 - WebP files are capped at 1920 px wide for banners, 1600 px for gallery images and 1200 px for covers, at quality 78. The total is 7.8 MB, with a 16 px blur placeholder for each image. Originals are in `public/media/legacy/_raw/`, which is gitignored.
-- The logo is saved as `public/media/brand/logo-white.png` (366×137, gold on white). It is a raster PNG; an SVG trace was not attempted. **Request an SVG from the designer.**
+- The logo is saved as transparent layers in `public/media/brand/` (`logo-word`, `logo-pin`, `logo-house`, and `logo-mark` for all three; 366×137). The tagline is live text from `site.tagline`. It is a raster PNG; an SVG trace was not attempted. **Request an SVG from the designer.**
 - `usedOn` records where each image appeared on the **legacy** site, mapped to the matching new route. It does not record where the new content uses the image.
 
 ## Redirects

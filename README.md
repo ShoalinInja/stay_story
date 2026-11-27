@@ -1,6 +1,6 @@
 # Stay Story Goa — staystory.in
 
-The Next.js rebuild of staystory.in covers villas, stays, travel, experiences, events, concierge and entertainment in Goa. Visitors **enquire**; there is no booking or payment. A lead goes to email, Supabase and a webhook, with WhatsApp and phone as fallbacks.
+The Next.js rebuild of staystory.in covers villas, stays, travel, experiences, events, concierge and entertainment in Goa. Visitors **enquire**; there is no booking or payment. There is no database: a lead is emailed to the team (Resend) and optionally posted to a webhook, and the visitor is offered a WhatsApp hand-off, with phone as the fallback.
 
 - **Stack:** Next.js 16 (App Router, Cache Components, Turbopack), React 19, TypeScript strict, Tailwind 4, shadcn/ui (Radix), zod and react-hook-form, Playwright and axe.
 - **Content** lives in typed TypeScript files under `content/`. There is no CMS and no database for content.
@@ -35,8 +35,7 @@ Every variable is documented in [`.env.example`](.env.example). In short:
 | `NEXT_PUBLIC_SITE_URL` | yes | Canonical origin, used for metadata, OG images and the sitemap. Default `https://www.staystory.in`. |
 | `ALLOW_PLACEHOLDERS` | **no, leave it unset** | `true` lets placeholder stays and unreviewed FAQs build. Local and preview only. |
 | `GOOGLE_SITE_VERIFICATION` | no | Search Console token. Empty means the legacy token is used. |
-| `RESEND_API_KEY`, `LEAD_TO_EMAIL`, `LEAD_FROM_EMAIL` | at least one sink | Lead email. The from-address must be on a domain verified in Resend. |
-| `SUPABASE_URL`, `SUPABASE_SERVICE_ROLE_KEY` | at least one sink | Lead storage in `public.enquiries`. Run `supabase/migrations/0001_enquiries.sql` first. **Server-only key.** |
+| `RESEND_API_KEY`, `LEAD_TO_EMAIL`, `LEAD_FROM_EMAIL` | yes (main sink) | Lead email to `LEAD_TO_EMAIL`. Until a domain is verified in Resend, use `onboarding@resend.dev` as the sender; it only delivers to the Resend account owner's address, so sign up to Resend with the same Gmail. **Server-only key.** |
 | `SHEET_WEBHOOK_URL` | optional sink | Sends each lead as a JSON POST, for example to Google Sheets. |
 | `UPSTASH_REDIS_REST_URL`, `UPSTASH_REDIS_REST_TOKEN` | recommended | Rate limit shared across instances: 5 enquiries per 10 minutes per IP. Without it each instance keeps its own in-memory limit. |
 | `NEXT_PUBLIC_TURNSTILE_SITE_KEY`, `TURNSTILE_SECRET_KEY` | optional | Cloudflare Turnstile. Turning it on breaks no-JS form posts. |
@@ -88,11 +87,10 @@ A **new top-level static page** (for example `app/(site)/careers`) must also be 
 
 1. Import the repo into Vercel. The framework is Next.js and pnpm is detected from `packageManager`, so no build settings need changing.
 2. Set the environment variables above for **Production**, and **never** set `ALLOW_PLACEHOLDERS` there. Previews may use `ALLOW_PLACEHOLDERS=true` to show draft content.
-3. **Supabase:** create a project, run `supabase/migrations/0001_enquiries.sql` (it enables RLS and revokes all table access from the `anon` and `authenticated` roles, so only the server key can write), and copy the URL and service-role key.
-4. **Resend:** verify the sending domain (`staystory.in`: add the SPF, DKIM and DMARC records it gives you), then set `LEAD_FROM_EMAIL` on that domain.
-5. **Upstash:** create a Redis database and set the REST URL and token.
-6. Deploy. On the preview URL:
-   - Send a test enquiry and confirm it arrives at every sink.
+3. **Resend:** create an account with the address that should receive leads, create an API key and set `RESEND_API_KEY` and `LEAD_TO_EMAIL`. Later, verify `staystory.in` (SPF, DKIM and DMARC records) and move `LEAD_FROM_EMAIL` onto that domain so leads can go to any inbox.
+4. **Upstash:** create a Redis database and set the REST URL and token.
+5. Deploy. On the preview URL:
+   - Send a test enquiry and confirm the email arrives (and the webhook, if set).
    - Run `pnpm check:redirects https://<preview-url>`.
    - Run Lighthouse on `/`, `/stays`, one stay and one service.
 
@@ -100,7 +98,7 @@ A **new top-level static page** (for example `app/(site)/careers`) must also be 
 
 Before:
 - [ ] The production build passes **without** `ALLOW_PLACEHOLDERS`. That requires the owner punch-list items below that block the build.
-- [ ] A test lead reaches email, Supabase and the sheet from the Vercel production deployment (`*.vercel.app`).
+- [ ] A test lead reaches the lead inbox (and the webhook, if set) from the Vercel production deployment (`*.vercel.app`).
 - [ ] `pnpm check:redirects https://<prod>.vercel.app` passes.
 - [ ] Lower the DNS TTL on `staystory.in` and `www` to 300 s at least 24 h ahead.
 - [ ] Note the existing MX, TXT (SPF, Google verification) and any mail records, and **keep them**. Only the web records change.
@@ -127,3 +125,5 @@ The full list, with what blocks the production build, is in [`docs/OWNER-PUNCHLI
 - [`content/CONTENT-REPORT.md`](content/CONTENT-REPORT.md): how the legacy content was migrated and rewritten, page by page.
 - [`QA-REPORT.md`](QA-REPORT.md): E2E and axe results, defects and fixes, Lighthouse.
 - [`docs/ADD-A-STAY.md`](docs/ADD-A-STAY.md): the owner's guide to adding a stay.
+- [`docs/DESIGN-AUDIT.md`](docs/DESIGN-AUDIT.md): design audit, with inconsistencies and prioritised improvements.
+- [`docs/MOTION-UX-PLAN.md`](docs/MOTION-UX-PLAN.md): motion tokens, component motion specs and trust/UX improvements, with an implementation order.

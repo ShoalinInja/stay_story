@@ -15,8 +15,8 @@ This is what the Stay Story team needs to supply, confirm or decide. Items marke
 
 | # | What | Why |
 |---|---|---|
-| 5 | **WhatsApp number** | Every WhatsApp button, the floating action button and the enquiry fallback stay hidden until `site.whatsapp` is set. |
-| 6 | **Domain email** (for example `hello@staystory.in`) | The site currently shows the old personal Gmail address (`site.contactEmail`). The lead "from" address also needs a verified domain in Resend. |
+| 5 | **WhatsApp number**: confirm +91 88281 91510 is on WhatsApp | It is set as `site.whatsapp`, so every WhatsApp button and the post-enquiry hand-off use it. If the number isn't on WhatsApp, set `whatsapp: null` in `content/site.ts` to hide them. |
+| 6 | **Domain email** (for example `hello@staystory.in`) | The site shows a personal Gmail address (`site.contactEmail`). A domain address looks more trustworthy, and verifying the domain in Resend lets leads be sent from it. |
 | 7 | **Social profile URLs** (Instagram, Facebook and so on) | `site.socials` is empty, so the footer shows no social links. |
 | 8 | **Real stats and guest reviews**, if you have them | The stats band and testimonials stay hidden until real data exists. Nothing is invented. |
 | 9 | **SVG logo** | Only a PNG exists. An SVG is sharper and lighter. |
@@ -36,7 +36,7 @@ This is what the Stay Story team needs to supply, confirm or decide. Items marke
 
 | # | What | Notes |
 |---|---|---|
-| 16 | **At least one lead destination**: Resend (email), Supabase (database) or a sheet webhook | **Without one, the production site cannot receive enquiries.** Every submission shows the phone fallback. See the README under Deploy. |
+| 16 | **Resend API key** (free): sign up with the Gmail that should receive leads, then set `RESEND_API_KEY` and `LEAD_TO_EMAIL` in Vercel. A sheet webhook is optional. | **Without it, the production site cannot email you enquiries.** Visitors still get the WhatsApp hand-off and phone fallback. See the README under Deploy. |
 | 17 | **Upstash Redis** | Spam limit shared across servers. Without it, each server keeps its own limit. |
 | 18 | **Vercel project and DNS access** | For the cutover checklist in the README |
 
@@ -51,6 +51,6 @@ This is what the Stay Story team needs to supply, confirm or decide. Items marke
 
 ## Known limits (no action needed unless you disagree)
 
-- Without JavaScript, `/stays` shows every stay. Filtering through the URL (for example from the home search bar) needs JavaScript.
+- Without JavaScript, `/stays` shows every stay. Filtering through the URL (for example from a footer link such as `/stays?type=apartment`) needs JavaScript.
 - When a filtered link such as `/stays?area=…` is opened directly, the full list is briefly part of the page before the filtered results replace it in the same response. Changing a filter on the page swaps the results without that flash.
 - `/areas` and `/collections` have no index pages, only the individual area and collection pages.

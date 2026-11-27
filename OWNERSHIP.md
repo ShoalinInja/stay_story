@@ -12,7 +12,7 @@ Spec of record: [`docs/BRIEF.md`](docs/BRIEF.md).
 | **A4 home** | 2 | `app/page.tsx`, `components/home/**` |
 | **A5 stays** | 2 | `app/stays/**`, `app/property-sales/**`, `app/areas/**`, `app/collections/**`, `app/list-your-property/**`, `components/stays/**` |
 | **A6 services** | 2 | `app/(services)/[category]/**`, `components/services/**` |
-| **A7 leads-backend** | 2 | `app/api/enquiry/**`, `app/thank-you/**`, `components/forms/**`, `lib/leads/**`, `.env.example`, `supabase/**` |
+| **A7 leads-backend** | 2 | `app/api/enquiry/**`, `app/thank-you/**`, `components/forms/**`, `lib/leads/**`, `.env.example` |
 | **A8 seo-performance** | 3 | `app/sitemap.ts`, `app/robots.ts`, `**/opengraph-image.tsx`, `lib/seo/**`, `scripts/check-redirects.ts` |
 | **A9 qa** | 3 | `e2e/**`, `playwright.config.ts`, `QA-REPORT.md` |
 

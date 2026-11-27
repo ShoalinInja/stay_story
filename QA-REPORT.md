@@ -23,7 +23,7 @@ pnpm test:e2e            # E2E_PORT=xxxx to change the port
 | Trailing slash returns 308 to the slashless URL | routes | 4 | pass |
 | axe WCAG 2.2 AA, 9 templates × 375 / 1280, zero serious or critical | `e2e/a11y.spec.ts` | 18 | pass (the D5–D7 rules are excluded on every page until those defects are fixed) |
 | axe `color-contrast`, `label-content-name-mismatch` | a11y | 2 | folded into the sweep (D5–D7 fixed) |
-| Search bar → `/stays?area=siolim&guests=2`, filtered grid | `e2e/flows.spec.ts` | 1 | pass |
+| ~~Search bar → filtered grid~~ (search bar removed at the owner's request; `/stays` filters are still covered) | — | — | removed |
 | Filter bar changes the URL and the results | flows | 1 | pass |
 | Stay gallery lightbox opens and closes on Escape | flows | 1 | pass |
 | Lightbox returns focus to its opener | flows | 1 | pass (D2 fixed) |

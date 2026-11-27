@@ -36,8 +36,8 @@ export function HeroCarousel({ hero }: { hero: Site["hero"] }) {
             </div>
           ))}
         </RailTrack>
-        <RailPrev label={T.prev} className="absolute top-1/2 left-4 z-10 -translate-y-1/2" />
-        <RailNext label={T.next} className="absolute top-1/2 right-4 z-10 -translate-y-1/2" />
+        <RailPrev label={T.prev} className="absolute bottom-20 left-4 z-10 md:top-1/2 md:bottom-auto md:-translate-y-1/2" />
+        <RailNext label={T.next} className="absolute right-4 bottom-20 z-10 md:top-1/2 md:bottom-auto md:-translate-y-1/2" />
       </Rail>
       <div className="pointer-events-none absolute inset-x-0 top-0 bottom-32 flex flex-col items-center justify-center px-4 text-center">
         <h1 className="max-w-3xl font-display type-h1 text-white">{hero.headline}</h1>

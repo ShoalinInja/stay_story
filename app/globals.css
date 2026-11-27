@@ -2,6 +2,10 @@
 @import "tw-animate-css";
 @import "shadcn/tailwind.css";
 
+/* The site has no dark theme. Without this, the UI kit's `dark:` classes fire on OS dark mode
+   (Tailwind's default) and, for example, turned the active footer tab dark-on-dark. */
+@custom-variant dark (&:where(.dark, .dark *));
+
 /* ₹ (U+20B9) lives in Inter's latin-ext file (~85 KB, not preloaded, so it delayed LCP on every priced page).
    public/fonts/inter-rupee.woff2 is Inter (OFL) subset to that one glyph: pyftsubset --unicodes=U+20B9. */
 @font-face {
